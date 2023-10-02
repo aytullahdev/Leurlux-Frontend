@@ -1,5 +1,7 @@
 'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { data } from 'autoprefixer';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -148,6 +150,9 @@ const BookSuperCar = () => {
         console.log(carForm)
     }
     useEffect(() => {
+        AOS.init();
+    }, [])
+    useEffect(() => {
         if (selectedSuperCar) {
             setCarForm(prev => ({ ...prev, ...selectedSuperCar }))
         }
@@ -166,7 +171,7 @@ const BookSuperCar = () => {
                     </div>
                     <div className='flex  flex-col gap-5 justify-center items-center  w-full text-base  mx-auto'>
 
-                        <div >
+                        <div data-aos="fade-left" data-aos-duration="1000">
                             <img className='scale-50' src={img} />
 
                         </div>
