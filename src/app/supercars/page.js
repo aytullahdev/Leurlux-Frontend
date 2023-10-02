@@ -132,7 +132,7 @@ const page = () => {
                 {
                     supercars.map((singleCar) => {
                         return <div key={singleCar.carname} className='rounded-lg overflow-hidden p-5 shadow-sm cursor-pointer'>
-                            <img className='hover:mx-10 duration-100' src={singleCar.img} />
+                            <img className='' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
                                 <p className='text-center text-sm font-bold'>{singleCar.price}</p>

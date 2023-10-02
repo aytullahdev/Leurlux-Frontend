@@ -8,7 +8,7 @@ const AboutService = ({ handleAbout, aboutData }) => {
                 aboutData &&
                 <div className='relative w-full h-full overflow-hidden'>
                     <button onClick={() => handleAbout()} className='cursor-pointer absolute top-5 left-5'>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-14 h-14 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-14 h-14 text-white hover:text-white">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                         </svg>
 

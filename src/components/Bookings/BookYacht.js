@@ -61,6 +61,7 @@ const BookingFormForYacht = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
+                        placeholder='Email...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                         required
                     />
@@ -72,6 +73,7 @@ const BookingFormForYacht = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
+                        placeholder='Phone...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                         required
                     />

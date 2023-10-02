@@ -1,12 +1,13 @@
+
 'use client'
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import AboutService from '../AboutService';
 const services = [
     {
-        title: "Private jets",
-        img: require('@/assets/images/private-jet.jpeg').default.src,
-        to: '/book?category=privatejet#bookprivatejet',
+        title: "Villas",
+        img: require('@/assets/images/villa.jpg').default.src,
+        to: '/villas',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -24,9 +25,9 @@ const services = [
 
     },
     {
-        title: "Yachts",
-        img: require('@/assets/images/yacht.jpeg').default.src,
-        to: '/yacht',
+        title: "Apartments",
+        img: require('@/assets/images/apartment.jpeg').default.src,
+        to: '/apartments',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -43,9 +44,9 @@ const services = [
         convenience, and luxury.`
     },
     {
-        title: "Supercars",
-        img: require('@/assets/images/supercar.png').default.src,
-        to: '/supercars',
+        title: "Hotels",
+        img: require('@/assets/images/hotel.jpeg').default.src,
+        to: '/hotels',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -100,7 +101,7 @@ const SingleServices = ({ service, handleAbout }) => {
     </>
 }
 
-const Rentals = () => {
+const Property = () => {
     const [openAbout, setOpenAbout] = useState(false)
     const [aboutData, setAboutData] = useState(null)
     const handleAbout = (data) => {
@@ -130,4 +131,5 @@ const Rentals = () => {
 
 
 
-export default Rentals;
+
+export default Property;

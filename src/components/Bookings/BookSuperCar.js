@@ -47,7 +47,7 @@ const BookSuperCar = () => {
                         <div className='flex flex-col overflow-hidden '>
                             <div className='flex flex-col gap-4'>
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
-                                <p className='text-xl  font-thin text-start'>{price}</p >
+                                <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{price}</span >
                             </div>
                             <div data-aos="fade-left" data-aos-duration="500">
 
@@ -84,7 +84,7 @@ const BookSuperCar = () => {
                             <div className='flex flex-col justify-start gap-2 text-xl '>
 
                                 <label className='font-italian'>Phone</label>
-                                <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='phone number...' value={phone} />
+                                <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Phone number...' value={phone} />
 
                             </div>
 

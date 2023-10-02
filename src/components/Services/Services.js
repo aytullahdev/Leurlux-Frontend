@@ -17,7 +17,7 @@ const services = [
     },
     {
         title: "Property",
-        list: ['Villas for rent', 'Apartment for rent'],
+        list: ['Villas for rent', 'Apartment for rent', 'Hotels'],
         img: require('@/assets/images/villa.jpeg').default.src,
         to: 'property'
     },
