@@ -46,6 +46,8 @@ export default function RootLayout({ children }) {
         <WhatsAppWidget replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
       How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+8801926668875" />
 
+
+
       </body>
     </html>
   )

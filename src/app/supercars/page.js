@@ -1,6 +1,8 @@
 'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect } from 'react';
 const supercars = [
@@ -90,6 +92,9 @@ const page = () => {
 
     }
     useEffect(() => {
+        AOS.init();
+    }, [])
+    useEffect(() => {
         setSelectedSuperCar(null)
     }, [])
     return (
@@ -126,8 +131,8 @@ const page = () => {
             <div className='grid grid-cols-3 gap-5 my-5' id='supercars'>
                 {
                     supercars.map((singleCar) => {
-                        return <div key={singleCar.carname} className='rounded-lg p-5 shadow-sm cursor-pointer'>
-                            <img src={singleCar.img} />
+                        return <div key={singleCar.carname} className='rounded-lg overflow-hidden p-5 shadow-sm cursor-pointer'>
+                            <img className='hover:mx-10 duration-100' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
                                 <p className='text-center text-sm font-bold'>{singleCar.price}</p>
