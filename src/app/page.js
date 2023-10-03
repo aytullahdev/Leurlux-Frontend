@@ -1,4 +1,6 @@
 'use client'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import Services from '@/components/Services/Services'
 import About from '@/components/about/About'
@@ -37,6 +39,9 @@ export default function Home() {
       </header>
       <Services />
       <About />
+      <Contact />
+      <Footer />
+
 
 
     </main>

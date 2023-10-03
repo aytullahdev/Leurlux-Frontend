@@ -49,9 +49,9 @@ const BookSuperCar = () => {
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
                                 <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{price}</span >
                             </div>
-                            <div data-aos="fade-left" data-aos-duration="500">
+                            <div data-aos="fade-right" data-aos-duration="500">
 
-                                <img className='w-[600px] h-[300px]' src={img} />
+                                <img className='w-[600px] h-[300px] ' src={img} />
 
                             </div>
                         </div>
