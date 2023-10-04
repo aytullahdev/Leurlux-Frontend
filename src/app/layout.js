@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
 import { GlobalProvider } from '@/GlobalContext/GlobalContext';
-
+import { Toaster } from 'sonner';
 const inter = Inter({ subsets: ['latin'] })
 
 const metadata = {
@@ -15,9 +15,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth" style={{
-      scrollBehavior: 'smooth'
-    }}>
+    <html lang="en" className="!scroll-smooth" >
       <head >
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -34,6 +32,7 @@ export default function RootLayout({ children }) {
       </head>
       <body id='top' className={`${inter.className} bg-white`}>
         <div>
+
           <Navbar />
         </div>
         <GlobalProvider>
@@ -44,9 +43,9 @@ export default function RootLayout({ children }) {
         </GlobalProvider>
 
         <WhatsAppWidget replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
-      How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+8801926668875" />
+      How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+46736700548" />
 
-
+        <Toaster richColors position='bottom-center' />
 
       </body>
     </html>

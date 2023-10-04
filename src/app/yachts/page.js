@@ -1,7 +1,9 @@
 'use client'
-import { GlobalContext } from '@/GlobalContext/GlobalContext';
+import Button from '@/components/resueable/Button';
+import useGlobalContext from '@/hooks/useGlobalContext';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 // const yachts = [
 //     {
 //         "name": "PORTOFINO 46 ZERO",
@@ -621,8 +623,11 @@ const yachts = [
     }
 ]
 
+
+
+
 function YachtDetails({ yacht }) {
-    const { setSelectedYacht, } = useContext(GlobalContext)
+    const { setSelectedYacht, } = useGlobalContext()
     const router = useRouter();
     const handleView = () => {
         setSelectedYacht(yacht);
@@ -680,7 +685,7 @@ function YachtDetails({ yacht }) {
     );
 }
 const page = () => {
-    const { setSelectedYacht, selectedYacht } = useContext(GlobalContext)
+    const { setSelectedYacht, selectedYacht } = useGlobalContext()
     useEffect(() => {
         if (selectedYacht) {
             setSelectedYacht(null)
@@ -700,7 +705,7 @@ const page = () => {
                         <div>
                             <h1 className='font-italian  text-6xl py-2'>YACHT<b className='font-bold'>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
-                            <p className='text-2xl'>
+                            <p className='text-2xl font-italian'>
                                 Browse our selection below to discover the ideal yacht for your Marbella holiday rental. If you can't find the specific yacht you have in mind, please don't hesitate to get in touch with us. Our extensive network of partners ensures that we can locate the yacht of your dreams.
                             </p>
                             {/* <div className='my-10'>
@@ -711,9 +716,13 @@ const page = () => {
                                 </div>
                             </div> */}
                         </div>
+                        <div className='my-10'>
+                            <Link className='px-5  block text-4xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#yachts">Yachts</Link>
+                        </div>
 
 
                     </div>
+
                 </div>
 
             </div>
@@ -725,6 +734,7 @@ const page = () => {
                     ))}
                 </div>
             </div>
+
         </div >
     );
 };

@@ -1,12 +1,13 @@
-import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import { useRouter } from 'next/navigation';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import { Toaster, toast } from 'sonner';
+import useGlobalContext from '@/hooks/useGlobalContext';
 const BookSuperCar = () => {
     const router = useRouter();
-    const { selectedSuperCar } = useContext(GlobalContext)
+    const { selectedSuperCar } = useGlobalContext();
 
     const { carname, img, price } = selectedSuperCar || {}
     const [carForm, setCarForm] = useState({
@@ -22,6 +23,7 @@ const BookSuperCar = () => {
     }
     const handleSubmit = () => {
         console.log(carForm)
+        toast.success("Thank you for booking")
     }
     useEffect(() => {
         AOS.init();
@@ -49,7 +51,7 @@ const BookSuperCar = () => {
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
                                 <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{price}</span >
                             </div>
-                            <div data-aos="fade-right" data-aos-duration="500">
+                            <div data-aos="fade-left" data-aos-duration="500">
 
                                 <img className='w-[600px] h-[300px] ' src={img} />
 

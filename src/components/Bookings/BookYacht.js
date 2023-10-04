@@ -1,6 +1,10 @@
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
+import Carousel from '../resueable/Carousel';
+
+
+
 const BookingFormForYacht = () => {
     const { selectedYacht } = useContext(GlobalContext); // Replace GlobalContext with your actual context
 
@@ -85,7 +89,7 @@ const BookingFormForYacht = () => {
                     >
                         Request
                     </button>
-                    <Link href="/yacht#yachts" className='mx-5  block underline text-base font-italian'>Back</Link>
+                    <Link href="/yachts#yachts" className='mx-5  block underline text-base font-italian'>Back</Link>
                 </div>
             </form>
         </div>
@@ -103,8 +107,8 @@ const BookYacht = () => {
                         <div>
                             <h2 className='text-4xl font-italian text-center'>{selectedYacht.name}</h2>
                         </div>
-                        <div className='p-10'>
-                            <div className='w-full h-full'>
+                        <div className='px-10 py-5'>
+                            {/* <div className='w-full h-full'>
                                 <img src={selectedYacht.images[0]} className='rounded-lg' />
                             </div>
                             <div className='flex flex-row gap-5 my-2'>
@@ -113,7 +117,8 @@ const BookYacht = () => {
                                         return <img src={singleImage} className='w-40 h-40 rounded-lg' />
                                     })
                                 }
-                            </div>
+                            </div> */}
+                            <Carousel photos={selectedYacht.images} />
                         </div>
                         <div className='px-10 py-5'>
                             <div className='flex flex-row justify-around items-center'>
@@ -216,7 +221,7 @@ const BookYacht = () => {
             </>
             :
             <div className='justify-center items-center flex flex-row h-full w-full py-20'>
-                <Link href={'/yacht#yachts'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a yacht</Link>
+                <Link href={'/yachts#yachts'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a yacht</Link>
             </div>
     }</>
 }

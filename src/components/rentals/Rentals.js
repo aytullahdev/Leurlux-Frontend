@@ -26,7 +26,7 @@ const services = [
     {
         title: "Yachts",
         img: require('@/assets/images/yacht.jpeg').default.src,
-        to: '/yacht',
+        to: '/yachts',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
