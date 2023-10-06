@@ -6,6 +6,9 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
     const [selectedSuperCar, setSelectedSuperCar] = useState();
     const [selectedYacht, setSelectedYacht] = useState();
+    const [selectedVilla, setSelectedVilla] = useState();
+    const [selectedHotel, setSelectedHotel] = useState();
+    const [selectedApartment, setSelectedApartment] = useState();
     const [links, setLinks] = useState({
         'address': ' Rua Eng. Lúcio de Azevedo, no 21-A 2700-347 Amadora, Portugal ',
         'phone': '+46 736 700 548',
@@ -23,7 +26,13 @@ export const GlobalProvider = ({ children }) => {
                 selectedYacht,
                 setSelectedYacht,
                 links,
-                setLinks
+                setLinks,
+                selectedVilla,
+                setSelectedVilla,
+                selectedApartment,
+                setSelectedApartment,
+                selectedHotel,
+                setSelectedHotel
             }}
         >
             {children}

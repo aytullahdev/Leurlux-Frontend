@@ -717,7 +717,7 @@ const page = () => {
                             </div> */}
                         </div>
                         <div className='my-10'>
-                            <Link className='px-5  block text-4xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#yachts">Yachts</Link>
+                            <Link className='px-5  block text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#yachts">Yachts</Link>
                         </div>
 
 

@@ -12,12 +12,13 @@ const BookSuperCar = () => {
     const { carname, img, price } = selectedSuperCar || {}
     const [carForm, setCarForm] = useState({
         pickupaddress: '',
+        dropoffaddress: '',
         email: '',
         phone: '',
         pickupdate: '',
         dropoffdate: '',
     })
-    const { pickupdate, email, phone, dropoffdate, pickupaddress } = carForm;
+    const { pickupdate, email, phone, dropoffdate, pickupaddress, dropoffaddress } = carForm;
     const handleChange = (e) => {
         setCarForm((prev) => ({ ...carForm, [e.target.name]: e.target.value }))
     }
@@ -75,6 +76,12 @@ const BookSuperCar = () => {
 
                                 <label className='font-italian'>Pickup Address</label>
                                 <input type='text' name='pickupaddress' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Pickup Address...' value={pickupaddress} />
+
+                            </div>
+                            <div className='flex flex-col justify-start gap-2 text-xl '>
+
+                                <label className='font-italian'>Drop Off Address</label>
+                                <input type='text' name='dropoffaddress' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Drop off Address...' value={dropoffaddress} />
 
                             </div>
                             <div className='flex flex-col justify-start gap-2 text-xl '>

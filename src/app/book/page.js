@@ -1,6 +1,9 @@
 'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
+import BookApartment from '@/components/Bookings/BookApartment';
+import BookHotle from '@/components/Bookings/BookHotle';
 import BookSuperCar from '@/components/Bookings/BookSuperCar';
+import BookVilla from '@/components/Bookings/BookVilla';
 import BookYacht from '@/components/Bookings/BookYacht';
 
 import { data } from 'autoprefixer';
@@ -149,8 +152,20 @@ const BookService = ({ category }) => {
     if (category === 'yacht') {
         return <BookYacht />
     }
+    if (category === 'villa') {
+        return <BookVilla />
+    }
+    if (category === 'apartment') {
+        return <BookApartment />
+    }
+    if (category === 'hotel') {
+        return <BookHotle />
+    }
+
     return <>
-        {category}
+        <div className='justify-center items-center flex flex-row h-full w-full py-20'>
+            <Link href={'/#services'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a service</Link>
+        </div>
     </>
 
 }
