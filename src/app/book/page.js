@@ -3,6 +3,7 @@ import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import BookApartment from '@/components/Bookings/BookApartment';
 import BookHotle from '@/components/Bookings/BookHotle';
 import BookSuperCar from '@/components/Bookings/BookSuperCar';
+import BookTransport from '@/components/Bookings/BookTransport';
 import BookVilla from '@/components/Bookings/BookVilla';
 import BookYacht from '@/components/Bookings/BookYacht';
 
@@ -161,6 +162,10 @@ const BookService = ({ category }) => {
     if (category === 'hotel') {
         return <BookHotle />
     }
+    if (category === 'transport') {
+        return <BookTransport />
+    }
+
 
     return <>
         <div className='justify-center items-center flex flex-row h-full w-full py-20'>

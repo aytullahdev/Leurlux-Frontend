@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
           <Navbar />
         </div>
         <GlobalProvider>
-          <div className=' pt-14'>
+          <div className=' pt-14 container mx-auto '>
             {children}
 
           </div>
