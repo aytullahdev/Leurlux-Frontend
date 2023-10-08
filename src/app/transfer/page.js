@@ -1,5 +1,6 @@
 'use client'
 import Carousel from '@/components/resueable/Carousel';
+import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
@@ -35,11 +36,11 @@ const page = () => {
             <div className='relative w-full '>
                 <div class="relative h-screen">
                     <video autoPlay loop muted class="w-full h-full object-cover">
-                        <source src="/transport.mp4" type="video/mp4" />
+                        <source src="/hongqi.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <div class="absolute inset-0 bg-black opacity-70"></div>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
+                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
 
                         <div>
                             <h1 className='font-italian text-5xl xl:text-9xl py-2'>THE LUXURY
@@ -62,6 +63,18 @@ const page = () => {
 
 
                     </div>
+                </div>
+
+                <div className="inset-0 opacity-70 bg-black font-italian p-4 text-center">
+                    <p className="text-6xl font-semibold text-white mb-2">
+                        Environmentally Friendly Transportation
+                    </p>
+                    <p className="text-xl py-5 text-white">
+                        We proudly use fully electric cars to reduce carbon emissions and protect the environment.
+                    </p>
+                </div>
+                <div className='my-10  flex justify-center items-center'>
+                    <Link href="/book?category=transport" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
                 </div>
                 <section id="transports" className="bg-gray-100 py-16">
                     <div>
@@ -96,40 +109,58 @@ const page = () => {
                             </h2>
                             <p className="text-lg  xl:text-2xl my-5">DEFINED BY LUXURY</p>
                         </div>
-
-                        <div className="flex flex-wrap mx-4">
-                            <div className="w-full lg:w-1/2 px-4 mb-8">
-                                <img
-                                    src="/sterncar.jpeg"
-                                    alt="Luxury Transportation 1"
-                                    className="rounded-lg shadow-md"
-                                />
-                            </div>
-                            <div className="w-full  lg:w-1/2 px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
-                                <p className="text-lg p-5 font-thin xl:text-2xl ">
-                                    We at LEURLUX understand that every journey should be a luxurious
-                                    and stress-free experience, and that's precisely what we aim to
-                                    provide for each and every one of our esteemed clients. Our core
-                                    focus lies in delivering top-notch Airport transportation and
-                                    private chauffeur services that are tailored to your specific
-                                    needs.
-                                </p>
-                                <Link href="/book?category=transport" className='text-2xl bg-black text-white  px-10 py-1 rounded-lg font-italian'>Book Now</Link>
-                            </div>
-                        </div>
                         <div className=" mx-4 my-5">
                             <h1 className='text-3xl font-italian my-5'>Our Transport</h1>
-                            <div className='grid grid-cols-3 gap-5'>
-                                <img className='rounded-lg' src='/sterncar.jpeg' />
-                                <img className='rounded-lg' src='/sterninteriro.jpeg' />
-                                <img className='rounded-lg' src='/porsche2.jpeg' />
-                                <img className='rounded-lg' src='/porsche3.jpeg' />
-                                <img className='rounded-lg' src='/porsche4.jpeg' />
-                                <img className='rounded-lg' src='/porsche5.jpeg' />
-                                <img className='rounded-lg' src='/porsche6.jpeg' />
+                            <div className='w-full '>
+                                <GalleryCarousel />
 
                             </div>
                         </div>
+                        <div className="flex flex-wrap mx-4 font-italian">
+
+                            <div className="w-full   px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
+                                <section className="bg-gray-100 py-12">
+                                    <div className="container mx-auto px-4">
+                                        <h2 className="text-3xl font-semibold text-gray-800 mb-6">Explore the Luxurious Hongqi E-HS9</h2>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                                            <div className="w-full flex flex-col justify-center items-center  px-4 mb-8">
+                                                <img
+                                                    src="/sterncar.jpeg"
+                                                    alt="Luxury Transportation 1"
+                                                    className="rounded-lg shadow-md h-[400px]"
+                                                />
+
+                                            </div>
+                                            <div className='flex flex-col gap-8'>
+                                                <div className="bg-white rounded-lg shadow-lg p-6 ">
+                                                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Experience Unparalleled Comfort</h3>
+                                                    <p className="text-gray-600">
+                                                        The Hongqi E-HS9 offers a luxurious and comfortable travel experience for all your transportation needs. With its spacious interior, premium materials, and advanced features, you'll enjoy every moment of your journey.
+                                                    </p>
+                                                </div>
+
+                                                <div className="bg-white rounded-lg shadow-lg p-6">
+                                                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Environmentally Friendly Travel</h3>
+                                                    <p className="text-gray-600">
+                                                        We are proud to use the Hongqi E-HS9, a fully electric car, for our transport services. This means you can travel in style while also contributing to a cleaner environment. Enjoy eco-friendly travel with us.
+                                                    </p>
+                                                </div>
+
+                                                <div className="bg-white rounded-lg shadow-lg p-6">
+                                                    <h3 className="text-xl font-semibold text-gray-800 mb-4">Tailored Transport Services</h3>
+                                                    <p className="text-gray-600">
+                                                        Our transport services are designed to cater to your specific needs. Whether you're heading to the airport, attending business meetings, or exploring the city, the Hongqi E-HS9 ensures a comfortable and tailored experience.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <Link href="/about/hongqi" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link>
+                            </div>
+                        </div>
+
 
                         <div className="flex flex-wrap ">
                             <div className="w-full lg:w-1/2 px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
@@ -142,14 +173,16 @@ const page = () => {
                                     luggage, and escort you to your chosen vehicle – ensuring you
                                     start or end your journey in the utmost style and relaxation.
                                 </p>
-                                <Link href="/book?category=transport" className='text-2xl bg-black text-white  px-10 py-1 rounded-lg font-italian'>Book Now</Link>
+
+                                <Link href="/about/hongqi" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link>
                             </div>
                             <div className="w-full lg:w-1/2 px-4 mb-8">
                                 <img
-                                    src="/sterninteriro.jpeg"
+                                    src="/porsche3.jpeg"
                                     alt="Luxury Transportation 2"
                                     className="rounded-lg shadow-md"
                                 />
+
                             </div>
                         </div>
 

@@ -48,7 +48,7 @@ const PricingSection = () => {
                             <li className="flex justify-between"><p>Marbella - Malaga Airport </p> <p>185€</p></li>
                             <li className="flex justify-between"><p> By the hour( Minimum 4 hours) </p> <p>225€</p></li>
                             <li className="flex justify-between"><p> Full day (8 Hours) </p> <p> 185€/hour</p></li>
-                            <li className="flex justify-between"><p>  Full day additional hours (more than 9 hours) </p> <p>120€</p></li>
+                            <li className="flex justify-between"><p>  Full-day additional rate (After 9 Hours) </p> <p>120€</p></li>
                         </ul>
 
 

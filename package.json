@@ -16,7 +16,8 @@
     "react-icons": "^4.11.0",
     "react-whatsapp-widget": "^2.2.0",
     "sonner": "^1.0.3",
-    "styled-components": "^6.0.8"
+    "styled-components": "^6.0.8",
+    "swiper": "^10.3.1"
   },
   "devDependencies": {
     "autoprefixer": "latest",
