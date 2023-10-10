@@ -101,7 +101,7 @@ const BookingForm = () => {
         dropoffAddress: "",
         transportType: "",
         numberOfPeople: "",
-        numberOfLaguage: "",
+        numberOfLuggages: "",
         flightNumber: "",
         otherRequest: "",
     });
@@ -269,9 +269,9 @@ const BookingForm = () => {
                         <input
                             className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
                             type="number"
-                            id="numberOfLaguage"
-                            name="numberOfLaguage"
-                            placeholder="Laguages"
+                            id="numberOfLuggages"
+                            name="numberOfLuggages"
+                            placeholder="luggages"
                             value={formData.numberOfLaguage}
                             onChange={handleChange}
                             required

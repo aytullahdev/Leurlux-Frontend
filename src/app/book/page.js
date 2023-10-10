@@ -168,7 +168,11 @@ const BookService = ({ category }) => {
 
 
     return <>
-        <div className='justify-center items-center flex flex-row h-full w-full py-20'>
+
+        <div className='justify-center items-center flex flex-col h-full w-full py-20'>
+            <div>
+                <h1 className='text-4xl font-italian py-5'>If You Encounter Booking Issues, Contact Us on <span className='text-bold text-green-500'>WhatsApp!</span></h1>
+            </div>
             <Link href={'/#services'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a service</Link>
         </div>
     </>
