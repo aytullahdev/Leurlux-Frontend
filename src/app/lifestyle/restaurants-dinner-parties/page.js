@@ -36,9 +36,9 @@ const page = () => {
             <h1 className='text-6xl font-italian' >Restaurants <span style={{ color: 'rgb(193, 182, 134)' }}>Dinner</span> Parties</h1>
             <div className='grid grid-cols-2 gap-5 my-10'>
                 {
-                    nightClubs.length ? nightClubs.map((singleClub) => {
+                    nightClubs.length ? nightClubs.map((singleClub, indx) => {
                         return (
-                            <div className='flex flex-col gap-5 shadow-sm border rounded-lg'>
+                            <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg'>
 
                                 <div>
                                     <GalleryCarousel slidesPerView={1} images={singleClub.images} />

@@ -42,7 +42,6 @@ const porsche_photos = [
 
 ]
 const page = () => {
-    const router = useRouter();
     return (
         <div>
             <div className='relative w-full '>
@@ -144,21 +143,21 @@ const page = () => {
                                                 <div className="bg-white rounded-lg shadow-lg p-6 ">
                                                     <h3 className="text-xl font-semibold text-black mb-4">Experience Unparalleled Comfort</h3>
                                                     <p className="text-black">
-                                                        The Hongqi E-HS9 offers a luxurious and comfortable travel experience for all your transportation needs. With its spacious interior, premium materials, and advanced features, you'll enjoy every moment of your journey.
+                                                        {`The Hongqi E-HS9 offers a luxurious and comfortable travel experience for all your transportation needs. With its spacious interior, premium materials, and advanced features, you'll enjoy every moment of your journey.`}
                                                     </p>
                                                 </div>
 
                                                 <div className="bg-white rounded-lg shadow-lg p-6">
                                                     <h3 className="text-xl font-semibold text-black mb-4">Environmentally Friendly Travel</h3>
                                                     <p className="text-black">
-                                                        We are proud to use the Hongqi E-HS9, a fully electric car, for our transport services. This means you can travel in style while also contributing to a cleaner environment. Enjoy eco-friendly travel with us.
+                                                        {`We are proud to use the Hongqi E-HS9, a fully electric car, for our transport services. This means you can travel in style while also contributing to a cleaner environment. Enjoy eco-friendly travel with us.`}
                                                     </p>
                                                 </div>
 
                                                 <div className="bg-white rounded-lg shadow-lg p-6">
                                                     <h3 className="text-xl font-semibold text-black mb-4">Tailored Transport Services</h3>
                                                     <p className="text-black">
-                                                        Our transport services are designed to cater to your specific needs. Whether you're heading to the airport, attending business meetings, or exploring the city, the Hongqi E-HS9 ensures a comfortable and tailored experience.
+                                                        {`Our transport services are designed to cater to your specific needs. Whether you're heading to the airport, attending business meetings, or exploring the city, the Hongqi E-HS9 ensures a comfortable and tailored experience.`}
                                                     </p>
                                                 </div>
                                             </div>
@@ -172,35 +171,35 @@ const page = () => {
                                             <img src='/gyles-taylor.png' className='w-[200px] block mx-auto' />
                                             <div className='flex flex-col gap-10 font-italian font-bold'>
                                                 <p className='text-4xl'>
-                                                    “I am very much looking forward to embarking on an exciting new career path with FAW. Hongqi, as the
+                                                    {`“I am very much looking forward to embarking on an exciting new career path with FAW. Hongqi, as the
                                                     oldest and most famous Chinese car brand, carries with it a deeply significant and diverse cultural history,”
-                                                    <br />
+                                                    <br />`}
 
                                                 </p>
-                                                <p className='text-2xl'> Taylor said. “There are many inspirational elements surrounding the marque with which to create fresh,
-                                                    modern vehicles for the new era,” he added.</p>
+                                                <p className='text-2xl'> {`Taylor said. “There are many inspirational elements surrounding the marque with which to create fresh,
+                                                    modern vehicles for the new era,” he added.`}</p>
 
                                             </div>
 
                                         </div>
 
                                         <p>
-                                            Gyles Taylor worked for Rolls-Royce for 13 years since 2005. During his time at Rolls-Royce, Taylor and his
+                                            {`Gyles Taylor worked for Rolls-Royce for 13 years since 2005. During his time at Rolls-Royce, Taylor and his
                                             team contributed to the creation of iconic models such as the Dawn convertible, the second-generation
-                                            Phantom, and the luxurious Cullinan SUV.
+                                            Phantom, and the luxurious Cullinan SUV.`}
                                         </p>
                                         <p>
-                                            So why would a man with such an impressive resume join FAW? Leaving aside the financial incentive, which
+                                            {`  So why would a man with such an impressive resume join FAW? Leaving aside the financial incentive, which
                                             we assume is more than generous, turning Hongqi into a global luxury player is surely a greater challenge
-                                            than keeping Rolls-Royce at the top of the game.
+                                            than keeping Rolls-Royce at the top of the game.`}
                                         </p>
 
 
                                         <p>
-                                            Hongqi, whose name means "Red Flag" in Mandarin, was founded in 1958. Originally, only high-ranking
+                                            {`  Hongqi, whose name means "Red Flag" in Mandarin, was founded in 1958. Originally, only high-ranking
                                             government officials were allowed to use Hongqi models. The brand was revived in the mid-1990s and
                                             started building cars for a wider audience. Hongqi’s owner FAW Group is one of China’s big three
-                                            automakers.
+                                            automakers.`}
                                         </p>
                                     </div>
                                 </div>
@@ -267,21 +266,21 @@ const page = () => {
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Unparalleled Performance</h3>
                                                             <p className="text-black">
-                                                                Our transport services feature the renowned Porsche, delivering exceptional performance and style. Whether it's a swift airport transfer or a luxurious city ride, Porsche ensures an unforgettable journey.
+                                                                {` Our transport services feature the renowned Porsche, delivering exceptional performance and style. Whether it's a swift airport transfer or a luxurious city ride, Porsche ensures an unforgettable journey.`}
                                                             </p>
                                                         </div>
 
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Sleek and Elegant Design</h3>
                                                             <p className="text-black">
-                                                                The Porsche's iconic design stands as a symbol of sophistication. With its sleek lines and elegant aesthetics, you'll make a statement as you travel in style with our Porsche transport services.
+                                                                {` The Porsche's iconic design stands as a symbol of sophistication. With its sleek lines and elegant aesthetics, you'll make a statement as you travel in style with our Porsche transport services.`}
                                                             </p>
                                                         </div>
 
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Tailored to Your Needs</h3>
                                                             <p className="text-black">
-                                                                Our Porsche transport services are tailored to cater to your specific requirements. Whether you need a quick airport transfer, a chauffeur for city exploration, or a stylish ride for special events, Porsche delivers.
+                                                                {` Our Porsche transport services are tailored to cater to your specific requirements. Whether you need a quick airport transfer, a chauffeur for city exploration, or a stylish ride for special events, Porsche delivers.`}
                                                             </p>
                                                         </div>
                                                     </div>

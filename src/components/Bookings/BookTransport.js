@@ -16,15 +16,15 @@ const PricingSection = () => {
     return (
         <div>
             <div className="my-5 flex flex-row gap-5">
-                {collection && collection.map((singleTransport) => {
+                {collection && collection.map((singleTransport,indx) => {
 
-                    return <button onClick={() => { setSelectedSection(`${singleTransport?.attributes?.vehicle}`) }} className="px-5 py-2  rounded-lg text-black border ">{singleTransport?.attributes?.vehicle}</button>
+                    return <button key={indx} onClick={() => { setSelectedSection(`${singleTransport?.attributes?.vehicle}`) }} className="px-5 py-2  rounded-lg text-black border ">{singleTransport?.attributes?.vehicle}</button>
 
                 })}
             </div>
             {collection && <div className="  my-2">
-                {collection && collection.map((singleTransport) => {
-                    return <div>
+                {collection && collection.map((singleTransport, indx) => {
+                    return <div key={indx}>
                         {selectedSection === `${singleTransport?.attributes?.vehicle}` && <div className="bg-white">
                             <p className='text-3xl font-bold bg-gray-600 px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
                             <h1 className="text-2xl py-8 font-bold "> Description</h1>
@@ -32,19 +32,19 @@ const PricingSection = () => {
                             <ul className="flex flex-col gap-2 text-xl">
 
                                 {
-                                    singleTransport?.attributes?.PricingOptions?.map((option, index) => {
+                                    singleTransport?.attributes?.PricingOptions?.map((option, indx) => {
 
                                         return (
-                                            <li className="flex justify-between"><p>{option.title} </p> <p>{option.price}{option.pricetag}</p></li>
+                                            <li key={indx}  className="flex justify-between"><p>{option.title} </p> <p>{option.price}{option.pricetag}</p></li>
 
                                         )
                                     })
                                 }
                                 {
-                                    singleTransport?.attributes?.ExtraPricing?.map((option, index) => {
+                                    singleTransport?.attributes?.ExtraPricing?.map((option, indx) => {
 
                                         return (
-                                            <li className="flex justify-between"><p>{option.title} </p><p>{option.price}{option.pricetag}</p></li>
+                                            <li key={indx} className="flex justify-between"><p>{option.title} </p><p>{option.price}{option.pricetag}</p></li>
 
                                         )
                                     })

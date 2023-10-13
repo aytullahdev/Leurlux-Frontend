@@ -39,7 +39,7 @@ const Villa = ({ villa }) => {
 
     </>
 }
-const page = () => {
+const Villas = () => {
     const [collection, setCollection] = useCollection('/api/villas?populate=*')
     const getVillaObject = (villa) => {
         return {
@@ -67,6 +67,9 @@ const page = () => {
 
         </div>
     );
+}
+const page = () => {
+    return <Villas />
 };
 
 export default page;

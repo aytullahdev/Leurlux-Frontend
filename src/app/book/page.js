@@ -142,8 +142,9 @@ const BookPrivateJet = () => {
 
 
 
-const BookService = ({ category }) => {
-
+const BookService = () => {
+    const searchParams = useSearchParams();
+    const category = searchParams.get('category')
     if (category === 'privatejet') {
         return <BookPrivateJet />
     }
@@ -179,16 +180,15 @@ const BookService = ({ category }) => {
 
 }
 const page = () => {
-    const searchParams = useSearchParams();
-    const category = searchParams.get('category')
+
 
     return (
         <>
-            {
-                category &&
-                <BookService category={category} />
 
-            }
+
+            <BookService />
+
+
         </>
     );
 };

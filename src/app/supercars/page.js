@@ -71,8 +71,7 @@ import axios from 'axios';
 //         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
 //     }
 // ]
-
-const page = () => {
+const SuperCars = () => {
     const [supercars, setSuperCars] = useState(null)
 
     const { selectedSuperCar, setSelectedSuperCar } = useContext(GlobalContext)
@@ -165,6 +164,10 @@ const page = () => {
             </div>
         </div >
     );
+
+}
+const page = () => {
+    return <SuperCars />
 };
 
 export default page;

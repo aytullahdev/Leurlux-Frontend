@@ -684,7 +684,7 @@ function YachtDetails({ yacht }) {
         </div>
     );
 }
-const page = () => {
+const Yachts = () => {
     const { setSelectedYacht, selectedYacht } = useGlobalContext()
     useEffect(() => {
         if (selectedYacht) {
@@ -706,7 +706,7 @@ const page = () => {
                             <h1 className='font-italian  text-6xl py-2'>YACHT<b className='font-bold'>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
                             <p className='text-2xl font-italian'>
-                                Browse our selection below to discover the ideal yacht for your Marbella holiday rental. If you can't find the specific yacht you have in mind, please don't hesitate to get in touch with us. Our extensive network of partners ensures that we can locate the yacht of your dreams.
+                                {` Browse our selection below to discover the ideal yacht for your Marbella holiday rental. If you can't find the specific yacht you have in mind, please don't hesitate to get in touch with us. Our extensive network of partners ensures that we can locate the yacht of your dreams.`}
                             </p>
                             {/* <div className='my-10'>
                                 <div class="animate-bounce flex justify-center items-center ">
@@ -737,6 +737,9 @@ const page = () => {
 
         </div >
     );
+}
+const page = () => {
+    return <Yachts />
 };
 
 export default page;

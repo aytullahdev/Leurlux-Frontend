@@ -1,30 +1,57 @@
 'use client'
 import Link from 'next/link';
 import React, { useState, useRef, useEffect } from 'react';
-
-const personalTrainingVideos = [
-    '/personal-training/personal-training.mp4',
-    '/personal-training/personal-training1.mp4',
-    '/personal-training/personal-training3.mp4'
-];
-const Page = () => {
+const PersonalTrainingVideos = () => {
+    const personalTrainingVideos = [
+        '/personal-training/personal-training.mp4',
+        '/personal-training/personal-training1.mp4',
+        '/personal-training/personal-training3.mp4'
+    ];
     const [isPlaying, setIsPlaying] = useState(Array(personalTrainingVideos.length).fill(false));
-    const videoRefs = personalTrainingVideos.map(() => useRef(null));
-
 
     const handleVideoHover = (index) => {
         const newIsPlaying = [...isPlaying];
         newIsPlaying[index] = true;
         setIsPlaying(newIsPlaying);
-        videoRefs[index].current.play();
     };
 
     const handleVideoLeave = (index) => {
         const newIsPlaying = [...isPlaying];
         newIsPlaying[index] = false;
         setIsPlaying(newIsPlaying);
-        videoRefs[index].current.pause();
     };
+
+    return (
+
+
+        <div className='grid grid-cols-3 my-5' id='personal-training'>
+            {personalTrainingVideos.map((singleVideo, index) => (
+                <div
+                    key={index}
+                    onMouseEnter={() => handleVideoHover(index)}
+                    onMouseLeave={() => handleVideoLeave(index)}
+                    className='relative'
+                >
+                    <video
+                        autoPlay={true} // Auto-play based on isPlaying state
+                        loop
+                        muted
+                        className='w-full h-full object-cover'
+                    >
+                        <source src={singleVideo} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            ))}
+        </div>
+
+
+
+    );
+}
+const PersonalTraining = () => {
+
+
 
     return (
         <div className=''>
@@ -63,32 +90,15 @@ const Page = () => {
             <div className='my-10  flex justify-center items-center'>
                 <Link href="/book?category=personal-training" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
             </div>
-            <div className='grid grid-cols-3 my-5' id='personal-training'>
-                {personalTrainingVideos.map((singleVideo, index) => (
-                    <div
-                        key={index}
-                        onMouseEnter={() => handleVideoHover(index)}
-                        onMouseLeave={() => handleVideoLeave(index)}
-                        className='relative'
-                    >
-                        <video
-                            ref={videoRefs[index]}
-                            loop
-                            muted
-                            className='w-full h-full object-cover'
-                        >
-                            <source src={singleVideo} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-
-                    </div>
-                ))}
-            </div>
+            <PersonalTrainingVideos />
             <div className='my-10  flex justify-center items-center'>
                 <Link href="/book?category=personal-training" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
             </div>
         </div>
     );
+}
+const Page = () => {
+    return <PersonalTraining />
 };
 
 export default Page;
