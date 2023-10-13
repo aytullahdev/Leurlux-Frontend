@@ -5,10 +5,11 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { Toaster, toast } from 'sonner';
 import useGlobalContext from '@/hooks/useGlobalContext';
+import axios from 'axios';
+import BookingSuccess from '../resueable/BookingSuccess';
 const BookSuperCar = () => {
     const router = useRouter();
-    const { selectedSuperCar } = useGlobalContext();
-
+    const { selectedSuperCar, setIsBooked, isBooked } = useGlobalContext();
     const { carname, img, price } = selectedSuperCar || {}
     const [carForm, setCarForm] = useState({
         pickupaddress: '',
@@ -22,9 +23,55 @@ const BookSuperCar = () => {
     const handleChange = (e) => {
         setCarForm((prev) => ({ ...carForm, [e.target.name]: e.target.value }))
     }
+    const [isSuccess, setIsSuccess] = useState(false)
     const handleSubmit = () => {
-        console.log(carForm)
-        toast.success("Thank you for booking")
+        const data = {
+            "data": {
+                "dropoffaddress": dropoffaddress,
+                "pickupaddress": pickupaddress,
+                "carname": carname,
+                "price": price,
+                "pickupdate": pickupdate,
+                "dropoffdate": dropoffdate,
+                "email": email,
+                "phone": phone
+            }
+        }
+        const apiUrl = 'http://localhost:1337/api/supercar-requests';
+        const token = 'f18c129f8685b67a78531cee1f7cbfad5037f77223c52fee9bbb9055550ef89be467e1d2be2cbb58ff09a5a522037aa7723affba78d0a2f2b5acdf815ea5f38859ef5cac0a4508d55529c96d2a147e4fc4a77b5ba9eab0065dd118a41ff6f0aa6176af77b4e7e9924e69bb952f564b6b2d7a3c6dba1b745ef832330f840d4908';
+
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        axios.post(apiUrl, data, { headers })
+            .then((response) => {
+                // Handle the response data here
+                console.log(response.data)
+                if (response.data.data.id) {
+                    setIsSuccess(true)
+                    toast.success("Thank you for booking")
+                    setIsBooked(true)
+                    setCarForm({
+                        pickupaddress: '',
+                        dropoffaddress: '',
+                        email: '',
+                        phone: '',
+                        pickupdate: '',
+                        dropoffdate: '',
+                    })
+                } else {
+                    isSuccess(false)
+                    setIsBooked(false)
+                    toast.error("Please try again!")
+                }
+            })
+            .catch((error) => {
+                // Handle any errors here
+                console.error(error);
+            });
+
+
+
     }
     useEffect(() => {
         AOS.init();
@@ -37,7 +84,8 @@ const BookSuperCar = () => {
     return <div className='relative w-full h-full' id='bookprivatejet'>
 
         <div className='absolute inset-0 flex flex-col  items-center justify-start backdrop-blur-sm bg-white/60 py-10 px-5 rounded'>
-            {selectedSuperCar ?
+            <BookingSuccess />
+            {!isBooked && selectedSuperCar ?
                 <div>
                     <div>
                         <h1 className='text-6xl font-italian text-center'>
@@ -50,7 +98,7 @@ const BookSuperCar = () => {
                         <div className='flex flex-col overflow-hidden '>
                             <div className='flex flex-col gap-4'>
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
-                                <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{price}</span >
+                                <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{`Starting from ${price} €/Day`}</span >
                             </div>
                             <div data-aos="fade-left" data-aos-duration="500">
 
@@ -59,7 +107,11 @@ const BookSuperCar = () => {
                             </div>
                         </div>
                         <div className='flex flex-col gap-2  '>
+                            {isSuccess && <spna className="text-green-500 font-italian text-start text-xl">Thank you for booking We will contact you soon.</spna>}
                             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
+
+
+
                             <div className='flex flex-col justify-start gap-2 text-xl '>
 
                                 <label className='font-italian font-bold'>Pickup Date</label>

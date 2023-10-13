@@ -9,6 +9,7 @@ export const GlobalProvider = ({ children }) => {
     const [selectedVilla, setSelectedVilla] = useState();
     const [selectedHotel, setSelectedHotel] = useState();
     const [selectedApartment, setSelectedApartment] = useState();
+    const [isBooked, setIsBooked] = useState(false)
     const [links, setLinks] = useState({
         'address': ' Rua Eng. Lúcio de Azevedo, no 21-A 2700-347 Amadora, Portugal ',
         'phone': '+46 736 700 548',
@@ -32,7 +33,9 @@ export const GlobalProvider = ({ children }) => {
                 selectedApartment,
                 setSelectedApartment,
                 selectedHotel,
-                setSelectedHotel
+                setSelectedHotel,
+                isBooked,
+                setIsBooked
             }}
         >
             {children}

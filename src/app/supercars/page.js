@@ -4,86 +4,77 @@ import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useRouter } from 'next/navigation';
-import React, { useContext, useEffect } from 'react';
-const supercars = [
-    {
-        "carname": "Audi R8",
-        "price": "Starting from 850 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-R8.jpg"
-    },
-    {
-        "carname": "Audi R8 Spyder",
-        "price": "Starting from 900 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-R8-Spyder.jpg"
-    },
-    {
-        "carname": "Bentley GT",
-        "price": "Starting from 1350 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GT.jpg"
-    },
-    {
-        "carname": "Bentley GTC",
-        "price": "Starting from 1600 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
-    },
-    {
-        "carname": "Ferrari 488 Coupe",
-        "price": "Starting from 1500 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Coupe.jpg"
-    },
-    {
-        "carname": "Ferrari 488 Spider",
-        "price": "Starting from 1600 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Spider.jpg"
-    },
-    {
-        "carname": "Ferrari 812 Superfast",
-        "price": "Starting from 2200 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-812-Superfast.jpg"
-    },
-    {
-        "carname": "Ferrari Portofino",
-        "price": "Starting from 1300 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-Portofino.jpg"
-    },
-    {
-        "carname": "Lamborghini Huracan Coupe",
-        "price": "Starting from 1350 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Coupe.jpg"
-    },
-    {
-        "carname": "Lamborghini Huracan Spyder",
-        "price": "Starting from 1600 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Spyder.jpg"
-    },
-    {
-        "carname": "Lamborghini Aventador LP750",
-        "price": "Starting from 2500 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Aventador-LP750.jpg"
-    },
-    {
-        "carname": "McLaren 570",
-        "price": "Starting from 1300 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/McLaren-570.jpg"
-    },
-    {
-        "carname": "Porsche 992 Coupe",
-        "price": "Starting from 650 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Coupe.jpg"
-    },
-    {
-        "carname": "Porsche 992 Cabrio",
-        "price": "Starting from 800 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Cab.jpg"
-    },
-    {
-        "carname": "Porsche GT3 RS",
-        "price": "Starting from 900 €/Day",
-        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
-    }
-]
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+// const supercars = [
+
+
+
+//     {
+//         "carname": "Bentley GTC",
+//         "price": "Starting from 1600 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
+//     },
+//     {
+//         "carname": "Ferrari 488 Coupe",
+//         "price": "Starting from 1500 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Coupe.jpg"
+//     },
+//     {
+//         "carname": "Ferrari 488 Spider",
+//         "price": "Starting from 1600 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Spider.jpg"
+//     },
+//     {
+//         "carname": "Ferrari 812 Superfast",
+//         "price": "Starting from 2200 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-812-Superfast.jpg"
+//     },
+//     {
+//         "carname": "Ferrari Portofino",
+//         "price": "Starting from 1300 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-Portofino.jpg"
+//     },
+//     {
+//         "carname": "Lamborghini Huracan Coupe",
+//         "price": "Starting from 1350 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Coupe.jpg"
+//     },
+//     {
+//         "carname": "Lamborghini Huracan Spyder",
+//         "price": "Starting from 1600 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Spyder.jpg"
+//     },
+//     {
+//         "carname": "Lamborghini Aventador LP750",
+//         "price": "Starting from 2500 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Aventador-LP750.jpg"
+//     },
+//     {
+//         "carname": "McLaren 570",
+//         "price": "Starting from 1300 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/McLaren-570.jpg"
+//     },
+//     {
+//         "carname": "Porsche 992 Coupe",
+//         "price": "Starting from 650 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Coupe.jpg"
+//     },
+//     {
+//         "carname": "Porsche 992 Cabrio",
+//         "price": "Starting from 800 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Cab.jpg"
+//     },
+//     {
+//         "carname": "Porsche GT3 RS",
+//         "price": "Starting from 900 €/Day",
+//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
+//     }
+// ]
 
 const page = () => {
+    const [supercars, setSuperCars] = useState(null)
+
     const { selectedSuperCar, setSelectedSuperCar } = useContext(GlobalContext)
     const router = useRouter()
     const handleReqeust = (selectedCar) => {
@@ -93,10 +84,32 @@ const page = () => {
     }
     useEffect(() => {
         AOS.init();
+
+        const apiUrl = 'http://localhost:1337/api/supercars?populate=*';
+        const token = '3896ced7d8b888791ee26d6499c43de7961291cdee3dcea00a7f8108ecec808094b3f057b19083397cd80bf8fb4ebb5214f422ab4b3e6ad04d001f162cefd99ce46c386985263bfd32fa7645c00a3305e2e89a936cbc69120b3615c73cde5042ee5b9138a69f33b2792ea8cdcdb62aadee11a4283ea91b5155e125b3798430fd';
+
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        axios.get(apiUrl, { headers })
+            .then((response) => {
+                // Handle the response data here
+                setSuperCars(response.data.data);
+                console.log(response.data)
+            })
+            .catch((error) => {
+                // Handle any errors here
+                console.error(error);
+            });
     }, [])
     useEffect(() => {
         setSelectedSuperCar(null)
     }, [])
+    const getCarObje = (singleCarObj) => {
+        const backend = 'http://localhost:1337'
+        return { 'carname': singleCarObj.attributes.carname, price: singleCarObj.attributes.price, img: `${backend}${singleCarObj.attributes.img.data.attributes.url}` };
+
+    }
     return (
         <div className='py-2'>
             <div className='relative w-full '>
@@ -132,13 +145,14 @@ const page = () => {
 
             </div>
             <div className='grid grid-cols-3 gap-5 my-5' id='supercars'>
-                {
-                    supercars.map((singleCar) => {
+                {supercars && supercars.length > 0 &&
+                    supercars.map((singleCarObj) => {
+                        const singleCar = getCarObje(singleCarObj);
                         return <div key={singleCar.carname} className='rounded-lg overflow-hidden p-5 shadow-sm cursor-pointer'>
                             <img className='' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
-                                <p className='text-center text-sm font-bold'>{singleCar.price}</p>
+                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price} €/Day`}</p>
 
                             </div>
                             <div>
