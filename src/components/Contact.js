@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { toast } from 'sonner';
 
 const Contact = () => {
     const [contact, setContact] = useState({
@@ -14,7 +16,48 @@ const Contact = () => {
         setContact((prev) => ({ ...prev, [name]: value }))
     }
     const handleSubmit = () => {
-        console.log(contact)
+        // console.log(contact)
+
+        if (!message || !firstName || !lastName || !phone || !email) {
+            toast.error("Please fillup the form correctly");
+            return
+        }
+        const data = {
+            "data": {
+                "name": `${firstName} ${lastName}`,
+                "email": email,
+                "phone": phone,
+                "request": message,
+
+            }
+        }
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/customers-requests`;
+        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        axios.post(apiUrl, data, { headers })
+            .then((response) => {
+                // Handle the response data here
+                // console.log(response.data)
+                if (response.data.data.id) {
+                    toast.success("Request Submited")
+                    setContact({
+                        firstName: '',
+                        lastName: '',
+                        email: '',
+                        phone: '',
+                        message: ''
+                    })
+
+                } else {
+                    toast.error("Please try again!")
+                }
+            })
+            .catch((error) => {
+                // Handle any errors here
+                console.error(error);
+            });
     }
     return (
         <div className='px-10 py-20 w-full' id='contact'>

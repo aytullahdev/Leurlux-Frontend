@@ -45,8 +45,8 @@ const page = () => {
     return (
         <div>
             <div className='relative w-full '>
-                <div class="relative h-screen">
-                    <video autoPlay loop muted class="w-full h-full object-cover">
+                <div className="relative h-screen">
+                    <video autoPlay loop muted className="w-full h-full object-cover">
                         <source src="/hongqi.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>

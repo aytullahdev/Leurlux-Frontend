@@ -57,7 +57,7 @@ const Villas = () => {
                 {collection && collection.length > 0 ? <>
                     {
                         collection.map((villa, indx) => {
-                            console.log(villa)
+                           // console.log(villa)
                             villa = getVillaObject(villa)
                             return <Villa key={`villa- ${indx}`} villa={villa} />
                         })

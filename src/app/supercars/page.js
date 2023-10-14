@@ -94,7 +94,7 @@ const SuperCars = () => {
             .then((response) => {
                 // Handle the response data here
                 setSuperCars(response.data.data);
-                console.log(response.data)
+               // console.log(response.data)
             })
             .catch((error) => {
                 // Handle any errors here
@@ -112,13 +112,13 @@ const SuperCars = () => {
     return (
         <div className='py-2'>
             <div className='relative w-full '>
-                <div class="relative h-screen">
-                    <video autoPlay loop muted class="w-full h-full object-cover">
+                <div className="relative h-screen">
+                    <video autoPlay loop muted className="w-full h-full object-cover">
                         <source src="./supercar.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
+                    <div className="absolute inset-0 bg-black opacity-50"></div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
 
                         <div>
                             <h1 className='font-italian  text-7xl py-2'>SUPER CAR <b className='font-bold'>RENTAL MARBELLA</b></h1>

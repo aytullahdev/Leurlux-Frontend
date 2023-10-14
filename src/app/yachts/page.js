@@ -632,7 +632,7 @@ function YachtDetails({ yacht }) {
     const handleView = () => {
         setSelectedYacht(yacht);
         router.push('/book?category=yacht');
-        console.log("view ")
+       
     }
     return (
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6  cursor-pointer">

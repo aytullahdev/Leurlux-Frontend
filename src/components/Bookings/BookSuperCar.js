@@ -45,7 +45,7 @@ const BookSuperCar = () => {
         axios.post(apiUrl, data, { headers })
             .then((response) => {
                 // Handle the response data here
-                console.log(response.data)
+                // console.log(response.data)
                 if (response.data.data.id) {
                     setIsSuccess(true)
                     toast.success("Thank you for booking")
