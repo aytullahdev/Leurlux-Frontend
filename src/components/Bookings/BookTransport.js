@@ -16,7 +16,7 @@ const PricingSection = () => {
     return (
         <div>
             <div className="my-5 flex flex-row gap-5">
-                {collection && collection.map((singleTransport,indx) => {
+                {collection && collection.map((singleTransport, indx) => {
 
                     return <button key={indx} onClick={() => { setSelectedSection(`${singleTransport?.attributes?.vehicle}`) }} className="px-5 py-2  rounded-lg text-black border ">{singleTransport?.attributes?.vehicle}</button>
 
@@ -35,7 +35,7 @@ const PricingSection = () => {
                                     singleTransport?.attributes?.PricingOptions?.map((option, indx) => {
 
                                         return (
-                                            <li key={indx}  className="flex justify-between"><p>{option.title} </p> <p>{option.price}{option.pricetag}</p></li>
+                                            <li key={indx} className="flex justify-between"><p>{option.title} </p> <p>{option.price}{option.pricetag}</p></li>
 
                                         )
                                     })
@@ -127,8 +127,8 @@ const BookingForm = () => {
                 "numberofpeople": formData.numberOfPeople
             }
         }
-        const apiUrl = 'http://localhost:1337/api/transport-requests';
-        const token = 'f18c129f8685b67a78531cee1f7cbfad5037f77223c52fee9bbb9055550ef89be467e1d2be2cbb58ff09a5a522037aa7723affba78d0a2f2b5acdf815ea5f38859ef5cac0a4508d55529c96d2a147e4fc4a77b5ba9eab0065dd118a41ff6f0aa6176af77b4e7e9924e69bb952f564b6b2d7a3c6dba1b745ef832330f840d4908';
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/transport-requests`;
+        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
         const headers = {
             Authorization: `Bearer ${token}`,

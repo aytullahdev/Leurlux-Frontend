@@ -37,9 +37,8 @@ const BookSuperCar = () => {
                 "phone": phone
             }
         }
-        const apiUrl = 'http://localhost:1337/api/supercar-requests';
-        const token = 'f18c129f8685b67a78531cee1f7cbfad5037f77223c52fee9bbb9055550ef89be467e1d2be2cbb58ff09a5a522037aa7723affba78d0a2f2b5acdf815ea5f38859ef5cac0a4508d55529c96d2a147e4fc4a77b5ba9eab0065dd118a41ff6f0aa6176af77b4e7e9924e69bb952f564b6b2d7a3c6dba1b745ef832330f840d4908';
-
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/supercar-requests`;
+        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
         const headers = {
             Authorization: `Bearer ${token}`,
         };
