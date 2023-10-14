@@ -46,13 +46,13 @@ const Footer = () => {
             ),
             link: 'https://www.tiktok.com/@MrMrsfixness',
         },
-        {
-            name: 'Instagram',
-            icon: (
-                <img className='w-10 h-10' src={require('@/assets/images/instagram.png').default.src} />
-            ),
-            link: `${links.instagram}`,
-        },
+        // {
+        //     name: 'Instagram',
+        //     icon: (
+        //         <img className='w-10 h-10' src={require('@/assets/images/instagram.png').default.src} />
+        //     ),
+        //     link: `${links.instagram}`,
+        // },
 
     ];
     return (
