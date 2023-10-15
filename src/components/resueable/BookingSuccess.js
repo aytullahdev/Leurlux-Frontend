@@ -10,6 +10,9 @@ const BookingSuccess = () => {
 
     return (
         <div>
+            <div>
+
+            </div>
             {isBooked && <div className=''>
                 <h1 className='text-6xl font-bold text-center py-10'> Thank you for your booking.</h1>
                 <p className='text-xl text-center'>  If you have any questions or need assistance, <br />please feel free to reach out to us on <span className='text-xl font-bold text-green-500'>WhatsApp👇</span>.</p>

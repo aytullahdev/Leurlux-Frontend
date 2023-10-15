@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from 'next/navigation'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from "next/link";
@@ -8,6 +9,7 @@ import { toast } from "sonner";
 import useGlobalContext from "@/hooks/useGlobalContext";
 import BookingSuccess from "../resueable/BookingSuccess";
 import useCollection from "@/hooks/useCollection";
+import { checkout } from "@/controller/checkout";
 
 const PricingSection = () => {
     const [selectedSection, setSelectedSection] = useState('Chauffeur')
@@ -84,6 +86,7 @@ const BookingForm = () => {
     const { setIsBooked, isBooked } = useGlobalContext();
     const [selectedPrice, setSelectedPrice] = useState("");
     const [isSuccess, setIsSuccess] = useState("")
+    const router = useRouter()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -106,64 +109,32 @@ const BookingForm = () => {
             [name]: value,
         });
     };
-
+    useEffect(() => {
+        setFormData(JSON.parse(localStorage.getItem('fromData')) || {})
+        setSelectedPrice(JSON.parse(localStorage.getItem('fromData'))?.selectedPrice || null)
+    }, [])
     const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission here (e.g., send data to the server)
-        console.log(formData);
-        const data = {
-            "data": {
-                "dropoffaddress": formData.dropoffAddress,
-                "pickupaddress": formData.pickupAddress,
-                "name": formData.name,
-                "transporttype": selectedPrice,
-                "pickupdate": formData.pickupDate,
-                "dropoffdate": formData.dropoffDate,
-                "email": formData.email,
-                "phone": formData.phone,
-                "flightnumber": formData.flightNumber,
-                "otherrequest": formData.otherRequest,
-                "luggages": formData.numberOfLuggages,
-                "numberofpeople": formData.numberOfPeople
-            }
+        e.preventDefault()
+        localStorage.setItem('fromData', JSON.stringify({ ...formData, "selectedPrice": selectedPrice }))
+        if (session_id) {
+            toast.error("Please refrash the page");
+            router.push("/book?category=transport")
+            return;
         }
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/transport-requests`;
-        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
-
-        const headers = {
-            Authorization: `Bearer ${token}`,
-        };
-        axios.post(apiUrl, data, { headers })
-            .then((response) => {
-                // Handle the response data here
-                //console.log(response.data)
-                if (response.data.data.id) {
-                    setIsSuccess(true)
-                    toast.success("Thank you for booking")
-                    setIsBooked(true)
-                    setFormData({
-                        name: "",
-                        email: "",
-                        pickupDate: "",
-                        pickupAddress: "",
-                        dropoffAddress: "",
-                        transportType: "",
-                        numberOfPeople: "",
-                        numberOfLuggages: "",
-                        flightNumber: "",
-                        otherRequest: "",
-                        phone: ""
-                    })
-                } else {
-                    isSuccess(false)
-                    setIsBooked(false)
-                    toast.error("Please try again!")
-                }
+        if (selectedPrice === 'Chauffeur-Full day (8 Hours)') {
+            submitTransportForm(null, { ...formData, "selectedPrice": selectedPrice })
+        } else {
+            checkout({
+                lineItems: [{ price: 'price_1O1SJQF65j8JGYI7ebPYLLA8', quantity: 1 }],
+                route: 'book?category=transport',
             })
-            .catch((error) => {
-                // Handle any errors here
-                console.error(error);
-            });
+        }
+
+
+
+
+        // Handle form submission here (e.g., send data to the server)
+
         // // Reset form data
         // setFormData({
         //     name: "",
@@ -178,7 +149,151 @@ const BookingForm = () => {
         //     otherRequest: "",
         // });
     };
+    const submitTransportForm = (session_id, transPortData) => {
+        if (!transPortData) {
+            return
+        }
+        localStorage.clear('fromData')
+        if (!transPortData || !transPortData.email || !transPortData.phone) {
+            toast.error("Please Fill up the form");
+            return;
+        }
+        console.log(transPortData)
+        if (session_id) {
 
+            const data = {
+                "data": {
+                    "dropoffaddress": transPortData.dropoffAddress,
+                    "pickupaddress": transPortData.pickupAddress,
+                    "name": transPortData.name,
+                    "transporttype": transPortData.selectedPrice,
+                    "pickupdate": transPortData.pickupDate,
+                    "dropoffdate": transPortData.dropoffDate,
+                    "email": transPortData.email,
+                    "phone": transPortData.phone,
+                    "flightnumber": transPortData.flightNumber,
+                    "otherrequest": transPortData.otherRequest,
+                    "luggages": transPortData.numberOfLuggages,
+                    "numberofpeople": transPortData.numberOfPeople,
+                    "payment": "Paid",
+                    "payment_id": session_id,
+                }
+            }
+            const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/transport-requests`;
+            const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+
+            const headers = {
+                Authorization: `Bearer ${token}`,
+            };
+            axios.post(apiUrl, data, { headers })
+                .then((response) => {
+                    // Handle the response data here
+                    //console.log(response.data)
+                    if (response.data.data.id) {
+                        setIsSuccess(true)
+                        toast.success("Thank you for booking")
+                        setIsBooked(true)
+                        setFormData({
+                            name: "",
+                            email: "",
+                            pickupDate: "",
+                            pickupAddress: "",
+                            dropoffAddress: "",
+                            transportType: "",
+                            numberOfPeople: "",
+                            numberOfLuggages: "",
+                            flightNumber: "",
+                            otherRequest: "",
+                            phone: ""
+                        })
+                        router.push(`/success?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+
+                    } else {
+                        isSuccess(false)
+                        setIsBooked(false)
+                        toast.error("Please try again!")
+                        router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                    }
+                })
+                .catch((error) => {
+                    // Handle any errors here
+                    console.error(error);
+                });
+
+        } else {
+
+            const data = {
+                "data": {
+                    "dropoffaddress": transPortData.dropoffAddress,
+                    "pickupaddress": transPortData.pickupAddress,
+                    "name": transPortData.name,
+                    "transporttype": transPortData.selectedPrice,
+                    "pickupdate": transPortData.pickupDate,
+                    "dropoffdate": transPortData.dropoffDate,
+                    "email": transPortData.email,
+                    "phone": transPortData.phone,
+                    "flightnumber": transPortData.flightNumber,
+                    "otherrequest": transPortData.otherRequest,
+                    "luggages": transPortData.numberOfLuggages,
+                    "numberofpeople": transPortData.numberOfPeople,
+                }
+            }
+            const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/transport-requests`;
+            const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+
+            const headers = {
+                Authorization: `Bearer ${token}`,
+            };
+            axios.post(apiUrl, data, { headers })
+                .then((response) => {
+                    // Handle the response data here
+                    //console.log(response.data)
+                    if (response.data.data.id) {
+                        setIsSuccess(true)
+                        toast.success("Thank you for booking")
+                        setIsBooked(true)
+                        setFormData({
+                            name: "",
+                            email: "",
+                            pickupDate: "",
+                            pickupAddress: "",
+                            dropoffAddress: "",
+                            transportType: "",
+                            numberOfPeople: "",
+                            numberOfLuggages: "",
+                            flightNumber: "",
+                            otherRequest: "",
+                            phone: ""
+                        })
+                        router.push(`/success?session_id=not_paid&email=${transPortData.email}&name=${transPortData.name}`)
+                    } else {
+                        isSuccess(false)
+                        setIsBooked(false)
+                        toast.error("Please try again!")
+                        router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                    }
+                })
+                .catch((error) => {
+                    // Handle any errors here
+                    router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                    console.error(error);
+                });
+
+        }
+
+    }
+    const searchParams = useSearchParams()
+    const session_id = searchParams.get('session_id')
+    useEffect(() => {
+        const localData = JSON.parse(localStorage.getItem('fromData'))
+        if (session_id) {
+
+            submitTransportForm(session_id, localData)
+        } else {
+            submitTransportForm(null, localData)
+        }
+
+    }, [session_id])
 
     const handlePriceChange = (event) => {
         setSelectedPrice(event.target.value);
@@ -187,8 +302,8 @@ const BookingForm = () => {
 
     return (
         <div className="w-full  max-w-md mx-auto font-italian ">
-            <BookingSuccess />
-            {!isBooked && <div>
+
+            {<div>
                 <div>
                     <h1 className='text-5xl font-italian text-center'>
                         Book Transport
@@ -345,7 +460,7 @@ const BookingForm = () => {
                                 id="numberOfLuggages"
                                 name="numberOfLuggages"
                                 placeholder="luggages"
-                                value={formData.numberOfLaguage}
+                                value={formData.numberOfLuggages}
                                 onChange={handleChange}
                                 required
                             />
@@ -405,7 +520,6 @@ const BookingForm = () => {
                         >
                             Book Now
                         </button>
-                        <Link href={'/#services'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>services</Link>
 
                     </div>
                 </form >
