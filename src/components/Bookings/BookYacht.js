@@ -101,7 +101,7 @@ const BookYacht = () => {
     return <>{
         selectedYacht ?
             <>
-                <div className=' grid grid-cols-2 gap-5 my-10'>
+                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
                     <div>
                         <div>
@@ -213,7 +213,7 @@ const BookYacht = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className=''>
                         <BookingFormForYacht />
 
                     </div>

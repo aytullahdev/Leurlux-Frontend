@@ -535,11 +535,11 @@ const BookingForm = () => {
 const BookTransport = () => {
     return (
         <div className="p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
-            <div className=" order-2 lg:order-1">
+            <div className=" order-1  lg:order-0">
                 <PricingSection />
 
             </div>
-            <div>
+            <div className="order-0  lg:order-1">
                 <BookingForm />
             </div>
         </div>

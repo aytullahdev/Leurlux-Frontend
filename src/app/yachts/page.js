@@ -632,7 +632,7 @@ function YachtDetails({ yacht }) {
     const handleView = () => {
         setSelectedYacht(yacht);
         router.push('/book?category=yacht');
-       
+
     }
     return (
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6  cursor-pointer">
@@ -692,7 +692,7 @@ const Yachts = () => {
         }
     }, [])
     return (
-        <div className='py-2'>
+        <div className='lg:py-2'>
             <div className='relative w-full '>
                 <div class="relative h-screen">
                     <video autoPlay loop muted class="w-full h-full object-cover">
@@ -700,12 +700,12 @@ const Yachts = () => {
                         Your browser does not support the video tag.
                     </video>
                     <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-1 lg:py-5">
 
                         <div>
-                            <h1 className='font-italian  text-6xl py-2'>YACHT<b className='font-bold'>RENTAL MARBELLA</b></h1>
+                            <h1 className='font-italian  text-5xl lg:text-6xl py-2'>YACHT<b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
-                            <p className='text-2xl font-italian'>
+                            <p className='text-base lg:text-2xl font-italian'>
                                 {` Browse our selection below to discover the ideal yacht for your Marbella holiday rental. If you can't find the specific yacht you have in mind, please don't hesitate to get in touch with us. Our extensive network of partners ensures that we can locate the yacht of your dreams.`}
                             </p>
                             {/* <div className='my-10'>
@@ -726,9 +726,9 @@ const Yachts = () => {
                 </div>
 
             </div>
-            <div className='px-10 my-10' id='yachts'>
+            <div className='px-4 lg:px-10 my-10' id='yachts'>
                 <h1 className='text-4xl font-italian'>Yacht Details</h1>
-                <div className='grid grid-cols-2 gap-5 my-10'>
+                <div className='grid lg:grid-cols-2 gap-5 my-10'>
                     {yachts.map((yacht, index) => (
                         <YachtDetails key={index} yacht={yacht} />
                     ))}

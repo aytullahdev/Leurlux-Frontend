@@ -121,7 +121,7 @@ const SuperCars = () => {
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian text-3xl lg:text-7xl py-2'>SUPER CAR <b className='font-bold'>RENTAL MARBELLA</b></h1>
+                            <h1 className='font-italian text-3xl lg:text-7xl py-2'>SUPER CAR <b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
                             <p className='text-base lg:text-2xl'>
                                 Browse our selection below to find the perfect <b>super car for rental in Marbella</b>  for your holiday, should you not find the vehicle you are looking for, do not hesitate to contact us, our large partner network means we will find you the car of your dreams.
