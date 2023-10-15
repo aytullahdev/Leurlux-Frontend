@@ -20,12 +20,13 @@ export default function Home() {
         setIsHover(false)
       }} onMouseOver={() => {
         setIsHover(true)
-      }} className='px-10 bg-no-repeat min-h-screen min-w-full py-5 bg-cover flex flex-col justify-center items-center ' style={{
+      }} className='px-5 lg:px-10 bg-no-repeat lg:min-h-screen min-w-full py-5 bg-cover flex flex-col justify-start lg:justify-center items-center ' style={{
         backgroundImage: !isHover ? `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url(${require('@/assets/images/yacht.jpeg').default.src
           })` : `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(${require('@/assets/images/yacht.jpeg').default.src
           })`,
+        backgroundSize: 'cover'
       }}>
-        <div className='text-8xl gap-5 flex flex-col   font-italian text-center ' >
+        <div className='text-3xl lg:text-8xl gap-5 flex flex-col   font-italian text-center ' >
           <h1 style={{ color: 'rgb(242, 245, 220)' }}>
             YOUR ONE STOP
           </h1>

@@ -35,23 +35,24 @@ const SingleServices = ({ service }) => {
     return <>{
         service && title && list &&
 
-        <div onClick={() => { router.push(to) }} className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer' onMouseLeave={() => {
+        <div onClick={() => { router.push(to) }} className='  text-white relative h-[400px] lg:min-h-screen bg-cover  origin-center bg-center cursor-pointer' onMouseLeave={() => {
             setIsHover(false)
         }} onMouseOver={() => {
             setIsHover(true)
         }} style={
             {
                 backgroundImage: !isHover ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(${img})` : `linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),url(${img})`,
+                backgroundSize: 'fit',
 
 
             }
 
         }>
-            <div className='absolute bottom-0 left-0 px-10 h-[200px]'>
-                <h1 className=' font-italian text-3xl'>
+            <div className='absolute bottom-0 left-0 px-5 lg:px-10 h-[200px]'>
+                <h1 className=' font-italian text-xl lg:text-3xl'>
                     {title}
                 </h1>
-                <ul className='text-base font-thin flex flex-col gap-2 my-10'>
+                <ul className='text-xs lg:text-base font-thin flex flex-col gap-2 my-10'>
                     {list && list.map((singleItem, indx) => {
                         return <li key={`servicelist${indx}`}>{singleItem}</li>
                     })}
@@ -63,7 +64,7 @@ const SingleServices = ({ service }) => {
 }
 const Services = () => {
     return (
-        <div id='services' className='w-full  grid grid-cols-4' >
+        <div id='services' className='w-full grid-cols-2 grid lg:grid-cols-4' >
             {
                 services.map((singleServices, indx) => {
                     return <SingleServices key={`service${indx}`} service={singleServices} />

@@ -57,7 +57,7 @@ const Footer = () => {
     ];
     return (
         <div className='w-full py-10 px-10 bg-black'>
-            <div className='grid grid-cols-3 justify-center items-start container mx-auto'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-0 justify-center items-start container mx-auto'>
                 <div className='flex flex-col justify-between gap-5'>
                     <img className='w-40' src={require('@/assets/images/logo.png').default.src} />
                     <div>
@@ -71,7 +71,7 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
-                <div className='flex flex-col justify-between items-center gap-2'>
+                <div className='flex flex-col justify-between items-start lg:items-center gap-2'>
 
                     <div className='flex flex-col justify-between gap-2'>
                         <h1 className='text-2xl font-roboto text-white '>LUXURY CONCIERGE</h1>
@@ -82,7 +82,7 @@ const Footer = () => {
                         }
                     </div>
                 </div>
-                <div className='flex flex-col justify-end items-end gap-2'>
+                <div className='flex flex-col justify-start lg:justify-end items-center lg:items-end gap-2'>
                     <h1 className='text-2xl font-roboto text-white '>FOLLOW US</h1>
                     <div className='flex flex-row gap-2'>
                         {
