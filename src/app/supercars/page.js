@@ -94,7 +94,7 @@ const SuperCars = () => {
             .then((response) => {
                 // Handle the response data here
                 setSuperCars(response.data.data);
-               // console.log(response.data)
+                // console.log(response.data)
             })
             .catch((error) => {
                 // Handle any errors here
@@ -118,12 +118,12 @@ const SuperCars = () => {
                         Your browser does not support the video tag.
                     </video>
                     <div className="absolute inset-0 bg-black opacity-50"></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian  text-7xl py-2'>SUPER CAR <b className='font-bold'>RENTAL MARBELLA</b></h1>
+                            <h1 className='font-italian text-3xl lg:text-7xl py-2'>SUPER CAR <b className='font-bold'>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
-                            <p className='text-2xl'>
+                            <p className='text-base lg:text-2xl'>
                                 Browse our selection below to find the perfect <b>super car for rental in Marbella</b>  for your holiday, should you not find the vehicle you are looking for, do not hesitate to contact us, our large partner network means we will find you the car of your dreams.
                             </p>
                             {/* <div className='my-10'>
@@ -135,7 +135,7 @@ const SuperCars = () => {
                             </div> */}
                         </div>
                         <div className='my-10'>
-                            <Link className='px-5  block text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#supercars">Supercars</Link>
+                            <Link className='px-3 lg:px-5  block text-base lg:text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#supercars">Supercars</Link>
                         </div>
 
 
@@ -143,7 +143,7 @@ const SuperCars = () => {
                 </div>
 
             </div>
-            <div className='grid grid-cols-3 gap-5 my-5' id='supercars'>
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 my-5' id='supercars'>
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
                         const singleCar = getCarObje(singleCarObj);

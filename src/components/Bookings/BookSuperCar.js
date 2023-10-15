@@ -87,13 +87,13 @@ const BookSuperCar = () => {
             {!isBooked && selectedSuperCar ?
                 <div>
                     <div>
-                        <h1 className='text-6xl font-italian text-center'>
+                        <h1 className='text-3xl lg:text-6xl font-italian text-center'>
                             Request for your Car
                         </h1>
 
 
                     </div>
-                    <div className='grid grid-cols-2  gap-5 my-10 justify-center items-center  w-full text-base  mx-auto'>
+                    <div className='grid lg:grid-cols-2  gap-5 my-10 justify-center items-center  w-full text-base  mx-auto'>
                         <div className='flex flex-col overflow-hidden '>
                             <div className='flex flex-col gap-4'>
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
@@ -101,47 +101,47 @@ const BookSuperCar = () => {
                             </div>
                             <div data-aos="fade-left" data-aos-duration="500">
 
-                                <img className='w-[600px] h-[300px] ' src={img} />
+                                <img className='w-[300px] lg:w-[600px] lg:h-[300px] ' src={img} />
 
                             </div>
                         </div>
                         <div className='flex flex-col gap-2  '>
                             {isSuccess && <spna className="text-green-500 font-italian text-start text-xl">Thank you for booking We will contact you soon.</spna>}
-                            <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
+                            <h2 className="text-xl text-center lg:text-left lg:text-3xl font-italian font-bold mb-4">Booking Form</h2>
 
 
 
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian font-bold'>Pickup Date</label>
                                 <input type='datetime-local' name='pickupdate' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' value={pickupdate} />
 
                             </div>
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Drop Off Date</label>
                                 <input type='datetime-local' name='dropoffdate' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' value={dropoffdate} />
 
                             </div>
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Pickup Address</label>
                                 <input type='text' name='pickupaddress' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Pickup Address...' value={pickupaddress} />
 
                             </div>
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Drop Off Address</label>
                                 <input type='text' name='dropoffaddress' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Drop off Address...' value={dropoffaddress} />
 
                             </div>
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Email</label>
                                 <input type='email' name='email' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Email Address...' value={email} />
 
                             </div>
-                            <div className='flex flex-col justify-start gap-2 text-xl '>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Phone</label>
                                 <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Phone number...' value={phone} />
@@ -149,7 +149,7 @@ const BookSuperCar = () => {
                             </div>
 
                             <div className='flex flex-row  items-center space-x-5 justify-center'>
-                                <button onClick={() => handleSubmit()} className='block px-5 py-2 bg-black text-white rounded-lg'>Request</button>
+                                <button onClick={() => handleSubmit()} className='block px-2 lg:px-5 py-2 bg-black text-white rounded-lg'>Request</button>
                                 <Link href="/supercars#supercars" className='block px-5 py-2  text-blue-600 underline font-italian  rounded-lg'>Back</Link>
                             </div>
 
