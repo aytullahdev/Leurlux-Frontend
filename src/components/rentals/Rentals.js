@@ -113,7 +113,7 @@ const Rentals = () => {
         <div className='w-full relative overflow-hidden h-[calc(100%-63px)]'>
 
 
-            <div id='services' className='w-full   grid grid-cols-3' >
+            <div id='services' className='w-full  grid   grid-cols-1  md:grid-cols-2 lg:grid-cols-3' >
                 {
                     services.map((singleServices, indx) => {
                         return <SingleServices aboutData={aboutData} handleAbout={handleAbout} key={`service${indx}`} service={singleServices} />

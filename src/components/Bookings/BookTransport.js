@@ -28,10 +28,10 @@ const PricingSection = () => {
                 {collection && collection.map((singleTransport, indx) => {
                     return <div key={indx}>
                         {selectedSection === `${singleTransport?.attributes?.vehicle}` && <div className="bg-white">
-                            <p className='text-3xl font-bold bg-gray-600 px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
-                            <h1 className="text-2xl py-8 font-bold "> Description</h1>
+                            <p className='text-xl lg:text-3xl font-bold bg-gray-600 px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
+                            <h1 className="text-base lg:text-2xl py-8 font-bold "> Description</h1>
 
-                            <ul className="flex flex-col gap-2 text-xl">
+                            <ul className="flex flex-col gap-2 text-base lg:text-xl">
 
                                 {
                                     singleTransport?.attributes?.PricingOptions?.map((option, indx) => {
@@ -305,16 +305,16 @@ const BookingForm = () => {
 
             {<div>
                 <div>
-                    <h1 className='text-5xl font-italian text-center'>
+                    <h1 className='text-3xl lg:text-5xl font-italian text-center'>
                         Book Transport
                     </h1>
 
 
                 </div>
-                <form onSubmit={handleSubmit} className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="grid grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="bg-white  rounded px-0 lg:px-8 pt-6 pb-8 mb-4">
+                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="name">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="name">
                                 Name
                             </label>
                             <input
@@ -329,7 +329,7 @@ const BookingForm = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="email">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="email">
                                 Email
                             </label>
                             <input
@@ -344,9 +344,9 @@ const BookingForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Pickup Date
                             </label>
                             <input
@@ -360,7 +360,7 @@ const BookingForm = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Drop Off Date
                             </label>
                             <input
@@ -376,7 +376,7 @@ const BookingForm = () => {
 
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="price" className="text-2xl my-1 block font-italian font-bold mb-4">
+                        <label htmlFor="price" className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4">
                             Select Option:
                         </label>
                         <select
@@ -403,9 +403,9 @@ const BookingForm = () => {
 
                         </select>
                     </div>
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupAddress">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupAddress">
                                 Pickup Address
                             </label>
                             <input
@@ -421,7 +421,7 @@ const BookingForm = () => {
                         </div>
 
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="dropoffAddress">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="dropoffAddress">
                                 Dropoff Address
                             </label>
                             <input
@@ -438,7 +438,7 @@ const BookingForm = () => {
 
                     </div>
 
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <input
                                 className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
@@ -466,9 +466,9 @@ const BookingForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-5">
+                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="flightNumber">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="flightNumber">
                                 Flight Number
                             </label>
                             <input
@@ -483,7 +483,7 @@ const BookingForm = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="phone">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="phone">
                                 Phone Number
                             </label>
                             <input
@@ -500,7 +500,7 @@ const BookingForm = () => {
                     </div>
 
                     <div className="mb-4">
-                        <label className="text-2xl my-1 block font-italian font-bold mb-4" htmlFor="otherRequest">
+                        <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="otherRequest">
                             Other Request
                         </label>
                         <textarea
@@ -513,7 +513,7 @@ const BookingForm = () => {
                         />
                     </div>
 
-                    <div className="mb-4 flex flex-row gap-5 justify-center items-center">
+                    <div className="mb-4 flex flex-row  gap-2 lg:gap-5 justify-center items-center">
                         <button
                             className="bg-black  text-white font-bold py-2 px-4 rounded focus:outline-none focus:"
                             type="submit"
@@ -534,8 +534,8 @@ const BookingForm = () => {
 
 const BookTransport = () => {
     return (
-        <div className="p-10 grid grid-cols-2 gap-5">
-            <div>
+        <div className="p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
+            <div className=" order-2 lg:order-1">
                 <PricingSection />
 
             </div>

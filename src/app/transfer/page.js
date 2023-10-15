@@ -45,19 +45,19 @@ const page = () => {
     return (
         <div>
             <div className='relative w-full '>
-                <div className="relative h-screen">
+                <div className="relative h-[500px] lg:h-screen">
                     <video autoPlay loop muted className="w-full h-full object-cover">
                         <source src="/hongqi.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                     <div className="absolute inset-0 bg-black opacity-70"></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-10 py-5">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian text-5xl xl:text-9xl py-2'>THE LUXURY
+                            <h1 className='font-italian text-4xl lg:text-5xl xl:text-9xl py-2'>THE LUXURY
                                 <span style={{ color: 'rgb(193, 182, 134)' }}> TRANSPORTATION</span></h1>
 
-                            <p className='text-4xl xl:text-5xl py-10 font-italian text-center'>
+                            <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>
                                 MARBELLA
                             </p>
                             {/* <div className='my-10'>
@@ -77,15 +77,15 @@ const page = () => {
                 </div>
 
                 <div className="inset-0  bg-black font-italian p-4 text-center">
-                    <p className="text-6xl font-semibold text-white mb-2">
+                    <p className="text-3xl lg:text-6xl font-semibold text-white mb-2">
                         Environmentally Friendly Transportation
                     </p>
-                    <p className="text-xl py-5 text-white">
+                    <p className="text-base lg:text-xl py-5 text-white">
                         We proudly use fully electric cars to reduce carbon emissions and protect the environment.
                     </p>
                 </div>
                 <div className='my-10  flex justify-center items-center'>
-                    <Link href="/book?category=transport" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                    <Link href="/book?category=transport" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
                 </div>
                 <section id="transports" className="bg-gray-100 py-5">
                     <div>
@@ -115,7 +115,7 @@ const page = () => {
                     </div>
                     <div className="container mx-auto">
                         <div className="text-center mb-10">
-                            <h2 className=" text-5xl xl:text-7xl font-italian font-semibold text-black">
+                            <h2 className=" text-3xl lg:text-5xl xl:text-7xl font-italian font-semibold text-black">
                                 DRIVEN BY EXCELLENCE
                             </h2>
                             <p className="text-lg  xl:text-2xl my-5">DEFINED BY LUXURY</p>
@@ -129,9 +129,9 @@ const page = () => {
                         </div> */}
                         <div className="flex flex-row flex-wrap mx-4 font-italian">
 
-                            <div className="w-full   px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
+                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
                                 <section className="bg-gray-100 py-5">
-                                    <div className="container mx-auto px-4">
+                                    <div className="container mx-auto lg:px-4">
                                         <h2 className="text-3xl font-semibold text-black mb-6">Explore the Luxurious Hongqi E-HS9</h2>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                                             <div className="flex-row flex justify-center items-center ">
@@ -164,19 +164,20 @@ const page = () => {
                                         </div>
                                     </div>
                                 </section>
-                                <div className="text-black bg-gray-100 font-italian py-10 px-10">
+                                <div className="text-black bg-gray-100 font-italian py-10 lg:px-10">
                                     <p className="text-6xl font-bold py-10">Gyles Taylor</p>
                                     <div className='font-italian text-2xl flex flex-col gap-9'>
-                                        <div className='flex flex-row gap-10'>
+                                        <div className='flex flex-col lg:flex-row lg:gap-10'>
                                             <img src='/gyles-taylor.png' className='w-[200px] block mx-auto' />
-                                            <div className='flex flex-col gap-10 font-italian font-bold'>
-                                                <p className='text-4xl'>
+                                            <div className='flex flex-col gap-4 lg:gap-10 font-italian font-bold'>
+                                                <p className='text-xl lg:text-4xl'>
                                                     {`“I am very much looking forward to embarking on an exciting new career path with FAW. Hongqi, as the
                                                     oldest and most famous Chinese car brand, carries with it a deeply significant and diverse cultural history,”
-                                                    <br />`}
+                                                    `}
+                                                    <br />
 
                                                 </p>
-                                                <p className='text-2xl'> {`Taylor said. “There are many inspirational elements surrounding the marque with which to create fresh,
+                                                <p className='text-base lg:text-2xl'> {`Taylor said. “There are many inspirational elements surrounding the marque with which to create fresh,
                                                     modern vehicles for the new era,” he added.`}</p>
 
                                             </div>
@@ -243,7 +244,7 @@ const page = () => {
 
                                 </div> */}
                                 <div className='my-10  flex justify-center items-center'>
-                                    <Link href="/book?category=transport" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                                    <Link href="/book?category=transport" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
                                 </div>
 
                                 <Link href="/about?category=hongqi" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link>
@@ -253,7 +254,7 @@ const page = () => {
 
                         <div className="flex flex-row flex-wrap mx-4 font-italian">
 
-                            <div className="w-full   px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
+                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
                                 <section className="bg-gray-100 py-5">
                                     <div className="container mx-auto px-4">
 
@@ -261,7 +262,7 @@ const page = () => {
 
                                             <section className="bg-gray-100 py-12">
                                                 <div className="container mx-auto px-4">
-                                                    <h2 className="text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
+                                                    <h2 className="text-xl lg:text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
                                                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Unparalleled Performance</h3>
