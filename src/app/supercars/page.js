@@ -147,7 +147,7 @@ const SuperCars = () => {
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
                         const singleCar = getCarObje(singleCarObj);
-                        return <div key={singleCar.carname} className='rounded-lg overflow-hidden p-5 shadow-sm cursor-pointer'>
+                        return <div key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
                             <img className='' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
@@ -155,7 +155,7 @@ const SuperCars = () => {
 
                             </div>
                             <div>
-                                <button onClick={() => { handleReqeust(singleCar) }} className='px-4 py-1 bg-slate-200 mx-auto block my-2 font-bold rounded font-italian'>Request</button>
+                                <button onClick={() => { handleReqeust(singleCar) }} className='px-4 py-1 bg-black text-white mx-auto block my-2 font-bold rounded font-italian'>Request</button>
 
                             </div>
                         </div>

@@ -80,9 +80,9 @@ const BookSuperCar = () => {
             setCarForm(prev => ({ ...prev, ...selectedSuperCar }))
         }
     }, [selectedSuperCar])
-    return <div className='relative w-full h-full' id='bookprivatejet'>
+    return <div className='bg-white relative w-full h-full' id='supercar'>
 
-        <div className='absolute inset-0 flex flex-col  items-center justify-start backdrop-blur-sm bg-white/60 py-10 px-5 rounded'>
+        <div className='absolute inset-0 flex flex-col  items-center text-black justify-start backdrop-blur-sm bg-white py-10 px-5 rounded'>
             <BookingSuccess />
             {!isBooked && selectedSuperCar ?
                 <div>

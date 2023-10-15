@@ -24,14 +24,14 @@ const PricingSection = () => {
 
                 })}
             </div>
-            {collection && <div className="  my-2">
+            {collection && <div className=" bg-white my-2">
                 {collection && collection.map((singleTransport, indx) => {
                     return <div key={indx}>
                         {selectedSection === `${singleTransport?.attributes?.vehicle}` && <div className="bg-white">
                             <p className='text-xl lg:text-3xl font-bold bg-gray-600 px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
-                            <h1 className="text-base lg:text-2xl py-8 font-bold "> Description</h1>
+                            <h1 className="text-base text-black lg:text-2xl py-8 font-bold "> Description</h1>
 
-                            <ul className="flex flex-col gap-2 text-base lg:text-xl">
+                            <ul className="flex text-black flex-col gap-2 text-base lg:text-xl">
 
                                 {
                                     singleTransport?.attributes?.PricingOptions?.map((option, indx) => {
@@ -301,7 +301,7 @@ const BookingForm = () => {
     const [collection, setCollection] = useCollection('/api/transport-prices')
 
     return (
-        <div className="w-full bg-white   max-w-md mx-auto font-italian ">
+        <div className="w-full bg-white   max-w-md mx-auto font-italian text-black ">
 
             {<div>
                 <div>
@@ -318,7 +318,7 @@ const BookingForm = () => {
                                 Name
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="name"
                                 name="name"
@@ -333,7 +333,7 @@ const BookingForm = () => {
                                 Email
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -344,13 +344,13 @@ const BookingForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
+                    <div className="grid grid-cols-2 text-black gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Pickup Date
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="datetime-local"
                                 id="pickupDate"
                                 name="pickupDate"
@@ -364,7 +364,7 @@ const BookingForm = () => {
                                 Drop Off Date
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="datetime-local"
                                 id="dropoffdate"
                                 name="dropoffDate"
@@ -409,7 +409,7 @@ const BookingForm = () => {
                                 Pickup Address
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="pickupAddress"
                                 name="pickupAddress"
@@ -425,7 +425,7 @@ const BookingForm = () => {
                                 Dropoff Address
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="dropoffAddress"
                                 name="dropoffAddress"
@@ -441,7 +441,7 @@ const BookingForm = () => {
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="number"
                                 id="numberOfPeople"
                                 name="numberOfPeople"
@@ -455,7 +455,7 @@ const BookingForm = () => {
                         <div className="mb-4">
 
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="number"
                                 id="numberOfLuggages"
                                 name="numberOfLuggages"
@@ -472,7 +472,7 @@ const BookingForm = () => {
                                 Flight Number
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="flightNumber"
                                 name="flightNumber"
@@ -487,7 +487,7 @@ const BookingForm = () => {
                                 Phone Number
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="phone"
                                 name="phone"
@@ -504,7 +504,7 @@ const BookingForm = () => {
                             Other Request
                         </label>
                         <textarea
-                            className=" appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:"
+                            className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                             id="otherRequest"
                             name="otherRequest"
                             placeholder="How can we help you?"
