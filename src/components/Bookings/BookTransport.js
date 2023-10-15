@@ -301,7 +301,7 @@ const BookingForm = () => {
     const [collection, setCollection] = useCollection('/api/transport-prices')
 
     return (
-        <div className="w-full  max-w-md mx-auto font-italian ">
+        <div className="w-full bg-white   max-w-md mx-auto font-italian ">
 
             {<div>
                 <div>
@@ -311,7 +311,7 @@ const BookingForm = () => {
 
 
                 </div>
-                <form onSubmit={handleSubmit} className="bg-white  rounded px-0 lg:px-8 pt-6 pb-8 mb-4">
+                <form onSubmit={handleSubmit} className=" rounded px-0 lg:px-8 pt-6 pb-8 mb-4">
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="name">
@@ -534,7 +534,7 @@ const BookingForm = () => {
 
 const BookTransport = () => {
     return (
-        <div className="p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
+        <div className="bg-white  p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
             <div className=" order-1  lg:order-0">
                 <PricingSection />
 
