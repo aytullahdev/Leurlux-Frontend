@@ -18,15 +18,21 @@ const BookSuperCar = () => {
         phone: '',
         pickupdate: '',
         dropoffdate: '',
+        fullname: '',
     })
-    const { pickupdate, email, phone, dropoffdate, pickupaddress, dropoffaddress } = carForm;
+    const { fullname, pickupdate, email, phone, dropoffdate, pickupaddress, dropoffaddress } = carForm;
     const handleChange = (e) => {
         setCarForm((prev) => ({ ...carForm, [e.target.name]: e.target.value }))
     }
     const [isSuccess, setIsSuccess] = useState(false)
     const handleSubmit = () => {
+        if (!fullname || !email || !pickupaddress || !dropoffaddress || !phone) {
+            toast.error("Please provide all information");
+            return
+        }
         const data = {
             "data": {
+                "name": fullname,
                 "dropoffaddress": dropoffaddress,
                 "pickupaddress": pickupaddress,
                 "carname": carname,
@@ -53,11 +59,13 @@ const BookSuperCar = () => {
                     setCarForm({
                         pickupaddress: '',
                         dropoffaddress: '',
+                        name: '',
                         email: '',
                         phone: '',
                         pickupdate: '',
                         dropoffdate: '',
                     })
+                    router.push(`/success`)
                 } else {
                     isSuccess(false)
                     setIsBooked(false)
@@ -66,6 +74,7 @@ const BookSuperCar = () => {
             })
             .catch((error) => {
                 // Handle any errors here
+                toast.error("Please try again!")
                 console.error(error);
             });
 
@@ -97,7 +106,7 @@ const BookSuperCar = () => {
                         <div className='flex flex-col overflow-hidden '>
                             <div className='flex flex-col gap-4'>
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
-                                <span className='text-base  font-thin text-start inline py-1 px-2 lg:w-52 bg-slate-200'>{`Starting from ${price} €/Day`}</span >
+                                <span className='text-base  font-thin text-start inline py-1 px-2 w-3/4 bg-slate-200'>{`Starting from ${price}`}</span >
                             </div>
                             <div data-aos="fade-left" data-aos-duration="500">
 
@@ -145,6 +154,12 @@ const BookSuperCar = () => {
 
                                 <label className='font-italian'>Phone</label>
                                 <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Phone number...' value={phone} />
+
+                            </div>
+                            <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
+
+                                <label className='font-italian'>Full Name</label>
+                                <input type='text' name='fullname' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Full name...' value={fullname} />
 
                             </div>
 

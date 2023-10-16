@@ -249,7 +249,7 @@ const BookingForm = () => {
             axios.post(apiUrl, data, { headers })
                 .then((response) => {
                     // Handle the response data here
-                    //console.log(response.data)
+                    //console.log("Transport Booking response Data-->", response.data)
                     if (response.data.data.id) {
                         setIsSuccess(true)
                         toast.success("Thank you for booking")
@@ -277,6 +277,7 @@ const BookingForm = () => {
                 })
                 .catch((error) => {
                     // Handle any errors here
+                    toast.error("Pleae try again later")
                     router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
                     console.error(error);
                 });

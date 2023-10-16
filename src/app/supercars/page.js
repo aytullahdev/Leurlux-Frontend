@@ -7,73 +7,71 @@ import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import ArrowDown from '../../components/resueable/ArrowDown';
-// const supercars = [
+const supercarsData = [
+    {
+        "carname": "Bentley GTC",
+        "price": "Starting from 1920 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
+    },
+    {
+        "carname": "Ferrari 488 Coupe",
+        "price": "Starting from 1800 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Coupe.jpg"
+    },
+    {
+        "carname": "Ferrari 488 Spider",
+        "price": "Starting from 1920 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Spider.jpg"
+    },
+    {
+        "carname": "Ferrari 812 Superfast",
+        "price": "Starting from 2640 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-812-Superfast.jpg"
+    },
+    {
+        "carname": "Ferrari Portofino",
+        "price": "Starting from 1560 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-Portofino.jpg"
+    },
+    {
+        "carname": "Lamborghini Huracan Coupe",
+        "price": "Starting from 1620 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Coupe.jpg"
+    },
+    {
+        "carname": "Lamborghini Huracan Spyder",
+        "price": "Starting from 1920 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Spyder.jpg"
+    },
+    {
+        "carname": "Lamborghini Aventador LP750",
+        "price": "Starting from 3000 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Aventador-LP750.jpg"
+    },
+    {
+        "carname": "McLaren 570",
+        "price": "Starting from 1560 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/McLaren-570.jpg"
+    },
+    {
+        "carname": "Porsche 992 Coupe",
+        "price": "Starting from 780 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Coupe.jpg"
+    },
+    {
+        "carname": "Porsche 992 Cabrio",
+        "price": "Starting from 960 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Cab.jpg"
+    },
+    {
+        "carname": "Porsche GT3 RS",
+        "price": "Starting from 1080 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
+    }
+]
 
-
-
-//     {
-//         "carname": "Bentley GTC",
-//         "price": "Starting from 1600 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
-//     },
-//     {
-//         "carname": "Ferrari 488 Coupe",
-//         "price": "Starting from 1500 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Coupe.jpg"
-//     },
-//     {
-//         "carname": "Ferrari 488 Spider",
-//         "price": "Starting from 1600 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Spider.jpg"
-//     },
-//     {
-//         "carname": "Ferrari 812 Superfast",
-//         "price": "Starting from 2200 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-812-Superfast.jpg"
-//     },
-//     {
-//         "carname": "Ferrari Portofino",
-//         "price": "Starting from 1300 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-Portofino.jpg"
-//     },
-//     {
-//         "carname": "Lamborghini Huracan Coupe",
-//         "price": "Starting from 1350 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Coupe.jpg"
-//     },
-//     {
-//         "carname": "Lamborghini Huracan Spyder",
-//         "price": "Starting from 1600 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Spyder.jpg"
-//     },
-//     {
-//         "carname": "Lamborghini Aventador LP750",
-//         "price": "Starting from 2500 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Aventador-LP750.jpg"
-//     },
-//     {
-//         "carname": "McLaren 570",
-//         "price": "Starting from 1300 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/McLaren-570.jpg"
-//     },
-//     {
-//         "carname": "Porsche 992 Coupe",
-//         "price": "Starting from 650 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Coupe.jpg"
-//     },
-//     {
-//         "carname": "Porsche 992 Cabrio",
-//         "price": "Starting from 800 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Cab.jpg"
-//     },
-//     {
-//         "carname": "Porsche GT3 RS",
-//         "price": "Starting from 900 €/Day",
-//         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
-//     }
-// ]
 const SuperCars = () => {
-    const [supercars, setSuperCars] = useState(null)
+    const [supercars, setSuperCars] = useState(supercarsData)
 
     const { selectedSuperCar, setSelectedSuperCar } = useContext(GlobalContext)
     const router = useRouter()
@@ -85,29 +83,30 @@ const SuperCars = () => {
     useEffect(() => {
         AOS.init();
 
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/supercars?populate=*`;
-        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+        // const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/supercars?populate=*`;
+        // const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
-        const headers = {
-            Authorization: `Bearer ${token}`,
-        };
-        axios.get(apiUrl, { headers })
-            .then((response) => {
-                // Handle the response data here
-                setSuperCars(response.data.data);
-                // console.log(response.data)
-            })
-            .catch((error) => {
-                // Handle any errors here
-                console.error(error);
-            });
+        // const headers = {
+        //     Authorization: `Bearer ${token}`,
+        // };
+        // axios.get(apiUrl, { headers })
+        //     .then((response) => {
+        //         // Handle the response data here
+        //         setSuperCars(response.data.data);
+        //         // console.log(response.data)
+        //     })
+        //     .catch((error) => {
+        //         // Handle any errors here
+        //         console.error(error);
+        //     });
     }, [])
     useEffect(() => {
         setSelectedSuperCar(null)
     }, [])
     const getCarObje = (singleCarObj) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`
-        return { 'carname': singleCarObj.attributes.carname, price: singleCarObj.attributes.price, img: `${backend}${singleCarObj.attributes.img.data.attributes.url}` };
+        return singleCarObj
+        // return { 'carname': singleCarObj.attributes.carname, price: singleCarObj.attributes.price, img: `${backend}${singleCarObj.attributes.img.data.attributes.url}` };
 
     }
     return (
@@ -180,7 +179,7 @@ const SuperCars = () => {
                             <img className='' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
-                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price} €/Day`}</p>
+                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price}`}</p>
 
                             </div>
                             <div>
