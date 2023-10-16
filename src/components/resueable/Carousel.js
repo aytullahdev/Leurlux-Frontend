@@ -38,7 +38,7 @@ const Carousel = ({ photos }) => {
                         <img
                             src={photos[activeIndex]}
                             alt="Main Photo"
-                            className="w-full h-[300px] rounded-lg"
+                            className="lg:w-full h-[300px] rounded-lg"
                         />
                         <div className="w-full flex my-2 items-start justify-stitems-start">
                             <div className="flex overflow-scroll flex-row justify-start gap-4">

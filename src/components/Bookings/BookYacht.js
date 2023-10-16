@@ -1,7 +1,7 @@
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
-import Carousel from '../resueable/Carousel';
+import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 
 
 
@@ -117,8 +117,10 @@ const BookYacht = () => {
                                         return <img src={singleImage} className='w-40 h-40 rounded-lg' />
                                     })
                                 }
+
                             </div> */}
-                            <Carousel photos={selectedYacht.images} />
+                            <GalleryCarousel slidesPerView={1} images={selectedYacht.images} />
+
                         </div>
                         <div className='px-10 py-5'>
                             <div className='flex flex-row justify-around items-center'>

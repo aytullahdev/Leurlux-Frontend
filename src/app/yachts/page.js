@@ -4,6 +4,7 @@ import useGlobalContext from '@/hooks/useGlobalContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
+import ArrowDown from '../../components/resueable/ArrowDown';
 // const yachts = [
 //     {
 //         "name": "PORTOFINO 46 ZERO",
@@ -635,9 +636,9 @@ function YachtDetails({ yacht }) {
 
     }
     return (
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-6  cursor-pointer">
+        <div className="bg-white rounded-lg  p-6 mb-6  cursor-pointer">
             <div>
-                <img src={yacht.images[0]} className='w-full h-[400px]' />
+                <img src={yacht.images[0]} className='w-full lg:h-[400px]' />
             </div>
             <h2 className="text-2xl font-semibold mb-4 font-italian text-center my-5">{yacht.name}</h2>
             <div>
@@ -694,20 +695,24 @@ const Yachts = () => {
     return (
         <div className='lg:py-2'>
             <div className='relative w-full '>
-                <div class="relative h-screen">
-                    <video autoPlay loop muted class="w-full h-full object-cover">
+                <div className="relative h-[700px] lg:h-screen">
+                    <video autoPlay loop muted className="w-full h-full object-cover">
                         <source src="./yacht.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <div class="absolute inset-0 bg-black opacity-50"></div>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-1 lg:py-5">
+                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian  text-5xl lg:text-6xl py-2'>YACHT<b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>RENTAL MARBELLA</b></h1>
-                            <hr className='py-5' />
-                            <p className='text-base lg:text-2xl font-italian'>
-                                {` Browse our selection below to discover the ideal yacht for your Marbella holiday rental. If you can't find the specific yacht you have in mind, please don't hesitate to get in touch with us. Our extensive network of partners ensures that we can locate the yacht of your dreams.`}
+                            <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2'>
+                                Introducing <span style={{ color: 'rgb(193, 182, 134)' }}>LEURLUX</span>  Yacht Rentals
+                            </h1>
+                            <p className='py-5 text-xs lg:text-4xl '>
+                                {`Welcome to LEURLUX Yacht Rentals, where we offer the epitome of luxury and adventure on the open seas. We redefine yacht charters by seamlessly blending opulence, exclusivity, and unparalleled experiences that will set your journey apart.`}
                             </p>
+                            {/* <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>
+                                MARBELLA
+                            </p> */}
                             {/* <div className='my-10'>
                                 <div class="animate-bounce flex justify-center items-center ">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -719,19 +724,75 @@ const Yachts = () => {
                         <div className='my-10'>
                             <Link className='px-5  block text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#yachts">Yachts</Link>
                         </div>
+                        <div>
+                            <ArrowDown />
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+            <div className="inset-0  bg-black font-italian p-4 text-center">
+                <p className="text-3xl lg:text-6xl font-semibold text-white mb-2">
+                    Discover Luxury Afloat
+                </p>
+            </div>
+            <div className='my-10  flex justify-center items-center lg:col-span-2'>
+                <Link href="#yachts" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Yachts</Link>
+            </div>
 
+            <div id='' className='py-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-2'>
+                    <div className='bg-white text-black  p-5 '>
+                        <h1 className='text-bold font-italian text-4xl py-5'>Discover Luxury Afloat</h1>
+                        <p className='text-justify font-2xl'> {`At LEURLUX, we take pride in providing a superior yacht rental service, offering an exquisite fleet of yachts that will cater to all your desires. Our collection includes an array of meticulously maintained yachts, from sleek and nimble vessels for intimate getaways to expansive, lavish yachts for group excursions.`}</p>
+                    </div>
+                    <div className='bg-white text-black  p-5 '>
+                        <h1 className='text-bold font-italian text-4xl py-5'>A Bigger Spectacle: Catamaran Yachts</h1>
+                        <p className='text-justify font-2xl'>{`In addition to our exceptional yacht fleet, we offer access to larger catamaran yachts that can entertain large groups, accommodating from 27 to 180 people. These magnificent vessels are ideal for hosting grand celebrations, corporate events, or any occasion where you want to create unforgettable memories with a larger audience.`}</p>
                     </div>
 
                 </div>
-
             </div>
+
             <div className='px-4 lg:px-10 my-10' id='yachts'>
                 <h1 className='text-4xl font-italian'>Yacht Details</h1>
                 <div className='grid lg:grid-cols-2 gap-5 my-10'>
                     {yachts.map((yacht, index) => (
                         <YachtDetails key={index} yacht={yacht} />
                     ))}
+                </div>
+            </div>
+            <div id='' className='py-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-2'>
+                    <div className='bg-white text-black  p-5 '>
+                        <h1 className='text-bold font-italian text-4xl py-5'>Tailored Experiences</h1>
+                        <p className='text-justify font-2xl'> {`Our commitment to excellence extends beyond merely booking a yacht. We believe that your journey should be as unique as you are. Whether you're seeking a romantic escape, a celebratory gathering, or a corporate event, our expert team of professionals will craft your experience to your preferences. No request is too extravagant, no detail is too small.`}</p>
+                    </div>
+                    <div className='bg-white text-black  p-5 '>
+                        <h1 className='text-bold font-italian text-4xl py-5'>Your Ocean Playground</h1>
+                        <p className='text-justify font-2xl'>{`Indulge in the thrill of cruising the Mediterranean, exploring hidden coves, or anchoring off vibrant coastal cities. Our yachts are your ticket to a world of adventure and relaxation, all within your reach.
+`}</p>
+                    </div>
+                    <div className='my-10  flex justify-center items-center lg:col-span-2'>
+                        <Link href="#yachts" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Yachts</Link>
+                    </div>
+                    <div className='bg-white text-black  p-5 lg:col-span-2 '>
+                        <h1 className='text-bold font-italian text-4xl py-5 text-start lg:text-center'>Welcome Aboard</h1>
+                        <p className='text-justify font-2xl'>{`While our private jet service elevates your travel, our commitment to luxury doesn't end upon landing. When you arrive at your destination, you'll be welcomed by our exceptional concierge services that redefine hospitality. From exclusive chauffeur-driven transfers to securing reservations at the world's finest restaurants, we ensure that every moment of your stay is extraordinary.`}
+                            <span className='block py-5 bg-none'></span>
+                            {` 
+As you embark on your journey with LEURLUX Yacht Rentals, you're in for an unparalleled experience. From the moment you step on board, you'll be welcomed by an atmosphere of sophistication, comfort, and adventure.`}
+                            <span className='block py-5 bg-none'></span>
+                            {` Our yachts and catamarans are not just vessels, they're gateways to the extraordinary. Set sail with us, and let the azure waters of the Mediterranean be your playground.`}</p>
+                        <span className='block py-5 bg-none'></span>
+                        <p>
+                            {`Let us redefine the way you experience the world. Welcome to a world where luxury meets the sea, and where your every nautical dream becomes a reality, whether you're in an intimate yacht or aboard one of our grand catamarans.`}
+                        </p>
+                    </div>
+
+                </div>
+                <div className='my-10  flex justify-center items-center lg:col-span-2'>
+                    <Link href="#yachts" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Yachts</Link>
                 </div>
             </div>
 

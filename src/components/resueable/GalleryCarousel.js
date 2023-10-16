@@ -20,7 +20,6 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
                         '--swiper-navigation-color': 'white',
                         '--swiper-pagination-color': '#fff',
                     }}
-                    loop={true}
                     modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
                     spaceBetween={10}
                     slidesPerView={slidesPerView}
@@ -30,7 +29,7 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
                 >
                     {images.map((image, index) => (
                         <SwiperSlide key={index}>
-                            <img className=' h-[300px] lg:h-full  w-full' src={image} alt={`Image ${index}`} />
+                            <img className='w-screen h-[300px] lg:h-full  lg:w-full' src={image} alt={`Image ${index}`} />
                         </SwiperSlide>
                     ))}
 
