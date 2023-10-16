@@ -30,7 +30,7 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
                 >
                     {images.map((image, index) => (
                         <SwiperSlide key={index}>
-                            <img style={{ height: '400px' }} className=' h-full w-full' src={image} alt={`Image ${index}`} />
+                            <img className=' h-[300px] lg:h-full  w-full' src={image} alt={`Image ${index}`} />
                         </SwiperSlide>
                     ))}
 

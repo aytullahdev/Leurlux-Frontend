@@ -116,6 +116,8 @@ const BookingForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         localStorage.setItem('fromData', JSON.stringify({ ...formData, "selectedPrice": selectedPrice }))
+        submitTransportForm(null, { ...formData, "selectedPrice": selectedPrice })
+        return;
         if (session_id) {
             toast.error("Please refrash the page");
             router.push("/book?category=transport")

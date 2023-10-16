@@ -2,11 +2,13 @@
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import AboutService from '../AboutService';
+import ArrowDown from '../resueable/ArrowDown';
 const services = [
     {
         title: "Private jets",
         img: require('@/assets/images/private-jet.jpeg').default.src,
-        to: '/book?category=privatejet#bookprivatejet',
+        to: '/privatejet',
+        book: '/book?category=privatejet#bookprivatejet',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -93,6 +95,10 @@ const SingleServices = ({ service, handleAbout }) => {
                     </svg>
                     </button>
 
+
+                </div>
+                <div className='block lg:hidden'>
+                    <ArrowDown />
                 </div>
             </div>
         </div>

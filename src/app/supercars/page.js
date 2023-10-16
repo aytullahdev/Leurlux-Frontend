@@ -6,6 +6,7 @@ import 'aos/dist/aos.css';
 import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import ArrowDown from '../../components/resueable/ArrowDown';
 // const supercars = [
 
 
@@ -138,7 +139,9 @@ const SuperCars = () => {
                             <Link className='px-3 lg:px-5  block text-base lg:text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#supercars">Supercars</Link>
                         </div>
 
-
+                        <div>
+                            <ArrowDown />
+                        </div>
                     </div>
                 </div>
 

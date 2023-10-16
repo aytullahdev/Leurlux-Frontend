@@ -4,6 +4,7 @@ import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import ArrowDown from '../../components/resueable/ArrowDown';
 
 const transportsPricing = [
     {
@@ -71,7 +72,9 @@ const page = () => {
                         <div className='my-10'>
                             <Link className='px-5  block text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#transports">Transport</Link>
                         </div>
-
+                        <div>
+                            <ArrowDown />
+                        </div>
 
                     </div>
                 </div>

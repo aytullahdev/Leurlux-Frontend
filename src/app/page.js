@@ -8,6 +8,7 @@ import Button from '@/components/resueable/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import ArrowDown from '../components/resueable/ArrowDown'
 
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
         </div>
         <div className='my-10'>
           <Button to={"#services"} text='Services' />
+          <ArrowDown />
         </div>
       </header>
       <Services />

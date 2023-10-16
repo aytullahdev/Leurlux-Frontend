@@ -12,8 +12,9 @@ const SuccessBooking = () => {
     return (
         <>
             <div className="h-full min-h-screen w-full flex flex-col justify-start py-10 items-center">
-                <h1 className=" text-6xl font-italian text-green-700">Thank you for booking</h1>
-                <div className="text-gray-500 flex flex-col gap-2 py-5 ">
+                <h1 className='text-3xl lg:text-6xl font-bold text-center py-10'> Thank you for your booking.</h1>
+                <p className='lg:text-xl text-center'>  If you have any questions or need assistance, <br />please feel free to reach out to us on <span className='text-xl font-bold text-green-500'>WhatsApp👇</span>.</p>
+                {/* <div className="text-gray-500 flex flex-col gap-2 py-5 ">
                     {name && (
                         <div className="w-full ">
                             <h1>
@@ -35,9 +36,9 @@ const SuccessBooking = () => {
                             </h1>
                         </div>
                     )}
-                </div>
-                <div>
-                    <Link href={"/#services"} className="font-italian text-3xl underline">Our Services</Link>
+                </div> */}
+                <div className="my-10">
+                    <Link href={"/#services"} className="font-italian text-base  lg:text-3xl underline">Our Services</Link>
                 </div>
             </div>
         </>
