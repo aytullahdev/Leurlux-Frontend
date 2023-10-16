@@ -49,7 +49,7 @@ const page = () => {
                     </p>
                 </div>
                 <div className='my-10  flex justify-center items-center'>
-                    <Link href="/book?category=privatejet#bookprivatejet" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                    <Link href="/book?category=privatejet#bookprivatejet" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Get A Guote Now</Link>
                 </div>
 
 
@@ -68,7 +68,7 @@ const page = () => {
                         <p className='text-justify font-2xl'>{`We understand that the needs of our discerning clientele vary. That's why LEURLUX ensures that your journey is as unique as you are. Whether you're traveling for business or pleasure, our expert concierge team tailors your experience to your preferences. No request is too extravagant; no detail is too small.`}</p>
                     </div>
                     <div className='my-10  flex justify-center items-center lg:col-span-2'>
-                        <Link href="/book?category=privatejet#bookprivatejet" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                        <Link href="/book?category=privatejet#bookprivatejet" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Get A Guote Now</Link>
                     </div>
                     <div className='bg-white text-black  p-5 lg:col-span-2 '>
                         <h1 className='text-bold font-italian text-4xl py-5 text-start lg:text-center'>Luxury Beyond the Skies</h1>
