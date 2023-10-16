@@ -15,7 +15,7 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="!scroll-smooth" suppressHydrationWarning={true} >
+    <html lang="en" className="!scroll-smooth text-black" suppressHydrationWarning={true} >
       <head >
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -41,8 +41,10 @@ export default function RootLayout({ children }) {
           </div>
         </GlobalProvider>
 
-        <WhatsAppWidget replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
+        <div className='text-black'>
+          <WhatsAppWidget replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
       How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+46736700548" />
+        </div>
 
         <Toaster richColors position='bottom-center' />
 

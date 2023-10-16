@@ -60,7 +60,7 @@ const Contact = () => {
             });
     }
     return (
-        <div className='px-10 py-20 w-full' id='contact'>
+        <div className='text-black px-10 py-20 w-full' id='contact'>
             <div className='text-center'>
                 <h1 className='text-xl lg:text-6xl text-center font-italian'>Don’t settle for anything less
 
@@ -70,7 +70,7 @@ const Contact = () => {
                     <br /> is truly unforgettable.</p>
 
             </div>
-            <div className='flex flex-col gap-5 justify-center items-center w-full'>
+            <div className='text-black flex flex-col gap-5 justify-center items-center w-full'>
                 <div className='grid grid-cols-2 gap-4'>
                     <input className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='firstName' value={firstName} placeholder='First Name' />
                     <input className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='lastName' value={lastName} placeholder='Last Name' />

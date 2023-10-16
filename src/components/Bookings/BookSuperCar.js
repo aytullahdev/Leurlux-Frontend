@@ -82,7 +82,7 @@ const BookSuperCar = () => {
     }, [selectedSuperCar])
     return <div className='bg-white relative w-full h-full' id='supercar'>
 
-        <div className='absolute inset-0 flex flex-col  items-center text-black justify-start backdrop-blur-sm bg-white py-10 px-5 rounded'>
+        <div className=' flex flex-col  items-center text-black justify-start backdrop-blur-sm bg-white py-10 px-5 rounded'>
             <BookingSuccess />
             {!isBooked && selectedSuperCar ?
                 <div>
@@ -97,7 +97,7 @@ const BookSuperCar = () => {
                         <div className='flex flex-col overflow-hidden '>
                             <div className='flex flex-col gap-4'>
                                 <p className='text-3xl font-italian text-start font-bold'>{carname}</p>
-                                <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{`Starting from ${price} €/Day`}</span >
+                                <span className='text-base  font-thin text-start inline py-1 px-2 lg:w-52 bg-slate-200'>{`Starting from ${price} €/Day`}</span >
                             </div>
                             <div data-aos="fade-left" data-aos-duration="500">
 
@@ -114,13 +114,13 @@ const BookSuperCar = () => {
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian font-bold'>Pickup Date</label>
-                                <input type='datetime-local' name='pickupdate' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' value={pickupdate} />
+                                <input type='datetime-local' name='pickupdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={pickupdate} />
 
                             </div>
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Drop Off Date</label>
-                                <input type='datetime-local' name='dropoffdate' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' value={dropoffdate} />
+                                <input type='datetime-local' name='dropoffdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={dropoffdate} />
 
                             </div>
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>

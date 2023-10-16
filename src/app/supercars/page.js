@@ -143,7 +143,7 @@ const SuperCars = () => {
                 </div>
 
             </div>
-            <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5' id='supercars'>
+            <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
                         const singleCar = getCarObje(singleCarObj);

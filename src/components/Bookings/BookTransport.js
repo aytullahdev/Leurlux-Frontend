@@ -28,7 +28,7 @@ const PricingSection = () => {
                 {collection && collection.map((singleTransport, indx) => {
                     return <div key={indx}>
                         {selectedSection === `${singleTransport?.attributes?.vehicle}` && <div className="bg-white">
-                            <p className='text-xl lg:text-3xl font-bold bg-gray-600 px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
+                            <p className='text-xl lg:text-3xl font-bold bg-white px-3 text-white  py-2'>{`${singleTransport?.attributes?.vehicle}`} Price</p>
                             <h1 className="text-base text-black lg:text-2xl py-8 font-bold "> Description</h1>
 
                             <ul className="flex text-black flex-col gap-2 text-base lg:text-xl">
@@ -344,13 +344,13 @@ const BookingForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 text-black gap-2 lg:gap-5">
+                    <div className="bg-white grid grid-cols-2 text-black gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Pickup Date
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                                className=" bg-white border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="datetime-local"
                                 id="pickupDate"
                                 name="pickupDate"
@@ -364,7 +364,7 @@ const BookingForm = () => {
                                 Drop Off Date
                             </label>
                             <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                                className="bg-white appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="datetime-local"
                                 id="dropoffdate"
                                 name="dropoffDate"
@@ -384,7 +384,7 @@ const BookingForm = () => {
                             name="price"
                             value={selectedPrice}
                             onChange={handlePriceChange}
-                            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
+                            className="bg-white w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
                         >
                             <option value="">Select a Option</option>
                             {collection && collection.map((singleTransport) => {
