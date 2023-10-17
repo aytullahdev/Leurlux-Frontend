@@ -41,7 +41,7 @@ const Carousel = ({ photos }) => {
                             className="lg:w-full h-[300px] rounded-lg"
                         />
                         <div className="w-full flex my-2 items-start justify-stitems-start">
-                            <div className="flex overflow-scroll flex-row justify-start gap-4">
+                            <div className="flex overflow-hidden overflow-scroll flex-row justify-start gap-4">
                                 {photos.map((photo, index) => (
                                     <img
                                         key={index}

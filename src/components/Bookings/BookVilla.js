@@ -1,13 +1,14 @@
+'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import Carousel from '../resueable/Carousel';
-
-
-
+import { toast } from "sonner";
+import axios from "axios";
+import { useRouter } from 'next/navigation';
 const BookingFormFor = () => {
     const { selectedVilla } = useContext(GlobalContext); // Replace GlobalContext with your actual context
-
+    const router = useRouter()
     const [formData, setFormData] = useState({
         villaName: selectedVilla.name,
         price: selectedVilla.price,
@@ -17,6 +18,7 @@ const BookingFormFor = () => {
         email: '',
         phone: '',
         request: '',
+        fullname: ''
     });
 
     const handleInputChange = (e) => {
@@ -29,6 +31,63 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const { villaName, price, fullname, phone, email, guests, arrival, departure, request } = formData
+        if (!fullname || !phone || !email || !guests || !arrival || !departure) {
+
+            toast.error("Please fillup all data")
+            return
+        }
+        const data = {
+            "data": {
+                "villaname": villaName,
+                "arrival": arrival,
+                "name": fullname,
+                "email": email,
+                "phone": phone,
+                "price": price,
+                "numberofguests": guests,
+                "departure": departure,
+                "otherrequest": request,
+
+            }
+        }
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/villa-requests`;
+        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        axios.post(apiUrl, data, { headers })
+            .then((response) => {
+                // Handle the response data here
+                //console.log(response.data)
+                if (response.data.data.id) {
+
+                    toast.success("Thank you for booking")
+
+                    setFormData({
+                        villaName: selectedVilla.name,
+                        price: selectedVilla.price,
+                        arrival: '',
+                        departure: '',
+                        guests: 1,
+                        email: '',
+                        phone: '',
+                        request: '',
+                        fullname: ''
+                    })
+                    router.push(`/success`)
+
+                } else {
+                    toast.error("Please try again!")
+
+                }
+            })
+            .catch((error) => {
+                // Handle any errors here
+                toast.error("Please try again!")
+                console.error(error);
+            });
         // Handle the form submission here, e.g., send the data to your server
         console.log('Form Data:', formData);
     };
@@ -75,7 +134,7 @@ const BookingFormFor = () => {
                             name="arrival"
                             value={formData.arrival}
                             onChange={handleInputChange}
-                            className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                            className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
                         />
                     </div>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
@@ -85,11 +144,23 @@ const BookingFormFor = () => {
                             name="departure"
                             onChange={handleInputChange}
                             value={formData.departure}
-                            className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                            className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
                         />
                     </div>
                 </div>
+                <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
+                    <label className="font-italian">Name</label>
+                    <input
+                        type="text"
+                        name="fullname"
+                        value={formData.fullname}
+                        onChange={handleInputChange}
+                        placeholder='Full Name...'
+                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        required
+                    />
+                </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
                     <label className="font-italian">Email</label>
@@ -124,7 +195,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         placeholder='Other request...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                        required
+
                     />
                 </div>
                 <div className='flex flex-row gap-5 items-center justify-center'>
@@ -146,13 +217,13 @@ const BookVilla = () => {
     return <>{
         selectedVilla ?
             <>
-                <div className=' grid grid-cols-2 gap-5 my-10'>
+                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
                     <div>
                         <div>
-                            <h2 className='text-4xl font-italian text-center'>{selectedVilla.name}</h2>
+                            <h2 className='text-2xl lg:text-4xl font-italian text-center'>{selectedVilla.name}</h2>
                         </div>
-                        <div className='px-10 py-5'>
+                        <div className='lg:px-10 py-5'>
                             {/* <div className='w-full h-full'>
                                 <img src={selectedYacht.images[0]} className='rounded-lg' />
                             </div>
@@ -163,9 +234,11 @@ const BookVilla = () => {
                                     })
                                 }
                             </div> */}
-                            <Carousel photos={selectedVilla.images} />
+                            <div className=' lg:px-0'>
+                                <Carousel photos={selectedVilla.images} />
+                            </div>
                         </div>
-                        <div className='px-10 py-5'>
+                        <div className=' lg:px-10 py-5'>
                             <div className='flex flex-row justify-around items-center'>
                                 <button onClick={() => setSelectedSection('specifications')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button>
                                 <button onClick={() => setSelectedSection('description')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
@@ -175,19 +248,22 @@ const BookVilla = () => {
                                 {
                                     selectedSection === 'specifications' && <>
                                         <div className='bg-white border p-5'>
-                                            <h3 className='text-3xl font-italian'>Specifications:</h3>
-                                            <ul className='px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
+                                            <h3 className='lg:text-3xl font-italian'>Specifications:</h3>
+                                            <ul className='lg:px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bed.svg' className='w-12 h-12' />
+                                                    <img src='/bed.svg' className='w-8 lg:w-12 lg:h-12' />
                                                     <span className='text-xl font-normal'>{selectedVilla.beds}</span>
                                                 </li>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bath-tube.svg' className='w-12 h-12' />
+                                                    <img src='/bath-tube.svg' className='w-8 lg:w-12 h-12' />
                                                     <span className='text-xl font-normal'>{selectedVilla.bathTube}</span>
                                                 </li>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/room.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedVilla.area}<sup>2</sup>m</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                                    </svg>
+
+                                                    <span className='text-xl font-normal'>{selectedVilla.guests}</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -196,7 +272,7 @@ const BookVilla = () => {
                                 {
                                     selectedSection === 'description' && <>
                                         <div className='bg-white border p-5'>
-                                            <h3 className='text-3xl font-italian'>Description:</h3>
+                                            <h3 className='lg:text-3xl font-italian'>Description:</h3>
                                             <p className='font-thin py-5 '>
                                                 {selectedVilla.details}
                                             </p>
