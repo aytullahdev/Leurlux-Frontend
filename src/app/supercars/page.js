@@ -9,6 +9,11 @@ import axios from 'axios';
 import ArrowDown from '../../components/resueable/ArrowDown';
 const supercarsData = [
     {
+        "carname": "Porsche",
+        "price": "Starting from 150 €/Hour",
+        "img": "/porche.jpeg"
+    },
+    {
         "carname": "Bentley GTC",
         "price": "Starting from 1920 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
