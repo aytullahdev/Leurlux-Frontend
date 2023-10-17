@@ -65,10 +65,10 @@ const Footer = () => {
                         </p>
                     </div>
                     <div>
-                        <p className='text-gray-300 font-thin text-base'> {links.mail}
+                        {/* <p className='text-gray-300 font-thin text-base'> {links.mail}
                             <br />
                             {links.phone}
-                        </p>
+                        </p> */}
                     </div>
                 </div>
                 <div className='flex flex-col justify-between items-start lg:items-center gap-2'>

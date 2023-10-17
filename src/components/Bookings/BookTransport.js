@@ -13,7 +13,18 @@ import { checkout } from "@/controller/checkout";
 
 const PricingSection = () => {
     const [selectedSection, setSelectedSection] = useState('Chauffeur')
-    const [collection] = useCollection('/api/transport-prices')
+    const { selectedTransport } = useGlobalContext()
+    // const [collection] = useCollection('/api/transport-prices')
+    return (
+        <div>
+            {
+                selectedTransport && (
+                    <div>
+                        <h1 className="uppercase text-xl ">Selected Transport <span className="font-bold">{selectedTransport.vehicle}</span></h1>
+                    </div>)
+            }
+        </div>
+    )
 
     return (
         <div>
@@ -86,6 +97,7 @@ const BookingForm = () => {
     const { setIsBooked, isBooked } = useGlobalContext();
     const [selectedPrice, setSelectedPrice] = useState("");
     const [isSuccess, setIsSuccess] = useState("")
+    const { selectedTransport } = useGlobalContext();
     const router = useRouter()
     const [formData, setFormData] = useState({
         name: "",
@@ -168,7 +180,7 @@ const BookingForm = () => {
                     "dropoffaddress": transPortData.dropoffAddress,
                     "pickupaddress": transPortData.pickupAddress,
                     "name": transPortData.name,
-                    "transporttype": transPortData.selectedPrice,
+                    "transporttype": `${selectedTransport.vehicle}- ${transPortData.selectedPrice}`,
                     "pickupdate": transPortData.pickupDate,
                     "dropoffdate": transPortData.dropoffDate,
                     "email": transPortData.email,
@@ -229,7 +241,7 @@ const BookingForm = () => {
                     "dropoffaddress": transPortData.dropoffAddress,
                     "pickupaddress": transPortData.pickupAddress,
                     "name": transPortData.name,
-                    "transporttype": transPortData.selectedPrice,
+                    "transporttype": `${selectedTransport.vehicle}- ${transPortData.selectedPrice}`,
                     "pickupdate": transPortData.pickupDate,
                     "dropoffdate": transPortData.dropoffDate,
                     "email": transPortData.email,
@@ -301,7 +313,7 @@ const BookingForm = () => {
     const handlePriceChange = (event) => {
         setSelectedPrice(event.target.value);
     };
-    const [collection, setCollection] = useCollection('/api/transport-prices')
+    // const [collection, setCollection] = useCollection('/api/transport-prices')
 
     return (
         <div className="w-full bg-white   max-w-md mx-auto font-italian text-black ">
@@ -390,7 +402,16 @@ const BookingForm = () => {
                             className="bg-white w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
                         >
                             <option value="">Select a Option</option>
-                            {collection && collection.map((singleTransport) => {
+                            <option value={`Malaga Airport - Marbella`}>
+                                Malaga Airport - Marbella
+                            </option>
+                            <option value={`Marbella - Malaga Airport`}>
+                                Marbella - Malaga Airport
+                            </option>
+                            <option value={`Full day (8 Hours)`}>
+                                Full day (8 Hours)
+                            </option>
+                            {/* {collection && collection.map((singleTransport) => {
 
                                 return singleTransport?.attributes?.PricingOptions.map((option, index) => {
 
@@ -402,7 +423,7 @@ const BookingForm = () => {
                                 })
 
 
-                            })}
+                            })} */}
 
                         </select>
                     </div>
@@ -537,12 +558,10 @@ const BookingForm = () => {
 
 const BookTransport = () => {
     return (
-        <div className="bg-white  p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
-            <div className=" order-1  lg:order-0">
-                <PricingSection />
+        <div className="bg-white  p-5 lg:p-10 grid lg:grid-cols-1 gap-5">
 
-            </div>
-            <div className="order-0  lg:order-1">
+            <div className="">
+                <PricingSection />
                 <BookingForm />
             </div>
         </div>

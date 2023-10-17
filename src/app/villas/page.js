@@ -49,7 +49,7 @@ const Villas = () => {
         }
     }
     return (
-        <div className='px-10 py-5' id='villas'>
+        <div className=' w-full h-full  px-10 py-5' id='villas'>
             <div>
                 <h1 className='text-5xl font-italian py-5'>Villas</h1>
             </div>
@@ -57,7 +57,7 @@ const Villas = () => {
                 {collection && collection.length > 0 ? <>
                     {
                         collection.map((villa, indx) => {
-                           // console.log(villa)
+                            // console.log(villa)
                             villa = getVillaObject(villa)
                             return <Villa key={`villa- ${indx}`} villa={villa} />
                         })
@@ -69,7 +69,9 @@ const Villas = () => {
     );
 }
 const page = () => {
-    return <Villas />
+    return <>
+        <Villas />
+    </>
 };
 
 export default page;

@@ -2,6 +2,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import ArrowDown from '@/components/resueable/ArrowDown'
 import AboutService from '../AboutService';
 const services = [
     {
@@ -94,6 +95,10 @@ const SingleServices = ({ service, handleAbout }) => {
                     </svg>
                     </button>
 
+
+                </div>
+                <div className='block lg:hidden'>
+                    <ArrowDown />
                 </div>
             </div>
         </div>
@@ -114,7 +119,7 @@ const Property = () => {
         <div className='w-full relative overflow-hidden h-[calc(100%-63px)]'>
 
 
-            <div id='services' className='w-full   grid grid-cols-3' >
+            <div id='services' className='w-full   grid lg:grid-cols-3' >
                 {
                     services.map((singleServices, indx) => {
                         return <SingleServices aboutData={aboutData} handleAbout={handleAbout} key={`service${indx}`} service={singleServices} />

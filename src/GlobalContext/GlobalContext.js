@@ -9,6 +9,40 @@ export const GlobalProvider = ({ children }) => {
     const [selectedVilla, setSelectedVilla] = useState();
     const [selectedHotel, setSelectedHotel] = useState();
     const [selectedApartment, setSelectedApartment] = useState();
+    const [selectedTransport, setSelectedTransport] = useState({
+        PricingOptions: [
+            {
+                "apiid": "price_1O1SJQF65j8JGYI7ebPYLLA8",
+                "price": "197",
+                "title": "Malaga Airport - Marbella",
+                "pricetag": "€"
+            },
+            {
+                "apiid": "price_1O1SJQF65j8JGYI7ebPYLLA8",
+                "price": "197",
+                "title": "Marbella - Malaga Airport",
+                "pricetag": "€"
+            },
+            {
+                "price": "225",
+                "title": "Full day (8 Hours)",
+                "pricetag": "€/hour"
+            }
+        ],
+        ExtraPricing: [
+            {
+                "price": "225",
+                "title": "By the hour (Minimum 4 hours)",
+                "pricetag": "€"
+            },
+            {
+                "price": "185",
+                "title": "Full-day additional rate (After 9 Hours)",
+                "pricetag": "€/hour"
+            }
+        ],
+        vehicle: "Hongqi",
+    });
     const [isBooked, setIsBooked] = useState(false)
     const [links, setLinks] = useState({
         'address': ' Rua Eng. Lúcio de Azevedo, no 21-A 2700-347 Amadora, Portugal ',
@@ -35,7 +69,9 @@ export const GlobalProvider = ({ children }) => {
                 selectedHotel,
                 setSelectedHotel,
                 isBooked,
-                setIsBooked
+                setIsBooked,
+                selectedTransport,
+                setSelectedTransport
             }}
         >
             {children}
