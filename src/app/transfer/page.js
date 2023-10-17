@@ -94,6 +94,9 @@ const porschePrice = {
 
 const hongqi_photos = ['/sterncar.jpeg',
     '/sterninteriro.jpeg',
+    'hongqi-5.webp',
+    'hongqi-6.webp',
+    'hongqi-7.webp',
 
 
 ]
@@ -103,7 +106,7 @@ const porsche_photos = [
     '/porsche5.jpeg',
 
 ]
-const page = () => {
+const TransportSection = () => {
     const { setSelectedTransport } = useGlobalContext();
     const router = useRouter()
     const handleBook = (carname) => {
@@ -501,6 +504,9 @@ const page = () => {
             </div>
         </div>
     );
+}
+const page = () => {
+    return <TransportSection />
 };
 
 export default page;
