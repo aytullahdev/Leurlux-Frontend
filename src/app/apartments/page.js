@@ -22,7 +22,7 @@ const apartments = [
     {
         name: 'Penthouse in Puerto Banus ',
         price: 'Price from 2,500€ / Week',
-        images: ['/villa_esko/villa_esko1.jpg', '/villa_esko/villa_esko2.jpg', '/villa_esko/villa_esko3.jpg'],
+        images: ['/apartments/penthouse/penthouse1.jpg', '/apartments/penthouse/penthouse2.jpg', '/apartments/penthouse/penthouse3.jpg', '/apartments/penthouse/penthouse4.jpg', '/apartments/penthouse/penthouse5.jpg'],
         beds: 4,
         bathTube: 3,
         area: 443,
@@ -88,7 +88,7 @@ const Apartment = ({ apartment }) => {
         <div className='border  flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
             <Carousel photos={apartment?.images} />
 
-            <div className='flex flex-row justify-between  items-center'>
+            <div className='flex flex-col lg:flex-row justify-between  items-center'>
                 <div>
                     <p className='uppercase font-black mt-5 font-italian text-2xl'>{apartment?.name}</p>
                     <p className='py-2'>
@@ -105,7 +105,7 @@ const Apartment = ({ apartment }) => {
 }
 const page = () => {
     return (
-        <div className='px-10 py-5' id='villas'>
+        <div className='px-2 lg:px-10 py-5' id='villas'>
             <div>
                 <h1 className='text-5xl font-italian py-5'>Apartments</h1>
             </div>

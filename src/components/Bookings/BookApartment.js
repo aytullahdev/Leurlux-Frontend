@@ -2,14 +2,16 @@ import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import Carousel from '../resueable/Carousel';
-
+import { toast } from "sonner";
+import axios from "axios";
+import { useRouter } from 'next/navigation';
 
 
 const BookingFormFor = () => {
     const { selectedApartment } = useContext(GlobalContext); // Replace GlobalContext with your actual context
-
+    const router = useRouter()
     const [formData, setFormData] = useState({
-        villaName: selectedApartment.name,
+        apartmentname: selectedApartment.name,
         price: selectedApartment.price,
         arrival: '',
         departure: '',
@@ -17,6 +19,7 @@ const BookingFormFor = () => {
         email: '',
         phone: '',
         request: '',
+        fullname: ''
     });
 
     const handleInputChange = (e) => {
@@ -29,6 +32,63 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const { apartmentname, price, fullname, phone, email, guests, arrival, departure, request } = formData
+        if (!fullname || !phone || !email || !guests || !arrival || !departure) {
+
+            toast.error("Please fillup all data")
+            return
+        }
+        const data = {
+            "data": {
+                "apartmentname": apartmentname,
+                "arrival": arrival,
+                "name": fullname,
+                "email": email,
+                "phone": phone,
+                "price": price,
+                "numberofguests": guests,
+                "departure": departure,
+                "otherrequest": request,
+
+            }
+        }
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/apartment-requests`;
+        const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
+
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+        axios.post(apiUrl, data, { headers })
+            .then((response) => {
+                // Handle the response data here
+                //console.log(response.data)
+                if (response.data.data.id) {
+
+                    toast.success("Thank you for booking")
+
+                    setFormData({
+                        apartmentname: selectedApartment.name,
+                        price: selectedApartment.price,
+                        arrival: '',
+                        departure: '',
+                        guests: 1,
+                        email: '',
+                        phone: '',
+                        request: '',
+                        fullname: ''
+                    })
+                    router.push(`/success`)
+
+                } else {
+                    toast.error("Please try again!")
+
+                }
+            })
+            .catch((error) => {
+                // Handle any errors here
+                toast.error("Please try again!")
+                console.error(error);
+            });
         // Handle the form submission here, e.g., send the data to your server
         console.log('Form Data:', formData);
     };
@@ -70,7 +130,19 @@ const BookingFormFor = () => {
                         />
                     </div>
                 </div>
+                <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
+                    <label className="font-italian">Name</label>
+                    <input
+                        type="text"
+                        name="fullname"
+                        value={formData.fullname}
+                        onChange={handleInputChange}
+                        placeholder='Full Name...'
+                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        required
+                    />
+                </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
                     <label className="font-italian">Email</label>
@@ -124,18 +196,18 @@ const BookingFormFor = () => {
 };
 const BookApartment = () => {
     const { selectedApartment } = useContext(GlobalContext)
-    const [selectedSection, setSelectedSection] = useState('specifications')
+    const [selectedSection, setSelectedSection] = useState('description')
     return <>{
         selectedApartment ?
             <>
-                <div className=' grid grid-cols-2 gap-5 my-10'>
+                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
                     <div>
                         <div className='px-10 flex flex-col gap-5'>
                             <h2 className='text-4xl font-italian text-left'>{selectedApartment.name}</h2>
                             <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{selectedApartment.price}</span >
                         </div>
-                        <div className='px-10 py-5'>
+                        <div className='px-2 lg:px-10 py-5'>
                             {/* <div className='w-full h-full'>
                                 <img src={selectedYacht.images[0]} className='rounded-lg' />
                             </div>
@@ -148,14 +220,14 @@ const BookApartment = () => {
                             </div> */}
                             <Carousel photos={selectedApartment.images} />
                         </div>
-                        <div className='px-10 py-5'>
+                        <div className='px-2 lg:px-10 py-5'>
                             <div className='flex flex-row justify-around items-center'>
-                                <button onClick={() => setSelectedSection('specifications')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button>
+                                {/* <button onClick={() => setSelectedSection('specifications')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button> */}
                                 <button onClick={() => setSelectedSection('description')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
 
                             </div>
                             <div>
-                                {
+                                {/* {
                                     selectedSection === 'specifications' && <>
                                         <div className='bg-white border p-5'>
                                             <h3 className='text-3xl font-italian'>Specifications:</h3>
@@ -175,7 +247,7 @@ const BookApartment = () => {
                                             </ul>
                                         </div>
                                     </>
-                                }
+                                } */}
                                 {
                                     selectedSection === 'description' && <>
                                         <div className='bg-white border p-5'>
