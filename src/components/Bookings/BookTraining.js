@@ -4,42 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import axios from 'axios';
-const trainingPackage = [
-    {
-        tittle: "1 Player Package",
-        sessions: [
-            {
-                type: '1-5 sessions',
-                price: '450€ - 1000€',
-                pricetag: 'per player',
-                session: 'per session'
-            },
-            {
-                type: '5+ sessions',
-                price: '350€ - 700€',
-                pricetag: 'per player',
-                session: 'per session'
-            }
-        ]
-    },
-    {
-        tittle: "2+ Player Package",
-        sessions: [
-            {
-                type: '1-5 sessions',
-                price: '375€ - 700€',
-                pricetag: 'per player',
-                session: 'per session'
-            },
-            {
-                type: '5+ sessions',
-                price: '275€ - 500€',
-                pricetag: 'per player',
-                session: 'per session'
-            }
-        ]
-    }
-]
+
 const BookTrainingForm = () => {
     const router = useRouter();
 
@@ -134,6 +99,9 @@ const BookTrainingForm = () => {
 
                         <option value="1 Player Package" className='px-3 py-1 border block rounded'>1 Player Package</option>
                         <option value="2+ Player Package" className='px-3 py-1 border block rounded'>2+ Player Package</option>
+                        <option value="Single Person" className='px-3 py-1 border block rounded'>Single Person Package</option>
+                        <option value="Couple Training" className='px-3 py-1 border block rounded'>Couple Training Package</option>
+                        <option value="3+ Person" className='px-3 py-1 border block rounded'>3+ Person Package</option>
                     </select>
                 </div>
 
@@ -219,28 +187,133 @@ const BookTrainingForm = () => {
                     >
                         Request
                     </button>
-                    <Link href="/hotels#hotels" className='mx-5  block underline text-base font-italian'>Back</Link>
+                    <Link href="/lifestyle" className='mx-5  block underline text-base font-italian'>Back</Link>
                 </div>
             </form>
         </div>
     );
 }
 const TrainingPricing = () => {
+    const trainingPackage = [
+        {
+            tittle: "1 Player Package",
+            sessions: [
+                {
+                    type: '1-5 sessions',
+                    price: '450€ - 1000€',
+                    pricetag: 'per player',
+                    session: 'per session'
+                },
+                {
+                    type: '5+ sessions',
+                    price: '350€ - 700€',
+                    pricetag: 'per player',
+                    session: 'per session'
+                }
+            ]
+        },
+        {
+            tittle: "2+ Player Package",
+            sessions: [
+                {
+                    type: '1-5 sessions',
+                    price: '375€ - 700€',
+                    pricetag: 'per player',
+                    session: 'per session'
+                },
+                {
+                    type: '5+ sessions',
+                    price: '275€ - 500€',
+                    pricetag: 'per player',
+                    session: 'per session'
+                }
+            ]
+        },
+        {
+            tittle: "Single Person",
+            sessions: [
+                {
+                    type: '1 session',
+                    price: '125€',
+                    pricetag: '',
+                    session: ''
+                },
+                {
+                    type: '10 sessions',
+                    price: '810€',
+                    pricetag: '',
+                    session: ''
+                },
+                {
+                    type: '20 sessions',
+                    price: '1,470€',
+                    pricetag: '',
+                    session: ''
+                }
+            ]
+        },
+        {
+            tittle: "Couple Training",
+            sessions: [
+                {
+                    type: '1 session',
+                    price: '87€',
+                    pricetag: 'Per Person',
+                    session: ''
+                },
+                {
+                    type: '10 sessions',
+                    price: '770€',
+                    pricetag: 'Per Person',
+                    session: ''
+                },
+                {
+                    type: '20 sessions',
+                    price: '1,170€',
+                    pricetag: 'Per person',
+                    session: ''
+                }
+            ]
+        },
+        {
+            tittle: "3+ Person",
+            sessions: [
+                {
+                    type: '1 session',
+                    price: '70€',
+                    pricetag: 'per person',
+                    session: ''
+                },
+                {
+                    type: '10 sessions',
+                    price: '570€',
+                    pricetag: 'per person',
+                    session: ''
+                },
+                {
+                    type: '20 sessions',
+                    price: '870€',
+                    pricetag: 'per person',
+                    session: ''
+                }
+            ]
+        }
+    ]
     return (<div className='font-italian py-5 bg-white text-black px-5 lg:px-0 '>
         <div >
             <h1 className='text-4xl'>PRO<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5'>
                 {trainingPackage.map((singlePackage, indx) => {
                     return (
-                        <div key={`package${indx}`} className='uppercase text-black shadow-sm p-5 border rounded '>
-                            <h1 className=' text-xl lg:text-3xl text-center'>{singlePackage.tittle}</h1>
+                        <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
+                            <h1 style={{ backgroundColor: 'rgb(193, 182, 134)' }} className=' text-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
                             <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-italian'>
                                 {
                                     singlePackage.sessions.map((singleSession, indx) => {
                                         return (
-                                            <div key={`session-${indx}`} className='text-center lg:text-2xl flex flex-col gap-1 justify-start'>
-                                                <h1 className='text-base lg:text-2xl'>{singleSession.type}</h1>
-                                                <h2 className=' text-base lg:text-2xl font-serif'>{singleSession.price}</h2>
+                                            <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
+                                                <h1 className='text-base lg:text-xl'>{singleSession.type}</h1>
+                                                <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
                                                 <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
                                                 <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
                                             </div>
