@@ -6,7 +6,7 @@ import BookSuperCar from '@/components/Bookings/BookSuperCar';
 import BookTransport from '@/components/Bookings/BookTransport';
 import BookVilla from '@/components/Bookings/BookVilla';
 import BookYacht from '@/components/Bookings/BookYacht';
-
+import BookTraining from '@/components/Bookings/BookTraining'
 import { data } from 'autoprefixer';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -45,13 +45,16 @@ const BookService = () => {
     if (category === 'transport') {
         return <BookTransport />
     }
+    if (category === 'personal-training') {
+        return <BookTraining />
+    }
 
 
     return <>
 
         <div className='justify-center items-center flex flex-col h-full w-full py-20'>
             <div>
-                <h1 className='text-4xl font-italian py-5'>If You Encounter Booking Issues, Contact Us on <span className='text-bold text-green-500'>WhatsApp!</span></h1>
+                <h1 className='px-5 lg:px-0 text-2xl lg:text-4xl font-italian py-5'>If You Encounter Booking Issues, Contact Us on <span className='text-bold text-green-500'>WhatsApp!</span></h1>
             </div>
             <Link href={'/#services'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a service</Link>
         </div>
