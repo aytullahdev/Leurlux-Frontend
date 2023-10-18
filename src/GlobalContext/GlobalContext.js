@@ -7,6 +7,7 @@ export const GlobalProvider = ({ children }) => {
     const [selectedSuperCar, setSelectedSuperCar] = useState();
     const [selectedYacht, setSelectedYacht] = useState();
     const [selectedVilla, setSelectedVilla] = useState();
+    const [selectedNightClub, setSelectedNightClub] = useState();
     const [selectedHotel, setSelectedHotel] = useState();
     const [selectedApartment, setSelectedApartment] = useState();
     const [selectedTransport, setSelectedTransport] = useState({
@@ -71,7 +72,9 @@ export const GlobalProvider = ({ children }) => {
                 isBooked,
                 setIsBooked,
                 selectedTransport,
-                setSelectedTransport
+                setSelectedTransport,
+                selectedNightClub,
+                setSelectedNightClub
             }}
         >
             {children}

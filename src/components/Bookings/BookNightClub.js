@@ -1,20 +1,18 @@
-import { GlobalContext } from '@/GlobalContext/GlobalContext';
+'use client'
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import Carousel from '../resueable/Carousel';
 import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
-
-
+import useGlobalContext from '@/hooks/useGlobalContext';
 const BookingFormFor = () => {
     const router = useRouter();
-    const { selectedHotel } = useContext(GlobalContext); // Replace GlobalContext with your actual context
+    const { selectedNightClub } = useGlobalContext(); // Replace GlobalContext with your actual context
 
     const [formData, setFormData] = useState({
-        hotelname: selectedHotel.name,
+        clubname: selectedNightClub.name,
         arrival: '',
-        departure: '',
         guests: 1,
         email: '',
         phone: '',
@@ -32,26 +30,25 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { hotelname, fullname, phone, email, guests, arrival, departure, request } = formData
-        if (!fullname || !phone || !email || !guests || !arrival || !departure) {
+        const { clubname, fullname, phone, email, guests, arrival, request } = formData
+        if (!fullname || !phone || !email || !guests || !arrival) {
 
             toast.error("Please fillup all data")
             return
         }
         const data = {
             "data": {
-                "hotelname": hotelname,
-                "arrival": arrival,
+                "clubname": clubname,
+                "bookingdate": arrival,
                 "name": fullname,
                 "email": email,
                 "phone": phone,
                 "numberofguests": guests,
-                "departure": departure,
                 "otherrequest": request,
 
             }
         }
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/hotel-requests`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/night-club-requests`;
         const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
         const headers = {
@@ -66,9 +63,8 @@ const BookingFormFor = () => {
                     toast.success("Thank you for booking")
 
                     setFormData({
-                        hotelname: selectedHotel.name,
+                        clubname: selectedNightClub.name,
                         arrival: '',
-                        departure: '',
                         guests: 1,
                         email: '',
                         phone: '',
@@ -95,11 +91,11 @@ const BookingFormFor = () => {
             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
             <form onSubmit={handleSubmit} >
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Hotel Name</label>
+                    <label className='font-italian'>Night Club Name</label>
                     <input
                         type="text"
-                        name="hotelname"
-                        value={formData.hotelname}
+                        name="clubname"
+                        value={formData.clubname}
                         readOnly
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                     />
@@ -125,9 +121,9 @@ const BookingFormFor = () => {
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                     />
                 </div>
-                <div className='grid grid-cols-2 gap-5'>
+                <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Arrival</label>
+                        <label className='font-italian'>Booking Date</label>
                         <input
                             type="datetime-local"
                             name="arrival"
@@ -136,16 +132,7 @@ const BookingFormFor = () => {
                             className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
                         />
                     </div>
-                    <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Departure</label>
-                        <input
-                            type="datetime-local"
-                            name="departure"
-                            onChange={handleInputChange}
-                            value={formData.departure}
-                            className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
-                        />
-                    </div>
+
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
@@ -211,78 +198,22 @@ const BookingFormFor = () => {
         </div>
     );
 };
-const BookHotle = () => {
-    const { selectedHotel } = useContext(GlobalContext)
-    const [selectedSection, setSelectedSection] = useState('description')
+const BookNightClub = () => {
+    const { selectedNightClub } = useGlobalContext();
     return <>{
-        selectedHotel ?
+        selectedNightClub ?
             <>
                 <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
                     <div>
                         <div>
-                            <h2 className='text-xl lg:text-4xl font-italian text-center'>{selectedHotel.name}</h2>
+                            <h2 className='text-xl lg:text-4xl font-italian text-center'>{selectedNightClub.name}</h2>
                         </div>
                         <div className='px-3 lg:px-10 py-5'>
-                            {/* <div className='w-full h-full'>
-                                <img src={selectedYacht.images[0]} className='rounded-lg' />
-                            </div>
-                            <div className='flex flex-row gap-5 my-2'>
-                                {
-                                    selectedYacht.images.map((singleImage) => {
-                                        return <img src={singleImage} className='w-40 h-40 rounded-lg' />
-                                    })
-                                }
-                            </div> */}
-                            <Carousel photos={selectedHotel.images} />
+
+                            <Carousel photos={selectedNightClub.images} />
                         </div>
-                        <div className='px-2 lg:px-10 py-5'>
-                            <div className='flex flex-row justify-around items-center'>
-                                {/* <button onClick={() => setSelectedSection('specifications')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button> */}
-                                <button onClick={() => setSelectedSection('description')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
 
-                            </div>
-                            <div>
-                                {/* {
-                                    selectedSection === 'specifications' && <>
-                                        <div className='bg-white border p-5'>
-                                            <h3 className='text-3xl font-italian'>Specifications:</h3>
-                                            <ul className='px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
-                                                <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bed.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedHotel.beds}</span>
-                                                </li>
-                                                <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bath-tube.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedHotel.bathTube}</span>
-                                                </li>
-                                                <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/room.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedHotel.area}<sup>2</sup>m</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </>
-                                } */}
-                                {
-                                    selectedSection === 'description' && <>
-                                        <div className='bg-white border p-5'>
-                                            <h3 className='lg:text-3xl font-italian'>Description:</h3>
-                                            <p className='font-thin py-5 '>
-                                                <div class="bg-white rounded-lg shadow-md p-4">
-                                                    <h1 class="text-2xl font-semibold text-black">{selectedHotel.name}</h1>
-                                                    <p class="text-gray-600 mt-2">Rating: {selectedHotel.rating}</p>
-                                                    <p class="text-gray-600">Location: {selectedHotel.location}</p>
-                                                    <div class="text-black mt-2">Sustainability Level: {selectedHotel.sustainabilityLevel}</div>
-                                                </div>
-
-                                            </p>
-                                        </div>
-                                    </>
-                                }
-
-                            </div>
-                        </div>
                     </div>
                     <div>
                         <BookingFormFor />
@@ -292,9 +223,9 @@ const BookHotle = () => {
             </>
             :
             <div className='justify-center items-center flex flex-row h-full w-full py-20'>
-                <Link href={'/hotels#hotels'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a hotels</Link>
+                <Link href={'/lifestyle'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a services</Link>
             </div>
     }</>
-}
+};
 
-export default BookHotle;
+export default BookNightClub;
