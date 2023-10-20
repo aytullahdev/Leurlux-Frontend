@@ -14,7 +14,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import BookPrivateJet from '../../components/Bookings/BookPrivateJet';
 import BookNightClub from '../../components/Bookings/BookNightClub';
 import BookRestaurants from '@/components/Bookings/BookRestaurants'
-
+import BookBeachClub from '@/components/Bookings/BookBeachClub'
 
 
 
@@ -54,6 +54,9 @@ const BookService = () => {
     }
     if (category === 'restaurant') {
         return <BookRestaurants />
+    }
+    if (category === 'beachclub') {
+        return <BookBeachClub />
     }
 
     return <>

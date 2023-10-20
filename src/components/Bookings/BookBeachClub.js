@@ -8,10 +8,10 @@ import { useRouter } from 'next/navigation';
 import useGlobalContext from '@/hooks/useGlobalContext';
 const BookingFormFor = () => {
     const router = useRouter();
-    const { selectedRestaurant } = useGlobalContext(); // Replace GlobalContext with your actual context
+    const { selectedBeachClub } = useGlobalContext(); // Replace GlobalContext with your actual context
 
     const [formData, setFormData] = useState({
-        restaurant: selectedRestaurant.name,
+        beachclub: selectedBeachClub.name,
         arrival: '',
         guests: 1,
         email: '',
@@ -30,7 +30,7 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { restaurant, fullname, phone, email, guests, arrival, request } = formData
+        const { beachclub, fullname, phone, email, guests, arrival, request } = formData
         if (!fullname || !phone || !email || !guests || !arrival) {
 
             toast.error("Please fillup all data")
@@ -38,7 +38,7 @@ const BookingFormFor = () => {
         }
         const data = {
             "data": {
-                "restaurant": restaurant,
+                "beachclub": beachclub,
                 "bookingdate": arrival,
                 "name": fullname,
                 "email": email,
@@ -48,7 +48,7 @@ const BookingFormFor = () => {
 
             }
         }
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/restaurant-requests`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/beachclub-requests`;
         const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
         const headers = {
@@ -63,7 +63,7 @@ const BookingFormFor = () => {
                     toast.success("Thank you for booking")
 
                     setFormData({
-                        clubname: selectedRestaurant.name,
+                        beachclub: selectedBeachClub.name,
                         arrival: '',
                         guests: 1,
                         email: '',
@@ -91,11 +91,11 @@ const BookingFormFor = () => {
             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
             <form onSubmit={handleSubmit} >
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Restaurant Name</label>
+                    <label className='font-italian'>Beachclub Name</label>
                     <input
                         type="text"
-                        name="restaurant"
-                        value={formData.restaurant}
+                        name="beachclub"
+                        value={formData.beachclub}
                         readOnly
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                     />
@@ -198,20 +198,20 @@ const BookingFormFor = () => {
         </div>
     );
 };
-const BookRestaurants = () => {
-    const { selectedRestaurant } = useGlobalContext();
+const BookBeachClub = () => {
+    const { selectedBeachClub } = useGlobalContext();
     return <>{
-        selectedRestaurant ?
+        selectedBeachClub ?
             <>
                 <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
                     <div>
                         <div>
-                            <h2 className='text-xl lg:text-4xl font-italian text-center'>{selectedRestaurant.name}</h2>
+                            <h2 className='text-xl lg:text-4xl font-italian text-center uppercase'>{selectedBeachClub.name}</h2>
                         </div>
                         <div className='px-3 lg:px-10 py-5'>
 
-                            <Carousel photos={selectedRestaurant.images} />
+                            <Carousel photos={selectedBeachClub.images} />
                         </div>
 
                     </div>
@@ -228,4 +228,4 @@ const BookRestaurants = () => {
     }</>
 };
 
-export default BookRestaurants;
+export default BookBeachClub;

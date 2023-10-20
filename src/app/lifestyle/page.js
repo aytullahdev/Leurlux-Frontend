@@ -31,7 +31,7 @@ const services = [
         title: "Massage",
 
         img: require("@/assets/images/massage.jpg").default.src,
-        to: "masssage",
+        to: "massage",
     },
     {
         title: "Private Runner",

@@ -97,7 +97,7 @@ const RestaurantsDinner = () => {
     return (
         <div className='py-8'>
             <h1 className='text-6xl font-italian' >Restaurants <span style={{ color: 'rgb(193, 182, 134)' }}>Dinner</span> Parties</h1>
-            <div className='grid lg:grid-cols-3 gap-5 my-10'>
+            <div className='grid lg:grid-cols-3 lg:gap-5 px-3 lg:px-0 my-10'>
                 {
                     restaurantList.length ? restaurantList.map((singleRestaurant, indx) => {
                         return (

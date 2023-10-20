@@ -1,18 +1,16 @@
 'use client'
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
-import Carousel from '../resueable/Carousel';
 import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
 import useGlobalContext from '@/hooks/useGlobalContext';
 const BookingFormFor = () => {
     const router = useRouter();
-    const { selectedRestaurant } = useGlobalContext(); // Replace GlobalContext with your actual context
 
     const [formData, setFormData] = useState({
-        restaurant: selectedRestaurant.name,
-        arrival: '',
+        service: 'Massage',
+        bookdate: '',
         guests: 1,
         email: '',
         phone: '',
@@ -30,16 +28,16 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { restaurant, fullname, phone, email, guests, arrival, request } = formData
-        if (!fullname || !phone || !email || !guests || !arrival) {
+        const { service, fullname, phone, email, guests, bookdate, request } = formData
+        if (!fullname || !phone || !email || !guests || !bookdate) {
 
             toast.error("Please fillup all data")
             return
         }
         const data = {
             "data": {
-                "restaurant": restaurant,
-                "bookingdate": arrival,
+                "service": service,
+                "bookingdate": bookdate,
                 "name": fullname,
                 "email": email,
                 "phone": phone,
@@ -48,7 +46,7 @@ const BookingFormFor = () => {
 
             }
         }
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/restaurant-requests`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/massage-requests`;
         const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
         const headers = {
@@ -63,8 +61,8 @@ const BookingFormFor = () => {
                     toast.success("Thank you for booking")
 
                     setFormData({
-                        clubname: selectedRestaurant.name,
-                        arrival: '',
+                        clubname: '',
+                        bookdate: '',
                         guests: 1,
                         email: '',
                         phone: '',
@@ -91,11 +89,11 @@ const BookingFormFor = () => {
             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
             <form onSubmit={handleSubmit} >
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Restaurant Name</label>
+                    <label className='font-italian'>Service Name</label>
                     <input
                         type="text"
-                        name="restaurant"
-                        value={formData.restaurant}
+                        name="service"
+                        value={formData.service}
                         readOnly
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                     />
@@ -126,8 +124,8 @@ const BookingFormFor = () => {
                         <label className='font-italian'>Booking Date</label>
                         <input
                             type="datetime-local"
-                            name="arrival"
-                            value={formData.arrival}
+                            name="bookdate"
+                            value={formData.bookdate}
                             onChange={handleInputChange}
                             className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
                         />
@@ -181,7 +179,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         placeholder='Other request...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                        required
+
                     />
                 </div>
 
@@ -198,34 +196,20 @@ const BookingFormFor = () => {
         </div>
     );
 };
-const BookRestaurants = () => {
-    const { selectedRestaurant } = useGlobalContext();
-    return <>{
-        selectedRestaurant ?
-            <>
-                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
+const Massage = () => {
 
-                    <div>
-                        <div>
-                            <h2 className='text-xl lg:text-4xl font-italian text-center'>{selectedRestaurant.name}</h2>
-                        </div>
-                        <div className='px-3 lg:px-10 py-5'>
 
-                            <Carousel photos={selectedRestaurant.images} />
-                        </div>
+    return (
+        <div className='py-1'>
 
-                    </div>
-                    <div>
-                        <BookingFormFor />
-
-                    </div>
-                </div>
-            </>
-            :
-            <div className='justify-center items-center flex flex-row h-full w-full py-20'>
-                <Link href={'/lifestyle'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a services</Link>
-            </div>
-    }</>
+            <BookingFormFor />
+        </div>
+    )
+}
+const page = () => {
+    return (
+        <Massage />
+    );
 };
 
-export default BookRestaurants;
+export default page;

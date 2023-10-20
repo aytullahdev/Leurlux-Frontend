@@ -10,6 +10,7 @@ export const GlobalProvider = ({ children }) => {
     const [selectedNightClub, setSelectedNightClub] = useState();
     const [selectedRestaurant, setSelectedRestaurant] = useState();
     const [selectedHotel, setSelectedHotel] = useState();
+    const [selectedBeachClub, setSelectedBeachClub] = useState()
     const [selectedApartment, setSelectedApartment] = useState();
     const [selectedTransport, setSelectedTransport] = useState({
         PricingOptions: [
@@ -77,7 +78,9 @@ export const GlobalProvider = ({ children }) => {
                 selectedNightClub,
                 setSelectedNightClub,
                 selectedRestaurant,
-                setSelectedRestaurant
+                setSelectedRestaurant,
+                selectedBeachClub,
+                setSelectedBeachClub
             }}
         >
             {children}
