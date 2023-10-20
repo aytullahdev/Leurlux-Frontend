@@ -332,8 +332,8 @@ const TrainingPricing = () => {
 }
 const BookTraining = () => {
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2'>
-            <div>
+        <div className='grid grid-cols-1 lg:grid-cols-2 py-5'>
+            <div className='hidden lg:block'>
                 <TrainingPricing />
             </div>
             <div>
