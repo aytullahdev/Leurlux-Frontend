@@ -25,12 +25,12 @@ const About = () => {
                     <h1 className='font-italian text-5xl py-5'>Our network</h1>
                     <div className='flex flex-col  mt-10 text-base text-justify lg:text-left lg:text-3xl font-thin'>
                         <p >
-                            {` We’re proud to offer our luxury concierge services in some of the world’s most vibrant and exciting cities. From New York to Paris, Marbella to Dubai, our team of experienced concierge profession- als is here to provide you with the highest level of service and attention to detail.
+                            {` We’re proud to offer our luxury concierge services in some of the world’s most vibrant and exciting cities. From New York to Paris, Marbella to Dubai, our team of experienced concierge professionals is here to provide you with the highest level of service and attention to detail.
 `}
 
                         </p>
                         <p className='mt-5'>
-                            {`No matter where your travels take you, our luxury concierge ser- vice is here to help you feel at home. From transportation to accommodations, dining reservations to event planning, we take care of everything so that you can focus on enjoying your trip.`}
+                            {`No matter where your travels take you, our luxury concierge service is here to help you feel at home. From transportation to accommodations, dining reservations to event planning, we take care of everything so that you can focus on enjoying your trip.`}
                         </p>
                     </div>
 

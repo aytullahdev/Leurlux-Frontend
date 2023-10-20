@@ -9,8 +9,8 @@ import axios from 'axios';
 import ArrowDown from '../../components/resueable/ArrowDown';
 const supercarsData = [
     {
-        "carname": "Porsche",
-        "price": "Starting from 150 €/Hour",
+        "carname": "Porsche Tycan 4s (Full Electric)",
+        "price": "From 600 €/day",
         "img": "/porche.jpeg"
     },
     {
