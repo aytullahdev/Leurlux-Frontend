@@ -311,7 +311,7 @@ const TrainingPricing = () => {
                                     singlePackage.sessions.map((singleSession, indx) => {
                                         return (
                                             <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
-                                                <h1 className='text-base lg:text-xl'>{singleSession.type}</h1>
+                                                <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
                                                 <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
                                                 <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
                                                 <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
