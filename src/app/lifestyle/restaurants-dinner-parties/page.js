@@ -95,19 +95,19 @@ const RestaurantsDinner = () => {
         router.push('/book?category=restaurant')
     }
     return (
-        <div className='py-8'>
-            <h1 className='text-6xl font-italian' >Restaurants <span style={{ color: 'rgb(193, 182, 134)' }}>Dinner</span> Parties</h1>
-            <div className='grid lg:grid-cols-3 lg:gap-5 px-3 lg:px-0 my-10'>
+        <div className='py-8 px-2 lg:px-0'>
+            <h1 className='text-4xl lg:text-6xl font-italian' >Restaurants <span style={{ color: 'rgb(193, 182, 134)' }}>Dinner</span> Parties</h1>
+            <div className='grid lg:grid-cols-3 gap-5 my-10'>
                 {
                     restaurantList.length ? restaurantList.map((singleRestaurant, indx) => {
                         return (
                             <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg'>
 
-                                <div>
+                                <div className='p-5'>
                                     <Carousel photos={singleRestaurant.images} />
 
                                 </div>
-                                <div className=' p-5 flex flex-row justify-around items-center'>
+                                <div className=' p-5 flex gap-5 lg:gap-0 flex-col lg:flex-row justify-around items-center'>
                                     <h1 className='text-xl font-italian'>{singleRestaurant.name}</h1>
                                     <button onClick={() => { handleSelect(singleRestaurant) }} className='text-white bg-black font-italian px-5 block py-2 rounded-lg'>Book Now</button>
                                 </div>

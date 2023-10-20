@@ -121,7 +121,7 @@ const BookingFormForYacht = () => {
                         value={formData.bookdate}
                         onChange={handleInputChange}
                         placeholder='Date'
-                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
                         required
                     />
                 </div>
