@@ -696,18 +696,19 @@ const Yachts = () => {
         <div className='lg:py-2'>
             <div className='relative w-full '>
                 <div className="relative h-[700px] lg:h-screen">
-                    <video autoPlay loop muted className="w-full h-full object-cover">
-                        <source src="./yacht.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+                    <div className="w-full h-full object-cover">
+                        {/* <source src="./yacht.mp4" type="video/mp4" /> */}
+                        <img src='/yatchlanding.jpeg' className='w-full h-full' />
+
+                    </div>
                     <div className="absolute inset-0 bg-black opacity-70"></div>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
                             <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2'>
-                                Introducing <span style={{ color: 'rgb(193, 182, 134)' }}>LEURLUX</span>  Yacht Rentals
+                                <span style={{ color: 'rgb(193, 182, 134)' }}>LEURLUX</span>  Yacht Rentals
                             </h1>
-                            <p className='py-5 text-xs lg:text-4xl '>
+                            <p className='py-5 text-xs font-italian lg:text-4xl '>
                                 {`Welcome to LEURLUX Yacht Rentals, where we offer the epitome of luxury and adventure on the open seas. We redefine yacht charters by seamlessly blending opulence, exclusivity, and unparalleled experiences that will set your journey apart.`}
                             </p>
                             {/* <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>

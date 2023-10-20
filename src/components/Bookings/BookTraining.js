@@ -176,7 +176,6 @@ const BookTrainingForm = () => {
                         onChange={handleInputChange}
                         placeholder='Other request...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                        required
                     />
                 </div>
 

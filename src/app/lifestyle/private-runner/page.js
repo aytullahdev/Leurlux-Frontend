@@ -101,7 +101,7 @@ const BookingFormFor = () => {
 
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Pickup Date</label>
+                        <label className='font-italian'>Pickup Time</label>
                         <input
                             type="datetime-local"
                             name="bookdate"
