@@ -90,7 +90,7 @@ const SingleServices = ({ service, handleAbout }) => {
                 </h1>
                 <div className='my-10 flex flex-row gap-5'>
                     <button onClick={(e) => { e.preventDefault(); router.push(to) }} className='bg-black px-5 py-1 rounded-xl font-thin text-xl'>BOOK NOW</button>
-                    <button onClick={() => handleAbout(service)} className='text-white ml-auto cursor-pointer '><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 hover:text-white">
+                    <button onClick={() => { e.preventDefault(); router.push(to) }} className='text-white ml-auto cursor-pointer '><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 hover:text-white">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
                     </button>
@@ -101,7 +101,7 @@ const SingleServices = ({ service, handleAbout }) => {
                     <ArrowDown />
                 </div>
             </div>
-        </div>
+        </div >
     }
     </>
 }
@@ -126,9 +126,7 @@ const Property = () => {
                     })
                 }
             </div>
-            <div className={`w-full  absolute top-0 duration-300 bg-gray-100  h-full  overflow-hidden  ${openAbout ? 'left-0' : 'left-[300%]'}`}>
-                <AboutService handleAbout={handleAbout} aboutData={aboutData} service={"service"} />
-            </div>
+
         </div>
     );
 };

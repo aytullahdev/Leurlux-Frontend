@@ -66,7 +66,7 @@ const Villas = () => {
         {
             name: 'Villa Esko',
             price: '8,000€/week',
-            images: ['/villas/villa_esko/villa_esko1.jpg', '/villas/villa_esko/villa_esko2.jpg', '/villas/villa_esko/villa_esko3.jpg', '/villas/villa_esko/villa_esko4.jpg', '/villas/villa_esko/villa_esko.jpg',],
+            images: ['/villas/villa_esko/villa_esko1.jpg', '/villas/villa_esko/villa_esko2.jpg', '/villas/villa_esko/villa_esko3.jpg', '/villas/villa_esko/villa_esko4.jpg', '/villas/villa_esko/villa_esko1.jpg',],
             beds: 7,
             bathTube: 5,
             guests: 14,
@@ -80,7 +80,7 @@ const Villas = () => {
         {
             name: 'Villa Fiona',
             price: '8,000€/week',
-            images: ['/villas/villa_fiona/villa_fiona1.jpg', '/villas/villa_fiona/villa_fiona2.jpg', '/villas/villa_fiona/villa_fiona3.jpg', '/villas/villa_fiona/villa_fiona4.jpg', '/villas/villa_fiona/villa_fiona.jpg',],
+            images: ['/villas/villa_fiona/villa_fiona1.jpg', '/villas/villa_fiona/villa_fiona2.jpg', '/villas/villa_fiona/villa_fiona3.jpg', '/villas/villa_fiona/villa_fiona4.jpg', '/villas/villa_fiona/villa_fiona5.jpg',],
             beds: 4,
             bathTube: 4,
             guests: 8,
