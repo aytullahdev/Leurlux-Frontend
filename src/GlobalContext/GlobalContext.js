@@ -8,6 +8,7 @@ export const GlobalProvider = ({ children }) => {
     const [selectedYacht, setSelectedYacht] = useState();
     const [selectedVilla, setSelectedVilla] = useState();
     const [selectedNightClub, setSelectedNightClub] = useState();
+    const [selectedRestaurant, setSelectedRestaurant] = useState();
     const [selectedHotel, setSelectedHotel] = useState();
     const [selectedApartment, setSelectedApartment] = useState();
     const [selectedTransport, setSelectedTransport] = useState({
@@ -74,7 +75,9 @@ export const GlobalProvider = ({ children }) => {
                 selectedTransport,
                 setSelectedTransport,
                 selectedNightClub,
-                setSelectedNightClub
+                setSelectedNightClub,
+                selectedRestaurant,
+                setSelectedRestaurant
             }}
         >
             {children}

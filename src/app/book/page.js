@@ -13,7 +13,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import BookPrivateJet from '../../components/Bookings/BookPrivateJet';
 import BookNightClub from '../../components/Bookings/BookNightClub';
-
+import BookRestaurants from '@/components/Bookings/BookRestaurants'
 
 
 
@@ -51,6 +51,9 @@ const BookService = () => {
     }
     if (category === 'night-club') {
         return <BookNightClub />
+    }
+    if (category === 'restaurant') {
+        return <BookRestaurants />
     }
 
     return <>
