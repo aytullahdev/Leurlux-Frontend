@@ -217,7 +217,7 @@ const BookVilla = () => {
     return <>{
         selectedVilla ?
             <>
-                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
+                <div className=' grid lg:grid-cols-2 gap-5 py-10'>
 
                     <div>
                         <div>
@@ -234,17 +234,17 @@ const BookVilla = () => {
                                     })
                                 }
                             </div> */}
-                            <div className=' lg:px-0'>
+                            <div className='px-5 lg:px-0'>
                                 <Carousel photos={selectedVilla.images} />
                             </div>
                         </div>
                         <div className=' lg:px-10 py-5'>
                             <div className='flex flex-row justify-around items-center'>
-                                <button onClick={() => setSelectedSection('specifications')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button>
-                                <button onClick={() => setSelectedSection('description')} className='px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
+                                <button onClick={() => setSelectedSection('specifications')} className='lg:px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Specifications</button>
+                                <button onClick={() => setSelectedSection('description')} className='lg:px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
 
                             </div>
-                            <div>
+                            <div className='px-3 lg:px-0'>
                                 {
                                     selectedSection === 'specifications' && <>
                                         <div className='bg-white border p-5'>
