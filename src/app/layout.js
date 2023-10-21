@@ -6,6 +6,7 @@ import { WhatsAppWidget } from 'react-whatsapp-widget';
 import 'react-whatsapp-widget/dist/index.css';
 import { GlobalProvider } from '@/GlobalContext/GlobalContext';
 import { Toaster } from 'sonner';
+import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'] })
 
 const metadata = {
@@ -17,6 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="!scroll-smooth text-black" suppressHydrationWarning={true} >
       <head >
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-2YLPKGGC00"></Script>
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+
+          gtag('config', 'G-2YLPKGGC00');`
+          }
+        </Script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -28,6 +38,8 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+
       </head>
       <body id='top' className={`${inter.className} bg-white min-h-screen text-black`} >
         <div className='bg-white '>
