@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-2YLPKGGC00');`
           }
         </Script>
+        <meta name="google-site-verification" content="zkfttP5nNHSbmyk4n3VKXD5ByFO3XxhqfxY6AEkk5bE" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
