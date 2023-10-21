@@ -94,6 +94,50 @@ const Villas = () => {
 
         },
         {
+            name: 'Villa Benna',
+            price: '10,000€/week',
+            images: ['/villas/villa_benna/villa_benna1.jpg', '/villas/villa_benna/villa_benna2.jpg', '/villas/villa_benna/villa_benna3.jpg', '/villas/villa_benna/villa_benna4.jpg', '/villas/villa_benna/villa_benna5.jpg',],
+            beds: 5,
+            bathTube: 5,
+            guests: 8,
+            details: `For more details Contact us`,
+            link: 'https://www.dropbox.com/sh/pkgkfvq4nv1wxva/AAAdpnLcTFi1sAia2t3dDAjla?dl=0'
+
+        },
+        {
+            name: 'VILLA GUDAL',
+            price: '7,000€/week',
+            images: ['/villas/villa_gudal/villa_gudal1.jpg', '/villas/villa_gudal/villa_gudal2.jpg', '/villas/villa_gudal/villa_gudal3.jpg', '/villas/villa_gudal/villa_gudal4.jpg', '/villas/villa_gudal/villa_gudal5.jpg',],
+            beds: 5,
+            bathTube: 5,
+            guests: 8,
+            details: `For more details Contact us`,
+            link: 'https://www.dropbox.com/sh/fycz7x362nr9bek/AAD38-rBG7FSB_A3ZhhrYd2wa?dl=0'
+
+        },
+        {
+            name: 'VILLAPB',
+            price: '10,000€/week',
+            images: ['/villas/villapb/villapb1.jpg', '/villas/villapb/villapb2.jpg', '/villas/villapb/villapb3.jpg', '/villas/villapb/villapb4.jpg', '/villas/villapb/villapb5.jpg',],
+            beds: 5,
+            bathTube: 5,
+            guests: 8,
+            details: `For more details Contact us`,
+            link: 'https://www.dropbox.com/sh/93elwir5n44ot68/AADpwxBtA6djudsm4h_IvcT7a?dl=0'
+
+        },
+        {
+            name: 'Villa Albornoz',
+            price: '5,000€/week',
+            images: ['/villas/villa_albornoz/villa_albornoz1.jpg', '/villas/villa_albornoz/villa_albornoz2.jpg', '/villas/villa_albornoz/villa_albornoz3.jpg', '/villas/villa_albornoz/villa_albornoz4.jpg', '/villas/villa_albornoz/villa_albornoz5.jpg', '/villas/villa_albornoz/villa_albornoz6.jpg', '/villas/villa_albornoz/villa_albornoz8.jpg'],
+            beds: 4,
+            bathTube: 3,
+            guests: 8,
+            details: `For more details Contact us`,
+            link: 'https://www.dropbox.com/sh/wh29uj0g6qkvxit/AAAQCxZe9ChQ7dCpwsHhASnJa?dl=0'
+
+        },
+        {
             name: 'Villa Aqua',
             price: '12,000€/week',
 

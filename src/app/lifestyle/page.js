@@ -35,7 +35,8 @@ const services = [
     },
     {
         title: "Private Runner",
-        img: require("@/assets/images/private-runner.jpg").default.src,
+        // img: require("@/assets/images/private-runner.jpg").default.src,
+        img: '/privaterunner.webp',
         to: "private-runner",
     },
 ];

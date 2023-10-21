@@ -29,6 +29,16 @@ const apartments = [
         details: `Contact Us for more details`
     },
     {
+        name: 'El Paraiso ',
+        price: 'Price from 5,500€/ Week',
+        images: ['/apartments/el_paraiso/el_paraiso1.jpg', '/apartments/el_paraiso/el_paraiso2.jpg', '/apartments/el_paraiso/el_paraiso3.jpg', '/apartments/el_paraiso/el_paraiso4.jpg', '/apartments/el_paraiso/el_paraiso5.jpg'],
+        beds: 5,
+        bathTube: 5,
+        area: 443,
+        link: 'https://www.dropbox.com/sh/3g62jru2xx372kf/AAB4mfNsU1A6YaiYu0OzQFv9a?dl=0',
+        details: `Contact Us for more details`
+    },
+    {
         name: 'Penthouse Aloha',
         price: 'Price from: 1,500€ / Week',
         images: [
