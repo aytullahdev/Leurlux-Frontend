@@ -21,7 +21,7 @@ const Villa = ({ villa }) => {
         router.push('/book?category=villa')
     }
     return <>
-        <div className='border shadow-sm p-2 rounded-lg bg-gray-50'>
+        <div onClick={() => handleBook()} className='border shadow-sm p-2 rounded-lg bg-gray-50'>
             <Carousel photos={villa?.images} />
 
             <div className='flex flex-col lg:flex-row justify-between  items-center'>

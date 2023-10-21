@@ -71,7 +71,7 @@ const SingleServices = ({ service, handleAbout }) => {
     return <>{
         service && title &&
 
-        <div className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
+        <div onClick={(e) => { e.preventDefault(); router.push(to) }} className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
             setIsHover(false)
         }} onMouseOver={() => {
             setIsHover(true)

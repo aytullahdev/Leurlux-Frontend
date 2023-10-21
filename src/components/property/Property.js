@@ -71,7 +71,7 @@ const SingleServices = ({ service, handleAbout }) => {
     return <>{
         service && title &&
 
-        <div className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
+        <div onClick={(e) => { e.preventDefault(); router.push(to) }} className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
             setIsHover(false)
         }} onMouseOver={() => {
             setIsHover(true)
@@ -90,7 +90,7 @@ const SingleServices = ({ service, handleAbout }) => {
                 </h1>
                 <div className='my-10 flex flex-row gap-5'>
                     <button onClick={(e) => { e.preventDefault(); router.push(to) }} className='bg-black px-5 py-1 rounded-xl font-thin text-xl'>BOOK NOW</button>
-                    <button onClick={() => { e.preventDefault(); router.push(to) }} className='text-white ml-auto cursor-pointer '><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 hover:text-white">
+                    <button onClick={(e) => { e.preventDefault(); router.push(to) }} className='text-white ml-auto cursor-pointer '><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 hover:text-white">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
                     </button>

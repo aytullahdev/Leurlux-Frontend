@@ -65,7 +65,7 @@ const page = () => {
                     </div>
                     <div className='bg-white text-black  p-5 '>
                         <h1 className='text-bold font-italian text-4xl py-5'>Your Journey, Your Way</h1>
-                        <p className='text-justify font-2xl'>{`We understand that the needs of our discerning clientele vary. That's why LEURLUX ensures that your journey is as unique as you are. Whether you're traveling for business or pleasure, our expert concierge team tailors your experience to your preferences. No request is too extravagant; no detail is too small.`}</p>
+                        <p className='text-justify font-2xl'>{`We understand that the needs of our discerning clientele vary. That's why LEURLUX ensures that your journey is as unique as you are. Whether you're traveling for business or pleasure, our expert concierge team tailors your experience to your preferences. No request is too extravagant no detail is too small.`}</p>
                     </div>
                     <div className='my-10  flex justify-center items-center lg:col-span-2'>
                         <Link href="/book?category=privatejet#bookprivatejet" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Get A Guote Now</Link>
@@ -74,7 +74,7 @@ const page = () => {
                         <h1 className='text-bold font-italian text-4xl py-5 text-start lg:text-center'>Luxury Beyond the Skies</h1>
                         <p className='text-justify font-2xl'>{`While our private jet service elevates your travel, our commitment to luxury doesn't end upon landing. When you arrive at your destination, you'll be welcomed by our exceptional concierge services that redefine hospitality. From exclusive chauffeur-driven transfers to securing reservations at the world's finest restaurants, we ensure that every moment of your stay is extraordinary.`}
                             <span className='block py-5 bg-none'></span>
-                            {` At LEURLUX, we invite you to embark on a journey where the sky is not the limit; it's just the beginning. We are here to cater to your every need and desire, ensuring that your travel experience is nothing short of perfection.`}
+                            {` At LEURLUX, we invite you to embark on a journey where the sky is not the limit it's just the beginning. We are here to cater to your every need and desire, ensuring that your travel experience is nothing short of perfection.`}
                             <span className='block py-5 bg-none'></span>
                             {` Indulge in the luxury of seamless private jet travel with LEURLUX, and let us redefine the way you experience the world. Welcome to a world where luxury meets the skies and where your every travel dream becomes a reality.`}</p>
                     </div>

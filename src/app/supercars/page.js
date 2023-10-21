@@ -180,7 +180,7 @@ const SuperCars = () => {
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
                         const singleCar = getCarObje(singleCarObj);
-                        return <div key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
+                        return <div onClick={() => { handleReqeust(singleCar) }} key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
                             <img className='' src={singleCar.img} />
                             <div className='font-italian'>
                                 <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>

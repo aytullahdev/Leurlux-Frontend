@@ -14,6 +14,7 @@
     "axios": "^1.5.1",
     "next": "latest",
     "react": "latest",
+    "react-datepicker": "^4.21.0",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
     "react-whatsapp-widget": "^2.2.0",
