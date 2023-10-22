@@ -11,10 +11,16 @@ const BeachClub = () => {
 
             It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
             images: [
-                "https://naopoolclub.com/wp-content/uploads/2018/08/NAO_HOME-HOR-2.jpg",
-                "https://naopoolclub.com/wp-content/uploads/2018/09/NAO_HOME-3.jpg",
-                "https://naopoolclub.com/wp-content/uploads/2018/09/LA-MESA_HOME.jpg",
-                "https://naopoolclub.com/wp-content/uploads/2018/09/LA-MESA_HOME-683x1024.jpg"
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
+                "/naopoolclub/naopoolclub1.jpg",
+                "/naopoolclub/naopoolclub2.jpg",
+                "/naopoolclub/naopoolclub3.jpg",
+                "/naopoolclub/naopoolclub4.jpg",
+                "/naopoolclub/naopoolclub5.jpg",
+                "/naopoolclub/naopoolclub6.jpg",
+                "/naopoolclub/naopoolclub7.jpg",
+                "/naopoolclub/naopoolclub8.jpg",
+
             ]
         },
         {
@@ -33,6 +39,8 @@ const BeachClub = () => {
             name: 'nikki beach',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
+                "https://storage.ghadiscovery.com/cdn-cgi/image/width=1920,f=auto,g=auto,fit=scale-down/img/images/3/1/3/0/790313-1-eng-GB/503c2cd5d6cd-Girl-watching-horizon-at-Nikki-Beach-Dubai.jpg",
+                "https://cf.bstatic.com/xdata/images/hotel/max1024x768/406507123.jpg?k=2d445dc6737871967fef7ab316c7596e0b3466cd152040bb3f04ded70f4eca99&o=&hp=1",
                 "https://marbella.nikkibeach.com/wp-content/uploads/sites/9/2022/03/marbella-homepage-dine-image-02.jpg",
                 "https://marbella.nikkibeach.com/wp-content/uploads/2020/01/santorini-homepage-2020.jpg",
                 "https://marbella.nikkibeach.com/wp-content/uploads/2020/12/montenegro-hotel-thumb.jpg",
@@ -44,7 +52,10 @@ const BeachClub = () => {
             name: 'ocean club',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
+                "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/0e/b0/34/breathtaking-views-and.jpg?w=1200&h=-1&s=1",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnr4F5fArLi1IR4pv2SaSRi6mTuNp9oClpO-i2Rg08Xp1xyyraQ3gSQbrqw5xXCFKriPg&usqp=CAU",
                 "https://oceanclub.es/app/uploads/2023/06/PEDROJAEN_CF168011-2-scaled.jpg",
+                "https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/43460062.jpg?k=13daa2436ce9bfd2674a60d5928a1ca197d6d3f11928e22f4ebdd8e3d30cb570&o=",
                 "https://oceanclub.es/app/uploads/2023/06/003_PEDROJAEN_364A6527-Pano-1-scaled.jpg",
                 "https://oceanclub.es/app/uploads/2021/10/club_hero.jpeg",
                 "https://oceanclub.es/app/uploads/2021/10/Club1.jpeg",
@@ -54,6 +65,7 @@ const BeachClub = () => {
             name: 'playapadre',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
+                "https://globeinfinite.com/wp-content/uploads/2023/08/playa-padre-443858.webp",
                 "https://playapadre.com/cms/uploads/1677750481-DJI_0874-1800-rqw0k6.jpg",
                 "https://playapadre.com/cms/uploads/1663074132-7L0A7321-1600-ri5g7o.jpeg",
                 "https://playapadre.com/cms/uploads/1663174366-31052020-_DSC0015-1600-ri7lk1.jpeg",
@@ -65,10 +77,14 @@ const BeachClub = () => {
             name: 'opium beach marbella',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
+                "https://lh3.googleusercontent.com/p/AF1QipORmsosWgO2i7ya-NJseLLOwOsCKKYpiiBhStNU=s680-w680-h510",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3021.jpg",
+                "https://lh3.googleusercontent.com/p/AF1QipPgpXv6v6FPhrxwrva6kSENfSc-aAjFJOR_2CbR=s680-w680-h510",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3497-1.jpg",
+                "https://lh5.googleusercontent.com/p/AF1QipPkTjz9he614F1FeiVhy02W_yihx2y-Y06veWgc=w141-h101-n-k-no-nu",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3021-1536x1025.jpg",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A2847-1.jpg",
+                "https://lh3.googleusercontent.com/p/AF1QipMSUtRrOiKtGMqSuaYCcsHkN5jUaAgR4mAPRHD_=s680-w680-h510",
             ]
         },
 
