@@ -11,7 +11,7 @@ const supercarsData = [
     {
         "carname": "Porsche Tycan 4s (Full Electric)",
         "price": "From 600 €/day",
-        "img": "/porche.jpeg"
+        "img": "/porche.png"
     },
     {
         "carname": "Bentley GTC",
@@ -128,7 +128,7 @@ const SuperCars = () => {
                         <div>
                             <h1 className='font-italian text-3xl lg:text-7xl py-2'>SUPER CAR <b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>RENTAL MARBELLA</b></h1>
                             <hr className='py-5' />
-                            <p className='text-base lg:text-2xl'>
+                            <p className='text-base lg:text-3xl font-italian'>
                                 {`At LEURLUX, we invite you to embrace the joys of supercar driving, where luxury knows no boundaries. Welcome to a world where exhilaration is the norm, and where we're dedicated to making every mile memorable.`}
                             </p>
                             {/* <div className='my-10'>
@@ -165,12 +165,14 @@ const SuperCars = () => {
             <div className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>The Power of Supercars</h1>
-                        <p className='text-justify font-2xl'> {`At LEURLUX, we're committed to offering high-performance supercars that redefine the thrill of luxury driving. We understand that your journey should be exhilarating, and that's why we provide an exceptional range of vehicles designed to exceed your expectations.`}</p>
+                        <h1 className='text-bold font-italian text-4xl py-5'>Luxury Meets Exhilaration
+                        </h1>
+                        <p className='text-justify font-2xl'>{`When you choose LEURLUX, you're making a statement that you can enjoy the thrill of high-performance driving without compromise. Your car will be delivered to  your chosen location & collected by us. Our service is designed to make your experience seamless, enjoyable, and unforgettable.
+`}</p>
                     </div>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>A Diverse Collection of Luxury</h1>
-                        <p className='text-justify font-2xl'>{`Our impressive collection includes a series of Lamborghinis, Ferraris, Rolls Royces, Bentleys, Mercedes, BMWs, and many more. We have meticulously curated our fleet to bring you the best renting cars from the 2023 to 2024 stock, featuring the Lamborghini Urus, Lamborghini Aventador, Rolls Royce Cullinan, Rolls Royce Wraith, Mercedes G63, GLE 63, C63s, and our hidden gem - the Red Ferrari.`}</p>
+                        <h1 className='text-bold font-italian text-4xl py-5'>The Power of Supercars</h1>
+                        <p className='text-justify font-2xl'> {`At LEURLUX, we're committed to offering high-performance supercars that redefine the thrill of luxury driving. We understand that your journey should be exhilarating, and that's why we provide an exceptional range of vehicles designed to exceed your expectations.`}</p>
                     </div>
 
 
@@ -197,16 +199,16 @@ const SuperCars = () => {
             </div>
             <div id='' className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
+
+                    <div className='bg-white text-black  p-5 '>
+                        <h1 className='text-bold font-italian text-4xl py-5'>A Diverse Collection of Luxury</h1>
+                        <p className='text-justify font-2xl'>{`Our impressive collection includes a series of Lamborghinis, Ferraris, Rolls Royces, Bentleys, Mercedes, BMWs, and many more. We have meticulously curated our fleet to bring you the best renting cars from the 2023 to 2024 stock, featuring the Lamborghini Urus, Lamborghini Aventador, Rolls Royce Cullinan, Rolls Royce Wraith, Mercedes G63, GLE 63, C63s, and our hidden gem - the Red Ferrari.`}</p>
+                    </div>
                     <div className='bg-white text-black  p-5 '>
                         <h1 className='text-bold font-italian text-4xl py-5'>Unleash the Supercar Experience</h1>
                         <p className='text-justify font-2xl'> {`Among our remarkable supercars, you'll find the lightning-fast Porsche Taycan 2024, a fully electric supercar. This high-performance masterpiece accelerates from 0 to 100 km/h in just 3 seconds, boasting 571 horsepower. What sets it apart is not just its stunning performance but also its eco-conscious nature. With our Porsche supercharging station, you can achieve a full charge in just 10-15 minutes, giving you an impressive 475 km range. As a special bonus, we include a free charging card, ensuring that you have unlimited charging opportunities while you enjoy your ride.`}</p>
                     </div>
-                    <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>Luxury Meets Exhilaration
-                        </h1>
-                        <p className='text-justify font-2xl'>{`When you choose LEURLUX, you're making a statement that you can enjoy the thrill of high-performance driving without compromise. Your car will be delivered to  your chosen location & collected by us. Our service is designed to make your experience seamless, enjoyable, and unforgettable.
-`}</p>
-                    </div>
+
 
                 </div>
 

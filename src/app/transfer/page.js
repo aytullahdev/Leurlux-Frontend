@@ -104,6 +104,8 @@ const porsche_photos = [
     '/porsche3.jpeg',
     '/porsche4.jpeg',
     '/porsche5.jpeg',
+    '/porchen.jpeg',
+    '/porchen1.jpeg',
 
 ]
 const TransportSection = () => {

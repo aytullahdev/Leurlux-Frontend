@@ -52,7 +52,7 @@ const Villas = () => {
         {
             name: 'VILLA LA QUINTA',
             price: '12,000€/week',
-            images: ['/villas/villa_la_quint/villa_la_quinta1.jpg', '/villas/villa_la_quint/villa_la_quinta2.jpg', '/villas/villa_la_quint/villa_la_quinta3.jpg', '/villas/villa_la_quint/villa_la_quinta4.jpg',],
+            images: ['/villas/villa_la_quint/villa_la_quinta1.jpg', '/villas/villa_la_quint/villa_la_quinta2.jpg', '/villas/villa_la_quint/villa_la_quinta3.jpg', '/villas/villa_la_quint/villa_la_quinta4.jpg', '/villas/villa_la_quint/villa_la_quinta5.jpg', '/villas/villa_la_quint/villa_la_quinta6.jpg', '/villas/villa_la_quint/villa_la_quinta7.jpg', '/villas/villa_la_quint/villa_la_quinta8.jpg', '/villas/villa_la_quint/villa_la_quinta9.jpg', '/villas/villa_la_quint/villa_la_quinta10.jpg', '/villas/villa_la_quint/villa_la_quinta11.jpg',],
             beds: 7,
             bathTube: 5,
             guests: 14,
@@ -66,7 +66,7 @@ const Villas = () => {
         {
             name: 'Villa Esko',
             price: '8,000€/week',
-            images: ['/villas/villa_esko/villa_esko1.jpg', '/villas/villa_esko/villa_esko2.jpg', '/villas/villa_esko/villa_esko3.jpg', '/villas/villa_esko/villa_esko4.jpg', '/villas/villa_esko/villa_esko1.jpg',],
+            images: ['/villas/villa_esko/villa_esko1.jpg', '/villas/villa_esko/villa_esko2.jpg', '/villas/villa_esko/villa_esko3.jpg', '/villas/villa_esko/villa_esko4.jpg', '/villas/villa_esko/villa_esko5.jpg', '/villas/villa_esko/villa_esko6.jpg', '/villas/villa_esko/villa_esko7.jpg', '/villas/villa_esko/villa_esko8.jpg', '/villas/villa_esko/villa_esko9.jpg', '/villas/villa_esko/villa_esko10.jpg',],
             beds: 7,
             bathTube: 5,
             guests: 14,
@@ -80,7 +80,7 @@ const Villas = () => {
         {
             name: 'Villa Fiona',
             price: '8,000€/week',
-            images: ['/villas/villa_fiona/villa_fiona1.jpg', '/villas/villa_fiona/villa_fiona2.jpg', '/villas/villa_fiona/villa_fiona3.jpg', '/villas/villa_fiona/villa_fiona4.jpg', '/villas/villa_fiona/villa_fiona5.jpg',],
+            images: ['/villas/villa_fiona/villa_fiona1.jpg', '/villas/villa_fiona/villa_fiona2.jpg', '/villas/villa_fiona/villa_fiona3.jpg', '/villas/villa_fiona/villa_fiona4.jpg', '/villas/villa_fiona/villa_fiona5.jpg', '/villas/villa_fiona/villa_fiona6.jpg', '/villas/villa_fiona/villa_fiona7.jpg', '/villas/villa_fiona/villa_fiona8.jpg', '/villas/villa_fiona/villa_fiona9.jpg', '/villas/villa_fiona/villa_fiona10.jpg',],
             beds: 4,
             bathTube: 4,
             guests: 8,
@@ -96,7 +96,7 @@ const Villas = () => {
         {
             name: 'Villa Benna',
             price: '10,000€/week',
-            images: ['/villas/villa_benna/villa_benna1.jpg', '/villas/villa_benna/villa_benna2.jpg', '/villas/villa_benna/villa_benna3.jpg', '/villas/villa_benna/villa_benna4.jpg', '/villas/villa_benna/villa_benna5.jpg',],
+            images: ['/villas/villa_benna/villa_benna1.jpg', '/villas/villa_benna/villa_benna2.jpg', '/villas/villa_benna/villa_benna3.jpg', '/villas/villa_benna/villa_benna4.jpg', '/villas/villa_benna/villa_benna5.jpg', '/villas/villa_benna/villa_benna6.jpg', '/villas/villa_benna/villa_benna7.jpg',],
             beds: 5,
             bathTube: 5,
             guests: 8,
@@ -107,7 +107,7 @@ const Villas = () => {
         {
             name: 'VILLA GUDAL',
             price: '7,000€/week',
-            images: ['/villas/villa_gudal/villa_gudal1.jpg', '/villas/villa_gudal/villa_gudal2.jpg', '/villas/villa_gudal/villa_gudal3.jpg', '/villas/villa_gudal/villa_gudal4.jpg', '/villas/villa_gudal/villa_gudal5.jpg',],
+            images: ['/villas/villa_gudal/villa_gudal1.jpg', '/villas/villa_gudal/villa_gudal2.jpg', '/villas/villa_gudal/villa_gudal3.jpg', '/villas/villa_gudal/villa_gudal4.jpg', '/villas/villa_gudal/villa_gudal5.jpg', '/villas/villa_gudal/villa_gudal6.jpg', '/villas/villa_gudal/villa_gudal7.jpg', '/villas/villa_gudal/villa_gudal8.jpg', '/villas/villa_gudal/villa_gudal9.jpg', '/villas/villa_gudal/villa_gudal10.jpg',],
             beds: 5,
             bathTube: 5,
             guests: 8,
@@ -118,7 +118,7 @@ const Villas = () => {
         {
             name: 'VILLAPB',
             price: '10,000€/week',
-            images: ['/villas/villapb/villapb1.jpg', '/villas/villapb/villapb2.jpg', '/villas/villapb/villapb3.jpg', '/villas/villapb/villapb4.jpg', '/villas/villapb/villapb5.jpg',],
+            images: ['/villas/villapb/villapb1.jpg', '/villas/villapb/villapb2.jpg', '/villas/villapb/villapb3.jpg', '/villas/villapb/villapb4.jpg', '/villas/villapb/villapb5.jpg', '/villas/villapb/villapb6.jpg', '/villas/villapb/villapb7.jpg', '/villas/villapb/villapb8.jpg', '/villas/villapb/villapb9.jpg',],
             beds: 5,
             bathTube: 5,
             guests: 8,
@@ -129,7 +129,7 @@ const Villas = () => {
         {
             name: 'Villa Albornoz',
             price: '5,000€/week',
-            images: ['/villas/villa_albornoz/villa_albornoz1.jpg', '/villas/villa_albornoz/villa_albornoz2.jpg', '/villas/villa_albornoz/villa_albornoz3.jpg', '/villas/villa_albornoz/villa_albornoz4.jpg', '/villas/villa_albornoz/villa_albornoz5.jpg', '/villas/villa_albornoz/villa_albornoz6.jpg', '/villas/villa_albornoz/villa_albornoz8.jpg'],
+            images: ['/villas/villa_albornoz/villa_albornoz1.jpg', '/villas/villa_albornoz/villa_albornoz2.jpg', '/villas/villa_albornoz/villa_albornoz3.jpg', '/villas/villa_albornoz/villa_albornoz4.jpg', '/villas/villa_albornoz/villa_albornoz5.jpg', '/villas/villa_albornoz/villa_albornoz6.jpg', '/villas/villa_albornoz/villa_albornoz8.jpg', '/villas/villa_albornoz/villa_albornoz9.jpg', '/villas/villa_albornoz/villa_albornoz11.jpg'],
             beds: 4,
             bathTube: 3,
             guests: 8,
@@ -141,7 +141,7 @@ const Villas = () => {
             name: 'Villa Aqua',
             price: '12,000€/week',
 
-            images: ['/villas/aqua/aqua1.jpg', '/villas/aqua/aqua2.jpg', '/villas/aqua/aqua3.jpg', '/villas/aqua/aqua4.jpg', '/villas/aqua/aqua5.jpg',],
+            images: ['/villas/aqua/aqua1.jpg', '/villas/aqua/aqua2.jpg', '/villas/aqua/aqua3.jpg', '/villas/aqua/aqua4.jpg', '/villas/aqua/aqua5.jpg', '/villas/aqua/aqua6.jpg', '/villas/aqua/aqua7.jpg', '/villas/aqua/aqua8.jpg', '/villas/aqua/aqua9.jpg', '/villas/aqua/aqua10.jpg',],
             beds: 4,
             bathTube: 4,
             guests: 8,
@@ -165,7 +165,7 @@ const Villas = () => {
             name: 'Villa Viera',
             price: '14,000€/week',
 
-            images: ['/villas/viera/viera1.jpg', '/villas/viera/viera2.jpg', '/villas/viera/viera3.jpg', '/villas/viera/viera4.jpg', '/villas/viera/viera5.jpg',],
+            images: ['/villas/viera/viera1.jpg', '/villas/viera/viera2.jpg', '/villas/viera/viera3.jpg', '/villas/viera/viera4.jpg', '/villas/viera/viera5.jpg', '/villas/viera/viera6.jpg', '/villas/viera/viera7.jpg', '/villas/viera/viera8.jpg', '/villas/viera/viera9.jpg', '/villas/viera/viera10.jpg',],
             beds: 6,
             bathTube: 6,
             guests: 8,
