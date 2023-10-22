@@ -211,6 +211,8 @@ const BookYacht = () => {
                                 <button onClick={() => setSelectedSection('features')} className='px-2 border lg:px-8 py-2 text-base lg:text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Features</button>
                                 <button onClick={() => setSelectedSection('included')} className='px-2 border lg:px-8 py-2 text-base lg:text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Included</button>
                                 <button onClick={() => setSelectedSection('pricing')} className='px-2 border lg:px-8 py-2 text-base lg:text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Pricing</button>
+                                {selectedYacht.pdf && < Link href={selectedYacht.pdf} target='_blank' className='px-2 border lg:px-8 py-2 text-base lg:text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >More Details</Link>}
+
                             </div>
                             <div className='overflow-hidden'>
                                 {

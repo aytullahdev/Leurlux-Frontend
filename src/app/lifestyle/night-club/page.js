@@ -18,10 +18,17 @@ const NightClubs = () => {
             name: 'MIRAGE | MARBELLA',
             description: `An experience like never before, bringing together the industries finest entertainment. World renowned DJ's, international artists, leading promotions, events and in-house visceral performances, delivering the highest levels of service.`,
             images: [
-                "https://static.wixstatic.com/media/c5bd4d_50a316b4d0c44394b0cd971e6594a2db~mv2_d_5472_3648_s_4_2.jpg/v1/fill/w_960,h_711,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c5bd4d_50a316b4d0c44394b0cd971e6594a2db~mv2_d_5472_3648_s_4_2.jpg",
-                "https://static.wixstatic.com/media/c5bd4d_284b3ccba6af4652bf071a6d98531171~mv2.jpg/v1/fill/w_960,h_702,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c5bd4d_284b3ccba6af4652bf071a6d98531171~mv2.jpg",
-                "https://static.wixstatic.com/media/c5bd4d_3ba1ba908c4945c6aa2d3168fe1a8303~mv2.jpg/v1/fill/w_960,h_702,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c5bd4d_3ba1ba908c4945c6aa2d3168fe1a8303~mv2.jpg",
-                "https://static.wixstatic.com/media/c5bd4d_ed61efeacf95469986e345928206d12a~mv2.jpg/v1/fill/w_960,h_686,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c5bd4d_ed61efeacf95469986e345928206d12a~mv2.jpg",
+                '/nightclubs/mirage/mirage7.jpg',
+                '/nightclubs/mirage/mirage8.jpg',
+                '/nightclubs/mirage/mirage9.jpg',
+                '/nightclubs/mirage/mirage10.jpg',
+                '/nightclubs/mirage/mirage1.webp',
+                '/nightclubs/mirage/mirage2.webp',
+                '/nightclubs/mirage/mirage3.webp',
+                '/nightclubs/mirage/mirage4.jpg',
+                '/nightclubs/mirage/mirage5.jpg',
+                '/nightclubs/mirage/mirage6.jpg',
+
             ]
         },
         {
@@ -30,7 +37,10 @@ const NightClubs = () => {
             images: [
                 '/nightclubs/momento/momento1.jpeg',
                 '/nightclubs/momento/momento2.jpeg',
-                '/nightclubs/momento/momento3.jpeg'
+                '/nightclubs/momento/momento4.jpg',
+                '/nightclubs/momento/momento5.jpg',
+                '/nightclubs/momento/momento6.jpg',
+
             ]
         },
         {
@@ -39,7 +49,10 @@ const NightClubs = () => {
             images: [
                 '/nightclubs/tibubanus/tibubanus1.webp',
                 '/nightclubs/tibubanus/tibubanus2.jpeg',
-                '/nightclubs/tibubanus/tibubanus3.jpeg'
+                '/nightclubs/tibubanus/tibubanus3.jpeg',
+                "https://tibubanus.com/wp-content/uploads/2022/06/tibu10.jpg",
+                "https://tibubanus.com/wp-content/uploads/2022/06/tibu6.jpg",
+                "https://tibubanus.com/wp-content/uploads/2022/06/5bubble.jpg",
             ]
         },
         {
@@ -61,14 +74,16 @@ const NightClubs = () => {
             description: `TIBU will entertain you with the very best music and live performances from the top DJS and live acts from around the globe. TIBU nightclub boasts a huge open-air terrace, to party the night away beneath the stars, plus dine at our restaurant to start you evening, ending with an amazing inside nightclub, TIBU is a must visit for your stay in Marbella.`,
             images: [
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-HOME.jpg",
-                "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-VIP-BW-2.jpg",
-                "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-NIGHTCLUB-683x1024.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-GALLERY-2-1024x683.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/03/DREAMERS-MARBELLA-14-1024x683.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-GALLERY-5-1024x683.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-GALLERY-1024x683.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-GALLERY-3-1024x683.jpg",
                 "https://dreamersmarbella.club/wp-content/uploads/2023/06/DREAMERS-MARBELLA-GALLERY-4-1024x683.jpg",
+                "https://olivia-valere.com/wp-content/uploads/2023/05/CED0101-Pano-copia.jpg",
+                "https://olivia-valere.com/wp-content/uploads/2023/05/4I9A0562.jpg",
+                "https://olivia-valere.com/wp-content/uploads/2023/05/olivia-valere-club-3.jpg",
+                "https://olivia-valere.com/wp-content/uploads/2023/05/4I9A0562-768x512.jpg",
             ]
         },
         {

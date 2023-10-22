@@ -275,7 +275,17 @@ import ArrowDown from '../../components/resueable/ArrowDown';
 const yachts = [
     {
         "name": "PORTOFINO 46 ZERO",
-        "images": ['https://emeraldyachtcharter.com/cdn/shop/products/220419_SCI_PORTOFINO_46_MK_DRONE_48_LOW_RES.jpg?v=1681397476&width=1426', 'https://emeraldyachtcharter.com/cdn/shop/products/220419_SCI_PORTOFINO_46_MK_DRONE_23_LOW_RES.jpg?v=1681397476&width=1426'],
+        "pdf": '/yachts/46_portofino/46_portofino.pdf',
+        "images": [
+            '/yachts/46_portofino/0.jpg',
+            '/yachts/46_portofino/1.jpg',
+            '/yachts/46_portofino/2.jpg',
+            '/yachts/46_portofino/3.jpg',
+            '/yachts/46_portofino/4.jpg',
+            '/yachts/46_portofino/6.jpg',
+            '/yachts/46_portofino/7.jpg',
+
+        ],
         "specs": {
             "capacity": "9 + skipper",
             "cabins": "1 double, 1 twin",
@@ -343,7 +353,16 @@ const yachts = [
     },
     {
         "name": "SUNSEEKER PREDATOR 56",
-        "images": ['https://photos.inautia.com/barcosOcasion/6/2/1/9/sunseeker-predator-56-ht-28158030152954524951674856494548x.jpg'],
+        "pdf": '/yachts/56_sunseekerpredator/56_sunseekerpredator.pdf',
+        "images": [
+            '/yachts/56_sunseekerpredator/0.jpg',
+            '/yachts/56_sunseekerpredator/1.jpg',
+            '/yachts/56_sunseekerpredator/2.jpg',
+            '/yachts/56_sunseekerpredator/3.jpg',
+            '/yachts/56_sunseekerpredator/4.jpg',
+            '/yachts/56_sunseekerpredator/6.jpg',
+            '/yachts/56_sunseekerpredator/7.jpg',
+        ],
         "specs": {
             "capacity": "11 + Skipper",
             "cabins": "2",
@@ -413,7 +432,16 @@ const yachts = [
     },
     {
         "name": "PRINCESS V58 VIKING",
-        "images": ['https://imageresizer.yachtsbt.com/boats/611a1a2f450792105c3f2320/611a1c5d24a0d703854405f6.jpg?method=crop&width=1200&height=630&format=jpeg'],
+        "images": ['/yachts/58_princessv58_viking/img0.jpg',
+            '/yachts/58_princessv58_viking/img1.jpg',
+            '/yachts/58_princessv58_viking/img2.jpg',
+            '/yachts/58_princessv58_viking/img3.jpg',
+            '/yachts/58_princessv58_viking/img4.jpg',
+            '/yachts/58_princessv58_viking/img5.jpg',
+            '/yachts/58_princessv58_viking/img7.jpg',
+        ],
+        "pdf": '/yachts/58_princessv58_viking/58_princessv58_viking.pdf',
+
         "specs": {
             "capacity": "12 + 2 crew",
             "cabins": "2 double, 1 twin",
@@ -483,7 +511,15 @@ const yachts = [
     },
     {
         "name": "BAIA AZZURRA 63 GOLD DIGGER",
-        "images": ['https://www.charterenibiza.com/wp-content/uploads/210803_MK_SMARTCHARTER_LOW-4.jpg'],
+        "images": ['/yachts/63_baiaazzurra/0.jpg',
+            '/yachts/63_baiaazzurra/1.jpg',
+            '/yachts/63_baiaazzurra/2.jpg',
+            '/yachts/63_baiaazzurra/3.jpg',
+            '/yachts/63_baiaazzurra/4.jpg',
+            '/yachts/63_baiaazzurra/6.jpg',
+            '/yachts/63_baiaazzurra/7.jpg',
+        ],
+        "pdf": '/yachts/63_baiaazzurra/63_baiaazzurra.pdf',
         "specs": {
             "capacity": "10 + 2 crew",
             "cabins": "1 double, 2 twin",
@@ -567,7 +603,15 @@ const yachts = [
     },
     {
         "name": "MANGUSTA 80 HAPPY HOUR",
-        "images": ['https://images.boatsgroup.com/images/1/56/60/6685660_20180823124239142_1_XLARGE.jpg'],
+        "pdf": '/yachts/80_mangusta/80_mangusta.pdf',
+        "images": ['/yachts/80_mangusta/0.jpg',
+            '/yachts/80_mangusta/1.jpg',
+            '/yachts/80_mangusta/2.jpg',
+            '/yachts/80_mangusta/3.jpg',
+            '/yachts/80_mangusta/4.jpg',
+            '/yachts/80_mangusta/5.jpg',
+            '/yachts/80_mangusta/7.jpg',
+            '/yachts/80_mangusta/8.jpg',],
         "specs": {
             "capacity": "12 + 2 crew",
             "cabins": "2 double, 1 twin",
