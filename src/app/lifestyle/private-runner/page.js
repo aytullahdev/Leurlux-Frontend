@@ -1,10 +1,8 @@
 'use client'
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
-import { toast } from "sonner";
-import axios from "axios";
 import { useRouter } from 'next/navigation';
-import useGlobalContext from '@/hooks/useGlobalContext';
+import React, { useEffect, useState } from 'react';
+import ArrowDown from '@/components/resueable/ArrowDown';
 const BookingFormFor = () => {
     const router = useRouter();
 
@@ -200,9 +198,76 @@ const PrivateRunner = () => {
         </div>
     )
 }
+const PrivateRunnerHeroSection = () => {
+    return (
+        <div className='lg:py-2'>
+
+            <div className='relative w-full '>
+                <div className="relative h-[500px] lg:h-screen">
+                    <div className="w-full h-full object-cover">
+                        {/* <source src="./yacht.mp4" type="video/mp4" /> */}
+                        <img src='/privaterunner.webp' className='w-full h-full' />
+
+                    </div>
+                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
+
+                        <div>
+                            <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2 '>
+                                Introducing <span style={{ color: 'rgb(193, 182, 134)' }}>LEURLUX</span> Private Runner
+
+                            </h1>
+                            <p className='py-5 text-xl font-italian lg:text-4xl '>
+                                {`At LeurLux, we take pride in setting new standards in concierge services right here in Marbella. We are excited to introduce a unique offering exclusively for our esteemed clients, The LeurLux Private Runner.`}
+                            </p>
+                            {/* <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>
+                                MARBELLA
+                            </p> */}
+                            {/* <div className='my-10'>
+                                <div class="animate-bounce flex justify-center items-center ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                </div>
+                            </div> */}
+                        </div>
+                        <Link href="#privaterunner">
+                            <ArrowDown />
+                        </Link>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id='privaterunner' className='grid grid-cols-1 lg:grid-cols-1'>
+                <div className='flex flex-col  text-justify ' >
+                    <p className='lg:text-3xl p-5 lg:p-10 font-italian bg-white shadow-sm border'>
+                        {` Our Private Runner service empowers our clients with unparalleled convenience, allowing them to have their desired items delivered to any location within Marbella. Whether it's a luxury handbag, a rental supercar, groceries shopping, a delectable takeaway, or even a crucial item left behind in your holiday residence, our dedicated Private Runner is at your service to swiftly retrieve and deliver it to you.`}
+                    </p>
+                </div>
+
+            </div>
+            <div className=' py-10'>
+                <div className='font-italian lg:text-5xl  px-4 lg:px-0 lg:py-10'>
+                    At LeurLux, our mission is to simplify and enhance your lifestyle, making every aspect of it more comfortable and enjoyable. We are your trusted partner for all things luxurious and convenient.
+
+                </div>
+                <div className='grid grid-cols-1 lg:grid-cols-2 justify-start items-center'>
+                    <div className='p-5 lg:p-10 flex flex-col gap-5'>
+
+                        <img src='/privaterunner.webp' className=' h-[300px] lg:h-[600px] w-full rounded-lg' />
+                        <h1 className='lg:text-2xl font-italian font-bold text-center'>At LeurLux, our mission is to simplify and enhance your lifestyle, making every aspect of it more comfortable and enjoyable. We are your trusted partner for all things luxurious and convenient.
+                        </h1>
+                    </div>
+                    <PrivateRunner />
+                </div>
+            </div>
+        </div>
+    )
+}
 const page = () => {
     return (
-        <PrivateRunner />
+        <PrivateRunnerHeroSection />
     );
 };
 
