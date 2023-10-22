@@ -25,7 +25,7 @@ const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const cardRef = useRef(null);
     return (
-        <div className=' flex fixed top-0 flex-row justify-between w-full  z-50 bg-black px-10 py-5 items-center'>
+        <div className=' flex fixed top-0 flex-row justify-between w-full  z-50 bg-black px-10 py-4 items-center'>
             {/* Logo */}
             <Link href="/">
                 <img src={require('@/assets/images/logo.png').default.src} className='w-40' />
