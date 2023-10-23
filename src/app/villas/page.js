@@ -28,7 +28,7 @@ const Villa = ({ villa }) => {
                 <div>
                     <p className='uppercase font-black mt-5 font-italian lg:text-2xl'>{villa?.name}</p>
                     <p className='py-2'>
-                        <span className='font-thin'>Price from {villa?.price}</span>
+                        <span className='font-thin'>Price from {villa?.price}€/week</span>
                     </p>
                 </div>
                 <div className=''>
@@ -45,25 +45,25 @@ const Villas = () => {
         return {
             name: villa.attributes.name, price: villa.attributes.price, images: villa.attributes.images.data.map((singelImage) => {
                 return `${singelImage.attributes.url}`
-            }), details: villa.attributes.details, specifications: villa.attributes.specifications
+            }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf
         }
     }
-    const villaCollection = [
-        {
-            name: 'VILLA LA QUINTA',
-            price: '12,000€/week',
-            images: ['/villas/villa_la_quint/villa_la_quinta1.jpg', '/villas/villa_la_quint/villa_la_quinta2.jpg', '/villas/villa_la_quint/villa_la_quinta3.jpg', '/villas/villa_la_quint/villa_la_quinta4.jpg', '/villas/villa_la_quint/villa_la_quinta5.jpg', '/villas/villa_la_quint/villa_la_quinta6.jpg', '/villas/villa_la_quint/villa_la_quinta7.jpg', '/villas/villa_la_quint/villa_la_quinta8.jpg', '/villas/villa_la_quint/villa_la_quinta9.jpg', '/villas/villa_la_quint/villa_la_quinta10.jpg', '/villas/villa_la_quint/villa_la_quinta11.jpg',],
-            beds: 7,
-            bathTube: 5,
-            guests: 14,
-            details: `Welcome to this newly built Villa with amazing architecture. Enjoy privacy in the luxurious El Herrojo
-            and endure in this extravagant white Villa with majestic sea views from the hills. The Villa offers en-
-            suite bedrooms, high glass ceilings for perfect indoor/outdoor living and spacious terraces area with a
-            swimming pool and BBQ`,
-            link: 'https://www.dropbox.com/scl/fo/1zmrxnqgsebem8cb872aw/h?rlkey=0rj6ong8sgmd69crh14bl0kgg&dl=0',
+    // const villaCollection = [
+    //     {
+    //         name: 'VILLA LA QUINTA',
+    //         price: '12,000€/week',
+    //         images: ['/villas/villa_la_quint/villa_la_quinta1.jpg', '/villas/villa_la_quint/villa_la_quinta2.jpg', '/villas/villa_la_quint/villa_la_quinta3.jpg', '/villas/villa_la_quint/villa_la_quinta4.jpg', '/villas/villa_la_quint/villa_la_quinta5.jpg', '/villas/villa_la_quint/villa_la_quinta6.jpg', '/villas/villa_la_quint/villa_la_quinta7.jpg', '/villas/villa_la_quint/villa_la_quinta8.jpg', '/villas/villa_la_quint/villa_la_quinta9.jpg', '/villas/villa_la_quint/villa_la_quinta10.jpg', '/villas/villa_la_quint/villa_la_quinta11.jpg',],
+    //         beds: 7,
+    //         bathTube: 5,
+    //         guests: 14,
+    //         details: `Welcome to this newly built Villa with amazing architecture. Enjoy privacy in the luxurious El Herrojo
+    //         and endure in this extravagant white Villa with majestic sea views from the hills. The Villa offers en-
+    //         suite bedrooms, high glass ceilings for perfect indoor/outdoor living and spacious terraces area with a
+    //         swimming pool and BBQ`,
+    //         link: 'https://www.dropbox.com/scl/fo/1zmrxnqgsebem8cb872aw/h?rlkey=0rj6ong8sgmd69crh14bl0kgg&dl=0',
 
-        }
-    ]
+    //     }
+    // ]
     return (
         <div className=' w-full h-full  px-3 lg:px-10 py-5' id='villas'>
             <div>
