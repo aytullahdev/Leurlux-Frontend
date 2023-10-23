@@ -49,7 +49,7 @@ const Carousel = ({ photos }) => {
                         />
                         <div className="w-full flex my-2 items-start justify-stitems-start">
                             <div className="flex overflow-scroll flex-row justify-start gap-4">
-                                {photos.slice(0, 10).map((photo, index) => (
+                                {photos.slice(0, 20).map((photo, index) => (
 
                                     <img
                                         key={index}
