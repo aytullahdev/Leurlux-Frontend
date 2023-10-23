@@ -1,6 +1,7 @@
 'use client'
 import Button from '@/components/resueable/Button';
 import Carousel from '@/components/resueable/Carousel';
+import useCollection from '@/hooks/useCollection';
 import useGlobalContext from '@/hooks/useGlobalContext';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
@@ -47,29 +48,29 @@ const apartments = [
         area: 443,
         link: 'https://www.dropbox.com/sh/3g62jru2xx372kf/AAB4mfNsU1A6YaiYu0OzQFv9a?dl=0',
         details: ``,
-    amenities: '/apartments/penthouse/amenities.png'
-           },
+        amenities: '/apartments/penthouse/amenities.png'
+    },
     {
-    name: 'Penthouse Aloha',
-    price: 'Price from: 1,500€ / Week',
+        name: 'Penthouse Aloha',
+        price: 'Price from: 1,500€ / Week',
         images: [
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F1x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F2x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F3x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F4x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F5x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F6x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F7x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F8x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F9x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F10x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F11x1400.jpg",
-                "https://ws.icnea.net/img4/E2147/imgs/E1179F12x1400.jpg",
-                    "https://ws.icnea.net/img4/E2147/imgs/E1179F13x1400.jpg",],
-                beds: 2,
-                bathTube: 2,
-                    area: 543,
-       details: `Are you in search for a place that offers the best features, overlooks the whole city, and is close to all the famous restaurants, bars, and even Puerto Banus? Well, look no further! This is the perfect place for you. If you are a fun and an outgoing group, you will surely appreciate the aesthetic of this 2-bedroom penthouse and everything else about it. Including the outdoor BBQ, the pool, and 3 terraces! `,                                                                                    
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F1x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F2x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F3x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F4x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F5x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F6x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F7x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F8x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F9x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F10x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F11x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F12x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1179F13x1400.jpg",],
+        beds: 2,
+        bathTube: 2,
+        area: 543,
+        details: `Are you in search for a place that offers the best features, overlooks the whole city, and is close to all the famous restaurants, bars, and even Puerto Banus? Well, look no further! This is the perfect place for you. If you are a fun and an outgoing group, you will surely appreciate the aesthetic of this 2-bedroom penthouse and everything else about it. Including the outdoor BBQ, the pool, and 3 terraces! `,
         amenities: "/apartments/aloha.png"
     },
     {
@@ -115,7 +116,7 @@ const Apartment = ({ apartment }) => {
                 <div>
                     <p className='uppercase font-black mt-5 font-italian text-2xl'>{apartment?.name}</p>
                     <p className='py-2'>
-                        <span className='font-thin'>{apartment?.price}</span>
+                        <span className='font-thin'>Price From: {apartment?.price}€ / Week</span>
                     </p>
                 </div>
                 <div className=''>
@@ -126,24 +127,41 @@ const Apartment = ({ apartment }) => {
 
     </>
 }
-const page = () => {
+const getObject = (singleObject) => {
+    const backend = `${process.env.NEXT_PUBLIC_API_URL}`
+    return {
+        name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
+            return `${backend}${singleImage.attributes.url}`
+        }), beds: singleObject.attributes.beds,
+        bathTube: singleObject.attributes.bathtub,
+    };
+
+}
+const MainSection = () => {
+    const [collection, setCollection] = useCollection('/api/apartments?populate=*')
+    useEffect(() => {
+        console.log(collection)
+    }, [collection])
     return (
         <div className='px-2 lg:px-10 py-5' id='villas'>
             <div>
                 <h1 className='text-5xl font-italian py-5'>Apartments</h1>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-2  2xl:grid-cols-3 gap-5'>
-                {apartments && apartments.length > 0 ? <>
-                    {        
-                        apartments.map((apartment, indx) => {                                                                            
-                            return <Apartment key={`villa- ${indx}`} apartment={apartment} />
-                        })                              
+                {collection && collection.length > 0 ? <>
+                    {
+                        collection.map((apartment, indx) => {
+                            return <Apartment key={`villa- ${indx}`} apartment={getObject(apartment)} />
+                        })
                     }
                 </> : null}
             </div>
 
         </div>
     );
+}
+const page = () => {
+    return <MainSection />
 };
 
 export default page;

@@ -205,7 +205,7 @@ const BookApartment = () => {
                     <div>
                         <div className='px-10 flex flex-col gap-5'>
                             <h2 className='text-4xl font-italian text-left'>{selectedApartment.name}</h2>
-                            <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>{selectedApartment.price}</span >
+                            <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>Price From: {selectedApartment.price}€ / Week</span >
                         </div>
                         <div className='px-2 lg:px-10 py-5'>
                             {/* <div className='w-full h-full'>
