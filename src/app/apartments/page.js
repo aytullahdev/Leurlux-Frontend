@@ -9,15 +9,23 @@ const apartments = [
         name: 'Puerto Banus',
         price: 'Price from: 2,970€/Week',
         images: [
-            "https://ws.icnea.net/img4/E2147/imgs/E1016F1x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1016F2x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1016F3x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1016F4x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1016F5x1400.jpg",],
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F11x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F40x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F6x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F39x1400.jpg",
+            "https://novumrentals.icnea.net/imgs/E1020F1x700.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F18x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F9x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F43x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F17x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F16x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F10x1400.jpg",
+            "https://ws.icnea.net/img4/E2147/imgs/E1077F7x1400.jpg],",],
         beds: 2,
         bathTube: 2,
         area: 343,
-        details: `Contact Us for more details`
+        amenities: "/apartments/puertobanus_amen.png",
+        details: ``
     },
     {
         name: 'Penthouse in Puerto Banus ',
@@ -26,8 +34,9 @@ const apartments = [
         beds: 2,
         bathTube: 2,
         area: 443,
+        amenities: "/apartments/penthouse/amenities.png",
         link: 'https://drive.google.com/file/d/19Y3qf4b6hFSj0ijFkY70B0HjIlzTy-en/view',
-        details: `Contact Us for more details`
+        details: ``
     },
     {
         name: 'El Paraiso ',
@@ -37,29 +46,31 @@ const apartments = [
         bathTube: 2,
         area: 443,
         link: 'https://www.dropbox.com/sh/3g62jru2xx372kf/AAB4mfNsU1A6YaiYu0OzQFv9a?dl=0',
-        details: `Contact Us for more details`
-    },
+        details: ``,
+    amenities: '/apartments/penthouse/amenities.png'
+           },
     {
-        name: 'Penthouse Aloha',
-        price: 'Price from: 1,500€ / Week',
+    name: 'Penthouse Aloha',
+    price: 'Price from: 1,500€ / Week',
         images: [
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F1x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F2x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F3x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F4x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F5x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F6x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F7x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F8x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F9x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F10x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F11x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F12x1400.jpg",
-            "https://ws.icnea.net/img4/E2147/imgs/E1179F13x1400.jpg",],
-        beds: 2,
-        bathTube: 2,
-        area: 543,
-        details: `Contact Us for more details`
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F1x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F2x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F3x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F4x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F5x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F6x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F7x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F8x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F9x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F10x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F11x1400.jpg",
+                "https://ws.icnea.net/img4/E2147/imgs/E1179F12x1400.jpg",
+                    "https://ws.icnea.net/img4/E2147/imgs/E1179F13x1400.jpg",],
+                beds: 2,
+                bathTube: 2,
+                    area: 543,
+       details: `Are you in search for a place that offers the best features, overlooks the whole city, and is close to all the famous restaurants, bars, and even Puerto Banus? Well, look no further! This is the perfect place for you. If you are a fun and an outgoing group, you will surely appreciate the aesthetic of this 2-bedroom penthouse and everything else about it. Including the outdoor BBQ, the pool, and 3 terraces! `,                                                                                    
+        amenities: "/apartments/aloha.png"
     },
     {
         name: 'Luxury in Nueva Andalucia ',
@@ -80,7 +91,8 @@ const apartments = [
         beds: 3,
         bathTube: 3,
         area: 543,
-        details: `Contact Us for more details`
+        details: `Heaven on Earth is what you will instantly feel as you greet this sunny entertainer’s oasis in the heart of Marbella, a 15-minute walk from iconic beaches and golf courses. Nothing screams fun and solace more than a place that features a tropical outdoor terrace, a private pool, sunbeds and a BBQ. If you are one to appreciate nature, you will surely enjoy the breathtaking mountain views as you take a 15-minute stroll towards the famous harbor of Puerto Banus. The apartment offers everything you need in an extravagant way for a comfortable stay including a fully-equipped designer kitchen, three sumptuous bedrooms, and three ensutite bathrooms.`,
+        amenities: "/apartments/nueva.png"
     }
 ]
 
@@ -122,10 +134,10 @@ const page = () => {
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-2  2xl:grid-cols-3 gap-5'>
                 {apartments && apartments.length > 0 ? <>
-                    {
-                        apartments.map((apartment, indx) => {
+                    {        
+                        apartments.map((apartment, indx) => {                                                                            
                             return <Apartment key={`villa- ${indx}`} apartment={apartment} />
-                        })
+                        })                              
                     }
                 </> : null}
             </div>

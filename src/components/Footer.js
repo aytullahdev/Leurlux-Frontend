@@ -12,8 +12,8 @@ const sections = [
         to: '#services'
     },
     {
-        title: 'About',
-        to: '#about'
+        title: 'About Us',
+        to: '/about-us'
     },
     {
         title: 'Contact',
@@ -21,7 +21,7 @@ const sections = [
     },
     {
         title: 'Terms & Conditions',
-        to: '#terms-condition'
+        to: '/terms-conditions'
     },
     {
         title: 'Privacy Policy',

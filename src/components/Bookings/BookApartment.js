@@ -283,6 +283,9 @@ const BookApartment = () => {
 
                     </div>
                 </div>
+                {selectedApartment?.amenities && <div>
+                    <img className='mx-auto' src={selectedApartment.amenities} />
+                </div>}
             </>
             :
             <div className='justify-center items-center flex flex-row h-full w-full py-20'>
