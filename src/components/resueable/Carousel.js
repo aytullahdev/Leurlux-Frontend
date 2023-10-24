@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-
+import Image from 'next/image'
 const Carousel = ({ photos }) => {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -47,19 +47,25 @@ const Carousel = ({ photos }) => {
                             alt="Main Photo"
                             className="w-full lg:w-full h-[350px] rounded-lg"
                         />
+                        {/* <Image src={photos[activeIndex]} quality={100} width={100} height={100} className="w-full lg:w-full h-[350px] rounded-lg" /> */}
                         <div className="w-full flex my-2 items-start justify-stitems-start">
                             <div className="flex overflow-scroll flex-row justify-start gap-4">
-                                {photos.slice(0, 20).map((photo, index) => (
+                                {photos.slice(0, 20).map((photo, index) => {
 
-                                    <img
-                                        key={index}
-                                        src={photo}
-                                        alt={`Thumbnail ${index}`}
-                                        className={`h-20 w-20 rounded-lg cursor-pointer ${index === activeIndex ? 'border-2 border-blue-500' : ''
-                                            }`}
-                                        onClick={() => changeActivePhoto(index)}
-                                    />
-                                ))}
+                                    // return (<img
+                                    //     key={index}
+                                    //     src={photo}
+                                    //     loading="lazy"
+                                    //     alt={`Thumbnail ${index}`}
+                                    //     className={`h-20 w-20 rounded-lg cursor-pointer ${index === activeIndex ? 'border-2 border-blue-500' : ''
+                                    //         }`}
+                                    //     onClick={() => changeActivePhoto(index)}
+                                    // />)
+                                    return (
+                                        <Image width={80} height={80} quality={100} loading="lazy" key={index} src={photo} alt={`Thumbnail ${index}`} className={`h-20 w-20 rounded-lg cursor-pointer ${index === activeIndex ? 'border-2 border-blue-500' : ''}`} onClick={() => changeActivePhoto(index)} />
+                                    )
+
+                                })}
                             </div>
                         </div>
                     </div>
