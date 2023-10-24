@@ -739,7 +739,7 @@ const Yachts = () => {
     return (
         <div className='lg:py-2'>
             <div className='relative w-full '>
-                <div className="relative h-[700px] lg:h-screen">
+                <div className="relative h-[400px] lg:h-screen">
                     <div className="w-full h-full object-cover">
                         {/* <source src="./yacht.mp4" type="video/mp4" /> */}
                         <img src='/yatchlanding.jpeg' className='w-full h-full' />
@@ -752,7 +752,7 @@ const Yachts = () => {
                             <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2 '>
                                 <span style={{ color: 'rgb(193, 182, 134)' }}>LEURLUX</span>  Yacht Rentals
                             </h1>
-                            <p className='py-5 text-xl font-italian lg:text-4xl '>
+                            <p className='py-5 md:text-xl font-italian lg:text-4xl '>
                                 {`Welcome to LEURLUX Yacht Rentals, where we offer the epitome of luxury and adventure on the open seas. We redefine yacht charters by seamlessly blending opulence, exclusivity, and unparalleled experiences that will set your journey apart.`}
                             </p>
                             {/* <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>
@@ -766,7 +766,7 @@ const Yachts = () => {
                                 </div>
                             </div> */}
                         </div>
-                        <div className='my-10'>
+                        <div className='lg:my-10'>
                             <Link className='px-5  block text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#yachts">Yachts</Link>
                         </div>
                         <div>
