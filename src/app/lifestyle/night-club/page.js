@@ -18,16 +18,17 @@ const NightClubs = () => {
             name: 'MIRAGE | MARBELLA',
             description: `An experience like never before, bringing together the industries finest entertainment. World renowned DJ's, international artists, leading promotions, events and in-house visceral performances, delivering the highest levels of service.`,
             images: [
-                '/nightclubs/mirage/mirage7.jpg',
-                '/nightclubs/mirage/mirage8.jpg',
-                '/nightclubs/mirage/mirage9.jpg',
-                '/nightclubs/mirage/mirage10.jpg',
-                '/nightclubs/mirage/mirage1.webp',
-                '/nightclubs/mirage/mirage2.webp',
-                '/nightclubs/mirage/mirage3.webp',
-                '/nightclubs/mirage/mirage4.jpg',
-                '/nightclubs/mirage/mirage5.jpg',
-                '/nightclubs/mirage/mirage6.jpg',
+
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage7.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage8.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage9.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage10.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage1.webp',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage2.webp',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage3.webp',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage4.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage5.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/mirage6.jpg',
 
             ]
         },
@@ -35,11 +36,11 @@ const NightClubs = () => {
             name: 'MOMENTO | MARBELLA',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
-                '/nightclubs/momento/momento1.jpeg',
-                '/nightclubs/momento/momento2.jpeg',
-                '/nightclubs/momento/momento4.jpg',
-                '/nightclubs/momento/momento5.jpg',
-                '/nightclubs/momento/momento6.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/momento1.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/momento2.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/momento4.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/momento5.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/momento6.jpg',
 
             ]
         },
@@ -47,9 +48,9 @@ const NightClubs = () => {
             name: 'TIBU BANUS',
             description: `TIBU will entertain you with the very best music and live performances from the top DJS and live acts from around the globe. TIBU nightclub boasts a huge open-air terrace, to party the night away beneath the stars, plus dine at our restaurant to start you evening, ending with an amazing inside nightclub, TIBU is a must visit for your stay in Marbella.`,
             images: [
-                '/nightclubs/tibubanus/tibubanus1.webp',
-                '/nightclubs/tibubanus/tibubanus2.jpeg',
-                '/nightclubs/tibubanus/tibubanus3.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/tibubanus1.webp',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/tibubanus2.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/tibubanus3.jpeg',
                 "https://tibubanus.com/wp-content/uploads/2022/06/tibu10.jpg",
                 "https://tibubanus.com/wp-content/uploads/2022/06/tibu6.jpg",
                 "https://tibubanus.com/wp-content/uploads/2022/06/5bubble.jpg",
