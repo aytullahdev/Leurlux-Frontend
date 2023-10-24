@@ -105,7 +105,7 @@ const NightClubs = () => {
     return (
         <div className='py-8 px-2 lg:px-0'>
             <h1 className='text-4xl lg:text-6xl font-italian' >Night <span style={{ color: 'rgb(193, 182, 134)' }}>Clubs</span></h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-5 my-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-5 my-10'>
                 {
                     nightClubs.length ? nightClubs.map((singleClub, indx) => {
                         return (

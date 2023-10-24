@@ -11,7 +11,7 @@ const BeachClub = () => {
 
             It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
             images: [
-                "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
+
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub1.jpg",
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub2.jpg",
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub3.jpg",
@@ -20,6 +20,7 @@ const BeachClub = () => {
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub6.jpg",
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub7.jpg",
                 "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub8.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
 
             ]
         },
@@ -120,7 +121,7 @@ const BeachClub = () => {
     return (
         <div className='py-8 lg:px-0'>
             <h1 className='text-6xl font-italian' >Beach <span style={{ color: 'rgb(193, 182, 134)' }}>Club</span></h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-5 px-3 lg:px-0 my-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-4 lg:gap-5 px-3 lg:px-0 my-10'>
                 {
                     beachclubList.length ? beachclubList.map((singleBeachClub, indx) => {
                         return (
