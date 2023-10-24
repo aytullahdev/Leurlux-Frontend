@@ -131,7 +131,7 @@ const getObject = (singleObject) => {
     const backend = `${process.env.NEXT_PUBLIC_API_URL}`
     return {
         name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
-            return `http://localhost:1337${singleImage.attributes.url}`
+            return `${singleImage.attributes.url}`
         }), beds: singleObject.attributes.beds,
         link: singleObject.attributes.pdf, guests: singleObject.attributes.guests, bedrooms: singleObject.attributes.bedrooms, bathrooms: singleObject.attributes.bathrooms, 'about_penthouse': singleObject.attributes.about_penthouse, 'about_neighborhood': singleObject.attributes.about_neighborhood, others: singleObject.attributes.others, price_tag: singleObject.attributes.price_tag
     };
