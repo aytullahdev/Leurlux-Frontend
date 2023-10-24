@@ -120,7 +120,7 @@ const BeachClub = () => {
     return (
         <div className='py-8 lg:px-0'>
             <h1 className='text-6xl font-italian' >Beach <span style={{ color: 'rgb(193, 182, 134)' }}>Club</span></h1>
-            <div className='grid lg:grid-cols-3 gap-4 lg:gap-5 px-3 lg:px-0 my-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-5 px-3 lg:px-0 my-10'>
                 {
                     beachclubList.length ? beachclubList.map((singleBeachClub, indx) => {
                         return (
