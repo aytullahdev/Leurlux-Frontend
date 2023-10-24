@@ -12,14 +12,14 @@ const BeachClub = () => {
             It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
             images: [
                 "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
-                "/naopoolclub/naopoolclub1.jpg",
-                "/naopoolclub/naopoolclub2.jpg",
-                "/naopoolclub/naopoolclub3.jpg",
-                "/naopoolclub/naopoolclub4.jpg",
-                "/naopoolclub/naopoolclub5.jpg",
-                "/naopoolclub/naopoolclub6.jpg",
-                "/naopoolclub/naopoolclub7.jpg",
-                "/naopoolclub/naopoolclub8.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub1.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub2.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub3.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub4.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub5.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub6.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub7.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub8.jpg",
 
             ]
         },

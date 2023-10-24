@@ -11,23 +11,23 @@ const RestaurantsDinner = () => {
 
             It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
             images: [
-                '/restaurants/moshfunkitchen/moshfunkitchen1.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen2.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen3.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen4.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen5.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen6.jpg',
-                '/restaurants/moshfunkitchen/moshfunkitchen7.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen1.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen2.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen3.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen4.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen5.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen6.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/moshfunkitchen7.jpg',
             ]
         },
         {
             name: 'OCCO RESTAURANT',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
             images: [
-                '/restaurants/occorestaurant/occorestaurant1.jpeg',
-                '/restaurants/occorestaurant/occorestaurant3.jpeg',
-                '/restaurants/occorestaurant/occorestaurant5.jpeg',
-                '/restaurants/occorestaurant/occorestaurant6.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/occorestaurant1.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/occorestaurant3.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/occorestaurant5.jpeg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/occorestaurant6.jpeg',
 
                 "https://scontent-fra3-1.cdninstagram.com/v/t39.30808-6/387760247_18386507617005097_8347950623649327463_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=101&_nc_ohc=pF5ftwZnW08AX-ZCMw7&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_AfBWC0Mi8lYc3DJUDyx_bvPKOKX8Fn7ShxgNwKKSIDg-Ng&oe=653AB3BD&_nc_sid=8b3546",
                 "https://scontent-fra3-1.cdninstagram.com/v/t39.30808-6/391619203_18387789085005097_3688453795857224091_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08&_nc_ht=scontent-fra3-1.cdninstagram.com&_nc_cat=101&_nc_ohc=pRU8xnLBAMcAX_02lbU&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_AfDiP9syxPfAhd6k063ao0T2ADVOiYpdLY8HHfaqnH-9Ug&oe=6539BC9A&_nc_sid=8b3546",
@@ -46,12 +46,12 @@ const RestaurantsDinner = () => {
             nature and fresh-thinking gastronomy.This multifaceted gastronomic concept offers a place in Marbella where you can relax, dine, meet, socialise, enjoy a cocktail and be inspired by quality food made with care. A way of life that adds another dimension to breakfast, lunch, dinner and drinks in Marbella. BREATHE OPENING HOURS:
             Every Day from 18:00 `,
             images: [
-                '/restaurants/breathe/breath1.jpg',
-                '/restaurants/breathe/breath2.jpg',
-                '/restaurants/breathe/breath3.jpg',
-                '/restaurants/breathe/breath4.jpg',
-                '/restaurants/breathe/breath5.jpg',
-                '/restaurants/breathe/breath6.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath1.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath2.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath3.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath4.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath5.jpg',
+                'https://leurlux.blr1.cdn.digitaloceanspaces.com/breath6.jpg',
             ]
         },
         {
