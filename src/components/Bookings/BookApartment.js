@@ -296,7 +296,7 @@ const BookApartment = () => {
                         {
                             selectedApartment.about_penthouse && (
                                 <div>
-                                    <h1 className='text-4xl font-italian'>The Penthouse</h1>
+                                    <h1 className='text-4xl font-italian'>About</h1>
                                     <p className='py-5 text-justify font-italian'>
                                         {selectedApartment.about_penthouse}
                                     </p>

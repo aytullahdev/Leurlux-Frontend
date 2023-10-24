@@ -737,7 +737,7 @@ const Yachts = () => {
         }
     }, [])
     return (
-        <div className='lg:py-2'>
+        <div className='lg:py-0'>
             <div className='relative w-full '>
                 <div className="relative h-[400px] lg:h-screen">
                     <div className="w-full h-full object-cover">
@@ -746,7 +746,7 @@ const Yachts = () => {
 
                     </div>
                     <div className="absolute inset-0 bg-black opacity-70"></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-2">
 
                         <div>
                             <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2 '>
