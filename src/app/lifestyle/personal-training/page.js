@@ -175,7 +175,7 @@ const TrainingPricing = () => {
 const PersonalTrainingVideos = () => {
     const personalTrainingVideos = [
         '/personal-training/personal-training.mp4',
-        '/personal-training/personal-training1.mp4',
+        '/personal-training/player.mp4',
         '/personal-training/playertrain.mp4'
     ];
     const [isPlaying, setIsPlaying] = useState(Array(personalTrainingVideos.length).fill(false));
@@ -238,7 +238,7 @@ const PersonalTraining = () => {
                         muted
                         className='w-full h-full object-cover'
                     >
-                        <source src={'/personal-training/protrain1.mp4'} type="video/mp4" />
+                        <source src={'/personal-training/training.mp4'} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                     <div class="absolute inset-0 bg-black opacity-50"></div>

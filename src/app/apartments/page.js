@@ -116,7 +116,7 @@ const Apartment = ({ apartment }) => {
                 <div>
                     <p className='uppercase font-black mt-5 font-italian text-2xl'>{apartment?.name}</p>
                     <p className='py-2'>
-                        <span className='font-thin'>Price From: {apartment?.price}€ / Week</span>
+                        <span className='font-thin'>Price From: {apartment?.price} {apartment?.price_tag}</span>
                     </p>
                 </div>
                 <div className=''>
@@ -131,9 +131,9 @@ const getObject = (singleObject) => {
     const backend = `${process.env.NEXT_PUBLIC_API_URL}`
     return {
         name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
-            return `${singleImage.attributes.url}`
+            return `http://localhost:1337${singleImage.attributes.url}`
         }), beds: singleObject.attributes.beds,
-        bathTube: singleObject.attributes.bathtub,
+        link: singleObject.attributes.pdf, guests: singleObject.attributes.guests, bedrooms: singleObject.attributes.bedrooms, bathrooms: singleObject.attributes.bathrooms, 'about_penthouse': singleObject.attributes.about_penthouse, 'about_neighborhood': singleObject.attributes.about_neighborhood, others: singleObject.attributes.others, price_tag: singleObject.attributes.price_tag
     };
 
 }

@@ -68,7 +68,7 @@ const BookingFormFor = () => {
 
                     setFormData({
                         apartmentname: selectedApartment.name,
-                        price: selectedApartment.price,
+                        price: selectedApartment.price + selectedApartment.price_tag,
                         arrival: '',
                         departure: '',
                         guests: 1,
@@ -205,7 +205,7 @@ const BookApartment = () => {
                     <div>
                         <div className='px-10 flex flex-col gap-5'>
                             <h2 className='text-4xl font-italian text-left'>{selectedApartment.name}</h2>
-                            <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>Price From: {selectedApartment.price}€ / Week</span >
+                            <span className='text-base  font-thin text-start inline py-1 px-2 w-52 bg-slate-200'>Price From: {selectedApartment.price} {selectedApartment.price_tag}</span >
                         </div>
                         <div className='px-2 lg:px-10 py-5'>
                             {/* <div className='w-full h-full'>
@@ -251,14 +251,24 @@ const BookApartment = () => {
                                 {
                                     selectedSection === 'description' && <>
                                         <div className='bg-white border p-5'>
-                                            <ul className='px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
+                                            <ul className='lg:px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bed.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedApartment.beds}</span>
+
+                                                    <span className='text-xl font-normal'>{selectedApartment.guests}</span>
+                                                    Guests
                                                 </li>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bath-tube.svg' className='w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedApartment.bathTube}</span>
+
+                                                    <span className='text-xl font-normal'>{selectedApartment.bedrooms}</span>
+                                                    Bedrooms
+                                                </li>
+                                                <li className='flex flex-row gap-5 justify-center items-center'>
+                                                    <span className='text-xl font-normal'>{selectedApartment.beds}</span>
+                                                    Beds
+                                                </li>
+                                                <li className='flex flex-row gap-5 justify-center items-center'>
+                                                    <span className='text-xl font-normal'>{selectedApartment.bathrooms}</span>
+                                                    Bathrooms
                                                 </li>
                                                 {selectedApartment.link && <li >
                                                     <Link className='font-italian font-bold flex flex-row  text-xs ' href={selectedApartment.link} target='_blank'> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -281,6 +291,34 @@ const BookApartment = () => {
                     <div>
                         <BookingFormFor />
 
+                    </div>
+                    <div className='lg:px-0 px-3'>
+                        {
+                            selectedApartment.about_penthouse && (
+                                <div>
+                                    <h1 className='text-4xl font-italian'>The Penthouse</h1>
+                                    <p className='py-5 text-justify font-italian'>
+                                        {selectedApartment.about_penthouse}
+                                    </p>
+
+                                </div>
+                            )
+
+                        }
+                    </div>
+                    <div className='lg:px-0 px-3'>
+                        {
+                            selectedApartment.about_neighborhood && (
+                                <div>
+                                    <h1 className='text-4xl font-italian'>The Neighborhood</h1>
+                                    <p className='py-5 text-justify font-italian'>
+                                        {selectedApartment.about_neighborhood}
+                                    </p>
+
+                                </div>
+                            )
+
+                        }
                     </div>
                 </div>
                 {selectedApartment?.amenities && <div>
