@@ -28,7 +28,7 @@ const Villa = ({ villa }) => {
                 <div>
                     <p className='uppercase font-black mt-5 font-italian lg:text-2xl'>{villa?.name}</p>
                     <p className='py-2'>
-                        <span className='font-thin'>Price from {villa?.price}€/week</span>
+                        <span className='font-thin'>Price from {villa?.price}{villa?.price_tag}</span>
                     </p>
                 </div>
                 <div className=''>
@@ -45,7 +45,7 @@ const Villas = () => {
         return {
             name: villa.attributes.name, price: villa.attributes.price, images: villa.attributes.images.data.map((singelImage) => {
                 return `${singelImage.attributes.url}`
-            }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf
+            }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf, guests: villa.attributes.guests, bedrooms: villa.attributes.bedrooms, bathrooms: villa.attributes.bathrooms, 'about_villa': villa.attributes.about_villa, 'about_neighborhood': villa.attributes.about_neighborhood, others: villa.attributes.others, price_tag: villa.attributes.price_tag
         }
     }
     // const villaCollection = [

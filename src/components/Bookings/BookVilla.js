@@ -11,7 +11,7 @@ const BookingFormFor = () => {
     const router = useRouter()
     const [formData, setFormData] = useState({
         villaName: selectedVilla.name,
-        price: selectedVilla.price,
+        price: selectedVilla.price + selectedVilla.price_tag,
         arrival: '',
         departure: '',
         guests: 1,
@@ -251,12 +251,22 @@ const BookVilla = () => {
                                             <h3 className='lg:text-3xl font-italian'>Specifications:</h3>
                                             <ul className='lg:px-10 py-5 text-xl font-thin flex flex-row flex-wrap gap-10'>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bed.svg' className='w-8 lg:w-12 lg:h-12' />
-                                                    <span className='text-xl font-normal'>{selectedVilla.beds}</span>
+
+                                                    <span className='text-xl font-normal'>{selectedVilla.guests}</span>
+                                                    Guests
                                                 </li>
                                                 <li className='flex flex-row gap-5 justify-center items-center'>
-                                                    <img src='/bath-tube.svg' className='w-8 lg:w-12 h-12' />
-                                                    <span className='text-xl font-normal'>{selectedVilla.bathTube}</span>
+
+                                                    <span className='text-xl font-normal'>{selectedVilla.bedrooms}</span>
+                                                    Bedrooms
+                                                </li>
+                                                <li className='flex flex-row gap-5 justify-center items-center'>
+                                                    <span className='text-xl font-normal'>{selectedVilla.beds}</span>
+                                                    Beds
+                                                </li>
+                                                <li className='flex flex-row gap-5 justify-center items-center'>
+                                                    <span className='text-xl font-normal'>{selectedVilla.bathrooms}</span>
+                                                    Bathrooms
                                                 </li>
                                                 {selectedVilla.link && <li >
                                                     <Link className='font-italian font-bold flex flex-row  text-xs ' href={selectedVilla.link} target='_blank'> <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -285,6 +295,34 @@ const BookVilla = () => {
                     <div>
                         <BookingFormFor />
 
+                    </div>
+                    <div className='lg:px-0 px-3'>
+                        {
+                            selectedVilla.about_villa && (
+                                <div>
+                                    <h1 className='text-4xl font-italian'>The Villa</h1>
+                                    <p className='py-5 text-justify font-italian'>
+                                        {selectedVilla.about_villa}
+                                    </p>
+
+                                </div>
+                            )
+
+                        }
+                    </div>
+                    <div className='lg:px-0 px-3'>
+                        {
+                            selectedVilla.about_neighborhood && (
+                                <div>
+                                    <h1 className='text-4xl font-italian'>The Neighborhood</h1>
+                                    <p className='py-5 text-justify font-italian'>
+                                        {selectedVilla.about_neighborhood}
+                                    </p>
+
+                                </div>
+                            )
+
+                        }
                     </div>
                 </div>
             </>
