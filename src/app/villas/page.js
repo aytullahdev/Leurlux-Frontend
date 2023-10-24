@@ -69,7 +69,7 @@ const Villas = () => {
             <div>
                 <h1 className='text-5xl font-italian py-5'>Villas</h1>
             </div>
-            <div className='grid lg:grid-cols-3 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 gap-5'>
                 {collection && collection.length > 0 ? <>
                     {
                         collection.map((villa, indx) => {

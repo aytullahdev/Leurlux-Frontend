@@ -640,7 +640,7 @@ const page = () => {
             <div>
                 <h1 className='text-5xl font-italian py-5'>Hotels</h1>
             </div>
-            <div className='grid w-full  lg:grid-cols-3 gap-5'>
+            <div className='grid w-full grid-cols-1 md:grid-cols-2  2xl:grid-cols-3 gap-5'>
                 {hotels && hotels.length > 0 ? <>
                     {
                         hotels.map((hotel, indx) => {
