@@ -169,8 +169,8 @@ const RestaurantsDinner = () => {
                     restaurantList?.length ? restaurantList?.map((singleRestaurant, indx) => {
                         // singleRestaurant = getObject(singleRestaurant)
                         return (
-                            <div>
-                                <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg'>
+                            <div key={indx}>
+                                <div className='flex flex-col gap-5 shadow-sm border rounded-lg'>
 
                                     <div className='lg:p-5'>
                                         {/* <Carousel photos={singleRestaurant.images} /> */}

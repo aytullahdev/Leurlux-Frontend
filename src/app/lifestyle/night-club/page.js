@@ -125,8 +125,8 @@ const NightClubs = () => {
                     nightClubs?.length ? nightClubs?.map((singleClub, indx) => {
                         //singleClub = getObject(singleClub)
                         return (
-                            <div>
-                                <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg'>
+                            <div key={indx}>
+                                <div className='flex flex-col gap-5 shadow-sm border rounded-lg'>
 
                                     <div className='p-5'>
                                         {/* <Carousel photos={singleClub.images} /> */}

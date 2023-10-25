@@ -140,8 +140,8 @@ const BeachClub = () => {
                     beachclubList?.length ? beachclubList.map((singleBeachClub, indx) => {
                         // singleBeachClub = getObject(singleBeachClub)
                         return (
-                            <div>
-                                <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg   '>
+                            <div key={indx}>
+                                <div className='flex flex-col gap-5 shadow-sm border rounded-lg   '>
 
                                     <div>
                                         {/* <Carousel photos={singleBeachClub.images} /> */}
