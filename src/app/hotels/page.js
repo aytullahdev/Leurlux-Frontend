@@ -1,8 +1,9 @@
 'use client'
-import Button from '@/components/resueable/Button';
 import Carousel from '@/components/resueable/Carousel';
+import GalleryCarousel from '@/components/resueable/GalleryCarousel'
 import useGlobalContext from '@/hooks/useGlobalContext';
 import { useRouter } from 'next/navigation';
+import useCollection from '@/hooks/useCollection';
 import React, { useEffect } from 'react';
 const hotels = [
     {
@@ -615,9 +616,13 @@ const Hotel = ({ hotel }) => {
     }
     return <>
         <div className='border  flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
-            <div className='overflow-hidden'>
+            {/* <div className='overflow-hidden'>
                 <Carousel photos={hotel?.images} />
+            </div> */}
+            <div >
+                <GalleryCarousel slidesPerView={1} images={hotel?.images} />
             </div>
+
 
             <div className='flex flex-col justify-between  items-center'>
                 <div>
@@ -634,7 +639,20 @@ const Hotel = ({ hotel }) => {
 
     </>
 }
-const page = () => {
+const HotelLanding = () => {
+    const [collection, setCollection] = useCollection('/api/hotels?populate=*')
+    useEffect(() => {
+        console.log(collection)
+    }, [collection])
+    const getObject = (singleObject) => {
+        const backend = `${process.env.NEXT_PUBLIC_API_URL}`
+        return {
+            name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
+                return `${singleImage.attributes.url}`
+            }), rating: singleObject.attributes.rating, location: singleObject.attributes.location, sustainabilityLevel: singleObject.attributes.sustainabilityLevel
+        };
+
+    }
     return (
         <div className='px-2 lg:px-10 py-5' id='hotel'>
             <div>
@@ -643,7 +661,8 @@ const page = () => {
             <div className='grid w-full grid-cols-1 md:grid-cols-2  2xl:grid-cols-3 gap-5'>
                 {hotels && hotels.length > 0 ? <>
                     {
-                        hotels.map((hotel, indx) => {
+                        hotels?.map((hotel, indx) => {
+
                             return <Hotel key={`hotel- ${indx}`} hotel={hotel} />
                         })
                     }
@@ -652,6 +671,9 @@ const page = () => {
 
         </div>
     );
+}
+const page = () => {
+    return <HotelLanding />
 };
 
 export default page;

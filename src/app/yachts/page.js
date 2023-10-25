@@ -682,7 +682,7 @@ function YachtDetails({ yacht }) {
     return (
         <div onClick={() => handleView()} className="bg-white rounded-lg  p-6 mb-6  cursor-pointer">
             <div>
-                <img src={yacht.images[0]} className='w-full lg:h-[400px]' />
+                <img src={yacht.images[0]} className='h-auto w-auto' />
             </div>
             <h2 className="text-2xl font-semibold mb-4 font-italian text-center my-5">{yacht.name}</h2>
             <div>

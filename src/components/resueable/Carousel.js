@@ -45,11 +45,11 @@ const Carousel = ({ photos }) => {
                         <img
                             src={photos[activeIndex]}
                             alt="Main Photo"
-                            className="w-full lg:w-full h-[350px] rounded-lg"
+                            className="w-auto h-auto mx-auto rounded-lg max-h-full max-w-full object-contain"
                         />
                         {/* <Image src={photos[activeIndex]} quality={100} width={100} height={100} className="w-full lg:w-full h-[350px] rounded-lg" /> */}
                         <div className="w-full flex my-2 items-start justify-stitems-start">
-                            <div className="flex overflow-scroll flex-row justify-start gap-4">
+                            <div className="flex overflow-scroll flex-row justify-start gap-2">
                                 {photos.slice(0, 15).map((photo, index) => {
 
                                     return (<img

@@ -353,7 +353,7 @@ const TransportSection = () => {
                                 </div>
 
 
-                                <Link href="/about?category=hongqi" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link>
+                                {/* <Link href="/about?category=hongqi" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link> */}
                             </div>
                         </div>
 
@@ -469,7 +469,7 @@ const TransportSection = () => {
                                     </div>
 
                                 </div>
-                                <Link href="/about?category=porsche" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link>
+                                {/* <Link href="/about?category=porsche" className=' text-blue-500 font-italian text-center mx-auto text-xl block hover:text-blue-600 py-5'>Read more...</Link> */}
                             </div>
                         </div>
 

@@ -8,16 +8,13 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-
-const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
-
-
+const GalleryForInstragram = ({ images, slidesPerView = 3 }) => {
     return (
         <>
             {images &&
                 <Swiper
                     style={{
-                        '--swiper-navigation-color': 'white',
+                        '--swiper-navigation-color': 'black',
                         '--swiper-pagination-color': '#fff',
                     }}
                     modules={[Navigation, Pagination, Scrollbar, Autoplay, A11y]}
@@ -25,11 +22,12 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
                     slidesPerView={slidesPerView}
                     navigation
                     pagination={{ clickable: true }}
+
                 //thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
                 >
                     {images.slice(0, 10).map((image, index) => (
                         <SwiperSlide key={index}>
-                            <img className='w-auto mx-auto h-auto max-h-full max-w-full object-contain' loading='lazy' src={image} alt={`Image ${index}`} />
+                            <img className='w-auto mx-auto h-auto max-h-[300px] max-w-full object-contain' loading='lazy' src={image} alt={`Image ${index}`} />
                         </SwiperSlide>
                     ))}
 
@@ -63,4 +61,4 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
     );
 };
 
-export default GalleryCarousel;
+export default GalleryForInstragram;

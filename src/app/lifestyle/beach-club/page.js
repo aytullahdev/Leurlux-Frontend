@@ -1,29 +1,13 @@
 'use client'
 import Carousel from '@/components/resueable/Carousel';
+import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 import useGlobalContext from '@/hooks/useGlobalContext';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
+import useCollection from '@/hooks/useCollection';
 const BeachClub = () => {
     const beachclubList = [
-        {
-            name: 'naopool club',
-            description: `Occo Marbella’s mystical experience and gastronomic concept does not end on the first floor. If you are looking for a casual setting for sunset cocktails and snacks, visit our unique open-air rooftop located on the second level.
 
-            It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
-            images: [
-
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub1.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub2.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub3.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub4.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub5.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub6.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub7.jpg",
-                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub8.jpg",
-                "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
-
-            ]
-        },
         {
             name: 'MOGLI THE KING',
             description: `The elements of Momento music are pitch, rhythm, dynamics, and the sonic qualities of timbre and texture (which are sometimes termed the "color" of a musical sound). The Taste of our food, and essence of the environment makes of Momento a unique temple in Marbella.`,
@@ -82,7 +66,6 @@ const BeachClub = () => {
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3021.jpg",
                 "https://lh3.googleusercontent.com/p/AF1QipPgpXv6v6FPhrxwrva6kSENfSc-aAjFJOR_2CbR=s680-w680-h510",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3497-1.jpg",
-                "https://lh5.googleusercontent.com/p/AF1QipPkTjz9he614F1FeiVhy02W_yihx2y-Y06veWgc=w141-h101-n-k-no-nu",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A3021-1536x1025.jpg",
                 "https://opiumbeachmarbella.com/wp-content/uploads/2022/08/0A5A2847-1.jpg",
                 "https://lh3.googleusercontent.com/p/AF1QipMSUtRrOiKtGMqSuaYCcsHkN5jUaAgR4mAPRHD_=s680-w680-h510",
@@ -104,7 +87,25 @@ const BeachClub = () => {
                 "https://nosso.es/wp-content/uploads/2021/07/Nosso-Summer-Club-Shop-700x875.jpg",
             ]
         },
+        {
+            name: 'naopool club',
+            description: `Occo Marbella’s mystical experience and gastronomic concept does not end on the first floor. If you are looking for a casual setting for sunset cocktails and snacks, visit our unique open-air rooftop located on the second level.
 
+            It's natural and beautiful setting, filled with elegant features and greenery, will take you right back to the Middle Eastern world, while overviewing. A hidden location overviewing La Concha Mountain, perfect for any occasion.`,
+            images: [
+
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub1.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub2.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub3.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub4.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub5.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub6.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub7.jpg",
+                "https://leurlux.blr1.cdn.digitaloceanspaces.com/naopoolclub8.jpg",
+                "https://media-cdn.tripadvisor.com/media/photo-s/17/eb/83/b0/photo3jpg.jpg",
+
+            ]
+        },
 
 
 
@@ -113,6 +114,19 @@ const BeachClub = () => {
     useEffect(() => {
         setSelectedBeachClub(null)
     }, [])
+    const [collection, setCollection] = useCollection('/api/beach-clubs?populate=*')
+    useEffect(() => {
+        console.log(collection)
+    }, [collection])
+    const getObject = (singleObject) => {
+        const backend = `${process.env.NEXT_PUBLIC_API_URL}`
+        return {
+            name: singleObject.attributes.name, description: singleObject.attributes.description, images: singleObject.attributes.images.data?.map((singleImage) => {
+                return `${singleImage.attributes.url}`
+            }), location: singleObject.attributes.location,
+        };
+
+    }
     const router = useRouter();
     const handleSelect = (selecteClub) => {
         setSelectedBeachClub(selecteClub)
@@ -121,19 +135,25 @@ const BeachClub = () => {
     return (
         <div className='py-8 lg:px-0'>
             <h1 className='text-6xl font-italian' >Beach <span style={{ color: 'rgb(193, 182, 134)' }}>Club</span></h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-4 lg:gap-5 px-3 lg:px-0 my-10'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-4  lg:gap-5 px-3 lg:px-0 my-10 '>
                 {
-                    beachclubList.length ? beachclubList.map((singleBeachClub, indx) => {
+                    beachclubList?.length ? beachclubList.map((singleBeachClub, indx) => {
+                        // singleBeachClub = getObject(singleBeachClub)
                         return (
-                            <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg'>
+                            <div>
+                                <div key={indx} className='flex flex-col gap-5 shadow-sm border rounded-lg   '>
 
-                                <div>
-                                    <Carousel photos={singleBeachClub.images} />
+                                    <div>
+                                        {/* <Carousel photos={singleBeachClub.images} /> */}
 
-                                </div>
-                                <div className=' p-5 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center'>
-                                    <h1 className='text-xl font-italian uppercase'>{singleBeachClub.name}</h1>
-                                    <button onClick={() => { handleSelect(singleBeachClub) }} className='text-white bg-black font-italian px-5 block py-2 rounded-lg'>Book Now</button>
+                                        <GalleryCarousel slidesPerView={1} images={singleBeachClub?.images} />
+
+
+                                    </div>
+                                    <div className=' p-5 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center'>
+                                        <h1 className='text-xl font-italian uppercase'>{singleBeachClub.name}</h1>
+                                        <button onClick={() => { handleSelect(singleBeachClub) }} className='text-white bg-black font-italian px-5 block py-2 rounded-lg'>Book Now</button>
+                                    </div>
                                 </div>
                             </div>
                         )

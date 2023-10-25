@@ -1,9 +1,8 @@
 'use client'
-import Button from '@/components/resueable/Button';
-import Carousel from '@/components/resueable/Carousel';
+
+import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 import useCollection from '@/hooks/useCollection';
 import useGlobalContext from '@/hooks/useGlobalContext';
-import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 const Villa = ({ villa }) => {
@@ -21,8 +20,11 @@ const Villa = ({ villa }) => {
         router.push('/book?category=villa')
     }
     return <>
-        <div onClick={() => handleBook()} className='border shadow-sm p-2 rounded-lg bg-gray-50'>
-            <Carousel photos={villa?.images} />
+        <div className='border shadow-sm p-2 rounded-lg bg-gray-50'>
+            {/* <Carousel photos={villa?.images} /> */}
+            <div >
+                <GalleryCarousel slidesPerView={1} images={villa?.images} />
+            </div>
 
             <div className='flex flex-col lg:flex-row justify-between  items-center'>
                 <div>
@@ -35,7 +37,7 @@ const Villa = ({ villa }) => {
                     <button onClick={() => handleBook()} className='text-xl hover:bg-gray-400 font-italian bg-gray-500 px-5 py-1 rounded-lg block mx-auto text-white'>Book Now</button>
                 </div>
             </div>
-        </div>
+        </div >
 
     </>
 }
