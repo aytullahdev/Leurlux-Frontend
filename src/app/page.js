@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <div className='my-10'>
           <Button to={"#services"} text='Services' />
-          <ArrowDown />
+          <Link href={'#services'}> <ArrowDown /></Link>
         </div>
       </header>
       <Services />
