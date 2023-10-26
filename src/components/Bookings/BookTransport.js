@@ -327,22 +327,67 @@ const BookingForm = () => {
 
                 </div>
                 <form onSubmit={handleSubmit} className=" rounded px-0 lg:px-8 pt-6 pb-8 mb-4">
+                    <div className="mb-4">
+                        <label htmlFor="price" className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4">
+                            Select Option:
+                        </label>
+                        <select
+                            id="price"
+                            name="price"
+                            value={selectedPrice}
+                            onChange={handlePriceChange}
+                            className="bg-white w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
+                        >
+                            <option value="">Select a Option</option>
+                            <option value={`Malaga Airport - Marbella`}>
+                                Malaga Airport - Marbella
+                            </option>
+                            <option value={`Marbella - Malaga Airport`}>
+                                Marbella - Malaga Airport
+                            </option>
+                            <option value={`Private Booking (4 Hours)`}>
+                                Private Booking (4 Hours)
+                            </option>
+                            <option value={`Private Booking Full day (8 Hours)`}>
+                                Private Booking Full Day (8 Hours)
+                            </option>
+                            <option value={`Enquiry (More Than 1 day)`}>
+                                Enquiry (More Than 1 Day)
+                            </option>
+                            {/* {collection && collection.map((singleTransport) => {
+
+                                return singleTransport?.attributes?.PricingOptions.map((option, index) => {
+
+                                    return (
+                                        <option key={option.title} value={`${singleTransport?.attributes?.vehicle}-${option.title}`}>
+                                            {`${singleTransport?.attributes?.vehicle}-${option.title}`}
+                                        </option>
+                                    )
+                                })
+
+
+                            })} */}
+
+                        </select>
+                    </div>
+                    <div className="mb-4">
+                        <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="name">
+                            Name
+                        </label>
+                        <input
+                            className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Full Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
-                        <div className="mb-4">
-                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="name">
-                                Name
-                            </label>
-                            <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Full Name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
+
+
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="email">
                                 Email
@@ -354,6 +399,21 @@ const BookingForm = () => {
                                 name="email"
                                 placeholder="Email"
                                 value={formData.email}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="mb-4">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="phone">
+                                Phone Number
+                            </label>
+                            <input
+                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                                type="text"
+                                id="phone"
+                                name="phone"
+                                placeholder="Phone number"
+                                value={formData.phone}
                                 onChange={handleChange}
                                 required
                             />
@@ -376,7 +436,7 @@ const BookingForm = () => {
                         </div>
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
-                                Drop Off Date
+                                Return Date
                             </label>
                             <input
                                 className="bg-white appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
@@ -390,43 +450,7 @@ const BookingForm = () => {
                         </div>
 
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="price" className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4">
-                            Select Option:
-                        </label>
-                        <select
-                            id="price"
-                            name="price"
-                            value={selectedPrice}
-                            onChange={handlePriceChange}
-                            className="bg-white w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
-                        >
-                            <option value="">Select a Option</option>
-                            <option value={`Malaga Airport - Marbella`}>
-                                Malaga Airport - Marbella
-                            </option>
-                            <option value={`Marbella - Malaga Airport`}>
-                                Marbella - Malaga Airport
-                            </option>
-                            <option value={`Full day (8 Hours)`}>
-                                Full day (8 Hours)
-                            </option>
-                            {/* {collection && collection.map((singleTransport) => {
 
-                                return singleTransport?.attributes?.PricingOptions.map((option, index) => {
-
-                                    return (
-                                        <option key={option.title} value={`${singleTransport?.attributes?.vehicle}-${option.title}`}>
-                                            {`${singleTransport?.attributes?.vehicle}-${option.title}`}
-                                        </option>
-                                    )
-                                })
-
-
-                            })} */}
-
-                        </select>
-                    </div>
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupAddress">
@@ -490,7 +514,7 @@ const BookingForm = () => {
                             />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
+                    <div className="grid grid-cols-1  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="flightNumber">
                                 Flight Number
@@ -506,21 +530,7 @@ const BookingForm = () => {
                                 required
                             />
                         </div>
-                        <div className="mb-4">
-                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="phone">
-                                Phone Number
-                            </label>
-                            <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
-                                type="text"
-                                id="phone"
-                                name="phone"
-                                placeholder="Phone number"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
+
                     </div>
 
                     <div className="mb-4">

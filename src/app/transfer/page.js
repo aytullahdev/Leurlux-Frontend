@@ -152,6 +152,11 @@ const TransportSection = () => {
                         <Link href={'#transports'}>
                             <ArrowDown />
                         </Link>
+                        <div className='w-full flex justify-center items-center'>
+                            <button onClick={() => {
+                                handleBook('chauffeur')
+                            }} href="/book?category=transport" className='text-xl lg:text-3xl bg-gray-300 text-black  px-10 py-2 rounded-lg font-italian '>Book Now</button>
+                        </div>
 
                     </div>
                 </div>
