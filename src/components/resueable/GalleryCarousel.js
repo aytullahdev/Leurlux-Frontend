@@ -29,7 +29,7 @@ const GalleryCarousel = ({ images, slidesPerView = 3 }) => {
                 >
                     {images.slice(0, 10).map((image, index) => (
                         <SwiperSlide key={index}>
-                            <img className='w-auto mx-auto h-auto max-h-full max-w-full object-contain' loading='lazy' src={image} alt={`Image ${index}`} />
+                            <img className='w-auto mx-auto h-auto max-h-full max-w-full object-contain rounded-lg' loading='lazy' src={image} alt={`Image ${index}`} />
                         </SwiperSlide>
                     ))}
 

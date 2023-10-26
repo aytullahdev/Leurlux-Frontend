@@ -137,8 +137,8 @@ const BeachClub = () => {
             <h1 className='text-6xl font-italian' >Beach <span style={{ color: 'rgb(193, 182, 134)' }}>Club</span></h1>
             <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-4  lg:gap-5 px-3 lg:px-0 my-10 '>
                 {
-                    beachclubList?.length ? beachclubList.map((singleBeachClub, indx) => {
-                        // singleBeachClub = getObject(singleBeachClub)
+                    collection?.length ? collection.map((singleBeachClub, indx) => {
+                        singleBeachClub = getObject(singleBeachClub)
                         return (
                             <div key={indx}>
                                 <div className='flex flex-col gap-5 shadow-sm border rounded-lg   '>
