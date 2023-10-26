@@ -45,7 +45,7 @@ const NightClubs = () => {
                             <div key={indx}>
                                 <div className='flex flex-col gap-5 shadow-sm border rounded-lg'>
 
-                                    <div className='p-5'>
+                                    <div className='p-1'>
                                         {/* <Carousel photos={singleClub.images} /> */}
                                         <GalleryCarousel slidesPerView={1} images={singleClub?.images} />
 
