@@ -190,8 +190,8 @@ const BookingForm = () => {
                     "phone": transPortData.phone,
                     "flightnumber": transPortData.flightNumber,
                     "otherrequest": transPortData.otherRequest,
-                    "luggages": transPortData.numberOfLuggages,
-                    "numberofpeople": transPortData.numberOfPeople,
+                    "luggages": parseInt(transPortData.numberOfLuggages),
+                    "numberofpeople": parseInt(transPortData.numberOfPeople),
                     "payment": "Paid",
                     "payment_id": session_id,
                 }
@@ -491,30 +491,39 @@ const BookingForm = () => {
 
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
-                            <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
-                                type="number"
+                            <select
+                                className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 id="numberOfPeople"
                                 name="numberOfPeople"
-                                placeholder="Number of people"
                                 value={formData.numberOfPeople}
                                 onChange={handleChange}
                                 required
-                            />
+                            >
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                            </select>
                         </div>
 
                         <div className="mb-4">
 
-                            <input
-                                className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
-                                type="number"
+                            <select
+                                className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 id="numberOfLuggages"
                                 name="numberOfLuggages"
-                                placeholder="luggages"
                                 value={formData.numberOfLuggages}
                                 onChange={handleChange}
                                 required
-                            />
+                            >
+                                <option value="1">1 luggage</option>
+                                <option value="2">2 luggages</option>
+                                <option value="3">3 luggages</option>
+                                <option value="4">4 luggages</option>
+                                <option value="5">5 luggages</option>
+                            </select>
                         </div>
                     </div>
                     <div className="grid grid-cols-1  gap-2 lg:gap-5">

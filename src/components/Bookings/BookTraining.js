@@ -316,7 +316,7 @@ const TrainingPricing = () => {
         <div >
             <div>
                 <h1 className='text-4xl'>PERSONAL <span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5'>
+                <div className='grid grid-cols-1 2xl:grid-cols-1 gap-5 mt-5'>
                     {personalTrainingPackage.map((singlePackage, indx) => {
                         return (
                             <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
@@ -325,7 +325,7 @@ const TrainingPricing = () => {
                                     {
                                         singlePackage.sessions.map((singleSession, indx) => {
                                             return (
-                                                <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
+                                                <div key={`session-${indx}`} className='text-center  lg:text-xl flex flex-col gap-1 justify-start'>
                                                     <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
                                                     <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
                                                     <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
@@ -342,7 +342,7 @@ const TrainingPricing = () => {
                 </div>
                 <div className='py-10'>
                     <h1 className='text-4xl'>PRO PALYER<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5'>
+                    <div className='grid grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 gap-5 mt-5'>
                         {proPlayerTrainingPackage.map((singlePackage, indx) => {
                             return (
                                 <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
