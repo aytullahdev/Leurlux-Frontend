@@ -248,7 +248,7 @@ const PrivateRunnerHeroSection = () => {
 
             </div>
             <div className=' py-10'>
-                <div className='font-italian lg:text-5xl  px-4 lg:px-0 lg:py-10'>
+                <div className='font-italian lg:text-5xl  px-4 lg:px-5 lg:py-10'>
                     At LeurLux, our mission is to simplify and enhance your lifestyle, making every aspect of it more comfortable and enjoyable. We are your trusted partner for all things luxurious and convenient.
 
                 </div>

@@ -403,7 +403,7 @@ const TransportSection = () => {
                                                 </div>
                                             </section>
 
-                                            <div className="flex-row flex justify-center items-center px-3 lg:px-0 ">
+                                            <div className="flex-row flex justify-center items-center px-3 lg:px-5 ">
                                                 <GalleryCarousel slidesPerView={1} images={porsche_photos} />
 
                                             </div>

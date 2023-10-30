@@ -234,7 +234,7 @@ const BookVilla = () => {
                                     })
                                 }
                             </div> */}
-                            <div className='px-5 lg:px-0'>
+                            <div className='px-5 lg:px-5'>
                                 <Carousel photos={selectedVilla.images} />
                             </div>
                         </div>
@@ -244,7 +244,7 @@ const BookVilla = () => {
                                 <button onClick={() => setSelectedSection('description')} className='lg:px-8 py-2 text-2xl font-italian  underline rounded-lg hover:bg-gray-50' >Description</button>
 
                             </div>
-                            <div className='px-3 lg:px-0'>
+                            <div className='px-3 lg:px-5'>
                                 {
                                     selectedSection === 'specifications' && <>
                                         <div className='bg-white border p-5'>

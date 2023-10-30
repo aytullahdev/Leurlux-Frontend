@@ -111,7 +111,7 @@ const TrainingPricing = () => {
         },
 
     ]
-    return (<div className='font-italian py-5 bg-white text-black px-5 lg:px-0 '>
+    return (<div className='font-italian py-5 bg-white text-black px-5 lg:px-5 '>
         <div >
             <div>
                 <h1 className='text-4xl'>PERSONAL <span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>

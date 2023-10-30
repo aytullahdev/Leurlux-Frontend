@@ -23,10 +23,7 @@ const sections = [
         title: 'Terms & Conditions',
         to: '/terms-conditions'
     },
-    {
-        title: 'Privacy Policy',
-        to: '#privacy-policy'
-    }
+
 ]
 
 const Footer = () => {
