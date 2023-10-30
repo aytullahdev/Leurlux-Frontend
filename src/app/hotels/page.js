@@ -27,11 +27,11 @@ const Hotel = ({ hotel }) => {
         router.push('/book?category=hotel')
     }
     return <>
-        <div className='border  flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
+        <div className='border    flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
             {/* <div className='overflow-hidden'>
                 <Carousel photos={hotel?.images} />
             </div> */}
-            <div >
+            <div className=' '>
                 <GalleryCarousel slidesPerView={1} images={hotel?.images} />
             </div>
 
