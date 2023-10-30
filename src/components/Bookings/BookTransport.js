@@ -20,7 +20,10 @@ const PricingSection = () => {
             {
                 selectedTransport && (
                     <div>
-                        <h1 className="uppercase text-xl ">Selected Transport <span className="font-bold">{selectedTransport.vehicle}</span></h1>
+                        <h1 className="uppercase text-xl ">Selected Transport <span className="font-bold">{selectedTransport.title}</span></h1>
+                        <div className="py-10">
+                            <img src={selectedTransport.img} />
+                        </div>
                     </div>)
             }
         </div>
@@ -568,10 +571,13 @@ const BookingForm = () => {
 
 const BookTransport = () => {
     return (
-        <div className="bg-white  p-5 lg:p-10 grid lg:grid-cols-1 gap-5">
+        <div className="bg-white  p-5 lg:p-10 grid lg:grid-cols-2 gap-5">
 
             <div className="">
                 <PricingSection />
+
+            </div>
+            <div>
                 <BookingForm />
             </div>
         </div>

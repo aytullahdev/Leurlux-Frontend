@@ -55,6 +55,8 @@ const chauffeurPrice = {
         }
     ],
     vehicle: "Hongqi",
+    title: "Hongqi",
+    "img": "/sterncar.jpeg"
 }
 const porschePrice = {
     PricingOptions: [
@@ -89,6 +91,8 @@ const porschePrice = {
         }
     ],
     vehicle: "Porsche",
+    title: 'Porsche Tycan 4s (Full Electric)',
+    "img": "/porche.png"
 
 }
 
