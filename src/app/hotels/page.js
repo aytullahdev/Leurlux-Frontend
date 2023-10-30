@@ -70,7 +70,7 @@ const HotelLanding = () => {
             <div>
                 <h1 className='text-5xl font-italian py-5'>Hotels</h1>
             </div>
-            <div className='grid w-full grid-cols-1 md:grid-cols-2  2xl:grid-cols-3 gap-5'>
+            <div className='grid w-full grid-cols-1 md:grid-cols-2  xl:grid-cols-2 gap-5'>
                 {collection && collection.length > 0 ? <>
                     {
                         collection?.map((hotel, indx) => {
