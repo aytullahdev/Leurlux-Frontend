@@ -175,8 +175,9 @@ const TrainingPricing = () => {
 const PersonalTrainingVideos = () => {
     const personalTrainingVideos = [
         '/personal-training/personal-training.mp4',
+        '/personal-training/player.mp4',
         '/personal-training/personal-training1.mp4',
-        '/personal-training/player.mp4'
+
     ];
     const [isPlaying, setIsPlaying] = useState(Array(personalTrainingVideos.length).fill(false));
 

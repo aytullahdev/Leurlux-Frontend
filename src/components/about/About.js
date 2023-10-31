@@ -21,9 +21,9 @@ const About = () => {
 
             </div >
             <div className=''>
-                <div className='text-white bg-[#232222] py-20 p-5 ' >
+                <div className='text-white bg-[#232222] lg:py-20 p-5 ' >
                     <h1 className='font-italian text-5xl py-5'>Our network</h1>
-                    <div className='flex flex-col  mt-10 text-base text-justify lg:text-left lg:text-3xl font-thin'>
+                    <div className='flex flex-col  lg:mt-10 text-base text-justify lg:text-left lg:text-3xl font-thin'>
                         <p >
                             {` We’re proud to offer our luxury concierge services in some of the world’s most vibrant and exciting cities. From New York to Paris, Marbella to Dubai, our team of experienced concierge professionals is here to provide you with the highest level of service and attention to detail.
 `}
