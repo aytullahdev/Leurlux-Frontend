@@ -27,8 +27,11 @@ const Apartment = ({ apartment }) => {
 
             <div className='flex flex-col lg:flex-row justify-between  items-center'>
                 <div>
-                    <p className='uppercase font-black mt-5 font-italian text-2xl'>{apartment?.name}</p>
-                    <p className='py-2'>
+                    <p className='uppercase font-black mt-5 font-italian text-xl'>{apartment?.name}</p>
+                    <p className='py-0'>
+                        <span className='font-thin'>{apartment?.beds} Bed</span>
+                    </p>
+                    <p className='py-0'>
                         <span className='font-thin'>Price From: {apartment?.price} {apartment?.price_tag}</span>
                     </p>
                 </div>
