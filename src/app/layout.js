@@ -54,8 +54,8 @@ export default function RootLayout({ children }) {
           </div>
         </GlobalProvider>
 
-        <div className='text-black'>
-          <WhatsAppWidget replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
+        <div className='text-black z-50'>
+          <WhatsAppWidget className="z-50" replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
       How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+46736700548" />
         </div>
 
