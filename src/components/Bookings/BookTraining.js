@@ -343,7 +343,7 @@ const TrainingPricing = () => {
             </div>
             <div>
                 <h1 className='text-4xl'>PERSONAL <span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
-                <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-5 mt-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 gap-5 mt-5'>
                     {personalTrainingPackage.map((singlePackage, indx) => {
                         return (
                             <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>

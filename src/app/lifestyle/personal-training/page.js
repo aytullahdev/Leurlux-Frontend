@@ -8,19 +8,19 @@ const TrainingPricing = () => {
             sessions: [
                 {
                     type: '1 session',
-                    price: '125€',
+                    price: '100€',
                     pricetag: '',
                     session: ''
                 },
                 {
                     type: '10 sessions',
-                    price: '810€',
+                    price: '775€',
                     pricetag: '',
                     session: ''
                 },
                 {
                     type: '20 sessions',
-                    price: '1,470€',
+                    price: '1,350€',
                     pricetag: '',
                     session: ''
                 }
@@ -31,19 +31,19 @@ const TrainingPricing = () => {
             sessions: [
                 {
                     type: '1 session',
-                    price: '87€',
+                    price: '75€',
                     pricetag: 'Per Person',
                     session: ''
                 },
                 {
                     type: '10 sessions',
-                    price: '770€',
+                    price: '600€',
                     pricetag: 'Per Person',
                     session: ''
                 },
                 {
                     type: '20 sessions',
-                    price: '1,170€',
+                    price: '1,000€',
                     pricetag: 'Per person',
                     session: ''
                 }
@@ -54,19 +54,19 @@ const TrainingPricing = () => {
             sessions: [
                 {
                     type: '1 session',
-                    price: '70€',
+                    price: '60€',
                     pricetag: 'per person',
                     session: ''
                 },
                 {
                     type: '10 sessions',
-                    price: '570€',
+                    price: '450€',
                     pricetag: 'per person',
                     session: ''
                 },
                 {
                     type: '20 sessions',
-                    price: '870€',
+                    price: '800€',
                     pricetag: 'per person',
                     session: ''
                 }
