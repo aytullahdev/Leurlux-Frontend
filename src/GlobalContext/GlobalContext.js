@@ -45,6 +45,8 @@ export const GlobalProvider = ({ children }) => {
             }
         ],
         vehicle: "Hongqi",
+        title: "Hongqi",
+        "img": "/sterncar.jpeg"
     });
     const [isBooked, setIsBooked] = useState(false)
     const [links, setLinks] = useState({
