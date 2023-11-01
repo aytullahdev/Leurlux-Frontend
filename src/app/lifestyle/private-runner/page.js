@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import ArrowDown from '@/components/resueable/ArrowDown';
+import DatePicker from 'react-datepicker'
 const BookingFormFor = () => {
     const router = useRouter();
 
@@ -15,7 +16,10 @@ const BookingFormFor = () => {
         fullname: '',
         whattodo: ''
     });
-
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -27,7 +31,8 @@ const BookingFormFor = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { service, fullname, phone, email, whattodo, bookdate, request } = formData
-        if (!fullname || !phone || !email || !bookdate || !whattodo) {
+        const { arrival, departure } = date
+        if (!fullname || !phone || !email || !arrival || !whattodo) {
 
             toast.error("Please fillup all data")
             return
@@ -100,13 +105,22 @@ const BookingFormFor = () => {
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                         <label className='font-italian'>Pickup Time</label>
-                        <input
+                        {/* <input
                             type="datetime-local"
                             name="bookdate"
                             value={formData.bookdate}
                             onChange={handleInputChange}
                             required
                             className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
+                        /> */}
+                        <DatePicker
+                            className='border  w-full p-2 rounded-lg'
+                            selected={date.arrival}
+                            onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                            showTimeSelect
+                            timeFormat="p"
+                            timeIntervals={30}
+                            dateFormat="Pp"
                         />
                     </div>
 

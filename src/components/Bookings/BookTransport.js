@@ -10,6 +10,7 @@ import useGlobalContext from "@/hooks/useGlobalContext";
 import BookingSuccess from "../resueable/BookingSuccess";
 import useCollection from "@/hooks/useCollection";
 import { checkout } from "@/controller/checkout";
+import DatePicker from 'react-datepicker'
 
 const PricingSection = () => {
     const [selectedSection, setSelectedSection] = useState('Chauffeur')
@@ -116,7 +117,10 @@ const BookingForm = () => {
         otherRequest: "",
         phone: ""
     });
-
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -167,6 +171,11 @@ const BookingForm = () => {
         // });
     };
     const submitTransportForm = (session_id, transPortData) => {
+        const { arrival, departure } = date
+        if (!arrival || !departure) {
+            toast.error("Please fillup the form");
+            return
+        }
         if (!transPortData) {
             return
         }
@@ -184,8 +193,8 @@ const BookingForm = () => {
                     "pickupaddress": transPortData.pickupAddress,
                     "name": transPortData.name,
                     "transporttype": `${selectedTransport.vehicle}- ${transPortData.selectedPrice}`,
-                    "pickupdate": transPortData.pickupDate,
-                    "dropoffdate": transPortData.dropoffDate,
+                    "pickupdate": arrival,
+                    "dropoffdate": departure,
                     "email": transPortData.email,
                     "phone": transPortData.phone,
                     "flightnumber": transPortData.flightNumber,
@@ -245,8 +254,8 @@ const BookingForm = () => {
                     "pickupaddress": transPortData.pickupAddress,
                     "name": transPortData.name,
                     "transporttype": `${selectedTransport.vehicle}- ${transPortData.selectedPrice}`,
-                    "pickupdate": transPortData.pickupDate,
-                    "dropoffdate": transPortData.dropoffDate,
+                    "pickupdate": arrival,
+                    "dropoffdate": departure,
                     "email": transPortData.email,
                     "phone": transPortData.phone,
                     "flightnumber": transPortData.flightNumber,
@@ -427,7 +436,7 @@ const BookingForm = () => {
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Pickup Date
                             </label>
-                            <input
+                            {/* <input
                                 className=" bg-white border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="datetime-local"
                                 id="pickupDate"
@@ -435,20 +444,29 @@ const BookingForm = () => {
                                 value={formData.pickupDate}
                                 onChange={handleChange}
                                 required
+                            /> */}
+                            <DatePicker
+                                className='border  w-full p-2 rounded-lg'
+                                selected={date.arrival}
+                                onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                                showTimeSelect
+                                timeFormat="p"
+                                timeIntervals={30}
+                                dateFormat="Pp"
                             />
                         </div>
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Return Date
                             </label>
-                            <input
-                                className="bg-white appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
-                                type="datetime-local"
-                                id="dropoffdate"
-                                name="dropoffDate"
-                                value={formData.dropoffDate}
-                                onChange={handleChange}
-                                required
+                            <DatePicker
+                                className='border  w-full p-2 rounded-lg'
+                                selected={date.departure}
+                                onChange={(data) => setDate((prev) => ({ ...prev, 'departure': data }))}
+                                showTimeSelect
+                                timeFormat="p"
+                                timeIntervals={30}
+                                dateFormat="Pp"
                             />
                         </div>
 

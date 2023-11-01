@@ -6,7 +6,7 @@ import GalleryCarousel from '@/components/resueable/GalleryCarousel';
 import axios from 'axios';
 import { Toaster, toast } from 'sonner';
 import { useRouter } from 'next/navigation';
-
+import DatePicker from 'react-datepicker'
 const BookingFormForYacht = () => {
     const { selectedYacht } = useContext(GlobalContext); // Replace GlobalContext with your actual context
     const router = useRouter()
@@ -18,6 +18,10 @@ const BookingFormForYacht = () => {
         fullname: '',
         bookdate: '',
     });
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -30,7 +34,8 @@ const BookingFormForYacht = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { fullname, email, phone, bookdate, season, yachtName } = formData;
-        if (!fullname || !email || !phone || !bookdate || !yachtName || !season) {
+        const { arrival, departure } = date
+        if (!fullname || !email || !phone || !arrival || !yachtName || !season) {
             toast.error("Fill up all the data")
             return
         }
@@ -115,7 +120,7 @@ const BookingFormForYacht = () => {
 
                 <div className="mb-4 flex flex-col justify-start gap-2 text-base lg:text-xl ">
                     <label className='font-italian'>Booking Date</label>
-                    <input
+                    {/* <input
                         type="datetime-local"
                         name="bookdate"
                         value={formData.bookdate}
@@ -123,6 +128,15 @@ const BookingFormForYacht = () => {
                         placeholder='Date'
                         className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
                         required
+                    /> */}
+                    <DatePicker
+                        className='border  w-full p-2 rounded-lg'
+                        selected={date.arrival}
+                        onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                        showTimeSelect
+                        timeFormat="p"
+                        timeIntervals={30}
+                        dateFormat="Pp"
                     />
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-base lg:text-xl ">

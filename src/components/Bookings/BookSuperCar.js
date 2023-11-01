@@ -7,6 +7,7 @@ import { Toaster, toast } from 'sonner';
 import useGlobalContext from '@/hooks/useGlobalContext';
 import axios from 'axios';
 import BookingSuccess from '../resueable/BookingSuccess';
+import DatePicker from 'react-datepicker'
 const BookSuperCar = () => {
     const router = useRouter();
     const { selectedSuperCar, setIsBooked, isBooked } = useGlobalContext();
@@ -20,13 +21,19 @@ const BookSuperCar = () => {
         dropoffdate: '',
         fullname: '',
     })
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
     const { fullname, pickupdate, email, phone, dropoffdate, pickupaddress, dropoffaddress } = carForm;
+
     const handleChange = (e) => {
         setCarForm((prev) => ({ ...carForm, [e.target.name]: e.target.value }))
     }
     const [isSuccess, setIsSuccess] = useState(false)
     const handleSubmit = () => {
-        if (!fullname || !email || !pickupaddress || !dropoffaddress || !phone) {
+        const { arrival, departure } = date
+        if (!fullname || !email || !pickupaddress || !dropoffaddress || !phone || !arrival || !departure) {
             toast.error("Please provide all information");
             return
         }
@@ -37,8 +44,8 @@ const BookSuperCar = () => {
                 "pickupaddress": pickupaddress,
                 "carname": carname,
                 "price": price,
-                "pickupdate": pickupdate,
-                "dropoffdate": dropoffdate,
+                "pickupdate": arrival,
+                "dropoffdate": departure,
                 "email": email,
                 "phone": phone
             }
@@ -123,13 +130,31 @@ const BookSuperCar = () => {
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian font-bold'>Pickup Date</label>
-                                <input type='datetime-local' name='pickupdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={pickupdate} />
+                                {/* <input type='datetime-local' name='pickupdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={pickupdate} /> */}
+                                <DatePicker
+                                    className='border  w-full p-2 rounded-lg'
+                                    selected={date.arrival}
+                                    onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                                    showTimeSelect
+                                    timeFormat="p"
+                                    timeIntervals={30}
+                                    dateFormat="Pp"
+                                />
 
                             </div>
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Drop Off Date</label>
-                                <input type='datetime-local' name='dropoffdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={dropoffdate} />
+                                {/* <input type='datetime-local' name='dropoffdate' onChange={handleChange} className='bg-white border outline-none px-2 py-2 rounded font-thin ' value={dropoffdate} /> */}
+                                <DatePicker
+                                    className='border  w-full p-2 rounded-lg'
+                                    selected={date.departure}
+                                    onChange={(data) => setDate((prev) => ({ ...prev, 'departure': data }))}
+                                    showTimeSelect
+                                    timeFormat="p"
+                                    timeIntervals={30}
+                                    dateFormat="Pp"
+                                />
 
                             </div>
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>

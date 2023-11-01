@@ -4,6 +4,8 @@ import { toast } from 'sonner';
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import DatePicker from 'react-datepicker'
+
 const BookPrivateJet = () => {
     const [bookongData, setBookingData] = useState({
         flyfrom: '',
@@ -21,17 +23,23 @@ const BookPrivateJet = () => {
     const handleChange = (e) => {
         setBookingData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
     const handleSubmit = () => {
-        if (!flyfrom || !flyto || !flydate || !fullname || !email || !phone || !passengers) {
+        const { arrival, departure } = date
+        if (!flyfrom || !flyto || !arrival || !fullname || !email || !phone || !passengers) {
             toast.error("Please fillup all the information!")
             return
         }
+
         const data = {
             "data": {
                 "name": fullname,
                 "flyfrom": flyfrom,
                 "flyto": flyto,
-                "flydate": flydate,
+                "flydate": arrival,
                 "passengers": passengers,
                 "email": email,
                 "phone": phone,
@@ -117,7 +125,16 @@ const BookPrivateJet = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Fly Date</label>
-                    <input onChange={handleChange} type='datetime-local' name='flydate' className='bg-white border  w-[300px] px-5 py-2 rounded' value={flydate} placeholder='Fly date' />
+                    {/* <input onChange={handleChange} type='datetime-local' name='flydate' className='bg-white border  w-[300px] px-5 py-2 rounded' value={flydate} placeholder='Fly date' /> */}
+                    <DatePicker
+                        className='border  w-full p-2 rounded-lg'
+                        selected={date.arrival}
+                        onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                        showTimeSelect
+                        timeFormat="p"
+                        timeIntervals={30}
+                        dateFormat="Pp"
+                    />
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Name</label>

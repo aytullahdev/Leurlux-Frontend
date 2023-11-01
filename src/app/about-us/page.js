@@ -37,7 +37,7 @@ const page = () => {
                 <h1 className='font-italian text-4xl py-1'>{` Where We Operate`}</h1>
                 <div className='flex flex-col  mt-4 text-base text-justify lg:text-left lg:text-xl font-thin'>
                     <p >
-                        {`Marbella, Ibiza, Mallorca, Madrid, Barcelona, Stockholm, Algarve, Lisbon, London, Berlin, Amsterdam, Paris, Mykonos, Santorini, Zakynthos, Marrakesh, Maldives, Boracay, Dubai, Qatar, Bangkok, Split, Los Angeles, New York, Las Vegas, and Miami.`}
+                        {`Marbella, Ibiza, Mallorca, Madrid, Barcelona, Stockholm, Lisbon, London, Amsterdam, Paris, Mykonos, Santorini, Dubai, Qatar, Los Angeles, New York, Las Vegas, and Miami`}
 
                     </p>
 

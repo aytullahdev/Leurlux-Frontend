@@ -6,6 +6,8 @@ import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
 import useGlobalContext from '@/hooks/useGlobalContext';
+import DatePicker from 'react-datepicker'
+
 const BookingFormFor = () => {
     const router = useRouter();
     const { selectedRestaurant } = useGlobalContext(); // Replace GlobalContext with your actual context
@@ -19,6 +21,10 @@ const BookingFormFor = () => {
         request: '',
         fullname: '',
     });
+    const [date, setDate] = useState({
+        'arrival': new Date(),
+        'departure': new Date(),
+    })
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -30,7 +36,8 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { restaurant, fullname, phone, email, guests, arrival, request } = formData
+        const { restaurant, fullname, phone, email, guests, request } = formData
+        const { arrival, departure } = date
         if (!fullname || !phone || !email || !guests || !arrival) {
 
             toast.error("Please fillup all data")
@@ -124,12 +131,21 @@ const BookingFormFor = () => {
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                         <label className='font-italian'>Booking Date</label>
-                        <input
+                        {/* <input
                             type="datetime-local"
                             name="arrival"
                             value={formData.arrival}
                             onChange={handleInputChange}
                             className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
+                        /> */}
+                        <DatePicker
+                            className='border  w-full p-2 rounded-lg'
+                            selected={date.arrival}
+                            onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                            showTimeSelect
+                            timeFormat="p"
+                            timeIntervals={30}
+                            dateFormat="Pp"
                         />
                     </div>
 
