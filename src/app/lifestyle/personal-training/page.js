@@ -118,17 +118,17 @@ const TrainingPricing = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5'>
                     {personalTrainingPackage.map((singlePackage, indx) => {
                         return (
-                            <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
-                                <h1 style={{ backgroundColor: 'rgb(193, 182, 134)' }} className=' text-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
-                                <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-italian'>
+                            <div key={`package${indx}`} className='uppercase font-mono  text-black shadow-sm p-5 border rounded '>
+                                <h1 className=' text-white bg-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
+                                <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center '>
                                     {
                                         singlePackage.sessions.map((singleSession, indx) => {
                                             return (
                                                 <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
-                                                    <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
-                                                    <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
-                                                    <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
-                                                    <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
+                                                    <h1 className='font-mono text-base lg:text-base'>{singleSession.type}</h1>
+                                                    <h2 className=' text-base lg:text-base font-serif'>{singleSession.price}</h2>
+                                                    <h3 className='text-xs lg:text-base'>{singleSession.pricetag}</h3>
+                                                    <h4 className='text-xs lg:text-base'>{singleSession.session}</h4>
                                                 </div>
                                             )
                                         })
@@ -145,16 +145,16 @@ const TrainingPricing = () => {
                         {proPlayerTrainingPackage.map((singlePackage, indx) => {
                             return (
                                 <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
-                                    <h1 style={{ backgroundColor: 'rgb(193, 182, 134)' }} className=' text-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
-                                    <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-italian'>
+                                    <h1 className=' text-white bg-black font-mono py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
+                                    <div className='flex flex-row gap-2 lg:gap-10 py-5 font-mono justify-center items-center '>
                                         {
                                             singlePackage.sessions.map((singleSession, indx) => {
                                                 return (
                                                     <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
-                                                        <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
-                                                        <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
-                                                        <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
-                                                        <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
+                                                        <h1 className='font-mono text-base lg:text-base'>{singleSession.type}</h1>
+                                                        <h2 className=' text-base lg:text-base font-serif'>{singleSession.price}</h2>
+                                                        <h3 className='text-xs lg:text-base'>{singleSession.pricetag}</h3>
+                                                        <h4 className='text-xs lg:text-base'>{singleSession.session}</h4>
                                                     </div>
                                                 )
                                             })

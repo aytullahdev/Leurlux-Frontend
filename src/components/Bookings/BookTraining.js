@@ -314,22 +314,22 @@ const TrainingPricing = () => {
     ]
     return (<div className='font-italian py-5 bg-white text-black px-5 lg:px-5 '>
         <div >
-            <div>
-                <h1 className='text-4xl'>PERSONAL <span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
-                <div className='grid grid-cols-1 2xl:grid-cols-1 gap-5 mt-5'>
-                    {personalTrainingPackage.map((singlePackage, indx) => {
+            <div className='py-10'>
+                <h1 className='text-4xl'>PROFFESIONAL FOOTBALL<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
+                <div className='grid grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 gap-5 mt-5'>
+                    {proPlayerTrainingPackage.map((singlePackage, indx) => {
                         return (
                             <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
-                                <h1 style={{ backgroundColor: 'rgb(193, 182, 134)' }} className=' text-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
+                                <h1 className=' text-white bg-black font-mono py-2 rounded-lg text-xl lg:text-xl text-center'>{singlePackage.tittle}</h1>
                                 <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-italian'>
                                     {
                                         singlePackage.sessions.map((singleSession, indx) => {
                                             return (
-                                                <div key={`session-${indx}`} className='text-center  lg:text-xl flex flex-col gap-1 justify-start'>
-                                                    <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
-                                                    <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
-                                                    <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
-                                                    <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
+                                                <div key={`session-${indx}`} className='text-center lg:text-base flex flex-col gap-1 justify-start'>
+                                                    <h1 className='font-mono text-base lg:text-base'>{singleSession.type}</h1>
+                                                    <h2 className=' text-base lg:text-base font-serif'>{singleSession.price}</h2>
+                                                    <h3 className='text-xs lg:text-base'>{singleSession.pricetag}</h3>
+                                                    <h4 className='text-xs lg:text-base'>{singleSession.session}</h4>
                                                 </div>
                                             )
                                         })
@@ -340,33 +340,34 @@ const TrainingPricing = () => {
                         )
                     })}
                 </div>
-                <div className='py-10'>
-                    <h1 className='text-4xl'>PROFFESIONAL FOOTBALL<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
-                    <div className='grid grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 gap-5 mt-5'>
-                        {proPlayerTrainingPackage.map((singlePackage, indx) => {
-                            return (
-                                <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
-                                    <h1 style={{ backgroundColor: 'rgb(193, 182, 134)' }} className=' text-black py-2 rounded-lg text-xl lg:text-2xl text-center'>{singlePackage.tittle}</h1>
-                                    <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-italian'>
-                                        {
-                                            singlePackage.sessions.map((singleSession, indx) => {
-                                                return (
-                                                    <div key={`session-${indx}`} className='text-center lg:text-xl flex flex-col gap-1 justify-start'>
-                                                        <h1 className='font-mono text-base lg:text-xl'>{singleSession.type}</h1>
-                                                        <h2 className=' text-base lg:text-xl font-serif'>{singleSession.price}</h2>
-                                                        <h3 className='text-xs lg:text-xl'>{singleSession.pricetag}</h3>
-                                                        <h4 className='text-xs lg:text-xl'>{singleSession.session}</h4>
-                                                    </div>
-                                                )
-                                            })
-                                        }
-                                    </div>
-
+            </div>
+            <div>
+                <h1 className='text-4xl'>PERSONAL <span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
+                <div className='grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-5 mt-5'>
+                    {personalTrainingPackage.map((singlePackage, indx) => {
+                        return (
+                            <div key={`package${indx}`} className='uppercase  text-black shadow-sm p-5 border rounded '>
+                                <h1 className=' text-white bg-black font-mono py-2 rounded-lg text-xl lg:text-xl text-center'>{singlePackage.tittle}</h1>
+                                <div className='flex flex-row gap-2 lg:gap-10 py-5 justify-center items-center font-mono'>
+                                    {
+                                        singlePackage.sessions.map((singleSession, indx) => {
+                                            return (
+                                                <div key={`session-${indx}`} className='text-center  lg:text-xl flex flex-col gap-1 justify-start'>
+                                                    <h1 className='font-mono text-base lg:text-base'>{singleSession.type}</h1>
+                                                    <h2 className=' text-base lg:text-base font-serif'>{singleSession.price}</h2>
+                                                    <h3 className='text-xs lg:text-base'>{singleSession.pricetag}</h3>
+                                                    <h4 className='text-xs lg:text-base'>{singleSession.session}</h4>
+                                                </div>
+                                            )
+                                        })
+                                    }
                                 </div>
-                            )
-                        })}
-                    </div>
+
+                            </div>
+                        )
+                    })}
                 </div>
+
             </div>
 
         </div>
