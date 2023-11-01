@@ -341,7 +341,7 @@ const TrainingPricing = () => {
                     })}
                 </div>
                 <div className='py-10'>
-                    <h1 className='text-4xl'>PRO PALYER<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
+                    <h1 className='text-4xl'>PROFFESIONAL FOOTBALL<span style={{ color: 'rgb(193, 182, 134)' }}>TRAINING</span></h1>
                     <div className='grid grid-cols-1 lg:grid-cols-1 2xl:grid-cols-2 gap-5 mt-5'>
                         {proPlayerTrainingPackage.map((singlePackage, indx) => {
                             return (

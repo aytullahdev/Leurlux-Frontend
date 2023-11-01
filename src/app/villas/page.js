@@ -29,6 +29,7 @@ const Villa = ({ villa }) => {
             <div className='flex flex-col lg:flex-row justify-between  items-center'>
                 <div>
                     <p className='uppercase font-black mt-5 font-italian lg:text-2xl'>{villa?.name}</p>
+                    <p className='uppercase font-thin '>{villa?.beds} Bed</p>
                     <p className='py-2'>
                         <span className='font-thin'>Price from {villa?.price}{villa?.price_tag}</span>
                     </p>

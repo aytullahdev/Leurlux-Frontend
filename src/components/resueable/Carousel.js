@@ -3,11 +3,9 @@ import { useState } from "react";
 import Image from 'next/image'
 const Carousel = ({ photos }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-
     const changeActivePhoto = (index) => {
         setActiveIndex(index);
     };
-
     const nextPhoto = () => {
         const newIndex = (activeIndex + 1) % photos.length;
         setActiveIndex(newIndex);
@@ -43,14 +41,14 @@ const Carousel = ({ photos }) => {
 
                         </button>
                         <img
-                            src={photos[activeIndex]}
+                            src={photos[Math.abs(photos.length - activeIndex - 1)]}
                             alt="Main Photo"
                             className="w-auto h-auto mx-auto rounded-lg max-h-full max-w-full object-contain"
                         />
                         {/* <Image src={photos[activeIndex]} quality={100} width={100} height={100} className="w-full lg:w-full h-[350px] rounded-lg" /> */}
                         <div className="w-full flex my-2 items-start justify-stitems-start">
                             <div className="flex overflow-scroll flex-row justify-start gap-2">
-                                {photos.slice(0, 15).map((photo, index) => {
+                                {photos.slice(0, 15).reverse().map((photo, index) => {
 
                                     return (<img
                                         key={index}
