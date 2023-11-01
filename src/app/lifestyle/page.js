@@ -86,7 +86,7 @@ const SingleServices = ({ service }) => {
 const page = () => {
     return (
         <div className="">
-            <div id="services" className="w-full px-5  grid lg:grid-cols-3 h-screen">
+            <div id="services" className="w-full lg:px-5  grid lg:grid-cols-3 h-screen">
                 {services.map((singleServices, indx) => {
                     return (
                         <SingleServices key={`service${indx}`} service={singleServices} />
