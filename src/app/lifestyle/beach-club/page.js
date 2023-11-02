@@ -123,7 +123,7 @@ const BeachClub = () => {
         return {
             name: singleObject.attributes.name, description: singleObject.attributes.description, images: singleObject.attributes.images.data?.map((singleImage) => {
                 return `${singleImage.attributes.url}`
-            }), location: singleObject.attributes.location,
+            }), location: singleObject.attributes.location, video: singleObject?.attributes?.videolink,
         };
 
     }
@@ -139,19 +139,22 @@ const BeachClub = () => {
                 {
                     collection?.length ? collection.map((singleBeachClub, indx) => {
                         singleBeachClub = getObject(singleBeachClub)
+                        console.log(singleBeachClub)
                         return (
-                            <div key={indx}>
-                                <div className='flex flex-col gap-5 shadow-sm border rounded-lg   '>
-
-                                    <div>
-                                        {/* <Carousel photos={singleBeachClub.images} /> */}
-
-                                        <GalleryCarousel slidesPerView={1} images={singleBeachClub?.images} />
+                            <div key={indx} className='overflow-hidden'>
+                                <div className='flex relative flex-col h-[500px]  gap-5 shadow-sm border rounded-lg   '>
 
 
-                                    </div>
-                                    <div className=' p-5 flex flex-col gap-5 lg:gap-0 lg:flex-row justify-around items-center'>
-                                        <h1 className='text-xl font-italian uppercase'>{singleBeachClub.name}</h1>
+                                    {/* <Carousel photos={singleBeachClub.images} /> */}
+                                    <video muted loop autoPlay className=' w-auto absolute top-0 left-0 z-20'>
+                                        <source src={singleBeachClub.video} />
+                                    </video>
+                                    {/* <GalleryCarousel slidesPerView={1} images={singleBeachClub?.images} /> */}
+
+
+
+                                    <div className='z-40 bg-black/50 hover:bg-black/40 absolute bottom-0 pb-2 flex flex-col  lg:gap-0 lg:flex-col justify-center w-full items-center'>
+                                        <h1 className='text-xl text-white font-italian uppercase py-5'>{singleBeachClub.name}</h1>
                                         <button onClick={() => { handleSelect(singleBeachClub) }} className='text-white bg-black font-italian px-5 block py-2 rounded-lg'>Book Now</button>
                                     </div>
                                 </div>

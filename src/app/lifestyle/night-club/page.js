@@ -30,7 +30,7 @@ const NightClubs = () => {
         return {
             name: singleObject.attributes.name, description: singleObject.attributes.description, images: singleObject.attributes.images.data?.map((singleImage) => {
                 return `${singleImage.attributes.url}`
-            }), location: singleObject.attributes.location,
+            }), location: singleObject.attributes.location, video: singleObject?.attributes?.videolink,
         };
 
     }
@@ -42,16 +42,18 @@ const NightClubs = () => {
                     collection?.length ? collection?.map((singleClub, indx) => {
                         singleClub = getObject(singleClub)
                         return (
-                            <div key={indx}>
-                                <div className='flex flex-col gap-5 shadow-sm border rounded-lg'>
+                            <div key={indx} className='overflow-hidden'>
+                                <div className='flex relative flex-col h-[500px]  gap-5 shadow-sm border rounded-lg   '>
+                                    <video muted loop autoPlay className=' w-auto absolute top-0 left-0 z-20'>
+                                        <source src={singleClub.video} />
+                                    </video>
+                                    {/* <div className='p-1'>
+                                     <Carousel photos={singleClub.images} /> 
+                                    <GalleryCarousel slidesPerView={1} images={singleClub?.images} />
 
-                                    <div className='p-1'>
-                                        {/* <Carousel photos={singleClub.images} /> */}
-                                        <GalleryCarousel slidesPerView={1} images={singleClub?.images} />
-
-                                    </div>
-                                    <div className=' p-5 flex gap-5 lg:gap-0 flex-col lg:flex-row justify-around items-center'>
-                                        <h1 className='text-xl font-italian'>{singleClub.name}</h1>
+                                </div> */}
+                                    <div className='z-40 bg-black/50 hover:bg-black/40 absolute bottom-0 pb-2 flex flex-col  lg:gap-0 lg:flex-col justify-center w-full items-center'>
+                                        <h1 className='text-xl text-white font-italian py-3'>{singleClub.name}</h1>
                                         <button onClick={() => { handleSelect(singleClub) }} className='text-white bg-black font-italian px-5 block py-2 rounded-lg'>Book Now</button>
                                     </div>
                                 </div>
@@ -61,7 +63,7 @@ const NightClubs = () => {
                 }
             </div>
 
-        </div>
+        </div >
     );
 }
 const page = () => {
