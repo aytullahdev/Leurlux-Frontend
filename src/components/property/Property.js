@@ -8,7 +8,7 @@ const services = [
     {
         title: "Villas",
         img: require('@/assets/images/villa.jpg').default.src,
-        to: '/villas',
+        to: '/villas#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -28,7 +28,7 @@ const services = [
     {
         title: "Apartments",
         img: require('@/assets/images/apartment.jpeg').default.src,
-        to: '/apartments',
+        to: '/apartments#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -47,7 +47,7 @@ const services = [
     {
         title: "Hotels",
         img: require('@/assets/images/hotel.jpeg').default.src,
-        to: '/hotels',
+        to: '/hotels#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -97,9 +97,10 @@ const SingleServices = ({ service, handleAbout }) => {
 
 
                 </div>
-                <div className='block lg:hidden'>
+                {title !== 'Hotels' && <div className={`block lg:hidden `}>
                     <ArrowDown />
                 </div>
+                }
             </div>
         </div >
     }

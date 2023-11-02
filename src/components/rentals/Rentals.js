@@ -7,7 +7,7 @@ const services = [
     {
         title: "Private jets",
         img: require('@/assets/images/private-jet.jpeg').default.src,
-        to: '/privatejet',
+        to: '/privatejet#top',
         book: '/book?category=privatejet#bookprivatejet',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
@@ -28,7 +28,7 @@ const services = [
     {
         title: "Yachts",
         img: require('@/assets/images/yacht.jpeg').default.src,
-        to: '/yachts',
+        to: '/yachts#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -47,7 +47,7 @@ const services = [
     {
         title: "Supercars",
         img: require('@/assets/images/supercar.png').default.src,
-        to: '/supercars',
+        to: '/supercars#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
         transportation experience, designed to meet the needs of the most
         
@@ -100,9 +100,10 @@ const SingleServices = ({ service, handleAbout }) => {
 
 
                 </div>
-                <div className='block lg:hidden'>
+                {title !== 'Supercars' && <div className={`block lg:hidden `}>
                     <ArrowDown />
                 </div>
+                }
             </div>
         </div>
     }

@@ -7,19 +7,19 @@ const services = [
         title: "Beach Club",
 
         img: require("@/assets/images/beachclub.jpg").default.src,
-        to: "beach-club",
+        to: "beach-club#top",
     },
     {
         title: "Restaurants / Dinner Parties",
 
         img: require("@/assets/images/resturent-dinner.jpg").default.src,
-        to: "restaurants-dinner-parties",
+        to: "restaurants-dinner-parties#top",
     },
     {
         title: "Night Club",
 
         img: require("@/assets/images/night-club.jpg").default.src,
-        to: "night-club",
+        to: "night-club#top",
     },
     {
         title: "Personal Training",
@@ -31,13 +31,13 @@ const services = [
         title: "Massage",
 
         img: require("@/assets/images/massage.jpg").default.src,
-        to: "massage",
+        to: "massage#top",
     },
     {
         title: "Private Runner",
         // img: require("@/assets/images/private-runner.jpg").default.src,
         img: '/privaterunner.webp',
-        to: "private-runner",
+        to: "private-runner#top",
     },
 ];
 const SingleServices = ({ service }) => {
@@ -49,7 +49,7 @@ const SingleServices = ({ service }) => {
             {service && title && (
                 <div
                     onClick={() => {
-                        router.push(`/lifestyle/${to}`);
+                        router.push(`/lifestyle/${to}`, { scroll: false });
                     }}
                     className="border w-full border-black hover:border-white h-[300px] lg:h-full text-white relative  bg-cover origin-center bg-center cursor-pointer"
                     onMouseLeave={() => {
@@ -75,9 +75,10 @@ const SingleServices = ({ service }) => {
                         </ul>
 
                     </div>
-                    <div className=" absolute bottom-0 py-5 lg:hidden w-full flex flex-row justify-start items-center">
+                    {title !== 'Private Runner' && <div className=" absolute bottom-0 py-5 lg:hidden w-full flex flex-row justify-start items-center">
                         <ArrowDown />
                     </div>
+                    }
                 </div>
             )}
         </>
