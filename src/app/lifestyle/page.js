@@ -2,34 +2,42 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import ArrowDown from '@/components/resueable/ArrowDown'
+import Link from "next/link";
 const services = [
     {
         title: "Beach Club",
-
+        id: 'beach_club',
         img: require("@/assets/images/beachclub.jpg").default.src,
         to: "beach-club#top",
+        next: '#restaurant',
     },
     {
         title: "Restaurants / Dinner Parties",
+        id: 'restaurant',
+        next: '#night_club',
 
         img: require("@/assets/images/resturent-dinner.jpg").default.src,
         to: "restaurants-dinner-parties#top",
     },
     {
         title: "Night Club",
+        id: 'night_club',
 
+        next: '#personal_training',
         img: require("@/assets/images/night-club.jpg").default.src,
         to: "night-club#top",
     },
     {
         title: "Personal Training",
-
+        id: 'personal_training',
+        next: '#massage',
         img: require("@/assets/images/personal-training.jpg").default.src,
         to: "personal-training",
     },
     {
         title: "Massage",
-
+        id: 'massage',
+        next: '#private_runner',
         img: require("@/assets/images/massage.jpg").default.src,
         to: "massage#top",
     },
@@ -38,16 +46,19 @@ const services = [
         // img: require("@/assets/images/private-runner.jpg").default.src,
         img: '/privaterunner.webp',
         to: "private-runner#top",
+        id: 'private_runner',
+
     },
 ];
 const SingleServices = ({ service }) => {
-    const { title, list, img, to } = service || {};
+    const { title, list, img, to, id, next } = service || {};
     const [isHover, setIsHover] = useState(false);
     const router = useRouter();
     return (
         <>
             {service && title && (
                 <div
+                    id={id}
                     onClick={() => {
                         router.push(`/lifestyle/${to}`, { scroll: false });
                     }}
@@ -75,9 +86,9 @@ const SingleServices = ({ service }) => {
                         </ul>
 
                     </div>
-                    {title !== 'Private Runner' && <div className=" absolute bottom-0 py-5 lg:hidden w-full flex flex-row justify-start items-center">
+                    {title !== 'Private Runner' && <Link onClick={(e) => e.stopPropagation()} href={next} className=" absolute bottom-0 py-5 lg:hidden w-full flex flex-row justify-start items-center">
                         <ArrowDown />
-                    </div>
+                    </Link>
                     }
                 </div>
             )}

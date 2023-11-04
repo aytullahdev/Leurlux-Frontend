@@ -86,7 +86,7 @@ const BookPrivateJet = () => {
 
 
     }
-    const countryes = ['Europe', ' New Zealand', 'Australia', 'The South Pacific']
+    const countryes = ['Europe', ' Asia', 'America', 'Africa']
     return <div className='bg-white relative w-full h-full' id='bookprivatejet'>
         {/* <video className='w-full h-full   z-40 ' autoPlay loop muted playsInline>
             <source src="https://cdn.globeair.com/website/m/globeair_website_header_2304_1920x1080.mp4" type="video/mp4" />

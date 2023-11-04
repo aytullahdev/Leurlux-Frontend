@@ -274,6 +274,71 @@ import ArrowDown from '../../components/resueable/ArrowDown';
 // ]
 const yachts = [
     {
+        "name": "MANGUSTA 80 HAPPY HOUR",
+        "pdf": '/yachts/80_mangusta/80_mangusta.pdf',
+        "images": ['/yachts/80_mangusta/0.jpg',
+            '/yachts/80_mangusta/1.jpg',
+            '/yachts/80_mangusta/2.jpg',
+            '/yachts/80_mangusta/3.jpg',
+            '/yachts/80_mangusta/4.jpg',
+            '/yachts/80_mangusta/5.jpg',
+            '/yachts/80_mangusta/7.jpg',
+            '/yachts/80_mangusta/8.jpg',],
+        "specs": {
+            "capacity": "12 + 2 crew",
+            "cabins": "2 double, 1 twin",
+            "wc": "2",
+            "length": "25 m",
+            "beam": "5.9 m",
+            "charterSpeed": "10 knots"
+        },
+        "features": [
+            "Sunshade",
+            "Front and back sunbeds",
+            "Interior and exterior sitting area",
+            "Bluetooth music connection",
+            "A/C",
+            "Void sound system",
+            "Fully equipped kitchen"
+        ],
+        "included": [
+            "Captain",
+            "Fuel",
+            "Insurance",
+            "Towels",
+            "Water",
+            "Soft drinks",
+            "Beers",
+            "Cava and white wine",
+            "Fruits & snacks",
+            "Snorkeling equipment",
+            "Paddle board"
+        ],
+        "pricing": {
+            "fullDay": {
+                "highSeason": {
+                    "price": 6500,
+                    "vatIncluded": true
+                },
+            },
+            "halfDay": {
+                "highSeason": {
+                    "price": 3900,
+                    "vatIncluded": true
+                }
+            },
+
+
+            "fuelConsumption": "460 L/h",
+            "morningCruiseTime": "10 am - 2 pm",
+            "afternoonCruiseTime": "4 pm - 8 pm",
+            "seasons": {
+                "highSeason": "June to September",
+                "lowSeason": "Rest of the year"
+            }
+        }
+    },
+    {
         "name": "PORTOFINO 46 ZERO",
         "pdf": '/yachts/46_portofino/46_portofino.pdf',
         "images": [
@@ -601,71 +666,7 @@ const yachts = [
             }
         }
     },
-    {
-        "name": "MANGUSTA 80 HAPPY HOUR",
-        "pdf": '/yachts/80_mangusta/80_mangusta.pdf',
-        "images": ['/yachts/80_mangusta/0.jpg',
-            '/yachts/80_mangusta/1.jpg',
-            '/yachts/80_mangusta/2.jpg',
-            '/yachts/80_mangusta/3.jpg',
-            '/yachts/80_mangusta/4.jpg',
-            '/yachts/80_mangusta/5.jpg',
-            '/yachts/80_mangusta/7.jpg',
-            '/yachts/80_mangusta/8.jpg',],
-        "specs": {
-            "capacity": "12 + 2 crew",
-            "cabins": "2 double, 1 twin",
-            "wc": "2",
-            "length": "25 m",
-            "beam": "5.9 m",
-            "charterSpeed": "10 knots"
-        },
-        "features": [
-            "Sunshade",
-            "Front and back sunbeds",
-            "Interior and exterior sitting area",
-            "Bluetooth music connection",
-            "A/C",
-            "Void sound system",
-            "Fully equipped kitchen"
-        ],
-        "included": [
-            "Captain",
-            "Fuel",
-            "Insurance",
-            "Towels",
-            "Water",
-            "Soft drinks",
-            "Beers",
-            "Cava and white wine",
-            "Fruits & snacks",
-            "Snorkeling equipment",
-            "Paddle board"
-        ],
-        "pricing": {
-            "fullDay": {
-                "highSeason": {
-                    "price": 6500,
-                    "vatIncluded": true
-                },
-            },
-            "halfDay": {
-                "highSeason": {
-                    "price": 3900,
-                    "vatIncluded": true
-                }
-            },
 
-
-            "fuelConsumption": "460 L/h",
-            "morningCruiseTime": "10 am - 2 pm",
-            "afternoonCruiseTime": "4 pm - 8 pm",
-            "seasons": {
-                "highSeason": "June to September",
-                "lowSeason": "Rest of the year"
-            }
-        }
-    }
 ]
 
 

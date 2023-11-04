@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import ArrowDown from '@/components/resueable/ArrowDown'
 import AboutService from '../AboutService';
+import Link from 'next/link';
 const services = [
     {
         title: "Villas",
@@ -22,7 +23,9 @@ const services = [
         
         get around town in style, our transfer service is designed to exceed
         your expectations and provide an unparalleled level of comfort,
-        convenience, and luxury.`
+        convenience, and luxury.`,
+        next: '#Apartments',
+
 
     },
     {
@@ -42,7 +45,8 @@ const services = [
         
         get around town in style, our transfer service is designed to exceed
         your expectations and provide an unparalleled level of comfort,
-        convenience, and luxury.`
+        convenience, and luxury.`,
+        next: '#Hotels'
     },
     {
         title: "Hotels",
@@ -65,13 +69,13 @@ const services = [
     },
 ]
 const SingleServices = ({ service, handleAbout }) => {
-    const { title, list, img, to } = service || {}
+    const { title, list, img, to, next } = service || {}
     const [isHover, setIsHover] = useState(false)
     const router = useRouter();
     return <>{
         service && title &&
 
-        <div onClick={(e) => { e.preventDefault(); router.push(to) }} className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
+        <div id={title} onClick={(e) => { e.preventDefault(); router.push(to) }} className='  text-white relative min-h-screen bg-cover origin-center bg-center cursor-pointer flex justify-center items-center' onMouseLeave={() => {
             setIsHover(false)
         }} onMouseOver={() => {
             setIsHover(true)
@@ -97,9 +101,9 @@ const SingleServices = ({ service, handleAbout }) => {
 
 
                 </div>
-                {title !== 'Hotels' && <div className={`block lg:hidden `}>
+                {title !== 'Hotels' && <Link onClick={(e) => e.stopPropagation()} href={next} className={`block lg:hidden `}>
                     <ArrowDown />
-                </div>
+                </Link>
                 }
             </div>
         </div >
