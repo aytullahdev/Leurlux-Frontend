@@ -677,7 +677,7 @@ function YachtDetails({ yacht }) {
     const router = useRouter();
     const handleView = () => {
         setSelectedYacht(yacht);
-        router.push('/book?category=yacht');
+        router.push('/book?category=yacht#top');
 
     }
     return (
