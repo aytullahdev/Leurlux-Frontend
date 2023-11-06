@@ -230,21 +230,21 @@ const TransportSection = () => {
                                             <div className='flex flex-col gap-8'>
 
                                                 <div className="bg-white rounded-lg shadow-lg p-6 ">
-                                                    <h3 className="text-xl font-semibold text-black mb-4">Experience Unparalleled Comfort</h3>
+                                                    <h3 className="lg:text-xl font-semibold text-black mb-4">Experience Unparalleled Comfort</h3>
                                                     <p className="text-black">
                                                         {`The Hongqi E-HS9 offers a luxurious and comfortable travel experience for all your transportation needs. With its spacious interior, premium materials, and advanced features, you'll enjoy every moment of your journey.`}
                                                     </p>
                                                 </div>
 
                                                 <div className="bg-white rounded-lg shadow-lg p-6">
-                                                    <h3 className="text-xl font-semibold text-black mb-4">Environmentally Friendly Travel</h3>
+                                                    <h3 className="lg:text-xl font-semibold text-black mb-4">Environmentally Friendly Travel</h3>
                                                     <p className="text-black">
                                                         {`We are proud to use the Hongqi E-HS9, a fully electric car, for our transport services. This means you can travel in style while also contributing to a cleaner environment. Enjoy eco-friendly travel with us.`}
                                                     </p>
                                                 </div>
 
                                                 <div className="bg-white rounded-lg shadow-lg p-6">
-                                                    <h3 className="text-xl font-semibold text-black mb-4">Tailored Transport Services</h3>
+                                                    <h3 className="lg:text-xl font-semibold text-black mb-4">Tailored Transport Services</h3>
                                                     <p className="text-black">
                                                         {`Our transport services are designed to cater to your specific needs. Whether you're heading to the airport, attending business meetings, or exploring the city, the Hongqi E-HS9 ensures a comfortable and tailored experience.`}
                                                     </p>
@@ -294,7 +294,7 @@ const TransportSection = () => {
                                 </div>
                                 <div className='my-10  w-full grid lg:grid-cols-2 justify-center items-center'>
                                     {/* <Link href="/book?category=transport" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link> */}
-                                    <div className='flex p-10 flex-row justify-start '>
+                                    <div className='flex p-5 lg:p-10 flex-row justify-start '>
                                         <div>
                                             <h1 className='text-3xl font-bold'>{chauffeurPrice.vehicle} Pricing</h1>
                                             <ul className="flex text-black flex-col gap-2 text-base lg:text-xl py-5 w-full">
@@ -377,7 +377,7 @@ const TransportSection = () => {
 
                                             <section className="bg-gray-100 py-12">
                                                 <div className="container mx-auto px-4">
-                                                    <h2 className="text-xl lg:text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
+                                                    <h2 className="text-base lg:text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
                                                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Unparalleled Performance</h3>
@@ -387,14 +387,14 @@ const TransportSection = () => {
                                                         </div>
 
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
-                                                            <h3 className="text-xl font-semibold text-black mb-4">Sleek and Elegant Design</h3>
+                                                            <h3 className="lg:text-xl font-semibold text-black mb-4">Sleek and Elegant Design</h3>
                                                             <p className="text-black">
                                                                 {` The Porsche's iconic design stands as a symbol of sophistication. With its sleek lines and elegant aesthetics, you'll make a statement as you travel in style with our Porsche transport services.`}
                                                             </p>
                                                         </div>
 
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
-                                                            <h3 className="text-xl font-semibold text-black mb-4">Tailored to Your Needs</h3>
+                                                            <h3 className="lg:text-xl font-semibold text-black mb-4">Tailored to Your Needs</h3>
                                                             <p className="text-black">
                                                                 {` Our Porsche transport services are tailored to cater to your specific requirements. Whether you need a quick airport transfer, a chauffeur for city exploration, or a stylish ride for special events, Porsche delivers.`}
                                                             </p>
@@ -451,7 +451,7 @@ const TransportSection = () => {
                                 </div>
                                 <div className='my-10  w-full grid lg:grid-cols-2 justify-center items-center'>
                                     {/* <Link href="/book?category=transport" className='text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</Link> */}
-                                    <div className='flex p-10 flex-row justify-start '>
+                                    <div className='flex p-5 lg:p-10 flex-row justify-start '>
                                         <div>
                                             <h1 className='text-3xl font-bold'>{porschePrice.vehicle} Pricing</h1>
                                             <ul className="flex text-black flex-col gap-2 text-base lg:text-xl py-5 w-full">
