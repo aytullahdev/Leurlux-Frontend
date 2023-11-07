@@ -279,7 +279,7 @@ const BookYacht = () => {
                                                 <div className=''>
                                                     <p className='lg:px-3 py-1 text-base lg:text-xl font-bold font-italian '>Seasons: High Season - {selectedYacht.pricing.seasons.highSeason}, Low Season - {selectedYacht.pricing.seasons.lowSeason}</p>
                                                 </div>
-                                                <div className=' w-full grid grid-cols-2 gap-2 font-thin'>
+                                                <div className=' w-full grid lg:grid-cols-2 gap-2 font-thin'>
 
                                                     <div className='flex flex-col gap-1 lg:gap-5'>
                                                         <h1 className='text-3x font-italian py-2'>High Season</h1>
@@ -292,7 +292,7 @@ const BookYacht = () => {
                                                         {(selectedYacht.pricing?.halfDay?.lowSeason?.price) && <p className='px-3 py-1 border block rounded'>Half Day (Low Season): {selectedYacht.pricing.halfDay.lowSeason.price} €</p>}
                                                     </div>
                                                 </div>
-                                                <div className=' w-full grid grid-cols-2 gap-2 font-thin'>
+                                                <div className=' w-full grid lg:grid-cols-2 gap-2 font-thin'>
 
                                                     <div className='flex flex-col gap-1 lg:gap-5 font-thin'>
                                                         <h1 className='text-3x font-italian py-2'>Morning Cruise</h1>

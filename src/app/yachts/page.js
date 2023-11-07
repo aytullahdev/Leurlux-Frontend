@@ -789,12 +789,12 @@ const Yachts = () => {
             <div id='' className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>Discover Luxury Afloat</h1>
-                        <p className='text-justify font-2xl'> {`At LEURLUX, we take pride in providing a superior yacht rental service, offering an exquisite fleet of yachts that will cater to all your desires. Our collection includes an array of meticulously maintained yachts, from sleek and nimble vessels for intimate getaways to expansive, lavish yachts for group excursions.`}</p>
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl py-5'>Discover Luxury Afloat</h1>
+                        <p className='text-justify text-sm lg:text-lg'> {`At LEURLUX, we take pride in providing a superior yacht rental service, offering an exquisite fleet of yachts that will cater to all your desires. Our collection includes an array of meticulously maintained yachts, from sleek and nimble vessels for intimate getaways to expansive, lavish yachts for group excursions.`}</p>
                     </div>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>A Bigger Spectacle: Catamaran Yachts</h1>
-                        <p className='text-justify font-2xl'>{`In addition to our exceptional yacht fleet, we offer access to larger catamaran yachts that can entertain large groups, accommodating from 27 to 180 people. These magnificent vessels are ideal for hosting grand celebrations, corporate events, or any occasion where you want to create unforgettable memories with a larger audience.`}</p>
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl py-5'>A Bigger Spectacle: Catamaran Yachts</h1>
+                        <p className='text-justify text-sm lg:text-lg'>{`In addition to our exceptional yacht fleet, we offer access to larger catamaran yachts that can entertain large groups, accommodating from 27 to 180 people. These magnificent vessels are ideal for hosting grand celebrations, corporate events, or any occasion where you want to create unforgettable memories with a larger audience.`}</p>
                     </div>
 
                 </div>
@@ -811,12 +811,12 @@ const Yachts = () => {
             <div id='' className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>Tailored Experiences</h1>
-                        <p className='text-justify font-2xl'> {`Our commitment to excellence extends beyond merely booking a yacht. We believe that your journey should be as unique as you are. Whether you're seeking a romantic escape, a celebratory gathering, or a corporate event, our expert team of professionals will craft your experience to your preferences. No request is too extravagant, no detail is too small.`}</p>
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl py-5'>Tailored Experiences</h1>
+                        <p className='text-justify text-sm lg:text-lg'> {`Our commitment to excellence extends beyond merely booking a yacht. We believe that your journey should be as unique as you are. Whether you're seeking a romantic escape, a celebratory gathering, or a corporate event, our expert team of professionals will craft your experience to your preferences. No request is too extravagant, no detail is too small.`}</p>
                     </div>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>Your Ocean Playground</h1>
-                        <p className='text-justify font-2xl'>{`Indulge in the thrill of cruising the Mediterranean, exploring hidden coves, or anchoring off vibrant coastal cities. Our yachts are your ticket to a world of adventure and relaxation, all within your reach.
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl py-5'>Your Ocean Playground</h1>
+                        <p className='text-justify text-sm lg:text-lg'>{`Indulge in the thrill of cruising the Mediterranean, exploring hidden coves, or anchoring off vibrant coastal cities. Our yachts are your ticket to a world of adventure and relaxation, all within your reach.
 `}</p>
                     </div>
                     <div className='my-10  flex justify-center items-center lg:col-span-2'>

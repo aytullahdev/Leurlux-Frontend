@@ -74,13 +74,13 @@ const page = () => {
 
 
     return (
-        <>
+        <div className='bg-white'>
 
 
             <BookService />
 
 
-        </>
+        </div>
     );
 };
 

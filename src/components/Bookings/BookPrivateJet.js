@@ -157,7 +157,7 @@ const BookPrivateJet = () => {
             </div>
             <div className='flex flex-row  items-center space-x-5 py-5 justify-center'>
                 <button onClick={() => handleSubmit()} className='block px-2 lg:px-5 py-2 bg-black text-white rounded-lg'>Request</button>
-                <Link href="/#services" className='block px-5 py-2  text-blue-600 underline font-italian  rounded-lg'>service</Link>
+                <Link href="/#services" className='block px-5 py-2   underline font-italian  rounded-lg' style={{ color: 'rgb(193, 182, 134)' }}>service</Link>
             </div>
         </div>
 

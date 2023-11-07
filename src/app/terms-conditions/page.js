@@ -3,11 +3,11 @@ import React from 'react';
 
 const page = () => {
     return (
-        <div className='px-5 lg:px-5'>
+        <div className='px-0 lg:px-5'>
             <div className='text-white bg-[#232222] py-5 p-5 ' >
                 <h1 className='font-italian text-5xl py-5'>Terms and Conditions</h1>
-                <p className='font-italian text-xl lg:text-3xl py-5 text-justify'>{`Welcome to LeurLux.com operated by LeurLux LCD. By using our website and services, you agree to comply with and be bound by the following terms and conditions. "Terms" Please read these Terms carefully before using our website and services. If you do not agree with these Terms, please do not use our website.`}</p>
-                <ul className='flex flex-col  gap-10 mt-10 text-base text-justify lg:text-left lg:text-3xl font-thin'>
+                <p className='font-italian text-xl lg:text-3xl py-5 text-left'>{`Welcome to LeurLux.com operated by LeurLux LCD. By using our website and services, you agree to comply with and be bound by the following terms and conditions. "Terms" Please read these Terms carefully before using our website and services. If you do not agree with these Terms, please do not use our website.`}</p>
+                <ul className='flex flex-col  gap-10 mt-10 text-base text-left lg:text-left lg:text-3xl font-thin'>
                     <li>1. Acceptance of Terms
                         By using our website and services, you accept and agree to these Terms and any additional terms and policies referenced herein. If you do not agree to these Terms, please refrain from using our website and services.</li>
                     <li>

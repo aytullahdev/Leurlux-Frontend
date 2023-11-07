@@ -221,7 +221,7 @@ const TransportSection = () => {
                             <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
                                 <section className="bg-gray-100 py-5">
                                     <div className="container mx-auto lg:px-4">
-                                        <h2 className="text-3xl font-semibold text-black mb-6">Explore the Luxurious Hongqi E-HS9</h2>
+                                        <h2 className="text-xl lg:text-3xl font-semibold text-black mb-6">Explore the Luxurious Hongqi E-HS9</h2>
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                                             <div className="flex-row flex justify-center items-center ">
                                                 <GalleryCarousel slidesPerView={1} images={hongqi_photos} />

@@ -10,67 +10,67 @@ import ArrowDown from '../../components/resueable/ArrowDown';
 const supercarsData = [
     {
         "carname": "Porsche Tycan 4s (Full Electric)",
-        "price": "From 600 €/day",
+        "price": " 600 €/day",
         "img": "/porche.png"
     },
     {
         "carname": "Bentley GTC",
-        "price": "Starting from 1920 €/Day",
+        "price": " 1920 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
     },
     {
         "carname": "Ferrari 488 Coupe",
-        "price": "Starting from 1800 €/Day",
+        "price": " 1800 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Coupe.jpg"
     },
     {
         "carname": "Ferrari 488 Spider",
-        "price": "Starting from 1920 €/Day",
+        "price": " 1920 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-488-Spider.jpg"
     },
     {
         "carname": "Ferrari 812 Superfast",
-        "price": "Starting from 2640 €/Day",
+        "price": " 2640 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-812-Superfast.jpg"
     },
     {
         "carname": "Ferrari Portofino",
-        "price": "Starting from 1560 €/Day",
+        "price": " 1560 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ferrari-Portofino.jpg"
     },
     {
         "carname": "Lamborghini Huracan Coupe",
-        "price": "Starting from 1620 €/Day",
+        "price": " 1620 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Coupe.jpg"
     },
     {
         "carname": "Lamborghini Huracan Spyder",
-        "price": "Starting from 1920 €/Day",
+        "price": " 1920 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Huracan-Spyder.jpg"
     },
     {
         "carname": "Lamborghini Aventador LP750",
-        "price": "Starting from 3000 €/Day",
+        "price": " 3000 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Aventador-LP750.jpg"
     },
     {
         "carname": "McLaren 570",
-        "price": "Starting from 1560 €/Day",
+        "price": " 1560 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/McLaren-570.jpg"
     },
     {
         "carname": "Porsche 992 Coupe",
-        "price": "Starting from 780 €/Day",
+        "price": " 780 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Coupe.jpg"
     },
     {
         "carname": "Porsche 992 Cabrio",
-        "price": "Starting from 960 €/Day",
+        "price": " 960 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-992-Cab.jpg"
     },
     {
         "carname": "Porsche GT3 RS",
-        "price": "Starting from 1080 €/Day",
+        "price": " 1080 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Porsche-GT3-RS.jpg"
     }
 ]
