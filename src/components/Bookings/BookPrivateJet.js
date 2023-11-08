@@ -5,7 +5,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker'
-
+import airportsData from './airports.json';
 const BookPrivateJet = () => {
     const [bookongData, setBookingData] = useState({
         flyfrom: '',
@@ -18,11 +18,29 @@ const BookPrivateJet = () => {
         passengers: 1
 
     })
+    const [showFlyFrom, setShowFlyFrom] = useState(false)
+    const [showFlyTo, setShowFlyTo] = useState(false)
     const router = useRouter();
     const { flyfrom, flyto, flydate, fullname, email, phone, otherdetails, passengers } = bookongData
     const handleChange = (e) => {
         setBookingData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+        if (e.target.name === 'flyfrom' || e.target.name === 'flyto') {
+            if (e.target.name === 'flyfrom') {
+                setShowFlyFrom(true)
+            } else {
+                setShowFlyTo(true)
+            }
+            const filteredAirports = airportsData.filter((airport) =>
+                airport.name.toLowerCase().includes(e.target.value.toLowerCase())
+            );
+            setSuggestions(filteredAirports.slice(0, 5));
+        } else {
+            setShowFlyFrom(false)
+            setShowFlyTo(false)
+        }
+
     }
+    const [suggestions, setSuggestions] = useState([]);
     const [date, setDate] = useState({
         'arrival': new Date(),
         'departure': new Date(),
@@ -97,7 +115,7 @@ const BookPrivateJet = () => {
                 <h1 className='text-3xl lg:text-6xl font-italian'>
                     Private Aircraft Charter
                 </h1>
-                <ul className='flex items-center justify-center flex-row  my-5 py-5 text-base'>
+                <ul className=' flex items-center justify-center flex-row  my-5 py-5 text-base'>
                     {
                         countryes.map((singleCountry) => {
                             return <li key={singleCountry} className=' font-italian text-sm lg:text-xl text-center mx-[2px] lg:mx-2'>{singleCountry} |</li>
@@ -111,13 +129,27 @@ const BookPrivateJet = () => {
                 <h1 className='text-xl font-bold'>Booking Form</h1>
             </div>
             <div className='flex flex-col lg:flex-row lg:flex-wrap w-full  gap-2 justify-start items-center bg-white text-black'>
-                <div className='flex flex-col gap-2'>
+                <div className='relative flex flex-col gap-2'>
                     <label>From</label>
                     <input onChange={handleChange} type='text' name='flyfrom' className='border w-[300px] px-5 py-2 rounded' value={flyfrom} placeholder='From' />
+                    {(showFlyFrom && suggestions.length) > 0 && (
+                        <ul className='absolute bg-white top-full'>
+                            {suggestions.map((airport) => (
+                                <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyfrom': airport.name })); setSuggestions([]); setShowFlyFrom(false) }} key={airport.code}>{airport.name}</li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='relative flex flex-col gap-2'>
                     <label>To</label>
                     <input onChange={handleChange} type='text' name='flyto' className='border w-[300px] px-5 py-2 rounded' value={flyto} placeholder='To' />
+                    {(showFlyTo && suggestions.length > 0) && (
+                        <ul className='absolute  bg-white top-full'>
+                            {suggestions.map((airport) => (
+                                <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyto': airport.name })); setSuggestions([]); setShowFlyTo(false) }} key={airport.code}>{airport.name}</li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Persons</label>

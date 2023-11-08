@@ -37,9 +37,8 @@ const page = () => {
 
                         {` 7. Disclaimers
                     - We provide our services "as is" and do not guarantee that they will always be error-free or uninterrupted.
-                    - LeurLux is not responsible for the actions of third parties you may interact with through our services.
-                    - We are not responsible for the quality, safety, or legality of any services provided by third-party partners or affiliates.
-                    - You use our services at your own risk.`}
+                    LeurLux is not responsible for the actions of third parties you may interact with through our services.
+                    We are not responsible for the quality, safety, or legality of any services provided by third-party partners or affiliates. You use our services at your own risk.`}
                     </li>
                     <li>
                         8. Limitation of Liability
