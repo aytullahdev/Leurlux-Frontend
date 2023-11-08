@@ -8,7 +8,7 @@ const services = [
         title: "Beach Club",
         id: 'beach_club',
         img: require("@/assets/images/beachclub.jpg").default.src,
-        to: "beach-club#top",
+        to: "/beach-club#top",
         next: '#restaurant',
     },
     {
@@ -17,7 +17,7 @@ const services = [
         next: '#night_club',
 
         img: require("@/assets/images/resturent-dinner.jpg").default.src,
-        to: "restaurants-dinner-parties#top",
+        to: "/restaurants-dinner-parties#top",
     },
     {
         title: "Night Club",
@@ -25,29 +25,28 @@ const services = [
 
         next: '#personal_training',
         img: require("@/assets/images/night-club.jpg").default.src,
-        to: "night-club#top",
+        to: "/night-club#top",
     },
     {
         title: "Personal Training",
         id: 'personal_training',
         next: '#massage',
         img: require("@/assets/images/personal-training.jpg").default.src,
-        to: "personal-training",
+        to: "/personal-training#top",
     },
     {
         title: "Massage",
         id: 'massage',
         next: '#private_runner',
         img: require("@/assets/images/massage.jpg").default.src,
-        to: "massage#top",
+        to: "/massage#top",
     },
     {
         title: "Private Runner",
         // img: require("@/assets/images/private-runner.jpg").default.src,
         img: '/privaterunner.webp',
-        to: "private-runner#top",
+        to: "/private-runner#top",
         id: 'private_runner',
-
     },
 ];
 const SingleServices = ({ service }) => {
@@ -60,7 +59,7 @@ const SingleServices = ({ service }) => {
                 <div
                     id={id}
                     onClick={() => {
-                        router.push(`/lifestyle/${to}`, { scroll: false });
+                        router.push(`/lifestyle/${to}`);
                     }}
                     className="border w-full border-black hover:border-white h-[300px] lg:h-full text-white relative  bg-cover origin-center bg-center cursor-pointer"
                     onMouseLeave={() => {

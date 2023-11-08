@@ -226,10 +226,10 @@ const Massage = () => {
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian text-4xl lg:text-6xl xl:text-8xl lg:py-2 '>
+                            <h1 className='font-italian text-2xl lg:text-6xl xl:text-8xl lg:py-2 '>
                                 Experience  <span style={{ color: 'rgb(193, 182, 134)' }}>Relaxation and Rejuvenation</span> with Our Private Massage Services
                             </h1>
-                            <p className='py-5 text-xl font-italian lg:text-4xl '>
+                            <p className='py-5 text-lg font-italian lg:text-4xl '>
                                 {`Traveling can often be a tiring endeavor, which is why we have introduced our exclusive private massage services. Our team of highly skilled massage therapists boasts over a decade of experience, backed by Level 5 diplomas in massage therapy`}
                             </p>
                             {/* <p className='text-3xl lg:text-4xl xl:text-5xl py-5 lg:py-10 font-italian text-center'>
