@@ -133,7 +133,7 @@ const BookPrivateJet = () => {
                     <label>From</label>
                     <input onChange={handleChange} type='text' name='flyfrom' className='border w-[300px] px-5 py-2 rounded' value={flyfrom} placeholder='From' />
                     {(showFlyFrom && suggestions.length) > 0 && (
-                        <ul className='absolute z-50 bg-white top-full'>
+                        <ul className='absolute z-50 bg-white top-full w-full'>
                             {suggestions.map((airport) => (
                                 <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyfrom': airport.name })); setSuggestions([]); setShowFlyFrom(false) }} key={airport.code}>{airport.name}</li>
                             ))}
@@ -144,7 +144,7 @@ const BookPrivateJet = () => {
                     <label>To</label>
                     <input onChange={handleChange} type='text' name='flyto' className='border w-[300px] px-5 py-2 rounded' value={flyto} placeholder='To' />
                     {(showFlyTo && suggestions.length > 0) && (
-                        <ul className='absolute  z-50 bg-white top-full'>
+                        <ul className='absolute  z-50 bg-white w-full top-full'>
                             {suggestions.map((airport) => (
                                 <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyto': airport.name })); setSuggestions([]); setShowFlyTo(false) }} key={airport.code}>{airport.name}</li>
                             ))}
