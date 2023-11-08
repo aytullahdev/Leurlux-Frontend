@@ -133,7 +133,7 @@ const BookPrivateJet = () => {
                     <label>From</label>
                     <input onChange={handleChange} type='text' name='flyfrom' className='border w-[300px] px-5 py-2 rounded' value={flyfrom} placeholder='From' />
                     {(showFlyFrom && suggestions.length) > 0 && (
-                        <ul className='absolute bg-white top-full'>
+                        <ul className='absolute z-50 bg-white top-full'>
                             {suggestions.map((airport) => (
                                 <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyfrom': airport.name })); setSuggestions([]); setShowFlyFrom(false) }} key={airport.code}>{airport.name}</li>
                             ))}
@@ -144,7 +144,7 @@ const BookPrivateJet = () => {
                     <label>To</label>
                     <input onChange={handleChange} type='text' name='flyto' className='border w-[300px] px-5 py-2 rounded' value={flyto} placeholder='To' />
                     {(showFlyTo && suggestions.length > 0) && (
-                        <ul className='absolute  bg-white top-full'>
+                        <ul className='absolute  z-50 bg-white top-full'>
                             {suggestions.map((airport) => (
                                 <li className=' cursor-pointer' onClick={() => { setBookingData((prev) => ({ ...prev, 'flyto': airport.name })); setSuggestions([]); setShowFlyTo(false) }} key={airport.code}>{airport.name}</li>
                             ))}
@@ -155,18 +155,20 @@ const BookPrivateJet = () => {
                     <label>Persons</label>
                     <input onChange={handleChange} type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' value={passengers} placeholder='Passengers' />
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2 w-full lg:w-auto'>
                     <label>Fly Date</label>
                     {/* <input onChange={handleChange} type='datetime-local' name='flydate' className='bg-white border  w-[300px] px-5 py-2 rounded' value={flydate} placeholder='Fly date' /> */}
-                    <DatePicker
-                        className='border  w-full p-2 rounded-lg'
-                        selected={date.arrival}
-                        onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
-                        showTimeSelect
-                        timeFormat="p"
-                        timeIntervals={30}
-                        dateFormat="Pp"
-                    />
+                    <div>
+                        <DatePicker
+                            className='border  w-full p-2 rounded-lg'
+                            selected={date.arrival}
+                            onChange={(data) => setDate((prev) => ({ ...prev, 'arrival': data }))}
+                            showTimeSelect
+                            timeFormat="p"
+                            timeIntervals={30}
+                            dateFormat="Pp"
+                        />
+                    </div>
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Name</label>
