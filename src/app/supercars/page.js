@@ -82,7 +82,7 @@ const SuperCars = () => {
     const router = useRouter()
     const handleReqeust = (selectedCar) => {
         setSelectedSuperCar(selectedCar);
-        router.push('/book?category=supercar')
+        router.push('/book?category=supercar#top')
 
     }
     useEffect(() => {
@@ -126,7 +126,7 @@ const SuperCars = () => {
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>
-                            <h1 className='font-italian text-3xl lg:text-7xl py-2'>SUPER CAR <b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>RENTAL MARBELLA</b></h1>
+                            <h1 className='font-italian text-3xl lg:text-7xl py-2'>LEURLUX ELITE <b className='font-bold' style={{ color: 'rgb(193, 182, 134)' }}>CAR RENTAL</b></h1>
                             <hr className='py-5' />
                             <p className='text-base lg:text-3xl font-italian'>
                                 {`At LEURLUX, we invite you to embrace the joys of supercar driving, where luxury knows no boundaries. Welcome to a world where exhilaration is the norm, and where we're dedicated to making every mile memorable.`}
@@ -140,7 +140,7 @@ const SuperCars = () => {
                             </div> */}
                         </div>
                         <div className='my-10'>
-                            <Link className='px-3 lg:px-5  block text-base lg:text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#supercars">Supercars</Link>
+                            <Link className='px-3 lg:px-5  block text-base lg:text-xl font-italian py-1 rounded-full bg-gray-300 hover:bg-gray-200 text-black' href="#supercars">Elite Cars</Link>
                         </div>
 
                         <Link href={'#supercars'}>
@@ -159,25 +159,29 @@ const SuperCars = () => {
                     At LEURLUX, we invite you to embrace the joys of supercar driving, where luxury knows no boundaries. Welcome to a world where exhilaration is the norm, and where we're dedicated to making every mile memorable.
                 </p> */}
             </div>
-            <div className='my-10  flex justify-center items-center lg:col-span-2'>
-                <Link href="#supercars" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Super Cars</Link>
+            <div className='my-3 lg:my-10  flex justify-center items-center lg:col-span-2'>
+                <Link href="#supercars" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Elite Cars</Link>
             </div>
-            <div className='py-5'>
+            <div className='py-2 lg:py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     <div className='bg-white text-black  p-5 '>
                         <h1 className='text-bold font-italian text-4xl py-5'>Luxury Meets Exhilaration
                         </h1>
-                        <p className='text-justify font-2xl'>{`When you choose LEURLUX, you're making a statement that you can enjoy the thrill of high-performance driving without compromise. Your car will be delivered to  your chosen location & collected by us. Our service is designed to make your experience seamless, enjoyable, and unforgettable.
+                        <p className='lg:text-justify font-2xl'>{`When you choose LEURLUX, you're making a statement that you can enjoy the thrill of high-performance driving without compromise. Your car will be delivered to  your chosen location & collected by us. Our service is designed to make your experience seamless, enjoyable, and unforgettable.
 `}</p>
                     </div>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>The Power of Supercars</h1>
-                        <p className='text-justify font-2xl'> {`At LEURLUX, we're committed to offering high-performance supercars that redefine the thrill of luxury driving. We understand that your journey should be exhilarating, and that's why we provide an exceptional range of vehicles designed to exceed your expectations.`}</p>
+                        <h1 className='text-bold font-italian text-4xl pb-2 lg:pb-0 lg:py-5'>The Power of Elite Cars</h1>
+                        <p className='lg:text-justify font-2xl'> {`At LEURLUX, we're committed to offering high-performance supercars that redefine the thrill of luxury driving. We understand that your journey should be exhilarating, and that's why we provide an exceptional range of vehicles designed to exceed your expectations.`}</p>
                     </div>
 
 
                 </div>
             </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes </h1>
+            </div>
+
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
@@ -197,16 +201,19 @@ const SuperCars = () => {
                     })
                 }
             </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes </h1>
+            </div>
             <div id='' className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
 
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>A Diverse Collection of Luxury</h1>
-                        <p className='text-justify font-2xl'>{`Our impressive collection includes a series of Lamborghinis, Ferraris, Rolls Royces, Bentleys, Mercedes, BMWs, and many more. We have meticulously curated our fleet to bring you the best renting cars from the 2023 to 2024 stock, featuring the Lamborghini Urus, Lamborghini Aventador, Rolls Royce Cullinan, Rolls Royce Wraith, Mercedes G63, GLE 63, C63s, and our hidden gem - the Red Ferrari.`}</p>
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl  lg:py-5'>A Diverse Collection of Luxury</h1>
+                        <p className='lg:text-justify font-2xl pt-2 lg:pt-0'>{`Our impressive collection includes a series of Lamborghinis, Ferraris, Rolls Royces, Bentleys, Mercedes, BMWs, and many more. We have meticulously curated our fleet to bring you the best renting cars from the 2023 to 2024 stock, featuring the Lamborghini Urus, Lamborghini Aventador, Rolls Royce Cullinan, Rolls Royce Wraith, Mercedes G63, GLE 63, C63s, and our hidden gem - the Red Ferrari.`}</p>
                     </div>
                     <div className='bg-white text-black  p-5 '>
-                        <h1 className='text-bold font-italian text-4xl py-5'>Unleash the Supercar Experience</h1>
-                        <p className='text-justify font-2xl'> {`Among our remarkable supercars, you'll find the lightning-fast Porsche Taycan 2024, a fully electric supercar. This high-performance masterpiece accelerates from 0 to 100 km/h in just 3 seconds, boasting 571 horsepower. What sets it apart is not just its stunning performance but also its eco-conscious nature. With our Porsche supercharging station, you can achieve a full charge in just 10-15 minutes, giving you an impressive 475 km range. As a special bonus, we include a free charging card, ensuring that you have unlimited charging opportunities while you enjoy your ride.`}</p>
+                        <h1 className='text-bold font-italian text-2xl lg:text-4xl lg:py-5'>Unleash the Supercar Experience</h1>
+                        <p className='lg:text-justify font-2xl pt-2 lg:pt-0'> {`Among our remarkable supercars, you'll find the lightning-fast Porsche Taycan 2024, a fully electric supercar. This high-performance masterpiece accelerates from 0 to 100 km/h in just 3 seconds, boasting 571 horsepower. What sets it apart is not just its stunning performance but also its eco-conscious nature. With our Porsche supercharging station, you can achieve a full charge in just 10-15 minutes, giving you an impressive 475 km range. As a special bonus, we include a free charging card, ensuring that you have unlimited charging opportunities while you enjoy your ride.`}</p>
                     </div>
 
 

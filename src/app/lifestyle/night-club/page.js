@@ -13,7 +13,7 @@ const NightClubs = () => {
     const router = useRouter();
     const handleSelect = (selecteClub) => {
         setSelectedNightClub(selecteClub)
-        router.push('/book?category=night-club')
+        router.push('/book?category=night-club#top')
     }
     const nightClubs = [
 
@@ -23,7 +23,7 @@ const NightClubs = () => {
     ]
     const [collection, setCollection] = useCollection('/api/night-clubs?populate=*')
     useEffect(() => {
-        console.log(collection)
+       //console.log(collection)
     }, [collection])
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`

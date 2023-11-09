@@ -116,7 +116,7 @@ const BeachClub = () => {
     }, [])
     const [collection, setCollection] = useCollection('/api/beach-clubs?populate=*')
     useEffect(() => {
-        console.log(collection)
+        //console.log(collection)
     }, [collection])
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`
@@ -130,7 +130,7 @@ const BeachClub = () => {
     const router = useRouter();
     const handleSelect = (selecteClub) => {
         setSelectedBeachClub(selecteClub)
-        router.push('/book?category=beachclub')
+        router.push('/book?category=beachclub#top')
     }
     return (
         <div className='py-8 lg:px-5'>
@@ -139,7 +139,7 @@ const BeachClub = () => {
                 {
                     collection?.length ? collection.map((singleBeachClub, indx) => {
                         singleBeachClub = getObject(singleBeachClub)
-                        console.log(singleBeachClub)
+                       // console.log(singleBeachClub)
                         return (
                             <div key={indx} className='overflow-hidden'>
                                 <div className='flex relative flex-col h-[500px]  gap-5 shadow-sm border rounded-lg   '>

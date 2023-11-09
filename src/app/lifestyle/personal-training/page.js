@@ -260,14 +260,14 @@ const PersonalTraining = () => {
                 </div>
             </div>
             <div className='my-10  flex justify-center items-center'>
-                <Link href="/book?category=personal-training" className='lg:text-3xl bg-black text-white px-5 lg:px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                <Link href="/book?category=personal-training#top" className='lg:text-3xl bg-black text-white px-5 lg:px-10 py-2 rounded-lg font-italian '>Book Now</Link>
             </div>
             <div>
                 <TrainingPricing />
             </div>
             <PersonalTrainingVideos />
             <div className='mt-10 pb-5 flex justify-center items-center'>
-                <Link href="/book?category=personal-training" className='lg:text-3xl bg-black text-white px-5  lg:px-10 py-2 rounded-lg font-italian '>Book Now</Link>
+                <Link href="/book?category=personal-training#top" className='lg:text-3xl bg-black text-white px-5  lg:px-10 py-2 rounded-lg font-italian '>Book Now</Link>
             </div>
         </div>
     );

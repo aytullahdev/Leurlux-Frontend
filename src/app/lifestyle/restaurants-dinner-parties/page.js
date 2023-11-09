@@ -15,11 +15,11 @@ const RestaurantsDinner = () => {
     const router = useRouter();
     const handleSelect = (selecteClub) => {
         setSelectedRestaurant(selecteClub)
-        router.push('/book?category=restaurant')
+        router.push('/book?category=restaurant#top')
     }
     const [collection, setCollection] = useCollection('/api/restaurants-and-dinners?populate=*')
     useEffect(() => {
-        console.log(collection)
+        //console.log(collection)
     }, [collection])
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`

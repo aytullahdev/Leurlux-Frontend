@@ -14,7 +14,7 @@ const useCollection = (path) => {
             .then((response) => {
                 // Handle the response data here
                 setCollection(response.data.data.sort((a, b) => (a?.attributes?.order - b?.attributes?.order) || true));
-                console.log(`Collection for ${path} `, response.data.data)
+                //console.log(`Collection for ${path} `, response.data.data)
             })
             .catch((error) => {
                 // Handle any errors here

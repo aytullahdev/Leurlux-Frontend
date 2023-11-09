@@ -85,7 +85,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-        console.log('Form Data:', formData);
+       // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">

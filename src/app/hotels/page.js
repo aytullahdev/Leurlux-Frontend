@@ -24,7 +24,7 @@ const Hotel = ({ hotel }) => {
     const handleBook = () => {
         setSelectedHotel(hotel);
 
-        router.push('/book?category=hotel')
+        router.push('/book?category=hotel#top')
     }
     return <>
         <div className='border    flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
@@ -54,7 +54,7 @@ const Hotel = ({ hotel }) => {
 const HotelLanding = () => {
     const [collection, setCollection] = useCollection('/api/hotels?populate=*')
     useEffect(() => {
-        console.log(collection)
+       // console.log(collection)
     }, [collection])
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`

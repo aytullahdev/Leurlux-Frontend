@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const services = [
     {
         title: "Rentals",
-        list: ['Private jets', 'Yachts', 'Super Cars'],
+        list: ['Private jets', 'Yachts', 'Elite Cars'],
         img: require('@/assets/images/private-jet.jpeg').default.src,
         to: 'rentals'
 

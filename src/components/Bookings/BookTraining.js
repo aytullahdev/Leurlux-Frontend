@@ -83,7 +83,7 @@ const BookTrainingForm = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-        console.log('Form Data:', formData);
+        //console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg px-2 py-2 lg:p-6 mb-6 font-italian">

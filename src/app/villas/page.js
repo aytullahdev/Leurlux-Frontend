@@ -17,7 +17,7 @@ const Villa = ({ villa }) => {
     const handleBook = () => {
         setSelectedVilla(villa);
 
-        router.push('/book?category=villa')
+        router.push('/book?category=villa#top')
     }
     return <>
         <div className='border shadow-sm p-2 rounded-lg bg-gray-50'>

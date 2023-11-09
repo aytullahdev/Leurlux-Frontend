@@ -87,7 +87,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-        console.log('Form Data:', formData);
+       // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -114,15 +114,29 @@ const BookingFormFor = () => {
                     />
                 </div> */}
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Number of Guests</label>
-                    <input
+                    <label className='font-italian'>Number of People</label>
+                    <select
                         type="number"
                         name="guests"
                         onChange={handleInputChange}
                         value={formData.guests}
 
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                    />
+                    >
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                        <option value="9">9 people</option>
+                        <option value="10">10 people</option>
+                        <option value="11">11 people</option>
+                        <option value="12">12 people</option>
+                        <option value="13">13 people</option>
+                    </select>
                 </div>
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
@@ -217,12 +231,18 @@ const Massage = () => {
         <div className='py-1'>
             <div className='relative w-full '>
                 <div className="relative h-[500px] lg:h-screen">
-                    <div className="w-full h-full object-cover">
-                        {/* <source src="./yacht.mp4" type="video/mp4" /> */}
+                    <video autoPlay loop muted className="w-full h-full object-cover ">
+                        <source src="https://leurlux.blr1.cdn.digitaloceanspaces.com/massage.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    {/* <div className="w-full h-full object-cover">
+                        <source src="./yacht.mp4" type="video/mp4" />
+                      
                         <img src='/massage.jpg' className='w-full h-full' />
 
-                    </div>
-                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    </div> */}
+
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-5 lg:px-10 py-5">
 
                         <div>

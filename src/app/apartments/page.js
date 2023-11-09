@@ -16,7 +16,7 @@ const Apartment = ({ apartment }) => {
     const handleBook = () => {
         setSelectedApartment(apartment);
 
-        router.push('/book?category=apartment')
+        router.push('/book?category=apartment#top')
     }
     return <>
         <div className='border  flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
@@ -56,7 +56,7 @@ const getObject = (singleObject) => {
 const MainSection = () => {
     const [collection, setCollection] = useCollection('/api/apartments?populate=*')
     useEffect(() => {
-        console.log(collection)
+       // console.log(collection)
     }, [collection])
     return (
         <div className='px-2 lg:px-10 py-5' id='villas'>

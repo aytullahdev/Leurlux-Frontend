@@ -41,7 +41,7 @@ const BookingFormForYacht = () => {
         }
 
         // Handle the form submission here, e.g., send the data to your server
-        console.log('Form Data:', formData);
+       // console.log('Form Data:', formData);
 
 
         const data = {

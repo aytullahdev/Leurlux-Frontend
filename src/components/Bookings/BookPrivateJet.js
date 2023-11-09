@@ -27,8 +27,10 @@ const BookPrivateJet = () => {
         if (e.target.name === 'flyfrom' || e.target.name === 'flyto') {
             if (e.target.name === 'flyfrom') {
                 setShowFlyFrom(true)
+                setShowFlyTo(false)
             } else {
                 setShowFlyTo(true)
+                setShowFlyFrom(false)
             }
             const filteredAirports = airportsData.filter((airport) =>
                 airport.name.toLowerCase().includes(e.target.value.toLowerCase())
@@ -73,7 +75,7 @@ const BookPrivateJet = () => {
         axios.post(apiUrl, data, { headers })
             .then((response) => {
                 // Handle the response data here
-                console.log(response.data)
+                //console.log(response.data)
                 if (response.data.data.id) {
                     toast.success("Thank you for booking")
 
@@ -152,8 +154,25 @@ const BookPrivateJet = () => {
                     )}
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label>Persons</label>
-                    <input onChange={handleChange} type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' value={passengers} placeholder='Passengers' />
+                    <label>Passengers</label>
+                    {/* <input onChange={handleChange} type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' value={passengers} placeholder='Passengers' /> */}
+                    <select
+                        type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' placeholder='Passengers'
+                        value={passengers}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                        <option value="9">9 people</option>
+                        <option value="10">10 people</option>
+                    </select>
                 </div>
                 <div className='flex flex-col gap-2 w-full lg:w-auto'>
                     <label>Fly Date</label>

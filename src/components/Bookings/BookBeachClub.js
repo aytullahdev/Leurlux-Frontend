@@ -90,7 +90,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-        console.log('Form Data:', formData);
+       // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -118,14 +118,29 @@ const BookingFormFor = () => {
                 </div> */}
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                     <label className='font-italian'>Number of Guests</label>
-                    <input
+
+                    <select
                         type="number"
                         name="guests"
                         onChange={handleInputChange}
                         value={formData.guests}
 
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                    />
+                    >
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                        <option value="9">9 people</option>
+                        <option value="10">10 people</option>
+                        <option value="11">11 people</option>
+                        <option value="12">12 people</option>
+                        <option value="13">13 people</option>
+                    </select>
                 </div>
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">

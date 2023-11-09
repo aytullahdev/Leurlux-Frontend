@@ -48,7 +48,7 @@ const services = [
         next: '#Supercars'
     },
     {
-        title: "Supercars",
+        title: "Elite Cars",
         img: require('@/assets/images/supercar.png').default.src,
         to: '/supercars#top',
         about: `Our luxury transfer service provides a seamless and sophisticated
@@ -103,7 +103,7 @@ const SingleServices = ({ service, handleAbout }) => {
 
 
                 </div>
-                {title !== 'Supercars' && <Link onClick={(e) => e.stopPropagation()} href={next} className={`block lg:hidden `}>
+                {title !== "Elite Cars" && <Link onClick={(e) => e.stopPropagation()} href={next} className={`block lg:hidden `}>
                     <ArrowDown />
                 </Link>
                 }
