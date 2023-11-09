@@ -124,7 +124,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         value={formData.guests}
 
-                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
                     >
                         <option value="1">1 person</option>
                         <option value="2">2 people</option>

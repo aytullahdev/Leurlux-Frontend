@@ -510,7 +510,7 @@ const BookingForm = () => {
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <select
-                                className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                                className="appearance-none border bg-white rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 id="numberOfPeople"
                                 name="numberOfPeople"
                                 value={formData.numberOfPeople}
@@ -529,7 +529,7 @@ const BookingForm = () => {
                         <div className="mb-4">
 
                             <select
-                                className="appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
+                                className="appearance-none border bg-white rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 id="numberOfLuggages"
                                 name="numberOfLuggages"
                                 value={formData.numberOfLuggages}

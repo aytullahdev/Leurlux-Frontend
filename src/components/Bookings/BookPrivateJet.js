@@ -157,7 +157,7 @@ const BookPrivateJet = () => {
                     <label>Passengers</label>
                     {/* <input onChange={handleChange} type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' value={passengers} placeholder='Passengers' /> */}
                     <select
-                        type='number' name='passengers' className='border w-[300px] px-5 py-2 rounded' placeholder='Passengers'
+                        type='number' name='passengers' className='border w-[300px] bg-white px-5 py-2 rounded' placeholder='Passengers'
                         value={passengers}
                         onChange={handleChange}
                         required

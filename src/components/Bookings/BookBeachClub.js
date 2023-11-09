@@ -90,7 +90,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-       // console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -125,7 +125,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         value={formData.guests}
 
-                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
                     >
                         <option value="1">1 person</option>
                         <option value="2">2 people</option>

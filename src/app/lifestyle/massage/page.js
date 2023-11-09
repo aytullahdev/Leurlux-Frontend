@@ -87,7 +87,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-       // console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -121,7 +121,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         value={formData.guests}
 
-                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+                        className="mt-1 p-2 bg-white  font-thin  w-full border rounded-md outline-black"
                     >
                         <option value="1">1 person</option>
                         <option value="2">2 people</option>
@@ -235,7 +235,7 @@ const Massage = () => {
                         <source src="https://leurlux.blr1.cdn.digitaloceanspaces.com/massage.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    <div className="absolute inset-0 bg-black opacity-70"></div>
+                    <div className="absolute inset-0 bg-black opacity-20"></div>
                     {/* <div className="w-full h-full object-cover">
                         <source src="./yacht.mp4" type="video/mp4" />
                       
