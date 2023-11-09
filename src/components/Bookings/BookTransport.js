@@ -180,7 +180,7 @@ const BookingForm = () => {
             return
         }
         localStorage.clear('fromData')
-        if (!transPortData || !transPortData.email || !transPortData.phone) {
+        if (!transPortData || !transPortData.email || !transPortData.phone || !transPortData.numberOfLuggages || !transPortData.numberOfPeople) {
             toast.error("Please Fill up the form");
             return;
         }
@@ -226,8 +226,8 @@ const BookingForm = () => {
                             pickupAddress: "",
                             dropoffAddress: "",
                             transportType: "",
-                            numberOfPeople: "",
-                            numberOfLuggages: "",
+                            numberOfPeople: 1,
+                            numberOfLuggages: 1,
                             flightNumber: "",
                             otherRequest: "",
                             phone: ""
@@ -238,7 +238,8 @@ const BookingForm = () => {
                         isSuccess(false)
                         setIsBooked(false)
                         toast.error("Please try again!")
-                        router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                        console.log(error)
+                        // router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
                     }
                 })
                 .catch((error) => {
@@ -260,8 +261,9 @@ const BookingForm = () => {
                     "phone": transPortData.phone,
                     "flightnumber": transPortData.flightNumber,
                     "otherrequest": transPortData.otherRequest,
-                    "luggages": transPortData.numberOfLuggages,
-                    "numberofpeople": transPortData.numberOfPeople,
+                    "luggages": parseInt(transPortData.numberOfLuggages),
+                    "numberofpeople": parseInt(transPortData.numberOfPeople),
+
                 }
             }
             const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/transport-requests`;
@@ -286,8 +288,8 @@ const BookingForm = () => {
                             dropoffAddress: "",
                             transportType: "",
                             numberOfPeople: "",
-                            numberOfLuggages: "",
-                            flightNumber: "",
+                            numberOfLuggages: 1,
+                            flightNumber: 1,
                             otherRequest: "",
                             phone: ""
                         })
@@ -296,13 +298,13 @@ const BookingForm = () => {
                         isSuccess(false)
                         setIsBooked(false)
                         toast.error("Please try again!")
-                        router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                        //router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
                     }
                 })
                 .catch((error) => {
                     // Handle any errors here
                     toast.error("Pleae try again later")
-                    router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
+                    //router.push(`/error?session_id=${session_id}&email=${transPortData.email}&name=${transPortData.name}`)
                     console.error(error);
                 });
 
@@ -350,6 +352,7 @@ const BookingForm = () => {
                             onChange={handlePriceChange}
                             className="bg-white w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-400"
                         >
+
                             <option value="">Select a Option</option>
                             <option value={`Malaga Airport - Marbella`}>
                                 Malaga Airport - Marbella
@@ -516,9 +519,11 @@ const BookingForm = () => {
                                 value={formData.numberOfPeople}
                                 onChange={handleChange}
                                 required
+
                             >
-                                <option value="1">1 person</option>
-                                <option value="2">2 people</option>
+                                <option>Select</option>
+                                <option value="1"  >1 person</option>
+                                <option value="2" >2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
                                 <option value="5">5 people</option>
@@ -536,7 +541,8 @@ const BookingForm = () => {
                                 onChange={handleChange}
                                 required
                             >
-                                <option value="1">1 luggage</option>
+                                <option>Select</option>
+                                <option value="1" >1 luggage</option>
                                 <option value="2">2 luggages</option>
                                 <option value="3">3 luggages</option>
                                 <option value="4">4 luggages</option>

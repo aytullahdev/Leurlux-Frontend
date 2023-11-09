@@ -60,10 +60,9 @@ const BookPrivateJet = () => {
                 "flyfrom": flyfrom,
                 "flyto": flyto,
                 "flydate": arrival,
-                "passengers": passengers,
+                "passengers": parseInt(passengers),
                 "email": email,
                 "phone": phone,
-                "passengers": passengers,
                 "otherdetails": otherdetails
             }
         }
@@ -162,6 +161,7 @@ const BookPrivateJet = () => {
                         onChange={handleChange}
                         required
                     >
+                        <option value="1">Select</option>
                         <option value="1">1 person</option>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>
