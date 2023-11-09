@@ -48,7 +48,7 @@ const BookingFormFor = () => {
                 "name": fullname,
                 "email": email,
                 "phone": phone,
-                "numberofguests": guests,
+                "numberofguests": parseInt(guests),
                 "otherrequest": request,
 
             }
