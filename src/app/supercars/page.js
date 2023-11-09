@@ -179,7 +179,7 @@ const SuperCars = () => {
                 </div>
             </div>
             <div className='py-2 lg:py-5'>
-                <h1 className='text-xl lg:text-3xl text-center font-italian'>If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes </h1>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes`} </h1>
             </div>
 
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
@@ -202,7 +202,7 @@ const SuperCars = () => {
                 }
             </div>
             <div className='py-2 lg:py-5'>
-                <h1 className='text-xl lg:text-3xl text-center font-italian'>If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes </h1>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes`}</h1>
             </div>
             <div id='' className='py-5'>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
