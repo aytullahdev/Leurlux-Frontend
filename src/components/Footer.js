@@ -5,7 +5,7 @@ import React from 'react';
 const sections = [
     {
         title: 'Locations',
-        to: '/locations'
+        to: '/locations#top'
     },
     {
         title: 'Services',
@@ -13,7 +13,7 @@ const sections = [
     },
     {
         title: 'About Us',
-        to: '/about-us'
+        to: '/about-us#top'
     },
     {
         title: 'Contact',
@@ -21,7 +21,7 @@ const sections = [
     },
     {
         title: 'Terms & Conditions',
-        to: '/terms-conditions'
+        to: '/terms-conditions#top'
     },
 
 ]
