@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import ArrowDown from '@/components/resueable/ArrowDown';
 import DatePicker from 'react-datepicker'
+import { toast } from 'sonner';
+import axios from 'axios';
 const BookingFormFor = () => {
     const router = useRouter();
 
@@ -40,7 +42,7 @@ const BookingFormFor = () => {
         const data = {
             "data": {
                 "service": service,
-                "pickupdate": bookdate,
+                "pickupdate": arrival,
                 "name": fullname,
                 "email": email,
                 "phone": phone,
@@ -85,7 +87,7 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-       // console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -140,7 +142,7 @@ const BookingFormFor = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
-                    <label className="font-italian">Name</label>
+                    <label className="font-italian">Full Name</label>
                     <input
                         type="text"
                         name="fullname"

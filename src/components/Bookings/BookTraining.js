@@ -39,7 +39,7 @@ const BookTrainingForm = () => {
         const data = {
             "data": {
                 "packagetype": packagetype,
-                "persons": persons,
+                "persons": parseInt(persons),
                 "name": fullname,
                 "email": email,
                 "phone": phone,
@@ -108,14 +108,29 @@ const BookTrainingForm = () => {
 
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                     <label className='font-italian'>Number of Persons</label>
-                    <input
+
+                    <select
                         type="number"
                         name="persons"
                         onChange={handleInputChange}
                         value={formData.persons}
 
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                    />
+                    >
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                        <option value="7">7 people</option>
+                        <option value="8">8 people</option>
+                        <option value="9">9 people</option>
+                        <option value="10">10 people</option>
+                        <option value="11">11 people</option>
+                        <option value="12">12 people</option>
+                        <option value="13">13 people</option>
+                    </select>
                 </div>
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex w-full flex-col justify-start gap-2 text-xl ">
@@ -141,7 +156,7 @@ const BookTrainingForm = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
-                    <label className="font-italian">Name</label>
+                    <label className="font-italian">Full Name</label>
                     <input
                         type="text"
                         name="fullname"

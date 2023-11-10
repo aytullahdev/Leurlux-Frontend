@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import ArrowDown from '@/components/resueable/ArrowDown';
 import DatePicker from 'react-datepicker'
+import axios from 'axios';
+import { toast } from 'sonner';
 
 const BookingFormFor = () => {
     const router = useRouter();
@@ -42,7 +44,7 @@ const BookingFormFor = () => {
         const data = {
             "data": {
                 "service": service,
-                "bookingdate": bookdate,
+                "bookingdate": arrival,
                 "name": fullname,
                 "email": email,
                 "phone": phone,
@@ -162,7 +164,7 @@ const BookingFormFor = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
-                    <label className="font-italian">Name</label>
+                    <label className="font-italian">Full Name</label>
                     <input
                         type="text"
                         name="fullname"

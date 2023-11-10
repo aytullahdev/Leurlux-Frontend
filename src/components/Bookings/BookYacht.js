@@ -141,7 +141,7 @@ const BookingFormForYacht = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-base lg:text-xl ">
 
-                    <label className="font-italian">Name</label>
+                    <label className="font-italian">Full Name</label>
                     <input
                         type="text"
                         name="fullname"

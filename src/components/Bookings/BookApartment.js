@@ -51,7 +51,7 @@ const BookingFormFor = () => {
                 "name": fullname,
                 "email": email,
                 "phone": phone,
-                "price": price,
+                "price": price.toString(),
                 "numberofguests": parseInt(guests),
                 "departure": departure,
                 "otherrequest": request,
@@ -98,6 +98,13 @@ const BookingFormFor = () => {
         // Handle the form submission here, e.g., send the data to your server
         // console.log('Form Data:', formData);
     };
+    const getOptions = (guests) => {
+        const gestArray = []
+        for (var i = 1; i <= guests; i++) {
+            gestArray.push(i);
+        }
+        return gestArray.map(i => <option key={i} value={i}>{i} people</option>)
+    }
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
@@ -114,19 +121,7 @@ const BookingFormFor = () => {
 
                         className="mt-1 p-2 bg-white font-thin  w-full border rounded-md outline-black"
                     >
-                        <option value="1">1 person</option>
-                        <option value="2">2 people</option>
-                        <option value="3">3 people</option>
-                        <option value="4">4 people</option>
-                        <option value="5">5 people</option>
-                        <option value="6">6 people</option>
-                        <option value="7">7 people</option>
-                        <option value="8">8 people</option>
-                        <option value="9">9 people</option>
-                        <option value="10">10 people</option>
-                        <option value="11">11 people</option>
-                        <option value="12">12 people</option>
-                        <option value="13">13 people</option>
+                        {getOptions(selectedApartment.guests)}
                     </select>
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
@@ -171,7 +166,7 @@ const BookingFormFor = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
-                    <label className="font-italian">Name</label>
+                    <label className="font-italian">Full Name</label>
                     <input
                         type="text"
                         name="fullname"

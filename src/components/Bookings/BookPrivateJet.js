@@ -190,7 +190,7 @@ const BookPrivateJet = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label>Name</label>
+                    <label>Full Name</label>
                     <input onChange={handleChange} type='text' name='fullname' className='border  w-[300px] px-5 py-2 rounded' value={fullname} placeholder='Full Name...' />
                 </div>
                 <div className='flex flex-col gap-2'>
