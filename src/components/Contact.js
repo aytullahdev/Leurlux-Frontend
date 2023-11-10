@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const Contact = () => {
     const [contact, setContact] = useState({
@@ -77,7 +79,17 @@ const Contact = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-4'>
                     <input type='email' className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='email' value={email} placeholder='Email..' />
-                    <input type='text' className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='phone' value={phone} placeholder='Phone..' />
+                    {/* <input type='text' className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='phone' value={phone} placeholder='Phone..' /> */}
+                    <div className='px-3 py-3 outline-none  border-b border-gray-500'>
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={contact.phone}
+
+                            onChange={(data) => {
+                                setContact((prev) => ({ ...prev, 'phone': data }))
+                            }} />
+                    </div>
+
 
                 </div>
                 <div>

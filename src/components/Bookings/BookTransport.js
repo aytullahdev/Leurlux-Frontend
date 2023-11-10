@@ -11,6 +11,8 @@ import BookingSuccess from "../resueable/BookingSuccess";
 import useCollection from "@/hooks/useCollection";
 import { checkout } from "@/controller/checkout";
 import DatePicker from 'react-datepicker'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const PricingSection = () => {
     const [selectedSection, setSelectedSection] = useState('Chauffeur')
@@ -422,7 +424,7 @@ const BookingForm = () => {
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="phone">
                                 Phone Number
                             </label>
-                            <input
+                            {/* <input
                                 className=" appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 type="text"
                                 id="phone"
@@ -431,7 +433,17 @@ const BookingForm = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 required
-                            />
+                            /> */}
+                            <div className="mt-1 p-2  font-thin  w-full border rounded-md outline-black">
+                                <PhoneInput
+                                    placeholder="Enter phone number"
+                                    value={formData.phone}
+
+                                    onChange={(data) => {
+                                        setFormData((prev) => ({ ...prev, 'phone': data }))
+                                    }} />
+                            </div>
+
                         </div>
                     </div>
                     <div className="bg-white grid grid-cols-2 text-black gap-2 lg:gap-5">

@@ -17,6 +17,8 @@
     "react-datepicker": "^4.21.0",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
+    "react-phone-input-2": "^2.15.1",
+    "react-phone-number-input": "^3.3.7",
     "react-whatsapp-widget": "^2.2.0",
     "sonner": "^1.0.3",
     "styled-components": "^6.0.8",

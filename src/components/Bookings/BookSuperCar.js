@@ -8,6 +8,9 @@ import useGlobalContext from '@/hooks/useGlobalContext';
 import axios from 'axios';
 import BookingSuccess from '../resueable/BookingSuccess';
 import DatePicker from 'react-datepicker'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 const BookSuperCar = () => {
     const router = useRouter();
     const { selectedSuperCar, setIsBooked, isBooked } = useGlobalContext();
@@ -178,7 +181,17 @@ const BookSuperCar = () => {
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>
 
                                 <label className='font-italian'>Phone</label>
-                                <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Phone number...' value={phone} />
+                                {/* <input type='text' name='phone' onChange={handleChange} className='border outline-none px-2 py-2 rounded font-thin ' placeholder='Phone number...' value={phone} /> */}
+                                <div className="mt-1 p-2  font-thin  w-full border rounded-md outline-black">
+                                    <PhoneInput
+                                        placeholder="Enter phone number"
+                                        value={phone}
+
+                                        onChange={(data) => {
+                                            setCarForm((prev) => ({ ...prev, 'phone': data }))
+                                        }} />
+                                </div>
+
 
                             </div>
                             <div className='flex flex-col justify-start gap-2  text-base lg:text-xl '>

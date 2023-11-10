@@ -6,6 +6,9 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker'
 import airportsData from './airports.json';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 const BookPrivateJet = () => {
     const [bookongData, setBookingData] = useState({
         flyfrom: '',
@@ -199,7 +202,17 @@ const BookPrivateJet = () => {
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Phone</label>
-                    <input onChange={handleChange} type='text' name='phone' className='border  w-[300px] px-5 py-2 rounded' value={phone} placeholder='Phone...' />
+                    <div className='border  w-[300px] px-5 py-2 rounded' >
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={phone}
+
+                            onChange={(data) => {
+                                setBookingData((prev) => ({ ...prev, 'phone': data }))
+                            }} />
+                    </div>
+
+                    {/* <input onChange={handleChange} type='text' name='phone' className='border  w-[300px] px-5 py-2 rounded' value={phone} placeholder='Phone...' /> */}
                 </div>
                 <div className='flex flex-col gap-2'>
                     <label>Other Details</label>
@@ -215,7 +228,7 @@ const BookPrivateJet = () => {
         </div>
 
 
-    </div>
+    </div >
 
 }
 

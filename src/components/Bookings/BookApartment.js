@@ -6,6 +6,8 @@ import { toast } from "sonner";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
 import DatePicker from 'react-datepicker'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const BookingFormFor = () => {
     const { selectedApartment } = useContext(GlobalContext); // Replace GlobalContext with your actual context
@@ -192,7 +194,7 @@ const BookingFormFor = () => {
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                     <label className='font-italian'>Phone</label>
-                    <input
+                    {/* <input
                         type="tel"
                         name="phone"
                         value={formData.phone}
@@ -200,7 +202,17 @@ const BookingFormFor = () => {
                         placeholder='Phone...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                         required
-                    />
+                    /> */}
+                    <div className="mt-1 p-2  font-thin  w-full border rounded-md outline-black">
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={formData.phone}
+
+                            onChange={(data) => {
+                                setFormData((prev) => ({ ...prev, 'phone': data }))
+                            }} />
+                    </div>
+
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
                     <label className='font-italian'>Other Requests</label>

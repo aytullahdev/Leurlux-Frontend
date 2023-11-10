@@ -1,33 +1,30 @@
 'use client'
-import Link from 'next/link';
-import React, { useContext, useState } from 'react';
-import Carousel from '../resueable/Carousel';
-import { toast } from "sonner";
-import axios from "axios";
 import { useRouter } from 'next/navigation';
-import useGlobalContext from '@/hooks/useGlobalContext';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { toast } from 'sonner';
+import axios from 'axios';
 import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
-const BookingFormFor = () => {
+const BookPrivateRunner = () => {
     const router = useRouter();
-    const { selectedRestaurant } = useGlobalContext(); // Replace GlobalContext with your actual context
 
     const [formData, setFormData] = useState({
-        restaurant: selectedRestaurant.name,
-        arrival: '',
-        guests: 1,
+        service: 'Private Runner',
+        bookdate: '',
         email: '',
         phone: '',
         request: '',
         fullname: '',
+        whattodo: ''
     });
     const [date, setDate] = useState({
         'arrival': new Date(),
         'departure': new Date(),
     })
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -38,26 +35,26 @@ const BookingFormFor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { restaurant, fullname, phone, email, guests, request } = formData
+        const { service, fullname, phone, email, whattodo, bookdate, request } = formData
         const { arrival, departure } = date
-        if (!fullname || !phone || !email || !guests || !arrival) {
+        if (!fullname || !phone || !email || !arrival || !whattodo) {
 
             toast.error("Please fillup all data")
             return
         }
         const data = {
             "data": {
-                "restaurant": restaurant,
-                "bookingdate": arrival,
+                "service": service,
+                "pickupdate": arrival,
                 "name": fullname,
                 "email": email,
                 "phone": phone,
-                "numberofguests": parseInt(guests),
+                "whattodo": whattodo,
                 "otherrequest": request,
 
             }
         }
-        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/restaurant-requests`;
+        const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/private-runners`;
         const token = `${process.env.NEXT_PUBLIC_API_TOKEN}`;
 
         const headers = {
@@ -72,13 +69,13 @@ const BookingFormFor = () => {
                     toast.success("Thank you for booking")
 
                     setFormData({
-                        clubname: selectedRestaurant.name,
-                        arrival: '',
-                        guests: 1,
+                        service: 'Private Runner',
+                        bookdate: '',
                         email: '',
                         phone: '',
                         request: '',
                         fullname: '',
+                        whattodo: ''
                     })
                     router.push(`/success`)
 
@@ -93,66 +90,32 @@ const BookingFormFor = () => {
                 console.error(error);
             });
         // Handle the form submission here, e.g., send the data to your server
-        //console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
     };
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
             <h2 className="text-3xl font-italian font-bold mb-4">Booking Form</h2>
             <form onSubmit={handleSubmit} >
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Restaurant Name</label>
+                    <label className='font-italian'>Service Name</label>
                     <input
                         type="text"
-                        name="restaurant"
-                        value={formData.restaurant}
+                        name="service"
+                        value={formData.service}
                         readOnly
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
                     />
                 </div>
-                {/* <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Price</label>
-                    <input
-                        type="text"
-                        name="price"
-                        value={formData.price}
-                        readOnly
-                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
-                    />
-                </div> */}
-                <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                    <label className='font-italian'>Number of Guests</label>
 
-                    <select
-                        type="number"
-                        name="guests"
-                        onChange={handleInputChange}
-                        value={formData.guests}
-
-                        className="mt-1 p-2 bg-white  font-thin  w-full border rounded-md outline-black"
-                    >
-                        <option value="1">1 person</option>
-                        <option value="2">2 people</option>
-                        <option value="3">3 people</option>
-                        <option value="4">4 people</option>
-                        <option value="5">5 people</option>
-                        <option value="6">6 people</option>
-                        <option value="7">7 people</option>
-                        <option value="8">8 people</option>
-                        <option value="9">9 people</option>
-                        <option value="10">10 people</option>
-                        <option value="11">11 people</option>
-                        <option value="12">12 people</option>
-                        <option value="13">13 people</option>
-                    </select>
-                </div>
                 <div className='grid grid-cols-1 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Booking Date</label>
+                        <label className='font-italian'>Pickup Time</label>
                         {/* <input
                             type="datetime-local"
-                            name="arrival"
-                            value={formData.arrival}
+                            name="bookdate"
+                            value={formData.bookdate}
                             onChange={handleInputChange}
+                            required
                             className="mt-1 p-2  bg-white font-thin  w-full border rounded-md outline-black"
                         /> */}
                         <DatePicker
@@ -166,6 +129,19 @@ const BookingFormFor = () => {
                         />
                     </div>
 
+                </div>
+                <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
+                    <label className='font-italian'>What to do?</label>
+                    <textarea
+
+                        name="whattodo"
+                        value={formData.whotodo}
+                        onChange={handleInputChange}
+                        placeholder='Describe what to do...'
+                        required
+                        className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+
+                    />
                 </div>
                 <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
 
@@ -224,6 +200,7 @@ const BookingFormFor = () => {
                         onChange={handleInputChange}
                         placeholder='Other request...'
                         className="mt-1 p-2  font-thin  w-full border rounded-md outline-black"
+
                     />
                 </div>
 
@@ -240,34 +217,5 @@ const BookingFormFor = () => {
         </div>
     );
 };
-const BookRestaurants = () => {
-    const { selectedRestaurant } = useGlobalContext();
-    return <>{
-        selectedRestaurant ?
-            <>
-                <div className=' grid lg:grid-cols-2 gap-5 my-10'>
 
-                    <div>
-                        <div>
-                            <h2 className='text-xl lg:text-4xl font-italian text-center'>{selectedRestaurant.name}</h2>
-                        </div>
-                        <div className='px-3 lg:px-10 py-5'>
-
-                            <Carousel photos={selectedRestaurant.images} />
-                        </div>
-
-                    </div>
-                    <div>
-                        <BookingFormFor />
-
-                    </div>
-                </div>
-            </>
-            :
-            <div className='justify-center items-center flex flex-row h-full w-full py-20'>
-                <Link href={'/lifestyle'} className=' text-xl text-black font-italian hover:text-blue-500 underline'>Select a services</Link>
-            </div>
-    }</>
-};
-
-export default BookRestaurants;
+export default BookPrivateRunner;
