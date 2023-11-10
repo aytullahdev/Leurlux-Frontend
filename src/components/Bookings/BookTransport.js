@@ -512,6 +512,9 @@ const BookingForm = () => {
 
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="numberofpeople">
+                                People
+                            </label>
                             <select
                                 className="appearance-none border bg-white rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
                                 id="numberOfPeople"
@@ -532,6 +535,9 @@ const BookingForm = () => {
                         </div>
 
                         <div className="mb-4">
+                            <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="luggage">
+                                Luggages
+                            </label>
 
                             <select
                                 className="appearance-none border bg-white rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"
