@@ -6,26 +6,26 @@ const services = [
         title: "Rentals",
         list: ['Private jets', 'Yachts', 'Elite Cars'],
         img: require('@/assets/images/private-jet.jpeg').default.src,
-        to: 'rentals'
+        to: 'rentals#top'
 
     },
     {
         title: "Transfer",
         list: ['From/To Airport', 'Private chauffer'],
         img: require('@/assets/images/car.jpeg').default.src,
-        to: 'transfer'
+        to: 'transfer#top'
     },
     {
         title: "Property",
         list: ['Villas for rent', 'Apartment for rent', 'Hotels'],
         img: require('@/assets/images/villa.jpeg').default.src,
-        to: 'property'
+        to: 'property#top'
     },
     {
         title: "Lifestyle",
         list: ['Event/Beach & night clubs', 'Restaurants', 'Personal training'],
         img: require('@/assets/images/lifestyle.jpeg').default.src,
-        to: 'lifestyle'
+        to: 'lifestyle#top'
     }
 ]
 const SingleServices = ({ service }) => {

@@ -54,7 +54,7 @@ const Hotel = ({ hotel }) => {
 const HotelLanding = () => {
     const [collection, setCollection] = useCollection('/api/hotels?populate=*')
     useEffect(() => {
-       // console.log(collection)
+        // console.log(collection)
     }, [collection])
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`
