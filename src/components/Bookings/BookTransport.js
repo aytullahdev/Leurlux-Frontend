@@ -402,7 +402,7 @@ const BookingForm = () => {
                             required
                         />
                     </div>
-                    <div className="grid grid-cols-2  gap-2 lg:gap-5">
+                    <div className="grid lg:grid-cols-2  gap-2 lg:gap-5">
 
 
                         <div className="mb-4">

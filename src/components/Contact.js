@@ -77,7 +77,7 @@ const Contact = () => {
                     <input className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='firstName' value={firstName} placeholder='First Name' />
                     <input className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='lastName' value={lastName} placeholder='Last Name' />
                 </div>
-                <div className='grid grid-cols-2 gap-4'>
+                <div className='grid lg:grid-cols-2 gap-4'>
                     <input type='email' className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='email' value={email} placeholder='Email..' />
                     {/* <input type='text' className='px-3 py-3 outline-none  border-b border-gray-500' onChange={handleChange} name='phone' value={phone} placeholder='Phone..' /> */}
                     <div className='px-3 py-3 outline-none  border-b border-gray-500'>
