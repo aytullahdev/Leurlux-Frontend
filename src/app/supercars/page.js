@@ -7,6 +7,135 @@ import { useRouter } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import ArrowDown from '../../components/resueable/ArrowDown';
+const suvCarData = [
+    {
+        "carname": "Audi RSQ3",
+        "price": " 480 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-RSQ3.jpg"
+    },
+    {
+        "carname": "Audi RSQ8",
+        "price": "Please contact us",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-RSQ8.jpg"
+    },
+    {
+        "carname": "Bentley Bentayga",
+        "price": " 1920 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/bentley_bentayga.jpg"
+    },
+    {
+        "carname": "BMW X4 Pack M",
+        "price": " 265 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/BMW-X4-Pack-M.jpg"
+    },
+    {
+        "carname": "BMW X5 Pack M",
+        "price": " 420 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/BMW-X5-Pack-M.jpg"
+    },
+    {
+        "carname": "Lamborghini Urus",
+        "price": " 2400 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Lamborghini-Urus.jpg"
+    },
+    {
+        "carname": "Land Rover Evoque Cab",
+        "price": " 300 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Land-Rover-Evoque-Cab.jpg"
+    },
+    {
+        "carname": "Land Rover Range Rover Velar",
+        "price": " 360 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/range_rover_velar.jpg"
+    },
+    {
+        "carname": "Land Rover Range Rover Sport",
+        "price": " 480 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/range_rover_sport.jpg"
+    },
+    {
+        "carname": "Land Rover Range Rover",
+        "price": " 550 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/range_rover.jpg"
+    },
+    {
+        "carname": "Range Rover Sport SVR",
+        "price": " 780 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Land-Rover-Range-Rover-SVR.jpg"
+    },
+    {
+        "carname": "Mercedes-Benz G63 AMG",
+        "price": " 1020 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Mercedes-Benz-G63-AMG.jpg"
+    }, {
+        "carname": "Mercedes-Benz GLE63 AMG",
+        "price": " 720 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/mercedes_benz_gle63amg_coupe.jpg"
+    },
+    {
+        "carname": "Porsche Cayenne",
+        "price": " 580 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/porsche_cayenne.jpg"
+    },
+    {
+        "carname": "Rolls Royce Cullinan",
+        "price": " 4200 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Rolls-Royce-Cullinan-1.jpg"
+    }
+]
+const noRoofCarData =
+    [
+        {
+            "carname": "Fiat 500C Abarth",
+            "price": " 145 €/Day",
+            "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Fiat-500-Abarth.jpg"
+        },
+        {
+            "carname": "Ford Mustang GT Cabrio",
+            "price": " 480 €/Day",
+            "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Ford-Mustang-GT-Cab.jpg"
+        },
+        {
+            "carname": "Mercedes-Benz E Class Cabrio",
+            "price": " 420 €/Day",
+            "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/mercedes_benz_e_class_cabrio.jpg"
+        },
+        {
+            "carname": "Mini Cooper S Cabrio",
+            "price": " 180 €/Day",
+            "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Mini-Cooper-S-Cab.jpg"
+        },
+    ]
+
+
+const compactCarData = [
+    {
+        "carname": "Audi S3",
+        "price": " 360 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/audi_s3.jpg"
+    },
+    {
+        "carname": "Audi RS3",
+        "price": " 420 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/audi_rs3.jpg"
+    },
+    {
+        "carname": "Mercedes-Benz A45-S AMG",
+        "price": " 480 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Mercedes-Benz-A45-S.jpg"
+    },
+    {
+        "carname": "Volkswagen Golf GTI TCR",
+        "price": " 180 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/vw_golf_gti.jpg"
+    },
+    {
+        "carname": "Volkswagen Golf R",
+        "price": " 210 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2023/08/vw_golf_r.jpg"
+    }
+]
+
 const supercarsData = [
     {
         "carname": "Porsche Tycan 4s (Full Electric)",
@@ -181,8 +310,79 @@ const SuperCars = () => {
             <div className='py-2 lg:py-5'>
                 <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can't find the exact car you want, contact us. Our mission is to fulfill your wishes`} </h1>
             </div>
-
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
+                <div className='col-span-full'>
+                    <h2 className='text-3xl font-bold font-italian'>COMPACT</h2>
+                </div>
+                {compactCarData && compactCarData.length > 0 &&
+                    compactCarData.map((singleCarObj) => {
+                        const singleCar = getCarObje(singleCarObj);
+                        return <div onClick={() => { handleReqeust(singleCar) }} key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
+                            <img className='' src={singleCar.img} />
+                            <div className='font-italian'>
+                                <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
+                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price}`}</p>
+
+                            </div>
+                            <div>
+                                <button onClick={() => { handleReqeust(singleCar) }} className='px-4 py-1 bg-black text-white mx-auto block my-2 font-bold rounded font-italian'>Request</button>
+
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+            <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
+                <div className='col-span-full'>
+                    <h2 className='text-3xl font-bold font-italian'>NO ROOF
+                    </h2>
+                </div>
+                {noRoofCarData && noRoofCarData.length > 0 &&
+                    noRoofCarData.map((singleCarObj) => {
+                        const singleCar = getCarObje(singleCarObj);
+                        return <div onClick={() => { handleReqeust(singleCar) }} key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
+                            <img className='' src={singleCar.img} />
+                            <div className='font-italian'>
+                                <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
+                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price}`}</p>
+
+                            </div>
+                            <div>
+                                <button onClick={() => { handleReqeust(singleCar) }} className='px-4 py-1 bg-black text-white mx-auto block my-2 font-bold rounded font-italian'>Request</button>
+
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+            <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
+                <div className='col-span-full'>
+                    <h2 className='text-3xl font-bold font-italian'>SUV
+                    </h2>
+                </div>
+                {suvCarData && suvCarData.length > 0 &&
+                    suvCarData.map((singleCarObj) => {
+                        const singleCar = getCarObje(singleCarObj);
+                        return <div onClick={() => { handleReqeust(singleCar) }} key={singleCar.carname} className='rounded-lg bg-white overflow-hidden p-5 shadow-sm cursor-pointer'>
+                            <img className='' src={singleCar.img} />
+                            <div className='font-italian'>
+                                <h1 className='text-xl font-bold text-center py-2'>{singleCar.carname}</h1>
+                                <p className='text-center text-sm font-bold'>{`Starting from ${singleCar.price}`}</p>
+
+                            </div>
+                            <div>
+                                <button onClick={() => { handleReqeust(singleCar) }} className='px-4 py-1 bg-black text-white mx-auto block my-2 font-bold rounded font-italian'>Request</button>
+
+                            </div>
+                        </div>
+                    })
+                }
+            </div>
+            <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
+                <div className='col-span-full'>
+                    <h2 className='text-3xl font-bold font-italian'>SPORTS CAR
+                    </h2>
+                </div>
                 {supercars && supercars.length > 0 &&
                     supercars.map((singleCarObj) => {
                         const singleCar = getCarObje(singleCarObj);
