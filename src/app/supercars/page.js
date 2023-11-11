@@ -312,7 +312,7 @@ const SuperCars = () => {
             </div>
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 <div className='col-span-full'>
-                    <h2 className='text-3xl font-bold font-italian'>COMPACT</h2>
+                    <h2 className='px-3 lg:px-0 text-3xl font-bold font-italian'>COMPACT</h2>
                 </div>
                 {compactCarData && compactCarData.length > 0 &&
                     compactCarData.map((singleCarObj) => {
@@ -334,7 +334,7 @@ const SuperCars = () => {
             </div>
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 <div className='col-span-full'>
-                    <h2 className='text-3xl font-bold font-italian'>NO ROOF
+                    <h2 className='px-3 lg:px-0 text-3xl font-bold font-italian'>NO ROOF
                     </h2>
                 </div>
                 {noRoofCarData && noRoofCarData.length > 0 &&
@@ -357,7 +357,7 @@ const SuperCars = () => {
             </div>
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 <div className='col-span-full'>
-                    <h2 className='text-3xl font-bold font-italian'>SUV
+                    <h2 className='px-3 lg:px-0 text-3xl font-bold font-italian'>SUV
                     </h2>
                 </div>
                 {suvCarData && suvCarData.length > 0 &&
@@ -380,7 +380,7 @@ const SuperCars = () => {
             </div>
             <div className='bg-white grid grid-cols-1 lg:grid-cols-3 gap-5 my-5 text-black' id='supercars'>
                 <div className='col-span-full'>
-                    <h2 className='text-3xl font-bold font-italian'>SPORTS CAR
+                    <h2 className='px-3 lg:px-0 text-3xl font-bold font-italian'>SPORTS CAR
                     </h2>
                 </div>
                 {supercars && supercars.length > 0 &&
