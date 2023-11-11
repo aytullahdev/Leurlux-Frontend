@@ -143,6 +143,21 @@ const supercarsData = [
         "img": "/porche.png"
     },
     {
+        "carname": "Audi R8",
+        "price": " 1020 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-R8.jpg"
+    },
+    {
+        "carname": "Audi R8 Spyder",
+        "price": " 1080 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Audi-R8-Spyder.jpg"
+    },
+    {
+        "carname": "Bentley GT",
+        "price": " 1620 €/Day",
+        "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GT.jpg"
+    },
+    {
         "carname": "Bentley GTC",
         "price": " 1920 €/Day",
         "img": "https://ryanmillexclusivecars.com/wp-content/uploads/2020/06/Bentley-GTC.jpg"
