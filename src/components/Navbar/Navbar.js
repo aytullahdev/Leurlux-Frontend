@@ -11,7 +11,7 @@ const navbar = [
     },
     {
         name: "About",
-        to: "/about-us"
+        to: "/about-us#top"
     },
     {
         name: "Contact",

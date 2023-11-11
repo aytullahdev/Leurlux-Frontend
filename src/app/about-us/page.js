@@ -3,7 +3,7 @@ import React from 'react';
 const page = () => {
     return (
         <div className=''>
-            <div className=' lg:mt-0 bg-[#232222]  flex flex-col justify-around'>
+            <div className=' lg:mt-0 bg-[#232222]  flex flex-col justify-around h-auto lg:h-screen'>
                 <div className=' lg:py-0'>
                     <div className='text-white bg-[#232222] py-1 p-5 ' >
                         <h1 className='font-italian text-2xl lg:text-4xl py-1'>Welcome to LeurLux, your gateway to luxury experiences. Our home base is in Lisbon, Portugal, and we specialize in creating unforgettable moments for you.</h1>
