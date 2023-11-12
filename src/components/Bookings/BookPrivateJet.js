@@ -35,8 +35,14 @@ const BookPrivateJet = () => {
                 setShowFlyTo(true)
                 setShowFlyFrom(false)
             }
-            const filteredAirports = airportsData.filter((airport) =>
-                airport.name.toLowerCase().includes(e.target.value.toLowerCase())
+            const filteredAirports = airportsData.filter((airport) => {
+                if (airport.type === "Railway Stations") {
+                    return false;
+                }
+                return airport.name.toLowerCase().includes(e.target.value.toLowerCase())
+
+            }
+
             );
             setSuggestions(filteredAirports.slice(0, 5));
         } else {
