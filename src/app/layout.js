@@ -55,8 +55,8 @@ export default function RootLayout({ children }) {
         </GlobalProvider>
 
         <div className='text-black fixed bottom-2 right-2 z-50'>
-          <WhatsAppWidget className="z-50" replyTimeText="Typically replies quickly." message="Hello! 👋🏼 
-      How can we assist you with your villa, yacht, car, or hotel booking needs?" phoneNumber="+46736700548" />
+          <WhatsAppWidget className="z-50" replyTimeText="Typically replies quickly." message="Hello,
+How can we assist you?" phoneNumber="+46736700548" />
         </div>
 
         <Toaster richColors position='bottom-center' />
