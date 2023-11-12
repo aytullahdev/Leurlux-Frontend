@@ -46,7 +46,7 @@ const chauffeurPrice = {
         {
             "price": "225",
             "title": "By the hour (Minimum 4 hours)",
-            "pricetag": "€"
+            "pricetag": "€/hour"
         },
         {
             "price": "185",
@@ -82,7 +82,7 @@ const porschePrice = {
         {
             "price": "175",
             "title": "By the hour (Minimum 4 hours)",
-            "pricetag": "€"
+            "pricetag": "€/hour"
         },
         {
             "price": "185",
@@ -218,7 +218,7 @@ const TransportSection = () => {
                         </div> */}
                         <div className="flex flex-row flex-wrap mx-4 font-italian">
 
-                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
+                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 lg:text-justify justify-center items-center">
                                 <section className="bg-gray-100 py-5">
                                     <div className="container mx-auto lg:px-4">
                                         <h2 className="text-xl lg:text-3xl font-semibold text-black mb-6">Explore the Luxurious Hongqi E-HS9</h2>
@@ -320,9 +320,9 @@ const TransportSection = () => {
                                         }} href="/book?category=transport" className='text-xl lg:text-3xl bg-black text-white  px-10 py-2 rounded-lg font-italian '>Book Now</button>
                                     </div>
                                 </div>
-                                <div className="text-black bg-gray-100 font-italian py-10 lg:px-10">
+                                <div className="text-black bg-gray-100 font-italian lg:py-10 lg:px-10">
                                     <p className="text-6xl font-bold py-10">Gyles Taylor</p>
-                                    <div className='font-italian text-2xl flex flex-col gap-9'>
+                                    <div className='font-italian lg:text-2xl flex flex-col gap-9'>
                                         <div className='flex flex-col lg:flex-row lg:gap-10'>
                                             <img src='/gyles-taylor.png' className='w-[200px] block mx-auto' />
                                             <div className='flex flex-col gap-4 lg:gap-10 font-italian font-bold'>
@@ -369,15 +369,15 @@ const TransportSection = () => {
 
                         <div className="flex flex-row flex-wrap lg:mx-4 font-italian">
 
-                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 text-justify justify-center items-center">
+                            <div className="w-full   lg:px-4 mb-8 flex flex-col gap-5 lg:text-justify justify-center items-center">
                                 <section className="bg-gray-100 py-5">
                                     <div className="container mx-auto lg:px-4">
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
-                                            <section className="bg-gray-100 py-12">
+                                            <section className="bg-gray-100 lg:py-12">
                                                 <div className="container mx-auto px-4">
-                                                    <h2 className="text-base lg:text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
+                                                    <h2 className="text-xl lg:text-3xl font-semibold text-black mb-6">Experience Luxury with Porsche</h2>
                                                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8">
                                                         <div className="bg-white rounded-lg shadow-lg p-6">
                                                             <h3 className="text-xl font-semibold text-black mb-4">Unparalleled Performance</h3>

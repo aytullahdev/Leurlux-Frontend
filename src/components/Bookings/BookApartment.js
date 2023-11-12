@@ -105,7 +105,7 @@ const BookingFormFor = () => {
         for (var i = 1; i <= guests; i++) {
             gestArray.push(i);
         }
-        return gestArray.map(i => <option key={i} value={i}>{i} people</option>)
+        return gestArray.map(i => <option key={i} value={i}>{i} {i === 1 ? 'person' : 'people'}</option>)
     }
     return (
         <div className="bg-white rounded-lg p-6 mb-6 font-italian">
@@ -128,7 +128,7 @@ const BookingFormFor = () => {
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Arrival</label>
+                        <label className='font-italian'>Check In</label>
                         {/* <input
                             type="datetime-local"
                             name="arrival"
@@ -147,7 +147,7 @@ const BookingFormFor = () => {
                         />
                     </div>
                     <div className="mb-4 flex flex-col justify-start gap-2 text-xl ">
-                        <label className='font-italian'>Departure</label>
+                        <label className='font-italian'>Check Out</label>
                         {/* <input
                             type="datetime-local"
                             name="departure"

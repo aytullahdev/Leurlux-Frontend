@@ -68,7 +68,10 @@ const HotelLanding = () => {
     return (
         <div className='px-2 lg:px-10 py-5' id='hotel'>
             <div>
-                <h1 className='text-5xl font-italian py-5'>Hotels</h1>
+                <h1 className='text-5xl font-italian py-2'>Hotels</h1>
+            </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can’t find the accommodation your looking for let us know and we will find it for you.`} </h1>
             </div>
             <div className='grid w-full grid-cols-1 md:grid-cols-2  xl:grid-cols-2 gap-5'>
                 {collection && collection.length > 0 ? <>
@@ -79,6 +82,9 @@ const HotelLanding = () => {
                         })
                     }
                 </> : null}
+            </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can’t find the accommodation your looking for let us know and we will find it for you.`} </h1>
             </div>
 
         </div>

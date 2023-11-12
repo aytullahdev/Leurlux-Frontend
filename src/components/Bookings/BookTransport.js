@@ -446,7 +446,7 @@ const BookingForm = () => {
 
                         </div>
                     </div>
-                    <div className="bg-white grid grid-cols-2 text-black gap-2 lg:gap-5">
+                    <div className="bg-white grid grid-cols-1 text-black gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Pickup Date
@@ -470,7 +470,7 @@ const BookingForm = () => {
                                 dateFormat="Pp"
                             />
                         </div>
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="pickupDate">
                                 Return Date
                             </label>
@@ -483,7 +483,7 @@ const BookingForm = () => {
                                 timeIntervals={30}
                                 dateFormat="Pp"
                             />
-                        </div>
+                        </div> */}
 
                     </div>
 
@@ -525,7 +525,7 @@ const BookingForm = () => {
                     <div className="grid grid-cols-2  gap-2 lg:gap-5">
                         <div className="mb-4">
                             <label className="text-base lg:text-2xl my-1 block font-italian font-bold mb-4" htmlFor="numberofpeople">
-                                People
+                                Passengers
                             </label>
                             <select
                                 className="appearance-none border bg-white rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:"

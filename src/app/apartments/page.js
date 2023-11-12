@@ -56,12 +56,15 @@ const getObject = (singleObject) => {
 const MainSection = () => {
     const [collection, setCollection] = useCollection('/api/apartments?populate=*')
     useEffect(() => {
-       // console.log(collection)
+        // console.log(collection)
     }, [collection])
     return (
         <div className='px-2 lg:px-10 py-5' id='villas'>
             <div>
-                <h1 className='text-5xl font-italian py-5'>Apartments</h1>
+                <h1 className='text-5xl font-italian py-2'>Apartments</h1>
+            </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can’t find the accommodation your looking for let us know and we will find it for you.`} </h1>
             </div>
             <div className='grid grid-cols-1 lg:grid-cols-2  2xl:grid-cols-3 gap-5'>
                 {collection && collection.length > 0 ? <>
@@ -71,6 +74,9 @@ const MainSection = () => {
                         })
                     }
                 </> : null}
+            </div>
+            <div className='py-2 lg:py-5'>
+                <h1 className='text-xl lg:text-3xl text-center font-italian'>{`If you can’t find the accommodation your looking for let us know and we will find it for you.`} </h1>
             </div>
 
         </div>
