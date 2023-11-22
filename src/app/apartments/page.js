@@ -29,7 +29,7 @@ const Apartment = ({ apartment }) => {
                 <div>
                     <p className='uppercase font-black mt-5 font-italian text-xl'>{apartment?.name}</p>
                     <p className='py-0'>
-                        <span className='font-thin'>{apartment?.beds} Bed</span>
+                        <span className='font-thin'>{apartment?.bedrooms} Bedrooms</span>
                     </p>
                     <p className='py-0'>
                         <span className='font-thin'>Price From: {apartment?.price} {apartment?.price_tag}</span>
