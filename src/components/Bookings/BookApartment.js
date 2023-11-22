@@ -9,6 +9,7 @@ import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import useCollection from '@/hooks/useCollection';
+import Loading from '../../app/loading';
 const BookingFormFor = () => {
     const { selectedApartment } = useContext(GlobalContext); // Replace GlobalContext with your actual context
     const router = useRouter()
@@ -269,7 +270,9 @@ const BookApartment = () => {
             });
         }
     }, [id, collection])
-
+    if (!collection) {
+        return <Loading />
+    }
     return <>{
         selectedApartment ?
             <>

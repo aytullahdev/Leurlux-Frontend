@@ -10,7 +10,7 @@ import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import useCollection from '@/hooks/useCollection';
-
+import Loading from '../../app/loading';
 const BookingFormFor = () => {
     const { selectedVilla } = useContext(GlobalContext); // Replace GlobalContext with your actual context
     const router = useRouter()
@@ -275,6 +275,7 @@ const BookVilla = () => {
             }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf, guests: villa.attributes.guests, bedrooms: villa.attributes.bedrooms, bathrooms: villa.attributes.bathrooms, 'about_villa': villa.attributes.about_villa, 'about_neighborhood': villa.attributes.about_neighborhood, others: villa.attributes.others, price_tag: villa.attributes.price_tag
         }
     }
+
     useEffect(() => {
         if (!selectedVilla && id) {
 
@@ -289,6 +290,10 @@ const BookVilla = () => {
         }
     }, [id, collection])
     const [selectedSection, setSelectedSection] = useState('specifications')
+
+    if (!collection) {
+        return <Loading />
+    }
     return <>{
         selectedVilla ?
             <>

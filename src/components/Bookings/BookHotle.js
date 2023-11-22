@@ -11,6 +11,7 @@ import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import useCollection from '@/hooks/useCollection';
+import Loading from '../../app/loading';
 
 const BookingFormFor = () => {
     const router = useRouter();
@@ -292,6 +293,9 @@ const BookHotle = () => {
             });
         }
     }, [id, collection])
+    if (!collection) {
+        return <Loading />
+    }
     return <>{
         selectedHotel ?
             <>

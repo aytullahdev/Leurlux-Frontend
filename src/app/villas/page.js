@@ -5,6 +5,7 @@ import useCollection from '@/hooks/useCollection';
 import useGlobalContext from '@/hooks/useGlobalContext';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
+import Loading from '../loading';
 const Villa = ({ villa }) => {
     const router = useRouter();
 
@@ -68,6 +69,9 @@ const Villas = () => {
 
     //     }
     // ]
+    if (!collection) {
+        return <Loading />
+    }
     return (
         <div className=' w-full h-full  px-3 lg:px-10 py-5' id='villas'>
             <div>

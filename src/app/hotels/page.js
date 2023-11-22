@@ -5,6 +5,7 @@ import useGlobalContext from '@/hooks/useGlobalContext';
 import { useRouter } from 'next/navigation';
 import useCollection from '@/hooks/useCollection';
 import React, { useEffect } from 'react';
+import Loading from '../loading';
 const hotels = [
 
 
@@ -26,6 +27,7 @@ const Hotel = ({ hotel }) => {
 
         router.push(`/book?category=hotel&id=${hotel.id}#top`)
     }
+
     return <>
         <div className='border    flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
             {/* <div className='overflow-hidden'>
@@ -65,6 +67,9 @@ const HotelLanding = () => {
             }), rating: singleObject.attributes.rating, location: singleObject.attributes.location, sustainabilityLevel: singleObject.attributes.sustainabilityLevel
         };
 
+    }
+    if (!collection) {
+        return <Loading />
     }
     return (
         <div className='px-2 lg:px-10 py-5' id='hotel'>
