@@ -1,14 +1,14 @@
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Carousel from '../resueable/Carousel';
 import { toast } from "sonner";
 import axios from "axios";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-
+import useCollection from '@/hooks/useCollection';
 const BookingFormFor = () => {
     const { selectedApartment } = useContext(GlobalContext); // Replace GlobalContext with your actual context
     const router = useRouter()
@@ -241,8 +241,35 @@ const BookingFormFor = () => {
     );
 };
 const BookApartment = () => {
-    const { selectedApartment } = useContext(GlobalContext)
+    const { selectedApartment, setSelectedApartment } = useContext(GlobalContext)
     const [selectedSection, setSelectedSection] = useState('description')
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id')
+    const [collection, setCollection] = useCollection('/api/apartments?populate=*')
+    const getObject = (singleObject) => {
+        const backend = `${process.env.NEXT_PUBLIC_API_URL}`
+        return {
+            name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
+                return `${singleImage.attributes.url}`
+            }), beds: singleObject.attributes.beds,
+            link: singleObject.attributes.pdf, guests: singleObject.attributes.guests, bedrooms: singleObject.attributes.bedrooms, bathrooms: singleObject.attributes.bathrooms, 'about_penthouse': singleObject.attributes.about_penthouse, 'about_neighborhood': singleObject.attributes.about_neighborhood, others: singleObject.attributes.others, price_tag: singleObject.attributes.price_tag
+        };
+
+    }
+    useEffect(() => {
+        if (!selectedApartment && id) {
+
+            collection?.map(element => {
+
+                if (element.id === parseInt(id)) {
+                    console.log(element)
+                    setSelectedApartment(getObject(element))
+                    return
+                }
+            });
+        }
+    }, [id, collection])
+
     return <>{
         selectedApartment ?
             <>

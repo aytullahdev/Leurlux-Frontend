@@ -1,15 +1,16 @@
 
+'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Carousel from '../resueable/Carousel';
 import { toast } from "sonner";
 import axios from "axios";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-
+import useCollection from '@/hooks/useCollection';
 
 const BookingFormFor = () => {
     const router = useRouter();
@@ -264,8 +265,33 @@ const BookingFormFor = () => {
     );
 };
 const BookHotle = () => {
-    const { selectedHotel } = useContext(GlobalContext)
+    const { selectedHotel, setSelectedHotel } = useContext(GlobalContext)
     const [selectedSection, setSelectedSection] = useState('description')
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id')
+    const [collection, setCollection] = useCollection('/api/hotels?populate=*')
+    const getObject = (singleObject) => {
+        const backend = `${process.env.NEXT_PUBLIC_API_URL}`
+        return {
+            name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
+                return `${singleImage.attributes.url}`
+            }), rating: singleObject.attributes.rating, location: singleObject.attributes.location, sustainabilityLevel: singleObject.attributes.sustainabilityLevel
+        };
+
+    }
+    useEffect(() => {
+        if (!selectedHotel && id) {
+
+            collection?.map(element => {
+
+                if (element.id === parseInt(id)) {
+                    console.log(element)
+                    setSelectedHotel(getObject(element))
+                    return
+                }
+            });
+        }
+    }, [id, collection])
     return <>{
         selectedHotel ?
             <>

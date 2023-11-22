@@ -16,7 +16,7 @@ const Apartment = ({ apartment }) => {
     const handleBook = () => {
         setSelectedApartment(apartment);
 
-        router.push('/book?category=apartment#top')
+        router.push(`/book?category=apartment&id=${apartment.id}#top`)
     }
     return <>
         <div className='border  flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
@@ -46,6 +46,7 @@ const Apartment = ({ apartment }) => {
 const getObject = (singleObject) => {
     const backend = `${process.env.NEXT_PUBLIC_API_URL}`
     return {
+        id: singleObject.id,
         name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
             return `${singleImage.attributes.url}`
         }), beds: singleObject.attributes.beds,

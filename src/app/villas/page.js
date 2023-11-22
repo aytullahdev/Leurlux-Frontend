@@ -17,7 +17,7 @@ const Villa = ({ villa }) => {
     const handleBook = () => {
         setSelectedVilla(villa);
 
-        router.push('/book?category=villa#top')
+        router.push(`/book?category=villa&id=${villa.id}#top`)
     }
     return <>
         <div className='border shadow-sm p-2 rounded-lg bg-gray-50'>
@@ -29,7 +29,7 @@ const Villa = ({ villa }) => {
             <div className='flex flex-col lg:flex-row justify-between  items-center'>
                 <div>
                     <p className='uppercase font-black mt-5 font-italian lg:text-2xl'>{villa?.name}</p>
-                    <p className='uppercase font-thin '>{villa?.beds} Bed</p>
+                    <p className='uppercase font-thin '>{villa?.bedrooms} Bedrooms</p>
                     <p className='py-2'>
                         <span className='font-thin'>Price from {villa?.price}{villa?.price_tag}</span>
                     </p>
@@ -46,6 +46,7 @@ const Villas = () => {
     const [collection, setCollection] = useCollection('/api/villas?populate=*')
     const getVillaObject = (villa) => {
         return {
+            id: villa.id,
             name: villa.attributes.name, price: villa.attributes.price, images: villa.attributes.images.data.map((singelImage) => {
                 return `${singelImage.attributes.url}`
             }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf, guests: villa.attributes.guests, bedrooms: villa.attributes.bedrooms, bathrooms: villa.attributes.bathrooms, 'about_villa': villa.attributes.about_villa, 'about_neighborhood': villa.attributes.about_neighborhood, others: villa.attributes.others, price_tag: villa.attributes.price_tag

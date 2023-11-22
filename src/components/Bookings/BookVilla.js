@@ -1,14 +1,15 @@
 'use client'
 import { GlobalContext } from '@/GlobalContext/GlobalContext';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Carousel from '../resueable/Carousel';
 import { toast } from "sonner";
 import axios from "axios";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import DatePicker from 'react-datepicker'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import useCollection from '@/hooks/useCollection';
 
 const BookingFormFor = () => {
     const { selectedVilla } = useContext(GlobalContext); // Replace GlobalContext with your actual context
@@ -262,7 +263,31 @@ const BookingFormFor = () => {
     );
 };
 const BookVilla = () => {
-    const { selectedVilla } = useContext(GlobalContext)
+    const { selectedVilla, setSelectedVilla } = useContext(GlobalContext)
+    const searchParams = useSearchParams();
+    const id = searchParams.get('id')
+    const [collection, setCollection] = useCollection('/api/villas?populate=*')
+    const getVillaObject = (villa) => {
+        return {
+            id: villa.id,
+            name: villa.attributes.name, price: villa.attributes.price, images: villa.attributes.images.data.map((singelImage) => {
+                return `${singelImage.attributes.url}`
+            }), details: villa.attributes.details, beds: villa.attributes.beds, bathTube: villa.attributes.bathtube, link: villa.attributes.pdf, guests: villa.attributes.guests, bedrooms: villa.attributes.bedrooms, bathrooms: villa.attributes.bathrooms, 'about_villa': villa.attributes.about_villa, 'about_neighborhood': villa.attributes.about_neighborhood, others: villa.attributes.others, price_tag: villa.attributes.price_tag
+        }
+    }
+    useEffect(() => {
+        if (!selectedVilla && id) {
+
+            collection?.map(element => {
+
+                if (element.id === parseInt(id)) {
+                    console.log(element)
+                    setSelectedVilla(getVillaObject(element))
+                    return
+                }
+            });
+        }
+    }, [id, collection])
     const [selectedSection, setSelectedSection] = useState('specifications')
     return <>{
         selectedVilla ?

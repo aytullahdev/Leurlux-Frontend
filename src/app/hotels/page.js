@@ -24,7 +24,7 @@ const Hotel = ({ hotel }) => {
     const handleBook = () => {
         setSelectedHotel(hotel);
 
-        router.push('/book?category=hotel#top')
+        router.push(`/book?category=hotel&id=${hotel.id}#top`)
     }
     return <>
         <div className='border    flex flex-col justify-between shadow-sm p-2 rounded-lg bg-gray-50'>
@@ -59,6 +59,7 @@ const HotelLanding = () => {
     const getObject = (singleObject) => {
         const backend = `${process.env.NEXT_PUBLIC_API_URL}`
         return {
+            id: singleObject.id,
             name: singleObject.attributes.name, price: singleObject.attributes.price, details: singleObject.attributes.details, images: singleObject.attributes.images.data.map((singleImage) => {
                 return `${singleImage.attributes.url}`
             }), rating: singleObject.attributes.rating, location: singleObject.attributes.location, sustainabilityLevel: singleObject.attributes.sustainabilityLevel
